@@ -100,6 +100,7 @@ class ComposerStaticInitb7bf05ab614fb22f748f36c8a037fd91
         array (
             'League\\Flysystem\\' => 17,
             'Laravel\\Tinker\\' => 15,
+            'LaravelFrontendPresets\\BulmaPreset\\' => 35,
         ),
         'J' => 
         array (
@@ -310,6 +311,10 @@ class ComposerStaticInitb7bf05ab614fb22f748f36c8a037fd91
         'Laravel\\Tinker\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/tinker/src',
+        ),
+        'LaravelFrontendPresets\\BulmaPreset\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-frontend-presets/bulma/src',
         ),
         'JakubOnderka\\PhpConsoleHighlighter\\' => 
         array (
@@ -2004,6 +2009,8 @@ class ComposerStaticInitb7bf05ab614fb22f748f36c8a037fd91
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'LaravelFrontendPresets\\BulmaPreset\\BulmaPreset' => __DIR__ . '/..' . '/laravel-frontend-presets/bulma/src/BulmaPreset.php',
+        'LaravelFrontendPresets\\BulmaPreset\\BulmaPresetServiceProvider' => __DIR__ . '/..' . '/laravel-frontend-presets/bulma/src/BulmaPresetServiceProvider.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',
         'Laravel\\Tinker\\TinkerCaster' => __DIR__ . '/..' . '/laravel/tinker/src/TinkerCaster.php',

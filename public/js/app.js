@@ -1721,4448 +1721,21112 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
-  \*****************************************************/
+/***/ "./node_modules/bulma-extensions/bulma-accordion/dist/js/bulma-accordion.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-accordion/dist/js/bulma-accordion.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/*!
-  * Bootstrap v4.3.1 (https://getbootstrap.com/)
-  * Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-  */
-(function (global, factory) {
-   true ? factory(exports, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")) :
-  undefined;
-}(this, function (exports, $, Popper) { 'use strict';
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
-  Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+var onBulmaAccordionClick = Symbol('onBulmaAccordionClick');
+
+var bulmaAccordion = function (_EventEmitter) {
+  _inherits(bulmaAccordion, _EventEmitter);
+
+  function bulmaAccordion(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaAccordion);
+
+    var _this = _possibleConstructorReturn(this, (bulmaAccordion.__proto__ || Object.getPrototypeOf(bulmaAccordion)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
     }
-  }
 
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
-  }
+    _this._clickEvents = ['click'];
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
+    _this[onBulmaAccordionClick] = _this[onBulmaAccordionClick].bind(_this);
 
-    return obj;
-  }
-
-  function _objectSpread(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-      var ownKeys = Object.keys(source);
-
-      if (typeof Object.getOwnPropertySymbols === 'function') {
-        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
-          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-        }));
-      }
-
-      ownKeys.forEach(function (key) {
-        _defineProperty(target, key, source[key]);
-      });
-    }
-
-    return target;
-  }
-
-  function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
+    _this.init();
+    return _this;
   }
 
   /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): util.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  /**
-   * ------------------------------------------------------------------------
-   * Private TransitionEnd Helpers
-   * ------------------------------------------------------------------------
-   */
-
-  var TRANSITION_END = 'transitionend';
-  var MAX_UID = 1000000;
-  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
-
-  function toType(obj) {
-    return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
-  }
-
-  function getSpecialTransitionEndEvent() {
-    return {
-      bindType: TRANSITION_END,
-      delegateType: TRANSITION_END,
-      handle: function handle(event) {
-        if ($(event.target).is(this)) {
-          return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
-        }
-
-        return undefined; // eslint-disable-line no-undefined
-      }
-    };
-  }
-
-  function transitionEndEmulator(duration) {
-    var _this = this;
-
-    var called = false;
-    $(this).one(Util.TRANSITION_END, function () {
-      called = true;
-    });
-    setTimeout(function () {
-      if (!called) {
-        Util.triggerTransitionEnd(_this);
-      }
-    }, duration);
-    return this;
-  }
-
-  function setTransitionEndSupport() {
-    $.fn.emulateTransitionEnd = transitionEndEmulator;
-    $.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
-  }
-  /**
-   * --------------------------------------------------------------------------
-   * Public Util Api
-   * --------------------------------------------------------------------------
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
    */
 
 
-  var Util = {
-    TRANSITION_END: 'bsTransitionEnd',
-    getUID: function getUID(prefix) {
-      do {
-        // eslint-disable-next-line no-bitwise
-        prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
-      } while (document.getElementById(prefix));
-
-      return prefix;
-    },
-    getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
-
-      if (!selector || selector === '#') {
-        var hrefAttr = element.getAttribute('href');
-        selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
-      }
-
-      try {
-        return document.querySelector(selector) ? selector : null;
-      } catch (err) {
-        return null;
-      }
-    },
-    getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
-      if (!element) {
-        return 0;
-      } // Get transition-duration of the element
+  _createClass(bulmaAccordion, [{
+    key: 'init',
 
 
-      var transitionDuration = $(element).css('transition-duration');
-      var transitionDelay = $(element).css('transition-delay');
-      var floatTransitionDuration = parseFloat(transitionDuration);
-      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
-
-      if (!floatTransitionDuration && !floatTransitionDelay) {
-        return 0;
-      } // If multiple durations are defined, take the first
-
-
-      transitionDuration = transitionDuration.split(',')[0];
-      transitionDelay = transitionDelay.split(',')[0];
-      return (parseFloat(transitionDuration) + parseFloat(transitionDelay)) * MILLISECONDS_MULTIPLIER;
-    },
-    reflow: function reflow(element) {
-      return element.offsetHeight;
-    },
-    triggerTransitionEnd: function triggerTransitionEnd(element) {
-      $(element).trigger(TRANSITION_END);
-    },
-    // TODO: Remove in v5
-    supportsTransitionEnd: function supportsTransitionEnd() {
-      return Boolean(TRANSITION_END);
-    },
-    isElement: function isElement(obj) {
-      return (obj[0] || obj).nodeType;
-    },
-    typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-      for (var property in configTypes) {
-        if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-          var expectedTypes = configTypes[property];
-          var value = config[property];
-          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
-
-          if (!new RegExp(expectedTypes).test(valueType)) {
-            throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
-          }
-        }
-      }
-    },
-    findShadowRoot: function findShadowRoot(element) {
-      if (!document.documentElement.attachShadow) {
-        return null;
-      } // Can find the shadow root otherwise it'll return the document
-
-
-      if (typeof element.getRootNode === 'function') {
-        var root = element.getRootNode();
-        return root instanceof ShadowRoot ? root : null;
-      }
-
-      if (element instanceof ShadowRoot) {
-        return element;
-      } // when we don't find a shadow root
-
-
-      if (!element.parentNode) {
-        return null;
-      }
-
-      return Util.findShadowRoot(element.parentNode);
-    }
-  };
-  setTransitionEndSupport();
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME = 'alert';
-  var VERSION = '4.3.1';
-  var DATA_KEY = 'bs.alert';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Selector = {
-    DISMISS: '[data-dismiss="alert"]'
-  };
-  var Event = {
-    CLOSE: "close" + EVENT_KEY,
-    CLOSED: "closed" + EVENT_KEY,
-    CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
-  };
-  var ClassName = {
-    ALERT: 'alert',
-    FADE: 'fade',
-    SHOW: 'show'
     /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
+     * Initiate plugin
+     * @method init
+     * @return {void}
      */
+    value: function init() {
+      this.items = this.element.querySelectorAll('.accordion .toggle') || [];
 
-  };
-
-  var Alert =
-  /*#__PURE__*/
-  function () {
-    function Alert(element) {
-      this._element = element;
-    } // Getters
-
-
-    var _proto = Alert.prototype;
-
-    // Public
-    _proto.close = function close(element) {
-      var rootElement = this._element;
-
-      if (element) {
-        rootElement = this._getRootElement(element);
-      }
-
-      var customEvent = this._triggerCloseEvent(rootElement);
-
-      if (customEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._removeElement(rootElement);
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY);
-      this._element = null;
-    } // Private
-    ;
-
-    _proto._getRootElement = function _getRootElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      var parent = false;
-
-      if (selector) {
-        parent = document.querySelector(selector);
-      }
-
-      if (!parent) {
-        parent = $(element).closest("." + ClassName.ALERT)[0];
-      }
-
-      return parent;
-    };
-
-    _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $.Event(Event.CLOSE);
-      $(element).trigger(closeEvent);
-      return closeEvent;
-    };
-
-    _proto._removeElement = function _removeElement(element) {
-      var _this = this;
-
-      $(element).removeClass(ClassName.SHOW);
-
-      if (!$(element).hasClass(ClassName.FADE)) {
-        this._destroyElement(element);
-
-        return;
-      }
-
-      var transitionDuration = Util.getTransitionDurationFromElement(element);
-      $(element).one(Util.TRANSITION_END, function (event) {
-        return _this._destroyElement(element, event);
-      }).emulateTransitionEnd(transitionDuration);
-    };
-
-    _proto._destroyElement = function _destroyElement(element) {
-      $(element).detach().trigger(Event.CLOSED).remove();
-    } // Static
-    ;
-
-    Alert._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $(this);
-        var data = $element.data(DATA_KEY);
-
-        if (!data) {
-          data = new Alert(this);
-          $element.data(DATA_KEY, data);
-        }
-
-        if (config === 'close') {
-          data[config](this);
-        }
-      });
-    };
-
-    Alert._handleDismiss = function _handleDismiss(alertInstance) {
-      return function (event) {
-        if (event) {
-          event.preventDefault();
-        }
-
-        alertInstance.close(this);
-      };
-    };
-
-    _createClass(Alert, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION;
-      }
-    }]);
-
-    return Alert;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME] = Alert._jQueryInterface;
-  $.fn[NAME].Constructor = Alert;
-
-  $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
-    return Alert._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$1 = 'button';
-  var VERSION$1 = '4.3.1';
-  var DATA_KEY$1 = 'bs.button';
-  var EVENT_KEY$1 = "." + DATA_KEY$1;
-  var DATA_API_KEY$1 = '.data-api';
-  var JQUERY_NO_CONFLICT$1 = $.fn[NAME$1];
-  var ClassName$1 = {
-    ACTIVE: 'active',
-    BUTTON: 'btn',
-    FOCUS: 'focus'
-  };
-  var Selector$1 = {
-    DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
-    DATA_TOGGLE: '[data-toggle="buttons"]',
-    INPUT: 'input:not([type="hidden"])',
-    ACTIVE: '.active',
-    BUTTON: '.btn'
-  };
-  var Event$1 = {
-    CLICK_DATA_API: "click" + EVENT_KEY$1 + DATA_API_KEY$1,
-    FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY$1 + DATA_API_KEY$1 + " " + ("blur" + EVENT_KEY$1 + DATA_API_KEY$1)
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Button =
-  /*#__PURE__*/
-  function () {
-    function Button(element) {
-      this._element = element;
-    } // Getters
-
-
-    var _proto = Button.prototype;
-
-    // Public
-    _proto.toggle = function toggle() {
-      var triggerChangeEvent = true;
-      var addAriaPressed = true;
-      var rootElement = $(this._element).closest(Selector$1.DATA_TOGGLE)[0];
-
-      if (rootElement) {
-        var input = this._element.querySelector(Selector$1.INPUT);
-
-        if (input) {
-          if (input.type === 'radio') {
-            if (input.checked && this._element.classList.contains(ClassName$1.ACTIVE)) {
-              triggerChangeEvent = false;
-            } else {
-              var activeElement = rootElement.querySelector(Selector$1.ACTIVE);
-
-              if (activeElement) {
-                $(activeElement).removeClass(ClassName$1.ACTIVE);
-              }
-            }
-          }
-
-          if (triggerChangeEvent) {
-            if (input.hasAttribute('disabled') || rootElement.hasAttribute('disabled') || input.classList.contains('disabled') || rootElement.classList.contains('disabled')) {
-              return;
-            }
-
-            input.checked = !this._element.classList.contains(ClassName$1.ACTIVE);
-            $(input).trigger('change');
-          }
-
-          input.focus();
-          addAriaPressed = false;
-        }
-      }
-
-      if (addAriaPressed) {
-        this._element.setAttribute('aria-pressed', !this._element.classList.contains(ClassName$1.ACTIVE));
-      }
-
-      if (triggerChangeEvent) {
-        $(this._element).toggleClass(ClassName$1.ACTIVE);
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$1);
-      this._element = null;
-    } // Static
-    ;
-
-    Button._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$1);
-
-        if (!data) {
-          data = new Button(this);
-          $(this).data(DATA_KEY$1, data);
-        }
-
-        if (config === 'toggle') {
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Button, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$1;
-      }
-    }]);
-
-    return Button;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$1.CLICK_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
-    event.preventDefault();
-    var button = event.target;
-
-    if (!$(button).hasClass(ClassName$1.BUTTON)) {
-      button = $(button).closest(Selector$1.BUTTON);
+      this._bindEvents();
     }
-
-    Button._jQueryInterface.call($(button), 'toggle');
-  }).on(Event$1.FOCUS_BLUR_DATA_API, Selector$1.DATA_TOGGLE_CARROT, function (event) {
-    var button = $(event.target).closest(Selector$1.BUTTON)[0];
-    $(button).toggleClass(ClassName$1.FOCUS, /^focus(in)?$/.test(event.type));
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$1] = Button._jQueryInterface;
-  $.fn[NAME$1].Constructor = Button;
-
-  $.fn[NAME$1].noConflict = function () {
-    $.fn[NAME$1] = JQUERY_NO_CONFLICT$1;
-    return Button._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$2 = 'carousel';
-  var VERSION$2 = '4.3.1';
-  var DATA_KEY$2 = 'bs.carousel';
-  var EVENT_KEY$2 = "." + DATA_KEY$2;
-  var DATA_API_KEY$2 = '.data-api';
-  var JQUERY_NO_CONFLICT$2 = $.fn[NAME$2];
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
-
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
-
-  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
-
-  var SWIPE_THRESHOLD = 40;
-  var Default = {
-    interval: 5000,
-    keyboard: true,
-    slide: false,
-    pause: 'hover',
-    wrap: true,
-    touch: true
-  };
-  var DefaultType = {
-    interval: '(number|boolean)',
-    keyboard: 'boolean',
-    slide: '(boolean|string)',
-    pause: '(string|boolean)',
-    wrap: 'boolean',
-    touch: 'boolean'
-  };
-  var Direction = {
-    NEXT: 'next',
-    PREV: 'prev',
-    LEFT: 'left',
-    RIGHT: 'right'
-  };
-  var Event$2 = {
-    SLIDE: "slide" + EVENT_KEY$2,
-    SLID: "slid" + EVENT_KEY$2,
-    KEYDOWN: "keydown" + EVENT_KEY$2,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$2,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$2,
-    TOUCHSTART: "touchstart" + EVENT_KEY$2,
-    TOUCHMOVE: "touchmove" + EVENT_KEY$2,
-    TOUCHEND: "touchend" + EVENT_KEY$2,
-    POINTERDOWN: "pointerdown" + EVENT_KEY$2,
-    POINTERUP: "pointerup" + EVENT_KEY$2,
-    DRAG_START: "dragstart" + EVENT_KEY$2,
-    LOAD_DATA_API: "load" + EVENT_KEY$2 + DATA_API_KEY$2,
-    CLICK_DATA_API: "click" + EVENT_KEY$2 + DATA_API_KEY$2
-  };
-  var ClassName$2 = {
-    CAROUSEL: 'carousel',
-    ACTIVE: 'active',
-    SLIDE: 'slide',
-    RIGHT: 'carousel-item-right',
-    LEFT: 'carousel-item-left',
-    NEXT: 'carousel-item-next',
-    PREV: 'carousel-item-prev',
-    ITEM: 'carousel-item',
-    POINTER_EVENT: 'pointer-event'
-  };
-  var Selector$2 = {
-    ACTIVE: '.active',
-    ACTIVE_ITEM: '.active.carousel-item',
-    ITEM: '.carousel-item',
-    ITEM_IMG: '.carousel-item img',
-    NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
-    INDICATORS: '.carousel-indicators',
-    DATA_SLIDE: '[data-slide], [data-slide-to]',
-    DATA_RIDE: '[data-ride="carousel"]'
-  };
-  var PointerType = {
-    TOUCH: 'touch',
-    PEN: 'pen'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Carousel =
-  /*#__PURE__*/
-  function () {
-    function Carousel(element, config) {
-      this._items = null;
-      this._interval = null;
-      this._activeElement = null;
-      this._isPaused = false;
-      this._isSliding = false;
-      this.touchTimeout = null;
-      this.touchStartX = 0;
-      this.touchDeltaX = 0;
-      this._config = this._getConfig(config);
-      this._element = element;
-      this._indicatorsElement = this._element.querySelector(Selector$2.INDICATORS);
-      this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0;
-      this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent);
-
-      this._addEventListeners();
-    } // Getters
-
-
-    var _proto = Carousel.prototype;
-
-    // Public
-    _proto.next = function next() {
-      if (!this._isSliding) {
-        this._slide(Direction.NEXT);
-      }
-    };
-
-    _proto.nextWhenVisible = function nextWhenVisible() {
-      // Don't call next when the page isn't visible
-      // or the carousel or its parent isn't visible
-      if (!document.hidden && $(this._element).is(':visible') && $(this._element).css('visibility') !== 'hidden') {
-        this.next();
-      }
-    };
-
-    _proto.prev = function prev() {
-      if (!this._isSliding) {
-        this._slide(Direction.PREV);
-      }
-    };
-
-    _proto.pause = function pause(event) {
-      if (!event) {
-        this._isPaused = true;
-      }
-
-      if (this._element.querySelector(Selector$2.NEXT_PREV)) {
-        Util.triggerTransitionEnd(this._element);
-        this.cycle(true);
-      }
-
-      clearInterval(this._interval);
-      this._interval = null;
-    };
-
-    _proto.cycle = function cycle(event) {
-      if (!event) {
-        this._isPaused = false;
-      }
-
-      if (this._interval) {
-        clearInterval(this._interval);
-        this._interval = null;
-      }
-
-      if (this._config.interval && !this._isPaused) {
-        this._interval = setInterval((document.visibilityState ? this.nextWhenVisible : this.next).bind(this), this._config.interval);
-      }
-    };
-
-    _proto.to = function to(index) {
-      var _this = this;
-
-      this._activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
-
-      var activeIndex = this._getItemIndex(this._activeElement);
-
-      if (index > this._items.length - 1 || index < 0) {
-        return;
-      }
-
-      if (this._isSliding) {
-        $(this._element).one(Event$2.SLID, function () {
-          return _this.to(index);
-        });
-        return;
-      }
-
-      if (activeIndex === index) {
-        this.pause();
-        this.cycle();
-        return;
-      }
-
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
-
-      this._slide(direction, this._items[index]);
-    };
-
-    _proto.dispose = function dispose() {
-      $(this._element).off(EVENT_KEY$2);
-      $.removeData(this._element, DATA_KEY$2);
-      this._items = null;
-      this._config = null;
-      this._element = null;
-      this._interval = null;
-      this._isPaused = null;
-      this._isSliding = null;
-      this._activeElement = null;
-      this._indicatorsElement = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, Default, config);
-      Util.typeCheckConfig(NAME$2, config, DefaultType);
-      return config;
-    };
-
-    _proto._handleSwipe = function _handleSwipe() {
-      var absDeltax = Math.abs(this.touchDeltaX);
-
-      if (absDeltax <= SWIPE_THRESHOLD) {
-        return;
-      }
-
-      var direction = absDeltax / this.touchDeltaX; // swipe left
-
-      if (direction > 0) {
-        this.prev();
-      } // swipe right
-
-
-      if (direction < 0) {
-        this.next();
-      }
-    };
-
-    _proto._addEventListeners = function _addEventListeners() {
+  }, {
+    key: 'destroy',
+    value: function destroy() {
       var _this2 = this;
 
-      if (this._config.keyboard) {
-        $(this._element).on(Event$2.KEYDOWN, function (event) {
-          return _this2._keydown(event);
+      this.items.forEach(function (item) {
+        _this2._clickEvents.forEach(function (clickEvent) {
+          item.removeEventListener(clickEvent, _this2[onBulmaAccordionClick], false);
         });
-      }
-
-      if (this._config.pause === 'hover') {
-        $(this._element).on(Event$2.MOUSEENTER, function (event) {
-          return _this2.pause(event);
-        }).on(Event$2.MOUSELEAVE, function (event) {
-          return _this2.cycle(event);
-        });
-      }
-
-      if (this._config.touch) {
-        this._addTouchEventListeners();
-      }
-    };
-
-    _proto._addTouchEventListeners = function _addTouchEventListeners() {
-      var _this3 = this;
-
-      if (!this._touchSupported) {
-        return;
-      }
-
-      var start = function start(event) {
-        if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-          _this3.touchStartX = event.originalEvent.clientX;
-        } else if (!_this3._pointerEvent) {
-          _this3.touchStartX = event.originalEvent.touches[0].clientX;
-        }
-      };
-
-      var move = function move(event) {
-        // ensure swiping with one touch and not pinching
-        if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
-          _this3.touchDeltaX = 0;
-        } else {
-          _this3.touchDeltaX = event.originalEvent.touches[0].clientX - _this3.touchStartX;
-        }
-      };
-
-      var end = function end(event) {
-        if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-          _this3.touchDeltaX = event.originalEvent.clientX - _this3.touchStartX;
-        }
-
-        _this3._handleSwipe();
-
-        if (_this3._config.pause === 'hover') {
-          // If it's a touch-enabled device, mouseenter/leave are fired as
-          // part of the mouse compatibility events on first tap - the carousel
-          // would stop cycling until user tapped out of it;
-          // here, we listen for touchend, explicitly pause the carousel
-          // (as if it's the second time we tap on it, mouseenter compat event
-          // is NOT fired) and after a timeout (to allow for mouse compatibility
-          // events to fire) we explicitly restart cycling
-          _this3.pause();
-
-          if (_this3.touchTimeout) {
-            clearTimeout(_this3.touchTimeout);
-          }
-
-          _this3.touchTimeout = setTimeout(function (event) {
-            return _this3.cycle(event);
-          }, TOUCHEVENT_COMPAT_WAIT + _this3._config.interval);
-        }
-      };
-
-      $(this._element.querySelectorAll(Selector$2.ITEM_IMG)).on(Event$2.DRAG_START, function (e) {
-        return e.preventDefault();
       });
-
-      if (this._pointerEvent) {
-        $(this._element).on(Event$2.POINTERDOWN, function (event) {
-          return start(event);
-        });
-        $(this._element).on(Event$2.POINTERUP, function (event) {
-          return end(event);
-        });
-
-        this._element.classList.add(ClassName$2.POINTER_EVENT);
-      } else {
-        $(this._element).on(Event$2.TOUCHSTART, function (event) {
-          return start(event);
-        });
-        $(this._element).on(Event$2.TOUCHMOVE, function (event) {
-          return move(event);
-        });
-        $(this._element).on(Event$2.TOUCHEND, function (event) {
-          return end(event);
-        });
-      }
-    };
-
-    _proto._keydown = function _keydown(event) {
-      if (/input|textarea/i.test(event.target.tagName)) {
-        return;
-      }
-
-      switch (event.which) {
-        case ARROW_LEFT_KEYCODE:
-          event.preventDefault();
-          this.prev();
-          break;
-
-        case ARROW_RIGHT_KEYCODE:
-          event.preventDefault();
-          this.next();
-          break;
-
-        default:
-      }
-    };
-
-    _proto._getItemIndex = function _getItemIndex(element) {
-      this._items = element && element.parentNode ? [].slice.call(element.parentNode.querySelectorAll(Selector$2.ITEM)) : [];
-      return this._items.indexOf(element);
-    };
-
-    _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
-      var isPrevDirection = direction === Direction.PREV;
-
-      var activeIndex = this._getItemIndex(activeElement);
-
-      var lastItemIndex = this._items.length - 1;
-      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
-
-      if (isGoingToWrap && !this._config.wrap) {
-        return activeElement;
-      }
-
-      var delta = direction === Direction.PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
-      return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
-    };
-
-    _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      var targetIndex = this._getItemIndex(relatedTarget);
-
-      var fromIndex = this._getItemIndex(this._element.querySelector(Selector$2.ACTIVE_ITEM));
-
-      var slideEvent = $.Event(Event$2.SLIDE, {
-        relatedTarget: relatedTarget,
-        direction: eventDirectionName,
-        from: fromIndex,
-        to: targetIndex
-      });
-      $(this._element).trigger(slideEvent);
-      return slideEvent;
-    };
-
-    _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
-      if (this._indicatorsElement) {
-        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector$2.ACTIVE));
-        $(indicators).removeClass(ClassName$2.ACTIVE);
-
-        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
-
-        if (nextIndicator) {
-          $(nextIndicator).addClass(ClassName$2.ACTIVE);
-        }
-      }
-    };
-
-    _proto._slide = function _slide(direction, element) {
-      var _this4 = this;
-
-      var activeElement = this._element.querySelector(Selector$2.ACTIVE_ITEM);
-
-      var activeElementIndex = this._getItemIndex(activeElement);
-
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
-
-      var nextElementIndex = this._getItemIndex(nextElement);
-
-      var isCycling = Boolean(this._interval);
-      var directionalClassName;
-      var orderClassName;
-      var eventDirectionName;
-
-      if (direction === Direction.NEXT) {
-        directionalClassName = ClassName$2.LEFT;
-        orderClassName = ClassName$2.NEXT;
-        eventDirectionName = Direction.LEFT;
-      } else {
-        directionalClassName = ClassName$2.RIGHT;
-        orderClassName = ClassName$2.PREV;
-        eventDirectionName = Direction.RIGHT;
-      }
-
-      if (nextElement && $(nextElement).hasClass(ClassName$2.ACTIVE)) {
-        this._isSliding = false;
-        return;
-      }
-
-      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
-
-      if (slideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (!activeElement || !nextElement) {
-        // Some weirdness is happening, so we bail
-        return;
-      }
-
-      this._isSliding = true;
-
-      if (isCycling) {
-        this.pause();
-      }
-
-      this._setActiveIndicatorElement(nextElement);
-
-      var slidEvent = $.Event(Event$2.SLID, {
-        relatedTarget: nextElement,
-        direction: eventDirectionName,
-        from: activeElementIndex,
-        to: nextElementIndex
-      });
-
-      if ($(this._element).hasClass(ClassName$2.SLIDE)) {
-        $(nextElement).addClass(orderClassName);
-        Util.reflow(nextElement);
-        $(activeElement).addClass(directionalClassName);
-        $(nextElement).addClass(directionalClassName);
-        var nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
-
-        if (nextElementInterval) {
-          this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
-          this._config.interval = nextElementInterval;
-        } else {
-          this._config.interval = this._config.defaultInterval || this._config.interval;
-        }
-
-        var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
-        $(activeElement).one(Util.TRANSITION_END, function () {
-          $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName$2.ACTIVE);
-          $(activeElement).removeClass(ClassName$2.ACTIVE + " " + orderClassName + " " + directionalClassName);
-          _this4._isSliding = false;
-          setTimeout(function () {
-            return $(_this4._element).trigger(slidEvent);
-          }, 0);
-        }).emulateTransitionEnd(transitionDuration);
-      } else {
-        $(activeElement).removeClass(ClassName$2.ACTIVE);
-        $(nextElement).addClass(ClassName$2.ACTIVE);
-        this._isSliding = false;
-        $(this._element).trigger(slidEvent);
-      }
-
-      if (isCycling) {
-        this.cycle();
-      }
-    } // Static
-    ;
-
-    Carousel._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$2);
-
-        var _config = _objectSpread({}, Default, $(this).data());
-
-        if (typeof config === 'object') {
-          _config = _objectSpread({}, _config, config);
-        }
-
-        var action = typeof config === 'string' ? config : _config.slide;
-
-        if (!data) {
-          data = new Carousel(this, _config);
-          $(this).data(DATA_KEY$2, data);
-        }
-
-        if (typeof config === 'number') {
-          data.to(config);
-        } else if (typeof action === 'string') {
-          if (typeof data[action] === 'undefined') {
-            throw new TypeError("No method named \"" + action + "\"");
-          }
-
-          data[action]();
-        } else if (_config.interval && _config.ride) {
-          data.pause();
-          data.cycle();
-        }
-      });
-    };
-
-    Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      var selector = Util.getSelectorFromElement(this);
-
-      if (!selector) {
-        return;
-      }
-
-      var target = $(selector)[0];
-
-      if (!target || !$(target).hasClass(ClassName$2.CAROUSEL)) {
-        return;
-      }
-
-      var config = _objectSpread({}, $(target).data(), $(this).data());
-
-      var slideIndex = this.getAttribute('data-slide-to');
-
-      if (slideIndex) {
-        config.interval = false;
-      }
-
-      Carousel._jQueryInterface.call($(target), config);
-
-      if (slideIndex) {
-        $(target).data(DATA_KEY$2).to(slideIndex);
-      }
-
-      event.preventDefault();
-    };
-
-    _createClass(Carousel, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$2;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default;
-      }
-    }]);
-
-    return Carousel;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$2.CLICK_DATA_API, Selector$2.DATA_SLIDE, Carousel._dataApiClickHandler);
-  $(window).on(Event$2.LOAD_DATA_API, function () {
-    var carousels = [].slice.call(document.querySelectorAll(Selector$2.DATA_RIDE));
-
-    for (var i = 0, len = carousels.length; i < len; i++) {
-      var $carousel = $(carousels[i]);
-
-      Carousel._jQueryInterface.call($carousel, $carousel.data());
     }
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
 
-  $.fn[NAME$2] = Carousel._jQueryInterface;
-  $.fn[NAME$2].Constructor = Carousel;
-
-  $.fn[NAME$2].noConflict = function () {
-    $.fn[NAME$2] = JQUERY_NO_CONFLICT$2;
-    return Carousel._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$3 = 'collapse';
-  var VERSION$3 = '4.3.1';
-  var DATA_KEY$3 = 'bs.collapse';
-  var EVENT_KEY$3 = "." + DATA_KEY$3;
-  var DATA_API_KEY$3 = '.data-api';
-  var JQUERY_NO_CONFLICT$3 = $.fn[NAME$3];
-  var Default$1 = {
-    toggle: true,
-    parent: ''
-  };
-  var DefaultType$1 = {
-    toggle: 'boolean',
-    parent: '(string|element)'
-  };
-  var Event$3 = {
-    SHOW: "show" + EVENT_KEY$3,
-    SHOWN: "shown" + EVENT_KEY$3,
-    HIDE: "hide" + EVENT_KEY$3,
-    HIDDEN: "hidden" + EVENT_KEY$3,
-    CLICK_DATA_API: "click" + EVENT_KEY$3 + DATA_API_KEY$3
-  };
-  var ClassName$3 = {
-    SHOW: 'show',
-    COLLAPSE: 'collapse',
-    COLLAPSING: 'collapsing',
-    COLLAPSED: 'collapsed'
-  };
-  var Dimension = {
-    WIDTH: 'width',
-    HEIGHT: 'height'
-  };
-  var Selector$3 = {
-    ACTIVES: '.show, .collapsing',
-    DATA_TOGGLE: '[data-toggle="collapse"]'
     /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
      */
 
-  };
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      var _this3 = this;
 
-  var Collapse =
-  /*#__PURE__*/
-  function () {
-    function Collapse(element, config) {
-      this._isTransitioning = false;
-      this._element = element;
-      this._config = this._getConfig(config);
-      this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(Selector$3.DATA_TOGGLE));
+      this.items.forEach(function (item) {
+        _this3._clickEvents.forEach(function (clickEvent) {
+          item.addEventListener(clickEvent, _this3[onBulmaAccordionClick], false);
+        });
+      });
+    }
 
-      for (var i = 0, len = toggleList.length; i < len; i++) {
-        var elem = toggleList[i];
-        var selector = Util.getSelectorFromElement(elem);
-        var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
-          return foundElem === element;
+    /**
+     * Toggle accordion item
+     * @method onBulmaAccordionClick
+     * @param  {Event}    e click event
+     * @return {void}
+     */
+
+  }, {
+    key: onBulmaAccordionClick,
+    value: function value(e) {
+      e.preventDefault();
+
+      var target = e.currentTarget.closest('.accordion') || e.currentTarget;
+      if (!target.classList.contains('is-active')) {
+        var activeItem = this.element.querySelector('.accordion.is-active');
+        if (activeItem) {
+          activeItem.classList.remove('is-active');
+        }
+        target.classList.add('is-active');
+      } else {
+        target.classList.remove('is-active');
+      }
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.accordions';
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaAccordion(element));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaAccordion;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaAccordion);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
         });
 
-        if (selector !== null && filterElement.length > 0) {
-          this._selector = selector;
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
 
-          this._triggerArray.push(elem);
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-calendar/dist/js/bulma-calendar.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-calendar/dist/js/bulma-calendar.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 200);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isDate = __webpack_require__(116)
+
+var MILLISECONDS_IN_HOUR = 3600000
+var MILLISECONDS_IN_MINUTE = 60000
+var DEFAULT_ADDITIONAL_DIGITS = 2
+
+var parseTokenDateTimeDelimeter = /[T ]/
+var parseTokenPlainTime = /:/
+
+// year tokens
+var parseTokenYY = /^(\d{2})$/
+var parseTokensYYY = [
+  /^([+-]\d{2})$/, // 0 additional digits
+  /^([+-]\d{3})$/, // 1 additional digit
+  /^([+-]\d{4})$/ // 2 additional digits
+]
+
+var parseTokenYYYY = /^(\d{4})/
+var parseTokensYYYYY = [
+  /^([+-]\d{4})/, // 0 additional digits
+  /^([+-]\d{5})/, // 1 additional digit
+  /^([+-]\d{6})/ // 2 additional digits
+]
+
+// date tokens
+var parseTokenMM = /^-(\d{2})$/
+var parseTokenDDD = /^-?(\d{3})$/
+var parseTokenMMDD = /^-?(\d{2})-?(\d{2})$/
+var parseTokenWww = /^-?W(\d{2})$/
+var parseTokenWwwD = /^-?W(\d{2})-?(\d{1})$/
+
+// time tokens
+var parseTokenHH = /^(\d{2}([.,]\d*)?)$/
+var parseTokenHHMM = /^(\d{2}):?(\d{2}([.,]\d*)?)$/
+var parseTokenHHMMSS = /^(\d{2}):?(\d{2}):?(\d{2}([.,]\d*)?)$/
+
+// timezone tokens
+var parseTokenTimezone = /([Z+-].*)$/
+var parseTokenTimezoneZ = /^(Z)$/
+var parseTokenTimezoneHH = /^([+-])(\d{2})$/
+var parseTokenTimezoneHHMM = /^([+-])(\d{2}):?(\d{2})$/
+
+/**
+ * @category Common Helpers
+ * @summary Convert the given argument to an instance of Date.
+ *
+ * @description
+ * Convert the given argument to an instance of Date.
+ *
+ * If the argument is an instance of Date, the function returns its clone.
+ *
+ * If the argument is a number, it is treated as a timestamp.
+ *
+ * If an argument is a string, the function tries to parse it.
+ * Function accepts complete ISO 8601 formats as well as partial implementations.
+ * ISO 8601: http://en.wikipedia.org/wiki/ISO_8601
+ *
+ * If all above fails, the function passes the given argument to Date constructor.
+ *
+ * @param {Date|String|Number} argument - the value to convert
+ * @param {Object} [options] - the object with options
+ * @param {0 | 1 | 2} [options.additionalDigits=2] - the additional number of digits in the extended year format
+ * @returns {Date} the parsed date in the local time zone
+ *
+ * @example
+ * // Convert string '2014-02-11T11:30:30' to date:
+ * var result = parse('2014-02-11T11:30:30')
+ * //=> Tue Feb 11 2014 11:30:30
+ *
+ * @example
+ * // Parse string '+02014101',
+ * // if the additional number of digits in the extended year format is 1:
+ * var result = parse('+02014101', {additionalDigits: 1})
+ * //=> Fri Apr 11 2014 00:00:00
+ */
+function parse (argument, dirtyOptions) {
+  if (isDate(argument)) {
+    // Prevent the date to lose the milliseconds when passed to new Date() in IE10
+    return new Date(argument.getTime())
+  } else if (typeof argument !== 'string') {
+    return new Date(argument)
+  }
+
+  var options = dirtyOptions || {}
+  var additionalDigits = options.additionalDigits
+  if (additionalDigits == null) {
+    additionalDigits = DEFAULT_ADDITIONAL_DIGITS
+  } else {
+    additionalDigits = Number(additionalDigits)
+  }
+
+  var dateStrings = splitDateString(argument)
+
+  var parseYearResult = parseYear(dateStrings.date, additionalDigits)
+  var year = parseYearResult.year
+  var restDateString = parseYearResult.restDateString
+
+  var date = parseDate(restDateString, year)
+
+  if (date) {
+    var timestamp = date.getTime()
+    var time = 0
+    var offset
+
+    if (dateStrings.time) {
+      time = parseTime(dateStrings.time)
+    }
+
+    if (dateStrings.timezone) {
+      offset = parseTimezone(dateStrings.timezone)
+    } else {
+      // get offset accurate to hour in timezones that change offset
+      offset = new Date(timestamp + time).getTimezoneOffset()
+      offset = new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE).getTimezoneOffset()
+    }
+
+    return new Date(timestamp + time + offset * MILLISECONDS_IN_MINUTE)
+  } else {
+    return new Date(argument)
+  }
+}
+
+function splitDateString (dateString) {
+  var dateStrings = {}
+  var array = dateString.split(parseTokenDateTimeDelimeter)
+  var timeString
+
+  if (parseTokenPlainTime.test(array[0])) {
+    dateStrings.date = null
+    timeString = array[0]
+  } else {
+    dateStrings.date = array[0]
+    timeString = array[1]
+  }
+
+  if (timeString) {
+    var token = parseTokenTimezone.exec(timeString)
+    if (token) {
+      dateStrings.time = timeString.replace(token[1], '')
+      dateStrings.timezone = token[1]
+    } else {
+      dateStrings.time = timeString
+    }
+  }
+
+  return dateStrings
+}
+
+function parseYear (dateString, additionalDigits) {
+  var parseTokenYYY = parseTokensYYY[additionalDigits]
+  var parseTokenYYYYY = parseTokensYYYYY[additionalDigits]
+
+  var token
+
+  // YYYY or ±YYYYY
+  token = parseTokenYYYY.exec(dateString) || parseTokenYYYYY.exec(dateString)
+  if (token) {
+    var yearString = token[1]
+    return {
+      year: parseInt(yearString, 10),
+      restDateString: dateString.slice(yearString.length)
+    }
+  }
+
+  // YY or ±YYY
+  token = parseTokenYY.exec(dateString) || parseTokenYYY.exec(dateString)
+  if (token) {
+    var centuryString = token[1]
+    return {
+      year: parseInt(centuryString, 10) * 100,
+      restDateString: dateString.slice(centuryString.length)
+    }
+  }
+
+  // Invalid ISO-formatted year
+  return {
+    year: null
+  }
+}
+
+function parseDate (dateString, year) {
+  // Invalid ISO-formatted year
+  if (year === null) {
+    return null
+  }
+
+  var token
+  var date
+  var month
+  var week
+
+  // YYYY
+  if (dateString.length === 0) {
+    date = new Date(0)
+    date.setUTCFullYear(year)
+    return date
+  }
+
+  // YYYY-MM
+  token = parseTokenMM.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    date.setUTCFullYear(year, month)
+    return date
+  }
+
+  // YYYY-DDD or YYYYDDD
+  token = parseTokenDDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    var dayOfYear = parseInt(token[1], 10)
+    date.setUTCFullYear(year, 0, dayOfYear)
+    return date
+  }
+
+  // YYYY-MM-DD or YYYYMMDD
+  token = parseTokenMMDD.exec(dateString)
+  if (token) {
+    date = new Date(0)
+    month = parseInt(token[1], 10) - 1
+    var day = parseInt(token[2], 10)
+    date.setUTCFullYear(year, month, day)
+    return date
+  }
+
+  // YYYY-Www or YYYYWww
+  token = parseTokenWww.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    return dayOfISOYear(year, week)
+  }
+
+  // YYYY-Www-D or YYYYWwwD
+  token = parseTokenWwwD.exec(dateString)
+  if (token) {
+    week = parseInt(token[1], 10) - 1
+    var dayOfWeek = parseInt(token[2], 10) - 1
+    return dayOfISOYear(year, week, dayOfWeek)
+  }
+
+  // Invalid ISO-formatted date
+  return null
+}
+
+function parseTime (timeString) {
+  var token
+  var hours
+  var minutes
+
+  // hh
+  token = parseTokenHH.exec(timeString)
+  if (token) {
+    hours = parseFloat(token[1].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR
+  }
+
+  // hh:mm or hhmm
+  token = parseTokenHHMM.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseFloat(token[2].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE
+  }
+
+  // hh:mm:ss or hhmmss
+  token = parseTokenHHMMSS.exec(timeString)
+  if (token) {
+    hours = parseInt(token[1], 10)
+    minutes = parseInt(token[2], 10)
+    var seconds = parseFloat(token[3].replace(',', '.'))
+    return (hours % 24) * MILLISECONDS_IN_HOUR +
+      minutes * MILLISECONDS_IN_MINUTE +
+      seconds * 1000
+  }
+
+  // Invalid ISO-formatted time
+  return null
+}
+
+function parseTimezone (timezoneString) {
+  var token
+  var absoluteOffset
+
+  // Z
+  token = parseTokenTimezoneZ.exec(timezoneString)
+  if (token) {
+    return 0
+  }
+
+  // ±hh
+  token = parseTokenTimezoneHH.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  // ±hh:mm or ±hhmm
+  token = parseTokenTimezoneHHMM.exec(timezoneString)
+  if (token) {
+    absoluteOffset = parseInt(token[2], 10) * 60 + parseInt(token[3], 10)
+    return (token[1] === '+') ? -absoluteOffset : absoluteOffset
+  }
+
+  return 0
+}
+
+function dayOfISOYear (isoYear, week, day) {
+  week = week || 0
+  day = day || 0
+  var date = new Date(0)
+  date.setUTCFullYear(isoYear, 0, 4)
+  var fourthOfJanuaryDay = date.getUTCDay() || 7
+  var diff = week * 7 + day + 1 - fourthOfJanuaryDay
+  date.setUTCDate(date.getUTCDate() + diff)
+  return date
+}
+
+module.exports = parse
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+var commonFormatterKeys = [
+  'M', 'MM', 'Q', 'D', 'DD', 'DDD', 'DDDD', 'd',
+  'E', 'W', 'WW', 'YY', 'YYYY', 'GG', 'GGGG',
+  'H', 'HH', 'h', 'hh', 'm', 'mm',
+  's', 'ss', 'S', 'SS', 'SSS',
+  'Z', 'ZZ', 'X', 'x'
+]
+
+function buildFormattingTokensRegExp (formatters) {
+  var formatterKeys = []
+  for (var key in formatters) {
+    if (formatters.hasOwnProperty(key)) {
+      formatterKeys.push(key)
+    }
+  }
+
+  var formattingTokens = commonFormatterKeys
+    .concat(formatterKeys)
+    .sort()
+    .reverse()
+  var formattingTokensRegExp = new RegExp(
+    '(\\[[^\\[]*\\])|(\\\\)?' + '(' + formattingTokens.join('|') + '|.)', 'g'
+  )
+
+  return formattingTokensRegExp
+}
+
+module.exports = buildFormattingTokensRegExp
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var startOfISOWeek = __webpack_require__(3)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the ISO week-numbering year of the given date.
+ *
+ * @description
+ * Get the ISO week-numbering year of the given date,
+ * which always starts 3 days before the year's first Thursday.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the ISO week-numbering year
+ *
+ * @example
+ * // Which ISO-week numbering year is 2 January 2005?
+ * var result = getISOYear(new Date(2005, 0, 2))
+ * //=> 2004
+ */
+function getISOYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+
+  var fourthOfJanuaryOfNextYear = new Date(0)
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
+  var startOfNextYear = startOfISOWeek(fourthOfJanuaryOfNextYear)
+
+  var fourthOfJanuaryOfThisYear = new Date(0)
+  fourthOfJanuaryOfThisYear.setFullYear(year, 0, 4)
+  fourthOfJanuaryOfThisYear.setHours(0, 0, 0, 0)
+  var startOfThisYear = startOfISOWeek(fourthOfJanuaryOfThisYear)
+
+  if (date.getTime() >= startOfNextYear.getTime()) {
+    return year + 1
+  } else if (date.getTime() >= startOfThisYear.getTime()) {
+    return year
+  } else {
+    return year - 1
+  }
+}
+
+module.exports = getISOYear
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfWeek = __webpack_require__(79)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the start of an ISO week for the given date.
+ *
+ * @description
+ * Return the start of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an ISO week
+ *
+ * @example
+ * // The start of an ISO week for 2 September 2014 11:55:00:
+ * var result = startOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfISOWeek (dirtyDate) {
+  return startOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = startOfISOWeek
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of a day for the given date.
+ *
+ * @description
+ * Return the start of a day for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a day
+ *
+ * @example
+ * // The start of a day for 2 September 2014 11:55:00:
+ * var result = startOfDay(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 02 2014 00:00:00
+ */
+function startOfDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfDay
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(10)
+var buildFormatLocale = __webpack_require__(11)
+
+/**
+ * @category Locales
+ * @summary English locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Add the specified number of days to the given date.
+ *
+ * @description
+ * Add the specified number of days to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be added
+ * @returns {Date} the new date with the days added
+ *
+ * @example
+ * // Add 10 days to 1 September 2014:
+ * var result = addDays(new Date(2014, 8, 1), 10)
+ * //=> Thu Sep 11 2014 00:00:00
+ */
+function addDays (dirtyDate, dirtyAmount) {
+  var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
+  date.setDate(date.getDate() + amount)
+  return date
+}
+
+module.exports = addDays
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Add the specified number of milliseconds to the given date.
+ *
+ * @description
+ * Add the specified number of milliseconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be added
+ * @returns {Date} the new date with the milliseconds added
+ *
+ * @example
+ * // Add 750 milliseconds to 10 July 2014 12:45:30.000:
+ * var result = addMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:30.750
+ */
+function addMilliseconds (dirtyDate, dirtyAmount) {
+  var timestamp = parse(dirtyDate).getTime()
+  var amount = Number(dirtyAmount)
+  return new Date(timestamp + amount)
+}
+
+module.exports = addMilliseconds
+
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(2)
+var startOfISOWeek = __webpack_require__(3)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the start of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the start of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an ISO year
+ *
+ * @example
+ * // The start of an ISO week-numbering year for 2 July 2005:
+ * var result = startOfISOYear(new Date(2005, 6, 2))
+ * //=> Mon Jan 03 2005 00:00:00
+ */
+function startOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(year, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuary)
+  return date
+}
+
+module.exports = startOfISOYear
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return 1 if the first date is after the second,
+ * -1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989:
+ * var result = compareAsc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> -1
+ *
+ * @example
+ * // Sort the array of dates:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareAsc)
+ * //=> [
+ * //   Wed Feb 11 1987 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Sun Jul 02 1995 00:00:00
+ * // ]
+ */
+function compareAsc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft < timeRight) {
+    return -1
+  } else if (timeLeft > timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareAsc
+
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'less than a second',
+      other: 'less than {{count}} seconds'
+    },
+
+    xSeconds: {
+      one: '1 second',
+      other: '{{count}} seconds'
+    },
+
+    halfAMinute: 'half a minute',
+
+    lessThanXMinutes: {
+      one: 'less than a minute',
+      other: 'less than {{count}} minutes'
+    },
+
+    xMinutes: {
+      one: '1 minute',
+      other: '{{count}} minutes'
+    },
+
+    aboutXHours: {
+      one: 'about 1 hour',
+      other: 'about {{count}} hours'
+    },
+
+    xHours: {
+      one: '1 hour',
+      other: '{{count}} hours'
+    },
+
+    xDays: {
+      one: '1 day',
+      other: '{{count}} days'
+    },
+
+    aboutXMonths: {
+      one: 'about 1 month',
+      other: 'about {{count}} months'
+    },
+
+    xMonths: {
+      one: '1 month',
+      other: '{{count}} months'
+    },
+
+    aboutXYears: {
+      one: 'about 1 year',
+      other: 'about {{count}} years'
+    },
+
+    xYears: {
+      one: '1 year',
+      other: '{{count}} years'
+    },
+
+    overXYears: {
+      one: 'over 1 year',
+      other: 'over {{count}} years'
+    },
+
+    almostXYears: {
+      one: 'almost 1 year',
+      other: 'almost {{count}} years'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'in ' + result
+      } else {
+        return result + ' ago'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in English, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  var monthsFull = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+  var weekdays2char = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
+  var weekdays3char = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  var weekdaysFull = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + 'st'
+      case 2:
+        return number + 'nd'
+      case 3:
+        return number + 'rd'
+    }
+  }
+  return number + 'th'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'أقل من ثانية واحدة',
+      other: 'أقل من {{count}} ثواني'
+    },
+
+    xSeconds: {
+      one: 'ثانية واحدة',
+      other: '{{count}} ثواني'
+    },
+
+    halfAMinute: 'نصف دقيقة',
+
+    lessThanXMinutes: {
+      one: 'أقل من دقيقة',
+      other: 'أقل من {{count}} دقيقة'
+    },
+
+    xMinutes: {
+      one: 'دقيقة واحدة',
+      other: '{{count}} دقائق'
+    },
+
+    aboutXHours: {
+      one: 'ساعة واحدة تقريباً',
+      other: '{{count}} ساعات تقريباً'
+    },
+
+    xHours: {
+      one: 'ساعة واحدة',
+      other: '{{count}} ساعات'
+    },
+
+    xDays: {
+      one: 'يوم واحد',
+      other: '{{count}} أيام'
+    },
+
+    aboutXMonths: {
+      one: 'شهر واحد تقريباً',
+      other: '{{count}} أشهر تقريباً'
+    },
+
+    xMonths: {
+      one: 'شهر واحد',
+      other: '{{count}} أشهر'
+    },
+
+    aboutXYears: {
+      one: 'عام واحد تقريباً',
+      other: '{{count}} أعوام تقريباً'
+    },
+
+    xYears: {
+      one: 'عام واحد',
+      other: '{{count}} أعوام'
+    },
+
+    overXYears: {
+      one: 'أكثر من عام',
+      other: 'أكثر من {{count}} أعوام'
+    },
+
+    almostXYears: {
+      one: 'عام واحد تقريباً',
+      other: '{{count}} أعوام تقريباً'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'في خلال ' + result
+      } else {
+        return 'منذ ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر']
+  var monthsFull = ['كانون الثاني يناير', 'شباط فبراير', 'آذار مارس', 'نيسان أبريل', 'أيار مايو', 'حزيران يونيو', 'تموز يوليو', 'آب أغسطس', 'أيلول سبتمبر', 'تشرين الأول أكتوبر', 'تشرين الثاني نوفمبر', 'كانون الأول ديسمبر']
+  var weekdays2char = ['ح', 'ن', 'ث', 'ر', 'خ', 'ج', 'س']
+  var weekdays3char = ['أحد', 'إثنين', 'ثلاثاء', 'أربعاء', 'خميس', 'جمعة', 'سبت']
+  var weekdaysFull = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت']
+  var meridiemUppercase = ['صباح', 'مساء']
+  var meridiemLowercase = ['ص', 'م']
+  var meridiemFull = ['صباحاً', 'مساءاً']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return String(number)
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'по-малко от секунда',
+      other: 'по-малко от {{count}} секунди'
+    },
+
+    xSeconds: {
+      one: '1 секунда',
+      other: '{{count}} секунди'
+    },
+
+    halfAMinute: 'половин минута',
+
+    lessThanXMinutes: {
+      one: 'по-малко от минута',
+      other: 'по-малко от {{count}} минути'
+    },
+
+    xMinutes: {
+      one: '1 минута',
+      other: '{{count}} минути'
+    },
+
+    aboutXHours: {
+      one: 'около час',
+      other: 'около {{count}} часа'
+    },
+
+    xHours: {
+      one: '1 час',
+      other: '{{count}} часа'
+    },
+
+    xDays: {
+      one: '1 ден',
+      other: '{{count}} дни'
+    },
+
+    aboutXMonths: {
+      one: 'около месец',
+      other: 'около {{count}} месеца'
+    },
+
+    xMonths: {
+      one: '1 месец',
+      other: '{{count}} месеца'
+    },
+
+    aboutXYears: {
+      one: 'около година',
+      other: 'около {{count}} години'
+    },
+
+    xYears: {
+      one: '1 година',
+      other: '{{count}} години'
+    },
+
+    overXYears: {
+      one: 'над година',
+      other: 'над {{count}} години'
+    },
+
+    almostXYears: {
+      one: 'почти година',
+      other: 'почти {{count}} години'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'след ' + result
+      } else {
+        return 'преди ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['яну', 'фев', 'мар', 'апр', 'май', 'юни', 'юли', 'авг', 'сеп', 'окт', 'ное', 'дек']
+  var monthsFull = ['януари', 'февруари', 'март', 'април', 'май', 'юни', 'юли', 'август', 'септември', 'октомври', 'ноември', 'декември']
+  var weekdays2char = ['нд', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+  var weekdays3char = ['нед', 'пон', 'вто', 'сря', 'чет', 'пет', 'съб']
+  var weekdaysFull = ['неделя', 'понеделник', 'вторник', 'сряда', 'четвъртък', 'петък', 'събота']
+  var meridiem = ['сутринта', 'на обяд', 'следобед', 'вечерта']
+
+  var timeOfDay = function (date) {
+    var hours = date.getHours()
+    if (hours >= 4 && hours < 12) {
+      return meridiem[0]
+    } else if (hours >= 12 && hours < 14) {
+      return meridiem[1]
+    } else if (hours >= 14 && hours < 17) {
+      return meridiem[2]
+    } else {
+      return meridiem[3]
+    }
+  }
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': timeOfDay,
+
+    // am, pm
+    'a': timeOfDay,
+
+    // a.m., p.m.
+    'aa': timeOfDay
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + '-ви'
+      case 2:
+        return number + '-ри'
+    }
+  }
+  return number + '-и'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: "menys d'un segon",
+      other: 'menys de {{count}} segons'
+    },
+
+    xSeconds: {
+      one: '1 segon',
+      other: '{{count}} segons'
+    },
+
+    halfAMinute: 'mig minut',
+
+    lessThanXMinutes: {
+      one: "menys d'un minut",
+      other: 'menys de {{count}} minuts'
+    },
+
+    xMinutes: {
+      one: '1 minut',
+      other: '{{count}} minuts'
+    },
+
+    aboutXHours: {
+      one: 'aproximadament una hora',
+      other: 'aproximadament {{count}} hores'
+    },
+
+    xHours: {
+      one: '1 hora',
+      other: '{{count}} hores'
+    },
+
+    xDays: {
+      one: '1 dia',
+      other: '{{count}} dies'
+    },
+
+    aboutXMonths: {
+      one: 'aproximadament un mes',
+      other: 'aproximadament {{count}} mesos'
+    },
+
+    xMonths: {
+      one: '1 mes',
+      other: '{{count}} mesos'
+    },
+
+    aboutXYears: {
+      one: 'aproximadament un any',
+      other: 'aproximadament {{count}} anys'
+    },
+
+    xYears: {
+      one: '1 any',
+      other: '{{count}} anys'
+    },
+
+    overXYears: {
+      one: "més d'un any",
+      other: 'més de {{count}} anys'
+    },
+
+    almostXYears: {
+      one: 'gairebé un any',
+      other: 'gairebé {{count}} anys'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'en ' + result
+      } else {
+        return 'fa ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['gen', 'feb', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'oct', 'nov', 'des']
+  var monthsFull = ['gener', 'febrer', 'març', 'abril', 'maig', 'juny', 'juliol', 'agost', 'setembre', 'octobre', 'novembre', 'desembre']
+  var weekdays2char = ['dg', 'dl', 'dt', 'dc', 'dj', 'dv', 'ds']
+  var weekdays3char = ['dge', 'dls', 'dts', 'dcs', 'djs', 'dvs', 'dss']
+  var weekdaysFull = ['diumenge', 'dilluns', 'dimarts', 'dimecres', 'dijous', 'divendres', 'dissabte']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  switch (number) {
+    case 1:
+      return '1r'
+    case 2:
+      return '2n'
+    case 3:
+      return '3r'
+    case 4:
+      return '4t'
+    default:
+      return number + 'è'
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports) {
+
+function declensionGroup (scheme, count) {
+  if (count === 1) {
+    return scheme.one
+  }
+
+  if (count >= 2 && count <= 4) {
+    return scheme.twoFour
+  }
+
+  // if count === null || count === 0 || count >= 5
+  return scheme.other
+}
+
+function declension (scheme, count, time) {
+  var group = declensionGroup(scheme, count)
+  var finalText = group[time] || group
+  return finalText.replace('{{count}}', count)
+}
+
+function extractPreposition (token) {
+  var result = ['lessThan', 'about', 'over', 'almost'].filter(function (preposition) {
+    return !!token.match(new RegExp('^' + preposition))
+  })
+
+  return result[0]
+}
+
+function prefixPreposition (preposition) {
+  var translation = ''
+
+  if (preposition === 'almost') {
+    translation = 'skoro'
+  }
+
+  if (preposition === 'about') {
+    translation = 'přibližně'
+  }
+
+  return translation.length > 0 ? translation + ' ' : ''
+}
+
+function suffixPreposition (preposition) {
+  var translation = ''
+
+  if (preposition === 'lessThan') {
+    translation = 'méně než'
+  }
+
+  if (preposition === 'over') {
+    translation = 'více než'
+  }
+
+  return translation.length > 0 ? translation + ' ' : ''
+}
+
+function lowercaseFirstLetter (string) {
+  return string.charAt(0).toLowerCase() + string.slice(1)
+}
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    xSeconds: {
+      one: {
+        regular: 'vteřina',
+        past: 'vteřinou',
+        future: 'vteřinu'
+      },
+      twoFour: {
+        regular: '{{count}} vteřiny',
+        past: '{{count}} vteřinami',
+        future: '{{count}} vteřiny'
+      },
+      other: {
+        regular: '{{count}} vteřin',
+        past: '{{count}} vteřinami',
+        future: '{{count}} vteřin'
+      }
+    },
+
+    halfAMinute: {
+      other: {
+        regular: 'půl minuty',
+        past: 'půl minutou',
+        future: 'půl minuty'
+      }
+    },
+
+    xMinutes: {
+      one: {
+        regular: 'minuta',
+        past: 'minutou',
+        future: 'minutu'
+      },
+      twoFour: {
+        regular: '{{count}} minuty',
+        past: '{{count}} minutami',
+        future: '{{count}} minuty'
+      },
+      other: {
+        regular: '{{count}} minut',
+        past: '{{count}} minutami',
+        future: '{{count}} minut'
+      }
+    },
+
+    xHours: {
+      one: {
+        regular: 'hodina',
+        past: 'hodinou',
+        future: 'hodinu'
+      },
+      twoFour: {
+        regular: '{{count}} hodiny',
+        past: '{{count}} hodinami',
+        future: '{{count}} hodiny'
+      },
+      other: {
+        regular: '{{count}} hodin',
+        past: '{{count}} hodinami',
+        future: '{{count}} hodin'
+      }
+    },
+
+    xDays: {
+      one: {
+        regular: 'den',
+        past: 'dnem',
+        future: 'den'
+      },
+      twoFour: {
+        regular: '{{count}} dni',
+        past: '{{count}} dny',
+        future: '{{count}} dni'
+      },
+      other: {
+        regular: '{{count}} dní',
+        past: '{{count}} dny',
+        future: '{{count}} dní'
+      }
+    },
+
+    xMonths: {
+      one: {
+        regular: 'měsíc',
+        past: 'měsícem',
+        future: 'měsíc'
+      },
+      twoFour: {
+        regular: '{{count}} měsíce',
+        past: '{{count}} měsíci',
+        future: '{{count}} měsíce'
+      },
+      other: {
+        regular: '{{count}} měsíců',
+        past: '{{count}} měsíci',
+        future: '{{count}} měsíců'
+      }
+    },
+
+    xYears: {
+      one: {
+        regular: 'rok',
+        past: 'rokem',
+        future: 'rok'
+      },
+      twoFour: {
+        regular: '{{count}} roky',
+        past: '{{count}} roky',
+        future: '{{count}} roky'
+      },
+      other: {
+        regular: '{{count}} roků',
+        past: '{{count}} roky',
+        future: '{{count}} roků'
+      }
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var preposition = extractPreposition(token) || ''
+    var key = lowercaseFirstLetter(token.substring(preposition.length))
+    var scheme = distanceInWordsLocale[key]
+
+    if (!options.addSuffix) {
+      return prefixPreposition(preposition) + suffixPreposition(preposition) + declension(scheme, count, 'regular')
+    }
+
+    if (options.comparison > 0) {
+      return prefixPreposition(preposition) + 'za ' + suffixPreposition(preposition) + declension(scheme, count, 'future')
+    } else {
+      return prefixPreposition(preposition) + 'před ' + suffixPreposition(preposition) + declension(scheme, count, 'past')
+    }
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['led', 'úno', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro']
+  var monthsFull = ['leden', 'únor', 'březen', 'duben', 'květen', 'červen', 'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec']
+  var weekdays2char = ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so']
+  var weekdays3char = ['ned', 'pon', 'úte', 'stř', 'čtv', 'pát', 'sob']
+  var weekdaysFull = ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota']
+  var meridiemUppercase = ['DOP.', 'ODP.']
+  var meridiemLowercase = ['dop.', 'odp.']
+  var meridiemFull = ['dopoledne', 'odpoledne']
+
+  var formatters = {
+    // Month: led, úno, ..., pro
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: leden, únor, ..., prosinec
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: ne, po, ..., so
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: ned, pon, ..., sob
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: neděle, pondělí, ..., sobota
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // DOP., ODP.
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // dop., odp.
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // dopoledne, odpoledne
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'mindre end et sekund',
+      other: 'mindre end {{count}} sekunder'
+    },
+
+    xSeconds: {
+      one: '1 sekund',
+      other: '{{count}} sekunder'
+    },
+
+    halfAMinute: 'et halvt minut',
+
+    lessThanXMinutes: {
+      one: 'mindre end et minut',
+      other: 'mindre end {{count}} minutter'
+    },
+
+    xMinutes: {
+      one: '1 minut',
+      other: '{{count}} minutter'
+    },
+
+    aboutXHours: {
+      one: 'cirka 1 time',
+      other: 'cirka {{count}} timer'
+    },
+
+    xHours: {
+      one: '1 time',
+      other: '{{count}} timer'
+    },
+
+    xDays: {
+      one: '1 dag',
+      other: '{{count}} dage'
+    },
+
+    aboutXMonths: {
+      one: 'cirka 1 måned',
+      other: 'cirka {{count}} måneder'
+    },
+
+    xMonths: {
+      one: '1 måned',
+      other: '{{count}} måneder'
+    },
+
+    aboutXYears: {
+      one: 'cirka 1 år',
+      other: 'cirka {{count}} år'
+    },
+
+    xYears: {
+      one: '1 år',
+      other: '{{count}} år'
+    },
+
+    overXYears: {
+      one: 'over 1 år',
+      other: 'over {{count}} år'
+    },
+
+    almostXYears: {
+      one: 'næsten 1 år',
+      other: 'næsten {{count}} år'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'om ' + result
+      } else {
+        return result + ' siden'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['januar', 'februar', 'marts', 'april', 'maj', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'december']
+  var weekdays2char = ['sø', 'ma', 'ti', 'on', 'to', 'fr', 'lø']
+  var weekdays3char = ['søn', 'man', 'tir', 'ons', 'tor', 'fre', 'lør']
+  var weekdaysFull = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      standalone: {
+        one: 'weniger als eine Sekunde',
+        other: 'weniger als {{count}} Sekunden'
+      },
+      withPreposition: {
+        one: 'weniger als einer Sekunde',
+        other: 'weniger als {{count}} Sekunden'
+      }
+    },
+
+    xSeconds: {
+      standalone: {
+        one: 'eine Sekunde',
+        other: '{{count}} Sekunden'
+      },
+      withPreposition: {
+        one: 'einer Sekunde',
+        other: '{{count}} Sekunden'
+      }
+    },
+
+    halfAMinute: {
+      standalone: 'eine halbe Minute',
+      withPreposition: 'einer halben Minute'
+    },
+
+    lessThanXMinutes: {
+      standalone: {
+        one: 'weniger als eine Minute',
+        other: 'weniger als {{count}} Minuten'
+      },
+      withPreposition: {
+        one: 'weniger als einer Minute',
+        other: 'weniger als {{count}} Minuten'
+      }
+    },
+
+    xMinutes: {
+      standalone: {
+        one: 'eine Minute',
+        other: '{{count}} Minuten'
+      },
+      withPreposition: {
+        one: 'einer Minute',
+        other: '{{count}} Minuten'
+      }
+    },
+
+    aboutXHours: {
+      standalone: {
+        one: 'etwa eine Stunde',
+        other: 'etwa {{count}} Stunden'
+      },
+      withPreposition: {
+        one: 'etwa einer Stunde',
+        other: 'etwa {{count}} Stunden'
+      }
+    },
+
+    xHours: {
+      standalone: {
+        one: 'eine Stunde',
+        other: '{{count}} Stunden'
+      },
+      withPreposition: {
+        one: 'einer Stunde',
+        other: '{{count}} Stunden'
+      }
+    },
+
+    xDays: {
+      standalone: {
+        one: 'ein Tag',
+        other: '{{count}} Tage'
+      },
+      withPreposition: {
+        one: 'einem Tag',
+        other: '{{count}} Tagen'
+      }
+
+    },
+
+    aboutXMonths: {
+      standalone: {
+        one: 'etwa ein Monat',
+        other: 'etwa {{count}} Monate'
+      },
+      withPreposition: {
+        one: 'etwa einem Monat',
+        other: 'etwa {{count}} Monaten'
+      }
+    },
+
+    xMonths: {
+      standalone: {
+        one: 'ein Monat',
+        other: '{{count}} Monate'
+      },
+      withPreposition: {
+        one: 'einem Monat',
+        other: '{{count}} Monaten'
+      }
+    },
+
+    aboutXYears: {
+      standalone: {
+        one: 'etwa ein Jahr',
+        other: 'etwa {{count}} Jahre'
+      },
+      withPreposition: {
+        one: 'etwa einem Jahr',
+        other: 'etwa {{count}} Jahren'
+      }
+    },
+
+    xYears: {
+      standalone: {
+        one: 'ein Jahr',
+        other: '{{count}} Jahre'
+      },
+      withPreposition: {
+        one: 'einem Jahr',
+        other: '{{count}} Jahren'
+      }
+    },
+
+    overXYears: {
+      standalone: {
+        one: 'mehr als ein Jahr',
+        other: 'mehr als {{count}} Jahre'
+      },
+      withPreposition: {
+        one: 'mehr als einem Jahr',
+        other: 'mehr als {{count}} Jahren'
+      }
+    },
+
+    almostXYears: {
+      standalone: {
+        one: 'fast ein Jahr',
+        other: 'fast {{count}} Jahre'
+      },
+      withPreposition: {
+        one: 'fast einem Jahr',
+        other: 'fast {{count}} Jahren'
+      }
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var usageGroup = options.addSuffix
+      ? distanceInWordsLocale[token].withPreposition
+      : distanceInWordsLocale[token].standalone
+
+    var result
+    if (typeof usageGroup === 'string') {
+      result = usageGroup
+    } else if (count === 1) {
+      result = usageGroup.one
+    } else {
+      result = usageGroup.other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'in ' + result
+      } else {
+        return 'vor ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in German, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Mär', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dez']
+  var monthsFull = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
+  var weekdays2char = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
+  var weekdays3char = ['Son', 'Mon', 'Die', 'Mit', 'Don', 'Fre', 'Sam']
+  var weekdaysFull = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'λιγότερο από ένα δευτερόλεπτο',
+      other: 'λιγότερο από {{count}} δευτερόλεπτα'
+    },
+
+    xSeconds: {
+      one: '1 δευτερόλεπτο',
+      other: '{{count}} δευτερόλεπτα'
+    },
+
+    halfAMinute: 'μισό λεπτό',
+
+    lessThanXMinutes: {
+      one: 'λιγότερο από ένα λεπτό',
+      other: 'λιγότερο από {{count}} λεπτά'
+    },
+
+    xMinutes: {
+      one: '1 λεπτό',
+      other: '{{count}} λεπτά'
+    },
+
+    aboutXHours: {
+      one: 'περίπου 1 ώρα',
+      other: 'περίπου {{count}} ώρες'
+    },
+
+    xHours: {
+      one: '1 ώρα',
+      other: '{{count}} ώρες'
+    },
+
+    xDays: {
+      one: '1 ημέρα',
+      other: '{{count}} ημέρες'
+    },
+
+    aboutXMonths: {
+      one: 'περίπου 1 μήνας',
+      other: 'περίπου {{count}} μήνες'
+    },
+
+    xMonths: {
+      one: '1 μήνας',
+      other: '{{count}} μήνες'
+    },
+
+    aboutXYears: {
+      one: 'περίπου 1 χρόνο',
+      other: 'περίπου {{count}} χρόνια'
+    },
+
+    xYears: {
+      one: '1 χρόνο',
+      other: '{{count}} χρόνια'
+    },
+
+    overXYears: {
+      one: 'πάνω από 1 χρόνο',
+      other: 'πάνω από {{count}} χρόνια'
+    },
+
+    almostXYears: {
+      one: 'περίπου 1 χρόνο',
+      other: 'περίπου {{count}} χρόνια'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'σε ' + result
+      } else {
+        return result + ' πρίν'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μαϊ', 'Ιουν', 'Ιουλ', 'Αυγ', 'Σεπ', 'Οκτ', 'Νοε', 'Δεκ']
+  var monthsFull = ['Ιανουάριος', 'Φεβρουάριος', 'Μάρτιος', 'Απρίλιος', 'Μάιος', 'Ιούνιος', 'Ιούλιος', 'Αύγουστος', 'Σεπτέμβριος', 'Οκτώβριος', 'Νοέμβριος', 'Δεκέμβριος']
+  var monthsGenitive = ['Ιανουαρίου', 'Φεβρουαρίου', 'Μαρτίου', 'Απριλίου', 'Μαΐου', 'Ιουνίου', 'Ιουλίου', 'Αυγούστου', 'Σεπτεμβρίου', 'Οκτωβρίου', 'Νοεμβρίου', 'Δεκεμβρίου']
+  var weekdays2char = ['Κυ', 'Δε', 'Τρ', 'Τε', 'Πέ', 'Πα', 'Σά']
+  var weekdays3char = ['Κυρ', 'Δευ', 'Τρί', 'Τετ', 'Πέμ', 'Παρ', 'Σάβ']
+  var weekdaysFull = ['Κυριακή', 'Δευτέρα', 'Τρίτη', 'Τετάρτη', 'Πέμπτη', 'Παρασκευή', 'Σάββατο']
+  var meridiemUppercase = ['ΠΜ', 'ΜΜ']
+  var meridiemLowercase = ['πμ', 'μμ']
+  var meridiemFull = ['π.μ.', 'μ.μ.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalGenders = {
+    'M': 'ος',
+    'D': 'η',
+    'DDD': 'η',
+    'd': 'η',
+    'Q': 'ο',
+    'W': 'η'
+  }
+  var ordinalKeys = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalKeys.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return formatters[formatterToken](date) + ordinalGenders[formatterToken]
+    }
+  })
+
+  // Generate genitive variant of full months
+  var formatsWithGenitive = ['D', 'Do', 'DD']
+  formatsWithGenitive.forEach(function (formatterToken) {
+    formatters[formatterToken + ' MMMM'] = function (date, commonFormatters) {
+      var formatter = formatters[formatterToken] || commonFormatters[formatterToken]
+      return formatter(date, commonFormatters) + ' ' + monthsGenitive[date.getMonth()]
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 26 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'malpli ol sekundo',
+      other: 'malpli ol {{count}} sekundoj'
+    },
+
+    xSeconds: {
+      one: '1 sekundo',
+      other: '{{count}} sekundoj'
+    },
+
+    halfAMinute: 'duonminuto',
+
+    lessThanXMinutes: {
+      one: 'malpli ol minuto',
+      other: 'malpli ol {{count}} minutoj'
+    },
+
+    xMinutes: {
+      one: '1 minuto',
+      other: '{{count}} minutoj'
+    },
+
+    aboutXHours: {
+      one: 'proksimume 1 horo',
+      other: 'proksimume {{count}} horoj'
+    },
+
+    xHours: {
+      one: '1 horo',
+      other: '{{count}} horoj'
+    },
+
+    xDays: {
+      one: '1 tago',
+      other: '{{count}} tagoj'
+    },
+
+    aboutXMonths: {
+      one: 'proksimume 1 monato',
+      other: 'proksimume {{count}} monatoj'
+    },
+
+    xMonths: {
+      one: '1 monato',
+      other: '{{count}} monatoj'
+    },
+
+    aboutXYears: {
+      one: 'proksimume 1 jaro',
+      other: 'proksimume {{count}} jaroj'
+    },
+
+    xYears: {
+      one: '1 jaro',
+      other: '{{count}} jaroj'
+    },
+
+    overXYears: {
+      one: 'pli ol 1 jaro',
+      other: 'pli ol {{count}} jaroj'
+    },
+
+    almostXYears: {
+      one: 'preskaŭ 1 jaro',
+      other: 'preskaŭ {{count}} jaroj'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'post ' + result
+      } else {
+        return 'antaŭ ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aŭg', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['januaro', 'februaro', 'marto', 'aprilo', 'majo', 'junio', 'julio', 'aŭgusto', 'septembro', 'oktobro', 'novembro', 'decembro']
+  var weekdays2char = ['di', 'lu', 'ma', 'me', 'ĵa', 've', 'sa']
+  var weekdays3char = ['dim', 'lun', 'mar', 'mer', 'ĵaŭ', 'ven', 'sab']
+  var weekdaysFull = ['dimanĉo', 'lundo', 'mardo', 'merkredo', 'ĵaŭdo', 'vendredo', 'sabato']
+  var meridiemUppercase = ['A.T.M.', 'P.T.M.']
+  var meridiemLowercase = ['a.t.m.', 'p.t.m.']
+  var meridiemFull = ['antaŭtagmeze', 'posttagmeze']
+
+  var formatters = {
+    // Month: jan, feb, ..., deс
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: januaro, februaro, ..., decembro
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: di, lu, ..., sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: dim, lun, ..., sab
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: dimanĉo, lundo, ..., sabato
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // A.T.M., P.T.M.
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // a.t.m., p.t.m.
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // antaŭtagmeze, posttagmeze
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return formatters[formatterToken](date) + '-a'
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'menos de un segundo',
+      other: 'menos de {{count}} segundos'
+    },
+
+    xSeconds: {
+      one: '1 segundo',
+      other: '{{count}} segundos'
+    },
+
+    halfAMinute: 'medio minuto',
+
+    lessThanXMinutes: {
+      one: 'menos de un minuto',
+      other: 'menos de {{count}} minutos'
+    },
+
+    xMinutes: {
+      one: '1 minuto',
+      other: '{{count}} minutos'
+    },
+
+    aboutXHours: {
+      one: 'alrededor de 1 hora',
+      other: 'alrededor de {{count}} horas'
+    },
+
+    xHours: {
+      one: '1 hora',
+      other: '{{count}} horas'
+    },
+
+    xDays: {
+      one: '1 día',
+      other: '{{count}} días'
+    },
+
+    aboutXMonths: {
+      one: 'alrededor de 1 mes',
+      other: 'alrededor de {{count}} meses'
+    },
+
+    xMonths: {
+      one: '1 mes',
+      other: '{{count}} meses'
+    },
+
+    aboutXYears: {
+      one: 'alrededor de 1 año',
+      other: 'alrededor de {{count}} años'
+    },
+
+    xYears: {
+      one: '1 año',
+      other: '{{count}} años'
+    },
+
+    overXYears: {
+      one: 'más de 1 año',
+      other: 'más de {{count}} años'
+    },
+
+    almostXYears: {
+      one: 'casi 1 año',
+      other: 'casi {{count}} años'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'en ' + result
+      } else {
+        return 'hace ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic']
+  var monthsFull = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+  var weekdays2char = ['do', 'lu', 'ma', 'mi', 'ju', 'vi', 'sa']
+  var weekdays3char = ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb']
+  var weekdaysFull = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + 'º'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 30 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  function futureSeconds (text) {
+    return text.replace(/sekuntia?/, 'sekunnin')
+  }
+
+  function futureMinutes (text) {
+    return text.replace(/minuuttia?/, 'minuutin')
+  }
+
+  function futureHours (text) {
+    return text.replace(/tuntia?/, 'tunnin')
+  }
+
+  function futureDays (text) {
+    return text.replace(/päivää?/, 'päivän')
+  }
+
+  function futureMonths (text) {
+    return text.replace(/(kuukausi|kuukautta)/, 'kuukauden')
+  }
+
+  function futureYears (text) {
+    return text.replace(/(vuosi|vuotta)/, 'vuoden')
+  }
+
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'alle sekunti',
+      other: 'alle {{count}} sekuntia',
+      futureTense: futureSeconds
+    },
+
+    xSeconds: {
+      one: 'sekunti',
+      other: '{{count}} sekuntia',
+      futureTense: futureSeconds
+    },
+
+    halfAMinute: {
+      one: 'puoli minuuttia',
+      other: 'puoli minuuttia',
+      futureTense: function (text) {
+        return 'puolen minuutin'
+      }
+    },
+
+    lessThanXMinutes: {
+      one: 'alle minuutti',
+      other: 'alle {{count}} minuuttia',
+      futureTense: futureMinutes
+    },
+
+    xMinutes: {
+      one: 'minuutti',
+      other: '{{count}} minuuttia',
+      futureTense: futureMinutes
+    },
+
+    aboutXHours: {
+      one: 'noin tunti',
+      other: 'noin {{count}} tuntia',
+      futureTense: futureHours
+    },
+
+    xHours: {
+      one: 'tunti',
+      other: '{{count}} tuntia',
+      futureTense: futureHours
+    },
+
+    xDays: {
+      one: 'päivä',
+      other: '{{count}} päivää',
+      futureTense: futureDays
+    },
+
+    aboutXMonths: {
+      one: 'noin kuukausi',
+      other: 'noin {{count}} kuukautta',
+      futureTense: futureMonths
+    },
+
+    xMonths: {
+      one: 'kuukausi',
+      other: '{{count}} kuukautta',
+      futureTense: futureMonths
+    },
+
+    aboutXYears: {
+      one: 'noin vuosi',
+      other: 'noin {{count}} vuotta',
+      futureTense: futureYears
+    },
+
+    xYears: {
+      one: 'vuosi',
+      other: '{{count}} vuotta',
+      futureTense: futureYears
+    },
+
+    overXYears: {
+      one: 'yli vuosi',
+      other: 'yli {{count}} vuotta',
+      futureTense: futureYears
+    },
+
+    almostXYears: {
+      one: 'lähes vuosi',
+      other: 'lähes {{count}} vuotta',
+      futureTense: futureYears
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var distance = distanceInWordsLocale[token]
+    var result = count === 1 ? distance.one : distance.other.replace('{{count}}', count)
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return distance.futureTense(result) + ' kuluttua'
+      } else {
+        return result + ' sitten'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['tammi', 'helmi', 'maalis', 'huhti', 'touko', 'kesä', 'heinä', 'elo', 'syys', 'loka', 'marras', 'joulu']
+  var monthsFull = ['tammikuu', 'helmikuu', 'maaliskuu', 'huhtikuu', 'toukokuu', 'kesäkuu', 'heinäkuu', 'elokuu', 'syyskuu', 'lokakuu', 'marraskuu', 'joulukuu']
+  var weekdays2char = ['su', 'ma', 'ti', 'ke', 'to', 'pe', 'la']
+  var weekdaysFull = ['sunnuntai', 'maanantai', 'tiistai', 'keskiviikko', 'torstai', 'perjantai', 'lauantai']
+
+  // In Finnish `a.m.` / `p.m.` are virtually never used, but it seems `AP` (aamupäivä) / `IP` (iltapäivä) are acknowleded terms:
+  // https://fi.wikipedia.org/wiki/24_tunnin_kello
+  function meridiem (date) {
+    return date.getHours() < 12 ? 'AP' : 'IP'
+  }
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      // Finnish doesn't use two-char weekdays
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': meridiem,
+
+    // am, pm
+    'a': meridiem,
+
+    // a.m., p.m.
+    'aa': meridiem
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return formatters[formatterToken](date).toString() + '.'
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 32 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'mas maliit sa isang segundo',
+      other: 'mas maliit sa {{count}} segundo'
+    },
+
+    xSeconds: {
+      one: '1 segundo',
+      other: '{{count}} segundo'
+    },
+
+    halfAMinute: 'kalahating minuto',
+
+    lessThanXMinutes: {
+      one: 'mas maliit sa isang minuto',
+      other: 'mas maliit sa {{count}} minuto'
+    },
+
+    xMinutes: {
+      one: '1 minuto',
+      other: '{{count}} minuto'
+    },
+
+    aboutXHours: {
+      one: 'mga 1 oras',
+      other: 'mga {{count}} oras'
+    },
+
+    xHours: {
+      one: '1 oras',
+      other: '{{count}} oras'
+    },
+
+    xDays: {
+      one: '1 araw',
+      other: '{{count}} araw'
+    },
+
+    aboutXMonths: {
+      one: 'mga 1 buwan',
+      other: 'mga {{count}} buwan'
+    },
+
+    xMonths: {
+      one: '1 buwan',
+      other: '{{count}} buwan'
+    },
+
+    aboutXYears: {
+      one: 'mga 1 taon',
+      other: 'mga {{count}} taon'
+    },
+
+    xYears: {
+      one: '1 taon',
+      other: '{{count}} taon'
+    },
+
+    overXYears: {
+      one: 'higit sa 1 taon',
+      other: 'higit sa {{count}} taon'
+    },
+
+    almostXYears: {
+      one: 'halos 1 taon',
+      other: 'halos {{count}} taon'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'sa loob ng ' + result
+      } else {
+        return result + ' ang nakalipas'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['Ene', 'Peb', 'Mar', 'Abr', 'May', 'Hun', 'Hul', 'Ago', 'Set', 'Okt', 'Nob', 'Dis']
+  var monthsFull = ['Enero', 'Pebrero', 'Marso', 'Abril', 'Mayo', 'Hunyo', 'Hulyo', 'Agosto', 'Setyembre', 'Oktubre', 'Nobyembre', 'Disyembre']
+  var weekdays2char = ['Li', 'Lu', 'Ma', 'Mi', 'Hu', 'Bi', 'Sa']
+  var weekdays3char = ['Lin', 'Lun', 'Mar', 'Miy', 'Huw', 'Biy', 'Sab']
+  var weekdaysFull = ['Linggo', 'Lunes', 'Martes', 'Miyerkules', 'Huwebes', 'Biyernes', 'Sabado']
+  var meridiemUppercase = ['NU', 'NT', 'NH', 'NG']
+  var meridiemLowercase = ['nu', 'nt', 'nh', 'ng']
+  var meridiemFull = ['ng umaga', 'ng tanghali', 'ng hapon', 'ng gabi']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      if (date.getHours() > 12) {
+        var modulo = date.getHours() % 12
+        if (modulo < 6) {
+          return meridiemUppercase[2]
+        } else {
+          return meridiemUppercase[3]
+        }
+      } else if (date.getHours() < 12) {
+        return meridiemUppercase[0]
+      } else {
+        return meridiemUppercase[1]
+      }
+    },
+
+    // am, pm
+    'a': function (date) {
+      if (date.getHours() > 12) {
+        var modulo = date.getHours() % 12
+        if (modulo < 6) {
+          return meridiemLowercase[2]
+        } else {
+          return meridiemLowercase[3]
+        }
+      } else if (date.getHours() < 12) {
+        return meridiemLowercase[0]
+      } else {
+        return meridiemLowercase[1]
+      }
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      if (date.getHours() > 12) {
+        var modulo = date.getHours() % 12
+        if (modulo < 6) {
+          return meridiemFull[2]
+        } else {
+          return meridiemFull[3]
+        }
+      } else if (date.getHours() < 12) {
+        return meridiemFull[0]
+      } else {
+        return meridiemFull[1]
+      }
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return 'ika-' + number
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'moins d’une seconde',
+      other: 'moins de {{count}} secondes'
+    },
+
+    xSeconds: {
+      one: '1 seconde',
+      other: '{{count}} secondes'
+    },
+
+    halfAMinute: '30 secondes',
+
+    lessThanXMinutes: {
+      one: 'moins d’une minute',
+      other: 'moins de {{count}} minutes'
+    },
+
+    xMinutes: {
+      one: '1 minute',
+      other: '{{count}} minutes'
+    },
+
+    aboutXHours: {
+      one: 'environ 1 heure',
+      other: 'environ {{count}} heures'
+    },
+
+    xHours: {
+      one: '1 heure',
+      other: '{{count}} heures'
+    },
+
+    xDays: {
+      one: '1 jour',
+      other: '{{count}} jours'
+    },
+
+    aboutXMonths: {
+      one: 'environ 1 mois',
+      other: 'environ {{count}} mois'
+    },
+
+    xMonths: {
+      one: '1 mois',
+      other: '{{count}} mois'
+    },
+
+    aboutXYears: {
+      one: 'environ 1 an',
+      other: 'environ {{count}} ans'
+    },
+
+    xYears: {
+      one: '1 an',
+      other: '{{count}} ans'
+    },
+
+    overXYears: {
+      one: 'plus d’un an',
+      other: 'plus de {{count}} ans'
+    },
+
+    almostXYears: {
+      one: 'presqu’un an',
+      other: 'presque {{count}} ans'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'dans ' + result
+      } else {
+        return 'il y a ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juill.', 'août', 'sept.', 'oct.', 'nov.', 'déc.']
+  var monthsFull = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+  var weekdays2char = ['di', 'lu', 'ma', 'me', 'je', 've', 'sa']
+  var weekdays3char = ['dim.', 'lun.', 'mar.', 'mer.', 'jeu.', 'ven.', 'sam.']
+  var weekdaysFull = ['dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['du matin', 'de l’après-midi', 'du soir']
+
+  var formatters = {
+    // Month: Jan, Feb, …, Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, …, December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, …, Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, …, Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, …, Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      var hours = date.getHours()
+
+      if (hours <= 12) {
+        return meridiemFull[0]
+      }
+
+      if (hours <= 16) {
+        return meridiemFull[1]
+      }
+
+      return meridiemFull[2]
+    },
+
+    // ISO week, ordinal version: 1st, 2nd, …, 53rd
+    // NOTE: Week has feminine grammatical gender in French: semaine
+    'Wo': function (date, formatters) {
+      return feminineOrdinal(formatters.W(date))
+    }
+  }
+
+  // Generate ordinal version of formatters: M → Mo, D → Do, etc.
+  // NOTE: For words with masculine grammatical gender in French: mois, jour, trimestre
+  var formatterTokens = ['M', 'D', 'DDD', 'd', 'Q']
+  formatterTokens.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return masculineOrdinal(formatters[formatterToken](date))
+    }
+  })
+
+  // Special case for day of month ordinals in long date format context:
+  // 1er mars, 2 mars, 3 mars, …
+  // See https://github.com/date-fns/date-fns/issues/437
+  //
+  // NOTE: The below implementation works because parsing of tokens inside a
+  // format string is done by a greedy regular expression, i.e. longer tokens
+  // have priority. E.g. formatter for "Do MMMM" has priority over individual
+  // formatters for "Do" and "MMMM".
+  var monthsTokens = ['MMM', 'MMMM']
+  monthsTokens.forEach(function (monthToken) {
+    formatters['Do ' + monthToken] = function (date, commonFormatters) {
+      var dayOfMonthToken = date.getDate() === 1
+        ? 'Do'
+        : 'D'
+      var dayOfMonthFormatter = formatters[dayOfMonthToken] || commonFormatters[dayOfMonthToken]
+
+      return dayOfMonthFormatter(date, commonFormatters) + ' ' + formatters[monthToken](date)
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function masculineOrdinal (number) {
+  if (number === 1) {
+    return '1er'
+  }
+
+  return number + 'e'
+}
+
+function feminineOrdinal (number) {
+  if (number === 1) {
+    return '1re'
+  }
+
+  return number + 'e'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: {
+        standalone: 'manje od 1 sekunde',
+        withPrepositionAgo: 'manje od 1 sekunde',
+        withPrepositionIn: 'manje od 1 sekundu'
+      },
+      dual: 'manje od {{count}} sekunde',
+      other: 'manje od {{count}} sekundi'
+    },
+
+    xSeconds: {
+      one: {
+        standalone: '1 sekunda',
+        withPrepositionAgo: '1 sekunde',
+        withPrepositionIn: '1 sekundu'
+      },
+      dual: '{{count}} sekunde',
+      other: '{{count}} sekundi'
+    },
+
+    halfAMinute: 'pola minute',
+
+    lessThanXMinutes: {
+      one: {
+        standalone: 'manje od 1 minute',
+        withPrepositionAgo: 'manje od 1 minute',
+        withPrepositionIn: 'manje od 1 minutu'
+      },
+      dual: 'manje od {{count}} minute',
+      other: 'manje od {{count}} minuta'
+    },
+
+    xMinutes: {
+      one: {
+        standalone: '1 minuta',
+        withPrepositionAgo: '1 minute',
+        withPrepositionIn: '1 minutu'
+      },
+      dual: '{{count}} minute',
+      other: '{{count}} minuta'
+    },
+
+    aboutXHours: {
+      one: {
+        standalone: 'oko 1 sat',
+        withPrepositionAgo: 'oko 1 sat',
+        withPrepositionIn: 'oko 1 sat'
+      },
+      dual: 'oko {{count}} sata',
+      other: 'oko {{count}} sati'
+    },
+
+    xHours: {
+      one: {
+        standalone: '1 sat',
+        withPrepositionAgo: '1 sat',
+        withPrepositionIn: '1 sat'
+      },
+      dual: '{{count}} sata',
+      other: '{{count}} sati'
+    },
+
+    xDays: {
+      one: {
+        standalone: '1 dan',
+        withPrepositionAgo: '1 dan',
+        withPrepositionIn: '1 dan'
+      },
+      dual: '{{count}} dana',
+      other: '{{count}} dana'
+    },
+
+    aboutXMonths: {
+      one: {
+        standalone: 'oko 1 mjesec',
+        withPrepositionAgo: 'oko 1 mjesec',
+        withPrepositionIn: 'oko 1 mjesec'
+      },
+      dual: 'oko {{count}} mjeseca',
+      other: 'oko {{count}} mjeseci'
+    },
+
+    xMonths: {
+      one: {
+        standalone: '1 mjesec',
+        withPrepositionAgo: '1 mjesec',
+        withPrepositionIn: '1 mjesec'
+      },
+      dual: '{{count}} mjeseca',
+      other: '{{count}} mjeseci'
+    },
+
+    aboutXYears: {
+      one: {
+        standalone: 'oko 1 godinu',
+        withPrepositionAgo: 'oko 1 godinu',
+        withPrepositionIn: 'oko 1 godinu'
+      },
+      dual: 'oko {{count}} godine',
+      other: 'oko {{count}} godina'
+    },
+
+    xYears: {
+      one: {
+        standalone: '1 godina',
+        withPrepositionAgo: '1 godine',
+        withPrepositionIn: '1 godinu'
+      },
+      dual: '{{count}} godine',
+      other: '{{count}} godina'
+    },
+
+    overXYears: {
+      one: {
+        standalone: 'preko 1 godinu',
+        withPrepositionAgo: 'preko 1 godinu',
+        withPrepositionIn: 'preko 1 godinu'
+      },
+      dual: 'preko {{count}} godine',
+      other: 'preko {{count}} godina'
+    },
+
+    almostXYears: {
+      one: {
+        standalone: 'gotovo 1 godinu',
+        withPrepositionAgo: 'gotovo 1 godinu',
+        withPrepositionIn: 'gotovo 1 godinu'
+      },
+      dual: 'gotovo {{count}} godine',
+      other: 'gotovo {{count}} godina'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      if (options.addSuffix) {
+        if (options.comparison > 0) {
+          result = distanceInWordsLocale[token].one.withPrepositionIn
+        } else {
+          result = distanceInWordsLocale[token].one.withPrepositionAgo
+        }
+      } else {
+        result = distanceInWordsLocale[token].one.standalone
+      }
+    } else if (
+      count % 10 > 1 && count % 10 < 5 && // if last digit is between 2 and 4
+      String(count).substr(-2, 1) !== '1' // unless the 2nd to last digit is "1"
+    ) {
+      result = distanceInWordsLocale[token].dual.replace('{{count}}', count)
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'za ' + result
+      } else {
+        return 'prije ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['sij', 'velj', 'ožu', 'tra', 'svi', 'lip', 'srp', 'kol', 'ruj', 'lis', 'stu', 'pro']
+  var monthsFull = ['siječanj', 'veljača', 'ožujak', 'travanj', 'svibanj', 'lipanj', 'srpanj', 'kolovoz', 'rujan', 'listopad', 'studeni', 'prosinac']
+  var monthsGenitive = ['siječnja', 'veljače', 'ožujka', 'travnja', 'svibnja', 'lipnja', 'srpnja', 'kolovoza', 'rujna', 'listopada', 'studenog', 'prosinca']
+  var weekdays2char = ['ne', 'po', 'ut', 'sr', 'če', 'pe', 'su']
+  var weekdays3char = ['ned', 'pon', 'uto', 'sri', 'čet', 'pet', 'sub']
+  var weekdaysFull = ['nedjelja', 'ponedjeljak', 'utorak', 'srijeda', 'četvrtak', 'petak', 'subota']
+  var meridiemUppercase = ['ujutro', 'popodne']
+  var meridiemLowercase = ['ujutro', 'popodne']
+  var meridiemFull = ['ujutro', 'popodne']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  // Generate formatters like 'D MMMM', where the month is in the genitive case
+  var monthsGenitiveFormatters = ['D', 'Do', 'DD']
+  monthsGenitiveFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + ' MMM'] = function (date, commonFormatters) {
+      var formatter = formatters[formatterToken] || commonFormatters[formatterToken]
+      return formatter(date, commonFormatters) + ' ' + monthsGenitive[date.getMonth()]
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'kevesebb, mint egy másodperce',
+      other: 'kevesebb, mint {{count}} másodperce'
+    },
+
+    xSeconds: {
+      one: '1 másodperce',
+      other: '{{count}} másodperce'
+    },
+
+    halfAMinute: 'fél perce',
+
+    lessThanXMinutes: {
+      one: 'kevesebb, mint egy perce',
+      other: 'kevesebb, mint {{count}} perce'
+    },
+
+    xMinutes: {
+      one: '1 perce',
+      other: '{{count}} perce'
+    },
+
+    aboutXHours: {
+      one: 'közel 1 órája',
+      other: 'közel {{count}} órája'
+    },
+
+    xHours: {
+      one: '1 órája',
+      other: '{{count}} órája'
+    },
+
+    xDays: {
+      one: '1 napja',
+      other: '{{count}} napja'
+    },
+
+    aboutXMonths: {
+      one: 'közel 1 hónapja',
+      other: 'közel {{count}} hónapja'
+    },
+
+    xMonths: {
+      one: '1 hónapja',
+      other: '{{count}} hónapja'
+    },
+
+    aboutXYears: {
+      one: 'közel 1 éve',
+      other: 'közel {{count}} éve'
+    },
+
+    xYears: {
+      one: '1 éve',
+      other: '{{count}} éve'
+    },
+
+    overXYears: {
+      one: 'több, mint 1 éve',
+      other: 'több, mint {{count}} éve'
+    },
+
+    almostXYears: {
+      one: 'majdnem 1 éve',
+      other: 'majdnem {{count}} éve'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return '' + result
+      } else {
+        return result + ''
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in English, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Már', 'Ápr', 'Máj', 'Jún', 'Júl', 'Aug', 'Sze', 'Okt', 'Nov', 'Dec']
+  var monthsFull = ['Január', 'Február', 'Március', 'Április', 'Május', 'Június', 'Július', 'Augusztus', 'Szeptember', 'Október', 'November', 'December']
+  var weekdays2char = ['Va', 'Hé', 'Ke', 'Sze', 'Cs', 'Pé', 'Szo']
+  var weekdays3char = ['Vas', 'Hét', 'Ked', 'Sze', 'Csü', 'Pén', 'Szo']
+  var weekdaysFull = ['Vasárnap', 'Hétfő', 'Kedd', 'Szerda', 'Csütörtök', 'Péntek', 'Szombat']
+  var meridiemUppercase = ['DE', 'DU']
+  var meridiemLowercase = ['de', 'du']
+  var meridiemFull = ['délelőtt', 'délután']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + 'st'
+      case 2:
+        return number + 'nd'
+      case 3:
+        return number + 'rd'
+    }
+  }
+  return number + 'th'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'kurang dari 1 detik',
+      other: 'kurang dari {{count}} detik'
+    },
+
+    xSeconds: {
+      one: '1 detik',
+      other: '{{count}} detik'
+    },
+
+    halfAMinute: 'setengah menit',
+
+    lessThanXMinutes: {
+      one: 'kurang dari 1 menit',
+      other: 'kurang dari {{count}} menit'
+    },
+
+    xMinutes: {
+      one: '1 menit',
+      other: '{{count}} menit'
+    },
+
+    aboutXHours: {
+      one: 'sekitar 1 jam',
+      other: 'sekitar {{count}} jam'
+    },
+
+    xHours: {
+      one: '1 jam',
+      other: '{{count}} jam'
+    },
+
+    xDays: {
+      one: '1 hari',
+      other: '{{count}} hari'
+    },
+
+    aboutXMonths: {
+      one: 'sekitar 1 bulan',
+      other: 'sekitar {{count}} bulan'
+    },
+
+    xMonths: {
+      one: '1 bulan',
+      other: '{{count}} bulan'
+    },
+
+    aboutXYears: {
+      one: 'sekitar 1 tahun',
+      other: 'sekitar {{count}} tahun'
+    },
+
+    xYears: {
+      one: '1 tahun',
+      other: '{{count}} tahun'
+    },
+
+    overXYears: {
+      one: 'lebih dari 1 tahun',
+      other: 'lebih dari {{count}} tahun'
+    },
+
+    almostXYears: {
+      one: 'hampir 1 tahun',
+      other: 'hampir {{count}} tahun'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'dalam waktu ' + result
+      } else {
+        return result + ' yang lalu'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in Indonesian, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
+  var monthsFull = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
+  var weekdays2char = ['Mi', 'Sn', 'Sl', 'Ra', 'Ka', 'Ju', 'Sa']
+  var weekdays3char = ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab']
+  var weekdaysFull = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  switch (number) {
+    case 1:
+      return 'pertama'
+    case 2:
+      return 'kedua'
+    case 3:
+      return 'ketiga'
+    default:
+      return 'ke-' + number
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'minna en 1 sekúnda',
+      other: 'minna en {{count}} sekúndur'
+    },
+
+    xSeconds: {
+      one: '1 sekúnda',
+      other: '{{count}} sekúndur'
+    },
+
+    halfAMinute: 'hálf mínúta',
+
+    lessThanXMinutes: {
+      one: 'minna en 1 mínúta',
+      other: 'minna en {{count}} mínútur'
+    },
+
+    xMinutes: {
+      one: '1 mínúta',
+      other: '{{count}} mínútur'
+    },
+
+    aboutXHours: {
+      one: 'u.þ.b. 1 klukkustund',
+      other: 'u.þ.b. {{count}} klukkustundir'
+    },
+
+    xHours: {
+      one: '1 klukkustund',
+      other: '{{count}} klukkustundir'
+    },
+
+    xDays: {
+      one: '1 dagur',
+      other: '{{count}} dagar'
+    },
+
+    aboutXMonths: {
+      one: 'u.þ.b. 1 mánuður',
+      other: 'u.þ.b. {{count}} mánuðir'
+    },
+
+    xMonths: {
+      one: '1 mánuður',
+      other: '{{count}} mánuðir'
+    },
+
+    aboutXYears: {
+      one: 'u.þ.b. 1 ár',
+      other: 'u.þ.b. {{count}} ár'
+    },
+
+    xYears: {
+      one: '1 ár',
+      other: '{{count}} ár'
+    },
+
+    overXYears: {
+      one: 'meira en 1 ár',
+      other: 'meira en {{count}} ár'
+    },
+
+    almostXYears: {
+      one: 'næstum 1 ár',
+      other: 'næstum {{count}} ár'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'í ' + result
+      } else {
+        return result + ' síðan'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'maí', 'jún', 'júl', 'ágú', 'sep', 'okt', 'nóv', 'des']
+  var monthsFull = ['janúar', 'febrúar', 'mars', 'apríl', 'maí', 'júní', 'júlí', 'ágúst', 'september', 'október', 'nóvember', 'desember']
+  var weekdays2char = ['su', 'má', 'þr', 'mi', 'fi', 'fö', 'la']
+  var weekdays3char = ['sun', 'mán', 'þri', 'mið', 'fim', 'fös', 'lau']
+  var weekdaysFull = ['sunnudaginn', 'mánudaginn', 'þriðjudaginn', 'miðvikudaginn', 'fimmtudaginn', 'föstudaginn', 'laugardaginn']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return '' + number
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'meno di un secondo',
+      other: 'meno di {{count}} secondi'
+    },
+
+    xSeconds: {
+      one: 'un secondo',
+      other: '{{count}} secondi'
+    },
+
+    halfAMinute: 'alcuni secondi',
+
+    lessThanXMinutes: {
+      one: 'meno di un minuto',
+      other: 'meno di {{count}} minuti'
+    },
+
+    xMinutes: {
+      one: 'un minuto',
+      other: '{{count}} minuti'
+    },
+
+    aboutXHours: {
+      one: 'circa un\'ora',
+      other: 'circa {{count}} ore'
+    },
+
+    xHours: {
+      one: 'un\'ora',
+      other: '{{count}} ore'
+    },
+
+    xDays: {
+      one: 'un giorno',
+      other: '{{count}} giorni'
+    },
+
+    aboutXMonths: {
+      one: 'circa un mese',
+      other: 'circa {{count}} mesi'
+    },
+
+    xMonths: {
+      one: 'un mese',
+      other: '{{count}} mesi'
+    },
+
+    aboutXYears: {
+      one: 'circa un anno',
+      other: 'circa {{count}} anni'
+    },
+
+    xYears: {
+      one: 'un anno',
+      other: '{{count}} anni'
+    },
+
+    overXYears: {
+      one: 'più di un anno',
+      other: 'più di {{count}} anni'
+    },
+
+    almostXYears: {
+      one: 'quasi un anno',
+      other: 'quasi {{count}} anni'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'tra ' + result
+      } else {
+        return result + ' fa'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic']
+  var monthsFull = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
+  var weekdays2char = ['do', 'lu', 'ma', 'me', 'gi', 've', 'sa']
+  var weekdays3char = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab']
+  var weekdaysFull = ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + 'º'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '1秒以下',
+      other: '{{count}}秒以下'
+    },
+
+    xSeconds: {
+      one: '1秒',
+      other: '{{count}}秒'
+    },
+
+    halfAMinute: '30秒ぐらい',
+
+    lessThanXMinutes: {
+      one: '1分以下',
+      other: '{{count}}分以下'
+    },
+
+    xMinutes: {
+      one: '1分',
+      other: '{{count}}分'
+    },
+
+    aboutXHours: {
+      one: '1時間ぐらい',
+      other: '{{count}}時間ぐらい'
+    },
+
+    xHours: {
+      one: '1時間',
+      other: '{{count}}時間'
+    },
+
+    xDays: {
+      one: '1日',
+      other: '{{count}}日'
+    },
+
+    aboutXMonths: {
+      one: '1ヶ月ぐらい',
+      other: '{{count}}ヶ月ぐらい'
+    },
+
+    xMonths: {
+      one: '1ヶ月',
+      other: '{{count}}ヶ月'
+    },
+
+    aboutXYears: {
+      one: '1年ぐらい',
+      other: '{{count}}年ぐらい'
+    },
+
+    xYears: {
+      one: '1年',
+      other: '{{count}}年'
+    },
+
+    overXYears: {
+      one: '1年以上',
+      other: '{{count}}年以上'
+    },
+
+    almostXYears: {
+      one: '1年以下',
+      other: '{{count}}年以下'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + '後'
+      } else {
+        return result + '前'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 47 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+  var monthsFull = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  var weekdays2char = ['日', '月', '火', '水', '木', '金', '土']
+  var weekdays3char = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜']
+  var weekdaysFull = ['日曜日', '月曜日', '火曜日', '水曜日', '木曜日', '金曜日', '土曜日']
+  var meridiemUppercase = ['午前', '午後']
+  var meridiemLowercase = ['午前', '午後']
+  var meridiemFull = ['午前', '午後']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '日'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 48 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '1초 미만',
+      other: '{{count}}초 미만'
+    },
+
+    xSeconds: {
+      one: '1초',
+      other: '{{count}}초'
+    },
+
+    halfAMinute: '30초',
+
+    lessThanXMinutes: {
+      one: '1분 미만',
+      other: '{{count}}분 미만'
+    },
+
+    xMinutes: {
+      one: '1분',
+      other: '{{count}}분'
+    },
+
+    aboutXHours: {
+      one: '약 1시간',
+      other: '약 {{count}}시간'
+    },
+
+    xHours: {
+      one: '1시간',
+      other: '{{count}}시간'
+    },
+
+    xDays: {
+      one: '1일',
+      other: '{{count}}일'
+    },
+
+    aboutXMonths: {
+      one: '약 1개월',
+      other: '약 {{count}}개월'
+    },
+
+    xMonths: {
+      one: '1개월',
+      other: '{{count}}개월'
+    },
+
+    aboutXYears: {
+      one: '약 1년',
+      other: '약 {{count}}년'
+    },
+
+    xYears: {
+      one: '1년',
+      other: '{{count}}년'
+    },
+
+    overXYears: {
+      one: '1년 이상',
+      other: '{{count}}년 이상'
+    },
+
+    almostXYears: {
+      one: '거의 1년',
+      other: '거의 {{count}}년'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + ' 후'
+      } else {
+        return result + ' 전'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 49 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+  var monthsFull = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월']
+  var weekdays2char = ['일', '월', '화', '수', '목', '금', '토']
+  var weekdays3char = ['일', '월', '화', '수', '목', '금', '토']
+  var weekdaysFull = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일']
+  var meridiemUppercase = ['오전', '오후']
+  var meridiemLowercase = ['오전', '오후']
+  var meridiemFull = ['오전', '오후']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '일'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'помалку од секунда',
+      other: 'помалку од {{count}} секунди'
+    },
+
+    xSeconds: {
+      one: '1 секунда',
+      other: '{{count}} секунди'
+    },
+
+    halfAMinute: 'половина минута',
+
+    lessThanXMinutes: {
+      one: 'помалку од минута',
+      other: 'помалку од {{count}} минути'
+    },
+
+    xMinutes: {
+      one: '1 минута',
+      other: '{{count}} минути'
+    },
+
+    aboutXHours: {
+      one: 'околу 1 час',
+      other: 'околу {{count}} часа'
+    },
+
+    xHours: {
+      one: '1 час',
+      other: '{{count}} часа'
+    },
+
+    xDays: {
+      one: '1 ден',
+      other: '{{count}} дена'
+    },
+
+    aboutXMonths: {
+      one: 'околу 1 месец',
+      other: 'околу {{count}} месеци'
+    },
+
+    xMonths: {
+      one: '1 месец',
+      other: '{{count}} месеци'
+    },
+
+    aboutXYears: {
+      one: 'околу 1 година',
+      other: 'околу {{count}} години'
+    },
+
+    xYears: {
+      one: '1 година',
+      other: '{{count}} години'
+    },
+
+    overXYears: {
+      one: 'повеќе од 1 година',
+      other: 'повеќе од {{count}} години'
+    },
+
+    almostXYears: {
+      one: 'безмалку 1 година',
+      other: 'безмалку {{count}} години'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'за ' + result
+      } else {
+        return 'пред ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['јан', 'фев', 'мар', 'апр', 'мај', 'јун', 'јул', 'авг', 'сеп', 'окт', 'ное', 'дек']
+  var monthsFull = ['јануари', 'февруари', 'март', 'април', 'мај', 'јуни', 'јули', 'август', 'септември', 'октомври', 'ноември', 'декември']
+  var weekdays2char = ['не', 'по', 'вт', 'ср', 'че', 'пе', 'са']
+  var weekdays3char = ['нед', 'пон', 'вто', 'сре', 'чет', 'пет', 'саб']
+  var weekdaysFull = ['недела', 'понеделник', 'вторник', 'среда', 'четврток', 'петок', 'сабота']
+  var meridiem = ['претпладне', 'попладне']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiem[1] : meridiem[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiem[1] : meridiem[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiem[1] : meridiem[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+        return number + '-ви'
+      case 2:
+        return number + '-ри'
+      case 7:
+      case 8:
+        return number + '-ми'
+    }
+  }
+  return number + '-ти'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 52 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'mindre enn ett sekund',
+      other: 'mindre enn {{count}} sekunder'
+    },
+
+    xSeconds: {
+      one: 'ett sekund',
+      other: '{{count}} sekunder'
+    },
+
+    halfAMinute: 'et halvt minutt',
+
+    lessThanXMinutes: {
+      one: 'mindre enn ett minutt',
+      other: 'mindre enn {{count}} minutter'
+    },
+
+    xMinutes: {
+      one: 'ett minutt',
+      other: '{{count}} minutter'
+    },
+
+    aboutXHours: {
+      one: 'rundt en time',
+      other: 'rundt {{count}} timer'
+    },
+
+    xHours: {
+      one: 'en time',
+      other: '{{count}} timer'
+    },
+
+    xDays: {
+      one: 'en dag',
+      other: '{{count}} dager'
+    },
+
+    aboutXMonths: {
+      one: 'rundt en måned',
+      other: 'rundt {{count}} måneder'
+    },
+
+    xMonths: {
+      one: 'en måned',
+      other: '{{count}} måneder'
+    },
+
+    aboutXYears: {
+      one: 'rundt ett år',
+      other: 'rundt {{count}} år'
+    },
+
+    xYears: {
+      one: 'ett år',
+      other: '{{count}} år'
+    },
+
+    overXYears: {
+      one: 'over ett år',
+      other: 'over {{count}} år'
+    },
+
+    almostXYears: {
+      one: 'nesten ett år',
+      other: 'nesten {{count}} år'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'om ' + result
+      } else {
+        return result + ' siden'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan.', 'feb.', 'mars', 'april', 'mai', 'juni', 'juli', 'aug.', 'sep.', 'okt.', 'nov.', 'des.']
+  var monthsFull = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember']
+  var weekdays2char = ['sø', 'ma', 'ti', 'on', 'to', 'fr', 'lø']
+  var weekdays3char = ['sø.', 'ma.', 'ti.', 'on.', 'to.', 'fr.', 'lø.']
+  var weekdaysFull = ['søndag', 'mandag', 'tirsdag', 'onsdag', 'torsdag', 'fredag', 'lørdag']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'minder dan een seconde',
+      other: 'minder dan {{count}} seconden'
+    },
+
+    xSeconds: {
+      one: '1 seconde',
+      other: '{{count}} seconden'
+    },
+
+    halfAMinute: 'een halve minuut',
+
+    lessThanXMinutes: {
+      one: 'minder dan een minuut',
+      other: 'minder dan {{count}} minuten'
+    },
+
+    xMinutes: {
+      one: 'een minuut',
+      other: '{{count}} minuten'
+    },
+
+    aboutXHours: {
+      one: 'ongeveer 1 uur',
+      other: 'ongeveer {{count}} uur'
+    },
+
+    xHours: {
+      one: '1 uur',
+      other: '{{count}} uur'
+    },
+
+    xDays: {
+      one: '1 dag',
+      other: '{{count}} dagen'
+    },
+
+    aboutXMonths: {
+      one: 'ongeveer 1 maand',
+      other: 'ongeveer {{count}} maanden'
+    },
+
+    xMonths: {
+      one: '1 maand',
+      other: '{{count}} maanden'
+    },
+
+    aboutXYears: {
+      one: 'ongeveer 1 jaar',
+      other: 'ongeveer {{count}} jaar'
+    },
+
+    xYears: {
+      one: '1 jaar',
+      other: '{{count}} jaar'
+    },
+
+    overXYears: {
+      one: 'meer dan 1 jaar',
+      other: 'meer dan {{count}} jaar'
+    },
+
+    almostXYears: {
+      one: 'bijna 1 jaar',
+      other: 'bijna {{count}} jaar'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'over ' + result
+      } else {
+        return result + ' geleden'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december']
+  var weekdays2char = ['zo', 'ma', 'di', 'wo', 'do', 'vr', 'za']
+  var weekdays3char = ['zon', 'maa', 'din', 'woe', 'don', 'vri', 'zat']
+  var weekdaysFull = ['zondag', 'maandag', 'dinsdag', 'woensdag', 'donderdag', 'vrijdag', 'zaterdag']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + 'e'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 56 */
+/***/ (function(module, exports) {
+
+function declensionGroup (scheme, count) {
+  if (count === 1) {
+    return scheme.one
+  }
+
+  var rem100 = count % 100
+
+  // ends with 11-20
+  if (rem100 <= 20 && rem100 > 10) {
+    return scheme.other
+  }
+
+  var rem10 = rem100 % 10
+
+  // ends with 2, 3, 4
+  if (rem10 >= 2 && rem10 <= 4) {
+    return scheme.twoFour
+  }
+
+  return scheme.other
+}
+
+function declension (scheme, count, time) {
+  time = time || 'regular'
+  var group = declensionGroup(scheme, count)
+  var finalText = group[time] || group
+  return finalText.replace('{{count}}', count)
+}
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: {
+        regular: 'mniej niż sekunda',
+        past: 'mniej niż sekundę',
+        future: 'mniej niż sekundę'
+      },
+      twoFour: 'mniej niż {{count}} sekundy',
+      other: 'mniej niż {{count}} sekund'
+    },
+
+    xSeconds: {
+      one: {
+        regular: 'sekunda',
+        past: 'sekundę',
+        future: 'sekundę'
+      },
+      twoFour: '{{count}} sekundy',
+      other: '{{count}} sekund'
+    },
+
+    halfAMinute: {
+      one: 'pół minuty',
+      twoFour: 'pół minuty',
+      other: 'pół minuty'
+    },
+
+    lessThanXMinutes: {
+      one: {
+        regular: 'mniej niż minuta',
+        past: 'mniej niż minutę',
+        future: 'mniej niż minutę'
+      },
+      twoFour: 'mniej niż {{count}} minuty',
+      other: 'mniej niż {{count}} minut'
+    },
+
+    xMinutes: {
+      one: {
+        regular: 'minuta',
+        past: 'minutę',
+        future: 'minutę'
+      },
+      twoFour: '{{count}} minuty',
+      other: '{{count}} minut'
+    },
+
+    aboutXHours: {
+      one: {
+        regular: 'około godzina',
+        past: 'około godziny',
+        future: 'około godzinę'
+      },
+      twoFour: 'około {{count}} godziny',
+      other: 'około {{count}} godzin'
+    },
+
+    xHours: {
+      one: {
+        regular: 'godzina',
+        past: 'godzinę',
+        future: 'godzinę'
+      },
+      twoFour: '{{count}} godziny',
+      other: '{{count}} godzin'
+    },
+
+    xDays: {
+      one: {
+        regular: 'dzień',
+        past: 'dzień',
+        future: '1 dzień'
+      },
+      twoFour: '{{count}} dni',
+      other: '{{count}} dni'
+    },
+
+    aboutXMonths: {
+      one: 'około miesiąc',
+      twoFour: 'około {{count}} miesiące',
+      other: 'około {{count}} miesięcy'
+    },
+
+    xMonths: {
+      one: 'miesiąc',
+      twoFour: '{{count}} miesiące',
+      other: '{{count}} miesięcy'
+    },
+
+    aboutXYears: {
+      one: 'około rok',
+      twoFour: 'około {{count}} lata',
+      other: 'około {{count}} lat'
+    },
+
+    xYears: {
+      one: 'rok',
+      twoFour: '{{count}} lata',
+      other: '{{count}} lat'
+    },
+
+    overXYears: {
+      one: 'ponad rok',
+      twoFour: 'ponad {{count}} lata',
+      other: 'ponad {{count}} lat'
+    },
+
+    almostXYears: {
+      one: 'prawie rok',
+      twoFour: 'prawie {{count}} lata',
+      other: 'prawie {{count}} lat'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var scheme = distanceInWordsLocale[token]
+    if (!options.addSuffix) {
+      return declension(scheme, count)
+    }
+
+    if (options.comparison > 0) {
+      return 'za ' + declension(scheme, count, 'future')
+    } else {
+      return declension(scheme, count, 'past') + ' temu'
+    }
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 57 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['sty', 'lut', 'mar', 'kwi', 'maj', 'cze', 'lip', 'sie', 'wrz', 'paź', 'lis', 'gru']
+  var monthsFull = ['styczeń', 'luty', 'marzec', 'kwiecień', 'maj', 'czerwiec', 'lipiec', 'sierpień', 'wrzesień', 'październik', 'listopad', 'grudzień']
+  var weekdays2char = ['nd', 'pn', 'wt', 'śr', 'cz', 'pt', 'sb']
+  var weekdays3char = ['niedz.', 'pon.', 'wt.', 'śr.', 'czw.', 'piąt.', 'sob.']
+  var weekdaysFull = ['niedziela', 'poniedziałek', 'wtorek', 'środa', 'czwartek', 'piątek', 'sobota']
+  var meridiem = ['w nocy', 'rano', 'po południu', 'wieczorem']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // Time of day
+    'A': function (date) {
+      var hours = date.getHours()
+      if (hours >= 17) {
+        return meridiem[3]
+      } else if (hours >= 12) {
+        return meridiem[2]
+      } else if (hours >= 4) {
+        return meridiem[1]
+      } else {
+        return meridiem[0]
+      }
+    }
+  }
+
+  formatters.a = formatters.A
+  formatters.aa = formatters.A
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      // Well, it should be just a number without any suffix
+      return formatters[formatterToken](date).toString()
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 58 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'menos de um segundo',
+      other: 'menos de {{count}} segundos'
+    },
+
+    xSeconds: {
+      one: '1 segundo',
+      other: '{{count}} segundos'
+    },
+
+    halfAMinute: 'meio minuto',
+
+    lessThanXMinutes: {
+      one: 'menos de um minuto',
+      other: 'menos de {{count}} minutos'
+    },
+
+    xMinutes: {
+      one: '1 minuto',
+      other: '{{count}} minutos'
+    },
+
+    aboutXHours: {
+      one: 'aproximadamente 1 hora',
+      other: 'aproximadamente {{count}} horas'
+    },
+
+    xHours: {
+      one: '1 hora',
+      other: '{{count}} horas'
+    },
+
+    xDays: {
+      one: '1 dia',
+      other: '{{count}} dias'
+    },
+
+    aboutXMonths: {
+      one: 'aproximadamente 1 mês',
+      other: 'aproximadamente {{count}} meses'
+    },
+
+    xMonths: {
+      one: '1 mês',
+      other: '{{count}} meses'
+    },
+
+    aboutXYears: {
+      one: 'aproximadamente 1 ano',
+      other: 'aproximadamente {{count}} anos'
+    },
+
+    xYears: {
+      one: '1 ano',
+      other: '{{count}} anos'
+    },
+
+    overXYears: {
+      one: 'mais de 1 ano',
+      other: 'mais de {{count}} anos'
+    },
+
+    almostXYears: {
+      one: 'quase 1 ano',
+      other: 'quase {{count}} anos'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'daqui a ' + result
+      } else {
+        return 'há ' + result
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 59 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+  var monthsFull = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+  var weekdays2char = ['do', 'se', 'te', 'qa', 'qi', 'se', 'sa']
+  var weekdays3char = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb']
+  var weekdaysFull = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + 'º'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 60 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'mai puțin de o secundă',
+      other: 'mai puțin de {{count}} secunde'
+    },
+
+    xSeconds: {
+      one: '1 secundă',
+      other: '{{count}} secunde'
+    },
+
+    halfAMinute: 'jumătate de minut',
+
+    lessThanXMinutes: {
+      one: 'mai puțin de un minut',
+      other: 'mai puțin de {{count}} minute'
+    },
+
+    xMinutes: {
+      one: '1 minut',
+      other: '{{count}} minute'
+    },
+
+    aboutXHours: {
+      one: 'circa 1 oră',
+      other: 'circa {{count}} ore'
+    },
+
+    xHours: {
+      one: '1 oră',
+      other: '{{count}} ore'
+    },
+
+    xDays: {
+      one: '1 zi',
+      other: '{{count}} zile'
+    },
+
+    aboutXMonths: {
+      one: 'circa 1 lună',
+      other: 'circa {{count}} luni'
+    },
+
+    xMonths: {
+      one: '1 lună',
+      other: '{{count}} luni'
+    },
+
+    aboutXYears: {
+      one: 'circa 1 an',
+      other: 'circa {{count}} ani'
+    },
+
+    xYears: {
+      one: '1 an',
+      other: '{{count}} ani'
+    },
+
+    overXYears: {
+      one: 'peste 1 an',
+      other: 'peste {{count}} ani'
+    },
+
+    almostXYears: {
+      one: 'aproape 1 an',
+      other: 'aproape {{count}} ani'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'în ' + result
+      } else {
+        return result + ' în urmă'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in Romanian language the weekdays and months should be in the lowercase.
+  var months3char = ['ian', 'feb', 'mar', 'apr', 'mai', 'iun', 'iul', 'aug', 'sep', 'oct', 'noi', 'dec']
+  var monthsFull = ['ianuarie', 'februarie', 'martie', 'aprilie', 'mai', 'iunie', 'iulie', 'august', 'septembrie', 'octombrie', 'noiembrie', 'decembrie']
+  var weekdays2char = ['du', 'lu', 'ma', 'mi', 'jo', 'vi', 'sâ']
+  var weekdays3char = ['dum', 'lun', 'mar', 'mie', 'joi', 'vin', 'sâm']
+  var weekdaysFull = ['duminică', 'luni', 'marți', 'miercuri', 'joi', 'vineri', 'sâmbăta']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number.toString()
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports) {
+
+function declension (scheme, count) {
+  // scheme for count=1 exists
+  if (scheme.one !== undefined && count === 1) {
+    return scheme.one
+  }
+
+  var rem10 = count % 10
+  var rem100 = count % 100
+
+  // 1, 21, 31, ...
+  if (rem10 === 1 && rem100 !== 11) {
+    return scheme.singularNominative.replace('{{count}}', count)
+
+  // 2, 3, 4, 22, 23, 24, 32 ...
+  } else if ((rem10 >= 2 && rem10 <= 4) && (rem100 < 10 || rem100 > 20)) {
+    return scheme.singularGenitive.replace('{{count}}', count)
+
+  // 5, 6, 7, 8, 9, 10, 11, ...
+  } else {
+    return scheme.pluralGenitive.replace('{{count}}', count)
+  }
+}
+
+function buildLocalizeTokenFn (scheme) {
+  return function (count, options) {
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        if (scheme.future) {
+          return declension(scheme.future, count)
+        } else {
+          return 'через ' + declension(scheme.regular, count)
+        }
+      } else {
+        if (scheme.past) {
+          return declension(scheme.past, count)
+        } else {
+          return declension(scheme.regular, count) + ' назад'
+        }
+      }
+    } else {
+      return declension(scheme.regular, count)
+    }
+  }
+}
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: buildLocalizeTokenFn({
+      regular: {
+        one: 'меньше секунды',
+        singularNominative: 'меньше {{count}} секунды',
+        singularGenitive: 'меньше {{count}} секунд',
+        pluralGenitive: 'меньше {{count}} секунд'
+      },
+      future: {
+        one: 'меньше, чем через секунду',
+        singularNominative: 'меньше, чем через {{count}} секунду',
+        singularGenitive: 'меньше, чем через {{count}} секунды',
+        pluralGenitive: 'меньше, чем через {{count}} секунд'
+      }
+    }),
+
+    xSeconds: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} секунда',
+        singularGenitive: '{{count}} секунды',
+        pluralGenitive: '{{count}} секунд'
+      },
+      past: {
+        singularNominative: '{{count}} секунду назад',
+        singularGenitive: '{{count}} секунды назад',
+        pluralGenitive: '{{count}} секунд назад'
+      },
+      future: {
+        singularNominative: 'через {{count}} секунду',
+        singularGenitive: 'через {{count}} секунды',
+        pluralGenitive: 'через {{count}} секунд'
+      }
+    }),
+
+    halfAMinute: function (_, options) {
+      if (options.addSuffix) {
+        if (options.comparison > 0) {
+          return 'через полминуты'
+        } else {
+          return 'полминуты назад'
         }
       }
 
-      this._parent = this._config.parent ? this._getParent() : null;
+      return 'полминуты'
+    },
 
-      if (!this._config.parent) {
-        this._addAriaAndCollapsedClass(this._element, this._triggerArray);
+    lessThanXMinutes: buildLocalizeTokenFn({
+      regular: {
+        one: 'меньше минуты',
+        singularNominative: 'меньше {{count}} минуты',
+        singularGenitive: 'меньше {{count}} минут',
+        pluralGenitive: 'меньше {{count}} минут'
+      },
+      future: {
+        one: 'меньше, чем через минуту',
+        singularNominative: 'меньше, чем через {{count}} минуту',
+        singularGenitive: 'меньше, чем через {{count}} минуты',
+        pluralGenitive: 'меньше, чем через {{count}} минут'
+      }
+    }),
+
+    xMinutes: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} минута',
+        singularGenitive: '{{count}} минуты',
+        pluralGenitive: '{{count}} минут'
+      },
+      past: {
+        singularNominative: '{{count}} минуту назад',
+        singularGenitive: '{{count}} минуты назад',
+        pluralGenitive: '{{count}} минут назад'
+      },
+      future: {
+        singularNominative: 'через {{count}} минуту',
+        singularGenitive: 'через {{count}} минуты',
+        pluralGenitive: 'через {{count}} минут'
+      }
+    }),
+
+    aboutXHours: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: 'около {{count}} часа',
+        singularGenitive: 'около {{count}} часов',
+        pluralGenitive: 'около {{count}} часов'
+      },
+      future: {
+        singularNominative: 'приблизительно через {{count}} час',
+        singularGenitive: 'приблизительно через {{count}} часа',
+        pluralGenitive: 'приблизительно через {{count}} часов'
+      }
+    }),
+
+    xHours: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} час',
+        singularGenitive: '{{count}} часа',
+        pluralGenitive: '{{count}} часов'
+      }
+    }),
+
+    xDays: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} день',
+        singularGenitive: '{{count}} дня',
+        pluralGenitive: '{{count}} дней'
+      }
+    }),
+
+    aboutXMonths: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: 'около {{count}} месяца',
+        singularGenitive: 'около {{count}} месяцев',
+        pluralGenitive: 'около {{count}} месяцев'
+      },
+      future: {
+        singularNominative: 'приблизительно через {{count}} месяц',
+        singularGenitive: 'приблизительно через {{count}} месяца',
+        pluralGenitive: 'приблизительно через {{count}} месяцев'
+      }
+    }),
+
+    xMonths: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} месяц',
+        singularGenitive: '{{count}} месяца',
+        pluralGenitive: '{{count}} месяцев'
+      }
+    }),
+
+    aboutXYears: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: 'около {{count}} года',
+        singularGenitive: 'около {{count}} лет',
+        pluralGenitive: 'около {{count}} лет'
+      },
+      future: {
+        singularNominative: 'приблизительно через {{count}} год',
+        singularGenitive: 'приблизительно через {{count}} года',
+        pluralGenitive: 'приблизительно через {{count}} лет'
+      }
+    }),
+
+    xYears: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: '{{count}} год',
+        singularGenitive: '{{count}} года',
+        pluralGenitive: '{{count}} лет'
+      }
+    }),
+
+    overXYears: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: 'больше {{count}} года',
+        singularGenitive: 'больше {{count}} лет',
+        pluralGenitive: 'больше {{count}} лет'
+      },
+      future: {
+        singularNominative: 'больше, чем через {{count}} год',
+        singularGenitive: 'больше, чем через {{count}} года',
+        pluralGenitive: 'больше, чем через {{count}} лет'
+      }
+    }),
+
+    almostXYears: buildLocalizeTokenFn({
+      regular: {
+        singularNominative: 'почти {{count}} год',
+        singularGenitive: 'почти {{count}} года',
+        pluralGenitive: 'почти {{count}} лет'
+      },
+      future: {
+        singularNominative: 'почти через {{count}} год',
+        singularGenitive: 'почти через {{count}} года',
+        pluralGenitive: 'почти через {{count}} лет'
+      }
+    })
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+    return distanceInWordsLocale[token](count, options)
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // http://new.gramota.ru/spravka/buro/search-answer?s=242637
+  var monthsShort = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.']
+  var monthsFull = ['январь', 'февраль', 'март', 'апрель', 'май', 'июнь', 'июль', 'август', 'сентябрь', 'октябрь', 'ноябрь', 'декабрь']
+  var monthsGenitive = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+  var weekdays2char = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб']
+  var weekdays3char = ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'суб']
+  var weekdaysFull = ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота']
+  var meridiem = ['ночи', 'утра', 'дня', 'вечера']
+
+  var formatters = {
+    // Month: янв., фев., ..., дек.
+    'MMM': function (date) {
+      return monthsShort[date.getMonth()]
+    },
+
+    // Month: январь, февраль, ..., декабрь
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: вс, пн, ..., сб
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: вск, пнд, ..., суб
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: воскресенье, понедельник, ..., суббота
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // Time of day: ночи, утра, дня, вечера
+    'A': function (date) {
+      var hours = date.getHours()
+      if (hours >= 17) {
+        return meridiem[3]
+      } else if (hours >= 12) {
+        return meridiem[2]
+      } else if (hours >= 4) {
+        return meridiem[1]
+      } else {
+        return meridiem[0]
+      }
+    },
+
+    'Do': function (date, formatters) {
+      return formatters.D(date) + '-е'
+    },
+
+    'Wo': function (date, formatters) {
+      return formatters.W(date) + '-я'
+    }
+  }
+
+  formatters.a = formatters.A
+  formatters.aa = formatters.A
+
+  // Generate ordinal version of formatters: M -> Mo, DDD -> DDDo, etc.
+  var ordinalFormatters = ['M', 'DDD', 'd', 'Q']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return formatters[formatterToken](date) + '-й'
+    }
+  })
+
+  // Generate formatters like 'D MMMM',
+  // where month is in the genitive case: января, февраля, ..., декабря
+  var monthsGenitiveFormatters = ['D', 'Do', 'DD']
+  monthsGenitiveFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + ' MMMM'] = function (date, commonFormatters) {
+      var formatter = formatters[formatterToken] || commonFormatters[formatterToken]
+      return formatter(date, commonFormatters) + ' ' + monthsGenitive[date.getMonth()]
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports) {
+
+function declensionGroup (scheme, count) {
+  if (count === 1) {
+    return scheme.one
+  }
+
+  if (count >= 2 && count <= 4) {
+    return scheme.twoFour
+  }
+
+  // if count === null || count === 0 || count >= 5
+  return scheme.other
+}
+
+function declension (scheme, count, time) {
+  var group = declensionGroup(scheme, count)
+  var finalText = group[time] || group
+  return finalText.replace('{{count}}', count)
+}
+
+function extractPreposition (token) {
+  var result = ['lessThan', 'about', 'over', 'almost'].filter(function (preposition) {
+    return !!token.match(new RegExp('^' + preposition))
+  })
+
+  return result[0]
+}
+
+function prefixPreposition (preposition) {
+  var translation = ''
+
+  if (preposition === 'almost') {
+    translation = 'takmer'
+  }
+
+  if (preposition === 'about') {
+    translation = 'približne'
+  }
+
+  return translation.length > 0 ? translation + ' ' : ''
+}
+
+function suffixPreposition (preposition) {
+  var translation = ''
+
+  if (preposition === 'lessThan') {
+    translation = 'menej než'
+  }
+
+  if (preposition === 'over') {
+    translation = 'viac než'
+  }
+
+  return translation.length > 0 ? translation + ' ' : ''
+}
+
+function lowercaseFirstLetter (string) {
+  return string.charAt(0).toLowerCase() + string.slice(1)
+}
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    xSeconds: {
+      one: {
+        regular: 'sekunda',
+        past: 'sekundou',
+        future: 'sekundu'
+      },
+      twoFour: {
+        regular: '{{count}} sekundy',
+        past: '{{count}} sekundami',
+        future: '{{count}} sekundy'
+      },
+      other: {
+        regular: '{{count}} sekúnd',
+        past: '{{count}} sekundami',
+        future: '{{count}} sekúnd'
+      }
+    },
+
+    halfAMinute: {
+      other: {
+        regular: 'pol minúty',
+        past: 'pol minútou',
+        future: 'pol minúty'
+      }
+    },
+
+    xMinutes: {
+      one: {
+        regular: 'minúta',
+        past: 'minútou',
+        future: 'minútu'
+      },
+      twoFour: {
+        regular: '{{count}} minúty',
+        past: '{{count}} minútami',
+        future: '{{count}} minúty'
+      },
+      other: {
+        regular: '{{count}} minút',
+        past: '{{count}} minútami',
+        future: '{{count}} minút'
+      }
+    },
+
+    xHours: {
+      one: {
+        regular: 'hodina',
+        past: 'hodinou',
+        future: 'hodinu'
+      },
+      twoFour: {
+        regular: '{{count}} hodiny',
+        past: '{{count}} hodinami',
+        future: '{{count}} hodiny'
+      },
+      other: {
+        regular: '{{count}} hodín',
+        past: '{{count}} hodinami',
+        future: '{{count}} hodín'
+      }
+    },
+
+    xDays: {
+      one: {
+        regular: 'deň',
+        past: 'dňom',
+        future: 'deň'
+      },
+      twoFour: {
+        regular: '{{count}} dni',
+        past: '{{count}} dňami',
+        future: '{{count}} dni'
+      },
+      other: {
+        regular: '{{count}} dní',
+        past: '{{count}} dňami',
+        future: '{{count}} dní'
+      }
+    },
+
+    xMonths: {
+      one: {
+        regular: 'mesiac',
+        past: 'mesiacom',
+        future: 'mesiac'
+      },
+      twoFour: {
+        regular: '{{count}} mesiace',
+        past: '{{count}} mesiacmi',
+        future: '{{count}} mesiace'
+      },
+      other: {
+        regular: '{{count}} mesiacov',
+        past: '{{count}} mesiacmi',
+        future: '{{count}} mesiacov'
+      }
+    },
+
+    xYears: {
+      one: {
+        regular: 'rok',
+        past: 'rokom',
+        future: 'rok'
+      },
+      twoFour: {
+        regular: '{{count}} roky',
+        past: '{{count}} rokmi',
+        future: '{{count}} roky'
+      },
+      other: {
+        regular: '{{count}} rokov',
+        past: '{{count}} rokmi',
+        future: '{{count}} rokov'
+      }
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var preposition = extractPreposition(token) || ''
+    var key = lowercaseFirstLetter(token.substring(preposition.length))
+    var scheme = distanceInWordsLocale[key]
+
+    if (!options.addSuffix) {
+      return prefixPreposition(preposition) + suffixPreposition(preposition) + declension(scheme, count, 'regular')
+    }
+
+    if (options.comparison > 0) {
+      return prefixPreposition(preposition) + 'za ' + suffixPreposition(preposition) + declension(scheme, count, 'future')
+    } else {
+      return prefixPreposition(preposition) + 'pred ' + suffixPreposition(preposition) + declension(scheme, count, 'past')
+    }
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'máj', 'jún', 'júl', 'aug', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['január', 'február', 'marec', 'apríl', 'máj', 'jún', 'júl', 'august', 'september', 'október', 'november', 'december']
+  var weekdays2char = ['ne', 'po', 'ut', 'st', 'št', 'pi', 'so']
+  var weekdays3char = ['neď', 'pon', 'uto', 'str', 'štv', 'pia', 'sob']
+  var weekdaysFull = ['nedeľa', 'pondelok', 'utorok', 'streda', 'štvrtok', 'piatok', 'sobota']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: jan, feb, ..., dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: január, február, ..., december
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: ne, po, ..., so
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: neď, pon, ..., sob
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: neďeľa, pondelok, ..., sobota
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'manj kot sekunda',
+      two: 'manj kot 2 sekundi',
+      three: 'manj kot {{count}} sekunde',
+      other: 'manj kot {{count}} sekund'
+    },
+
+    xSeconds: {
+      one: '1 sekunda',
+      two: '2 sekundi',
+      three: '{{count}} sekunde',
+      other: '{{count}} sekund'
+    },
+
+    halfAMinute: 'pol minute',
+
+    lessThanXMinutes: {
+      one: 'manj kot minuta',
+      two: 'manj kot 2 minuti',
+      three: 'manj kot {{count}} minute',
+      other: 'manj kot {{count}} minut'
+    },
+
+    xMinutes: {
+      one: '1 minuta',
+      two: '2 minuti',
+      three: '{{count}} minute',
+      other: '{{count}} minut'
+    },
+
+    aboutXHours: {
+      one: 'približno 1 ura',
+      two: 'približno 2 uri',
+      three: 'približno {{count}} ure',
+      other: 'približno {{count}} ur'
+    },
+
+    xHours: {
+      one: '1 ura',
+      two: '2 uri',
+      three: '{{count}} ure',
+      other: '{{count}} ur'
+    },
+
+    xDays: {
+      one: '1 dan',
+      two: '2 dni',
+      three: '{{count}} dni',
+      other: '{{count}} dni'
+    },
+
+    aboutXMonths: {
+      one: 'približno 1 mesec',
+      two: 'približno 2 meseca',
+      three: 'približno {{count}} mesece',
+      other: 'približno {{count}} mesecev'
+    },
+
+    xMonths: {
+      one: '1 mesec',
+      two: '2 meseca',
+      three: '{{count}} meseci',
+      other: '{{count}} mesecev'
+    },
+
+    aboutXYears: {
+      one: 'približno 1 leto',
+      two: 'približno 2 leti',
+      three: 'približno {{count}} leta',
+      other: 'približno {{count}} let'
+    },
+
+    xYears: {
+      one: '1 leto',
+      two: '2 leti',
+      three: '{{count}} leta',
+      other: '{{count}} let'
+    },
+
+    overXYears: {
+      one: 'več kot 1 leto',
+      two: 'več kot 2 leti',
+      three: 'več kot {{count}} leta',
+      other: 'več kot {{count}} let'
+    },
+
+    almostXYears: {
+      one: 'skoraj 1 leto',
+      two: 'skoraj 2 leti',
+      three: 'skoraj {{count}} leta',
+      other: 'skoraj {{count}} let'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else if (count === 2) {
+      result = distanceInWordsLocale[token].two
+    } else if (count === 3 || count === 4) {
+      result = distanceInWordsLocale[token].three.replace('{{count}}', count)
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      result = result.replace(/(minut|sekund|ur)(a)/, '$1o')
+      if (token === 'xMonths') {
+        result = result.replace(/(mesec)(i)/, '$1e')
+      }
+      if (options.comparison > 0) {
+        return 'čez ' + result
+      } else {
+        return result + ' nazaj'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'avg', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['januar', 'februar', 'marec', 'april', 'maj', 'junij', 'julij', 'avgust', 'september', 'oktober', 'november', 'december']
+  var weekdays2char = ['ne', 'po', 'to', 'sr', 'če', 'pe', 'so']
+  var weekdays3char = ['ned', 'pon', 'tor', 'sre', 'čet', 'pet', 'sob']
+  var weekdaysFull = ['nedelja', 'ponedeljek', 'torek', 'sreda', 'četrtek', 'petek', 'sobota']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['a.m.', 'p.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number + '.'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      singular: 'mindre än en sekund',
+      plural: 'mindre än {{count}} sekunder'
+    },
+
+    xSeconds: {
+      singular: 'en sekund',
+      plural: '{{count}} sekunder'
+    },
+
+    halfAMinute: 'en halv minut',
+
+    lessThanXMinutes: {
+      singular: 'mindre än en minut',
+      plural: 'mindre än {{count}} minuter'
+    },
+
+    xMinutes: {
+      singular: 'en minut',
+      plural: '{{count}} minuter'
+    },
+
+    aboutXHours: {
+      singular: 'ungefär en timme',
+      plural: 'ungefär {{count}} timmar'
+    },
+
+    xHours: {
+      singular: 'en timme',
+      plural: '{{count}} timmar'
+    },
+
+    xDays: {
+      singular: 'en dag',
+      plural: '{{count}} dagar'
+    },
+
+    aboutXMonths: {
+      singular: 'ungefär en månad',
+      plural: 'ungefär {{count}} månader'
+    },
+
+    xMonths: {
+      singular: 'en månad',
+      plural: '{{count}} månader'
+    },
+
+    aboutXYears: {
+      singular: 'ungefär ett år',
+      plural: 'ungefär {{count}} år'
+    },
+
+    xYears: {
+      singular: 'ett år',
+      plural: '{{count}} år'
+    },
+
+    overXYears: {
+      singular: 'över ett år',
+      plural: 'över {{count}} år'
+    },
+
+    almostXYears: {
+      singular: 'nästan ett år',
+      plural: 'nästan {{count}} år'
+    }
+  }
+
+  var wordMapping = [
+    'noll',
+    'en',
+    'två',
+    'tre',
+    'fyra',
+    'fem',
+    'sex',
+    'sju',
+    'åtta',
+    'nio',
+    'tio',
+    'elva',
+    'tolv'
+  ]
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var translation = distanceInWordsLocale[token]
+    var result
+    if (typeof translation === 'string') {
+      result = translation
+    } else if (count === 0 || count > 1) {
+      result = translation.plural.replace('{{count}}', count < 13 ? wordMapping[count] : count)
+    } else {
+      result = translation.singular
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return 'om ' + result
+      } else {
+        return result + ' sedan'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['jan', 'feb', 'mar', 'apr', 'maj', 'jun', 'jul', 'aug', 'sep', 'okt', 'nov', 'dec']
+  var monthsFull = ['januari', 'februari', 'mars', 'april', 'maj', 'juni', 'juli', 'augusti', 'september', 'oktober', 'november', 'december']
+  var weekdays2char = ['sö', 'må', 'ti', 'on', 'to', 'fr', 'lö']
+  var weekdays3char = ['sön', 'mån', 'tis', 'ons', 'tor', 'fre', 'lör']
+  var weekdaysFull = ['söndag', 'måndag', 'tisdag', 'onsdag', 'torsdag', 'fredag', 'lördag']
+  var meridiemFull = ['f.m.', 'e.m.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  formatters.A = formatters.aa
+  formatters.a = formatters.aa
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var rem100 = number % 100
+  if (rem100 > 20 || rem100 < 10) {
+    switch (rem100 % 10) {
+      case 1:
+      case 2:
+        return number + ':a'
+    }
+  }
+  return number + ':e'
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'น้อยกว่า 1 วินาที',
+      other: 'น้อยกว่า {{count}} วินาที'
+    },
+
+    xSeconds: {
+      one: '1 วินาที',
+      other: '{{count}} วินาที'
+    },
+
+    halfAMinute: 'ครึ่งนาที',
+
+    lessThanXMinutes: {
+      one: 'น้อยกว่า 1 นาที',
+      other: 'น้อยกว่า {{count}} นาที'
+    },
+
+    xMinutes: {
+      one: '1 นาที',
+      other: '{{count}} นาที'
+    },
+
+    aboutXHours: {
+      one: 'ประมาณ 1 ชั่วโมง',
+      other: 'ประมาณ {{count}} ชั่วโมง'
+    },
+
+    xHours: {
+      one: '1 ชั่วโมง',
+      other: '{{count}} ชั่วโมง'
+    },
+
+    xDays: {
+      one: '1 วัน',
+      other: '{{count}} วัน'
+    },
+
+    aboutXMonths: {
+      one: 'ประมาณ 1 เดือน',
+      other: 'ประมาณ {{count}} เดือน'
+    },
+
+    xMonths: {
+      one: '1 เดือน',
+      other: '{{count}} เดือน'
+    },
+
+    aboutXYears: {
+      one: 'ประมาณ 1 ปี',
+      other: 'ประมาณ {{count}} ปี'
+    },
+
+    xYears: {
+      one: '1 ปี',
+      other: '{{count}} ปี'
+    },
+
+    overXYears: {
+      one: 'มากกว่า 1 ปี',
+      other: 'มากกว่า {{count}} ปี'
+    },
+
+    almostXYears: {
+      one: 'เกือบ 1 ปี',
+      other: 'เกือบ {{count}} ปี'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        if (token === 'halfAMinute') {
+          return 'ใน' + result
+        } else {
+          return 'ใน ' + result
+        }
+      } else {
+        return result + 'ที่ผ่านมา'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.']
+  var monthsFull = ['มกราคาม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
+  var weekdays2char = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.']
+  var weekdays3char = ['อา.', 'จ.', 'อ.', 'พ.', 'พฤ.', 'ศ.', 'ส.']
+  var weekdaysFull = ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์']
+  var meridiemUppercase = ['น.']
+  var meridiemLowercase = ['น.']
+  var meridiemFull = ['นาฬิกา']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return meridiemFull[0]
+    }
+  }
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: 'bir saniyeden az',
+      other: '{{count}} saniyeden az'
+    },
+
+    xSeconds: {
+      one: '1 saniye',
+      other: '{{count}} saniye'
+    },
+
+    halfAMinute: 'yarım dakika',
+
+    lessThanXMinutes: {
+      one: 'bir dakikadan az',
+      other: '{{count}} dakikadan az'
+    },
+
+    xMinutes: {
+      one: '1 dakika',
+      other: '{{count}} dakika'
+    },
+
+    aboutXHours: {
+      one: 'yaklaşık 1 saat',
+      other: 'yaklaşık {{count}} saat'
+    },
+
+    xHours: {
+      one: '1 saat',
+      other: '{{count}} saat'
+    },
+
+    xDays: {
+      one: '1 gün',
+      other: '{{count}} gün'
+    },
+
+    aboutXMonths: {
+      one: 'yaklaşık 1 ay',
+      other: 'yaklaşık {{count}} ay'
+    },
+
+    xMonths: {
+      one: '1 ay',
+      other: '{{count}} ay'
+    },
+
+    aboutXYears: {
+      one: 'yaklaşık 1 yıl',
+      other: 'yaklaşık {{count}} yıl'
+    },
+
+    xYears: {
+      one: '1 yıl',
+      other: '{{count}} yıl'
+    },
+
+    overXYears: {
+      one: '1 yıldan fazla',
+      other: '{{count}} yıldan fazla'
+    },
+
+    almostXYears: {
+      one: 'neredeyse 1 yıl',
+      other: 'neredeyse {{count}} yıl'
+    }
+  }
+
+  var extraWordTokens = [
+    'lessThanXSeconds',
+    'lessThanXMinutes',
+    'overXYears'
+  ]
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      var extraWord = ''
+      if (extraWordTokens.indexOf(token) > -1) {
+        extraWord = ' bir süre'
       }
 
-      if (this._config.toggle) {
-        this.toggle();
+      if (options.comparison > 0) {
+        return result + extraWord + ' içinde'
+      } else {
+        return result + extraWord + ' önce'
       }
-    } // Getters
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
 
 
-    var _proto = Collapse.prototype;
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
 
-    // Public
-    _proto.toggle = function toggle() {
-      if ($(this._element).hasClass(ClassName$3.SHOW)) {
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  // Note: in Turkish, the names of days of the week and months are capitalized.
+  // If you are making a new locale based on this one, check if the same is true for the language you're working on.
+  // Generally, formatted dates should look like they are in the middle of a sentence,
+  // e.g. in Spanish language the weekdays and months should be in the lowercase.
+  var months3char = ['Oca', 'Şub', 'Mar', 'Nis', 'May', 'Haz', 'Tem', 'Ağu', 'Eyl', 'Eki', 'Kas', 'Ara']
+  var monthsFull = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+  var weekdays2char = ['Pz', 'Pt', 'Sa', 'Ça', 'Pe', 'Cu', 'Ct']
+  var weekdays3char = ['Paz', 'Pts', 'Sal', 'Çar', 'Per', 'Cum', 'Cts']
+  var weekdaysFull = ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi']
+  var meridiemUppercase = ['ÖÖ', 'ÖS']
+  var meridiemLowercase = ['öö', 'ös']
+  var meridiemFull = ['ö.ö.', 'ö.s.']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  var suffixes = {
+    1: '\'inci',
+    2: '\'inci',
+    3: '\'üncü',
+    4: '\'üncü',
+    5: '\'inci',
+    6: '\'ıncı',
+    7: '\'inci',
+    8: '\'inci',
+    9: '\'uncu',
+    10: '\'uncu',
+    20: '\'inci',
+    30: '\'uncu',
+    50: '\'inci',
+    60: '\'ıncı',
+    70: '\'inci',
+    80: '\'inci',
+    90: '\'ıncı',
+    100: '\'üncü'
+  }
+
+  if (number === 0) {
+    return '0\'ıncı'
+  }
+
+  var x = number % 10
+  var y = number % 100 - x
+  var z = number >= 100 ? 100 : null
+
+  return number + (suffixes[x] || suffixes[y] || suffixes[z])
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '不到 1 秒',
+      other: '不到 {{count}} 秒'
+    },
+
+    xSeconds: {
+      one: '1 秒',
+      other: '{{count}} 秒'
+    },
+
+    halfAMinute: '半分钟',
+
+    lessThanXMinutes: {
+      one: '不到 1 分钟',
+      other: '不到 {{count}} 分钟'
+    },
+
+    xMinutes: {
+      one: '1 分钟',
+      other: '{{count}} 分钟'
+    },
+
+    xHours: {
+      one: '1 小时',
+      other: '{{count}} 小时'
+    },
+
+    aboutXHours: {
+      one: '大约 1 小时',
+      other: '大约 {{count}} 小时'
+    },
+
+    xDays: {
+      one: '1 天',
+      other: '{{count}} 天'
+    },
+
+    aboutXMonths: {
+      one: '大约 1 个月',
+      other: '大约 {{count}} 个月'
+    },
+
+    xMonths: {
+      one: '1 个月',
+      other: '{{count}} 个月'
+    },
+
+    aboutXYears: {
+      one: '大约 1 年',
+      other: '大约 {{count}} 年'
+    },
+
+    xYears: {
+      one: '1 年',
+      other: '{{count}} 年'
+    },
+
+    overXYears: {
+      one: '超过 1 年',
+      other: '超过 {{count}} 年'
+    },
+
+    almostXYears: {
+      one: '将近 1 年',
+      other: '将近 {{count}} 年'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + '内'
+      } else {
+        return result + '前'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+  var monthsFull = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  var weekdays2char = ['日', '一', '二', '三', '四', '五', '六']
+  var weekdays3char = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+  var weekdaysFull = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+  var meridiemFull = ['上午', '下午']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    }
+  }
+
+  // AM, PM / am, pm / a.m., p.m. all translates to 上午, 下午
+  formatters.a = formatters.aa = formatters.A = function (date) {
+    return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number.toString()
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 76 */
+/***/ (function(module, exports) {
+
+function buildDistanceInWordsLocale () {
+  var distanceInWordsLocale = {
+    lessThanXSeconds: {
+      one: '少於 1 秒',
+      other: '少於 {{count}} 秒'
+    },
+
+    xSeconds: {
+      one: '1 秒',
+      other: '{{count}} 秒'
+    },
+
+    halfAMinute: '半分鐘',
+
+    lessThanXMinutes: {
+      one: '少於 1 分鐘',
+      other: '少於 {{count}} 分鐘'
+    },
+
+    xMinutes: {
+      one: '1 分鐘',
+      other: '{{count}} 分鐘'
+    },
+
+    xHours: {
+      one: '1 小時',
+      other: '{{count}} 小時'
+    },
+
+    aboutXHours: {
+      one: '大約 1 小時',
+      other: '大約 {{count}} 小時'
+    },
+
+    xDays: {
+      one: '1 天',
+      other: '{{count}} 天'
+    },
+
+    aboutXMonths: {
+      one: '大約 1 個月',
+      other: '大約 {{count}} 個月'
+    },
+
+    xMonths: {
+      one: '1 個月',
+      other: '{{count}} 個月'
+    },
+
+    aboutXYears: {
+      one: '大約 1 年',
+      other: '大約 {{count}} 年'
+    },
+
+    xYears: {
+      one: '1 年',
+      other: '{{count}} 年'
+    },
+
+    overXYears: {
+      one: '超過 1 年',
+      other: '超過 {{count}} 年'
+    },
+
+    almostXYears: {
+      one: '將近 1 年',
+      other: '將近 {{count}} 年'
+    }
+  }
+
+  function localize (token, count, options) {
+    options = options || {}
+
+    var result
+    if (typeof distanceInWordsLocale[token] === 'string') {
+      result = distanceInWordsLocale[token]
+    } else if (count === 1) {
+      result = distanceInWordsLocale[token].one
+    } else {
+      result = distanceInWordsLocale[token].other.replace('{{count}}', count)
+    }
+
+    if (options.addSuffix) {
+      if (options.comparison > 0) {
+        return result + '內'
+      } else {
+        return result + '前'
+      }
+    }
+
+    return result
+  }
+
+  return {
+    localize: localize
+  }
+}
+
+module.exports = buildDistanceInWordsLocale
+
+
+/***/ }),
+/* 77 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildFormattingTokensRegExp = __webpack_require__(1)
+
+function buildFormatLocale () {
+  var months3char = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+  var monthsFull = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+  var weekdays2char = ['日', '一', '二', '三', '四', '五', '六']
+  var weekdays3char = ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+  var weekdaysFull = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+  var meridiemUppercase = ['AM', 'PM']
+  var meridiemLowercase = ['am', 'pm']
+  var meridiemFull = ['上午', '下午']
+
+  var formatters = {
+    // Month: Jan, Feb, ..., Dec
+    'MMM': function (date) {
+      return months3char[date.getMonth()]
+    },
+
+    // Month: January, February, ..., December
+    'MMMM': function (date) {
+      return monthsFull[date.getMonth()]
+    },
+
+    // Day of week: Su, Mo, ..., Sa
+    'dd': function (date) {
+      return weekdays2char[date.getDay()]
+    },
+
+    // Day of week: Sun, Mon, ..., Sat
+    'ddd': function (date) {
+      return weekdays3char[date.getDay()]
+    },
+
+    // Day of week: Sunday, Monday, ..., Saturday
+    'dddd': function (date) {
+      return weekdaysFull[date.getDay()]
+    },
+
+    // AM, PM
+    'A': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemUppercase[1] : meridiemUppercase[0]
+    },
+
+    // am, pm
+    'a': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemLowercase[1] : meridiemLowercase[0]
+    },
+
+    // a.m., p.m.
+    'aa': function (date) {
+      return (date.getHours() / 12) >= 1 ? meridiemFull[1] : meridiemFull[0]
+    }
+  }
+
+  // Generate ordinal version of formatters: M -> Mo, D -> Do, etc.
+  var ordinalFormatters = ['M', 'D', 'DDD', 'd', 'Q', 'W']
+  ordinalFormatters.forEach(function (formatterToken) {
+    formatters[formatterToken + 'o'] = function (date, formatters) {
+      return ordinal(formatters[formatterToken](date))
+    }
+  })
+
+  return {
+    formatters: formatters,
+    formattingTokensRegExp: buildFormattingTokensRegExp(formatters)
+  }
+}
+
+function ordinal (number) {
+  return number.toString()
+}
+
+module.exports = buildFormatLocale
+
+
+/***/ }),
+/* 78 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = {
+  addDays: __webpack_require__(6),
+  addHours: __webpack_require__(128),
+  addISOYears: __webpack_require__(129),
+  addMilliseconds: __webpack_require__(7),
+  addMinutes: __webpack_require__(131),
+  addMonths: __webpack_require__(81),
+  addQuarters: __webpack_require__(132),
+  addSeconds: __webpack_require__(133),
+  addWeeks: __webpack_require__(118),
+  addYears: __webpack_require__(134),
+  areRangesOverlapping: __webpack_require__(201),
+  closestIndexTo: __webpack_require__(202),
+  closestTo: __webpack_require__(203),
+  compareAsc: __webpack_require__(9),
+  compareDesc: __webpack_require__(119),
+  differenceInCalendarDays: __webpack_require__(80),
+  differenceInCalendarISOWeeks: __webpack_require__(204),
+  differenceInCalendarISOYears: __webpack_require__(135),
+  differenceInCalendarMonths: __webpack_require__(136),
+  differenceInCalendarQuarters: __webpack_require__(205),
+  differenceInCalendarWeeks: __webpack_require__(206),
+  differenceInCalendarYears: __webpack_require__(138),
+  differenceInDays: __webpack_require__(139),
+  differenceInHours: __webpack_require__(207),
+  differenceInISOYears: __webpack_require__(208),
+  differenceInMilliseconds: __webpack_require__(82),
+  differenceInMinutes: __webpack_require__(209),
+  differenceInMonths: __webpack_require__(120),
+  differenceInQuarters: __webpack_require__(210),
+  differenceInSeconds: __webpack_require__(121),
+  differenceInWeeks: __webpack_require__(211),
+  differenceInYears: __webpack_require__(212),
+  distanceInWords: __webpack_require__(141),
+  distanceInWordsStrict: __webpack_require__(213),
+  distanceInWordsToNow: __webpack_require__(214),
+  eachDay: __webpack_require__(215),
+  endOfDay: __webpack_require__(122),
+  endOfHour: __webpack_require__(216),
+  endOfISOWeek: __webpack_require__(217),
+  endOfISOYear: __webpack_require__(218),
+  endOfMinute: __webpack_require__(219),
+  endOfMonth: __webpack_require__(143),
+  endOfQuarter: __webpack_require__(220),
+  endOfSecond: __webpack_require__(221),
+  endOfToday: __webpack_require__(222),
+  endOfTomorrow: __webpack_require__(223),
+  endOfWeek: __webpack_require__(142),
+  endOfYear: __webpack_require__(224),
+  endOfYesterday: __webpack_require__(225),
+  format: __webpack_require__(226),
+  getDate: __webpack_require__(227),
+  getDay: __webpack_require__(228),
+  getDayOfYear: __webpack_require__(144),
+  getDaysInMonth: __webpack_require__(117),
+  getDaysInYear: __webpack_require__(229),
+  getHours: __webpack_require__(230),
+  getISODay: __webpack_require__(148),
+  getISOWeek: __webpack_require__(123),
+  getISOWeeksInYear: __webpack_require__(231),
+  getISOYear: __webpack_require__(2),
+  getMilliseconds: __webpack_require__(232),
+  getMinutes: __webpack_require__(233),
+  getMonth: __webpack_require__(234),
+  getOverlappingDaysInRanges: __webpack_require__(235),
+  getQuarter: __webpack_require__(137),
+  getSeconds: __webpack_require__(236),
+  getTime: __webpack_require__(237),
+  getYear: __webpack_require__(238),
+  isAfter: __webpack_require__(239),
+  isBefore: __webpack_require__(240),
+  isDate: __webpack_require__(116),
+  isEqual: __webpack_require__(241),
+  isFirstDayOfMonth: __webpack_require__(242),
+  isFriday: __webpack_require__(243),
+  isFuture: __webpack_require__(244),
+  isLastDayOfMonth: __webpack_require__(245),
+  isLeapYear: __webpack_require__(147),
+  isMonday: __webpack_require__(246),
+  isPast: __webpack_require__(247),
+  isSameDay: __webpack_require__(248),
+  isSameHour: __webpack_require__(149),
+  isSameISOWeek: __webpack_require__(151),
+  isSameISOYear: __webpack_require__(152),
+  isSameMinute: __webpack_require__(153),
+  isSameMonth: __webpack_require__(155),
+  isSameQuarter: __webpack_require__(156),
+  isSameSecond: __webpack_require__(158),
+  isSameWeek: __webpack_require__(124),
+  isSameYear: __webpack_require__(160),
+  isSaturday: __webpack_require__(249),
+  isSunday: __webpack_require__(250),
+  isThisHour: __webpack_require__(251),
+  isThisISOWeek: __webpack_require__(252),
+  isThisISOYear: __webpack_require__(253),
+  isThisMinute: __webpack_require__(254),
+  isThisMonth: __webpack_require__(255),
+  isThisQuarter: __webpack_require__(256),
+  isThisSecond: __webpack_require__(257),
+  isThisWeek: __webpack_require__(258),
+  isThisYear: __webpack_require__(259),
+  isThursday: __webpack_require__(260),
+  isToday: __webpack_require__(261),
+  isTomorrow: __webpack_require__(262),
+  isTuesday: __webpack_require__(263),
+  isValid: __webpack_require__(146),
+  isWednesday: __webpack_require__(264),
+  isWeekend: __webpack_require__(265),
+  isWithinRange: __webpack_require__(266),
+  isYesterday: __webpack_require__(267),
+  lastDayOfISOWeek: __webpack_require__(268),
+  lastDayOfISOYear: __webpack_require__(269),
+  lastDayOfMonth: __webpack_require__(270),
+  lastDayOfQuarter: __webpack_require__(271),
+  lastDayOfWeek: __webpack_require__(161),
+  lastDayOfYear: __webpack_require__(272),
+  max: __webpack_require__(273),
+  min: __webpack_require__(274),
+  parse: __webpack_require__(0),
+  setDate: __webpack_require__(275),
+  setDay: __webpack_require__(276),
+  setDayOfYear: __webpack_require__(277),
+  setHours: __webpack_require__(278),
+  setISODay: __webpack_require__(279),
+  setISOWeek: __webpack_require__(280),
+  setISOYear: __webpack_require__(130),
+  setMilliseconds: __webpack_require__(281),
+  setMinutes: __webpack_require__(282),
+  setMonth: __webpack_require__(162),
+  setQuarter: __webpack_require__(283),
+  setSeconds: __webpack_require__(284),
+  setYear: __webpack_require__(285),
+  startOfDay: __webpack_require__(4),
+  startOfHour: __webpack_require__(150),
+  startOfISOWeek: __webpack_require__(3),
+  startOfISOYear: __webpack_require__(8),
+  startOfMinute: __webpack_require__(154),
+  startOfMonth: __webpack_require__(286),
+  startOfQuarter: __webpack_require__(157),
+  startOfSecond: __webpack_require__(159),
+  startOfToday: __webpack_require__(287),
+  startOfTomorrow: __webpack_require__(288),
+  startOfWeek: __webpack_require__(79),
+  startOfYear: __webpack_require__(145),
+  startOfYesterday: __webpack_require__(289),
+  subDays: __webpack_require__(290),
+  subHours: __webpack_require__(291),
+  subISOYears: __webpack_require__(140),
+  subMilliseconds: __webpack_require__(292),
+  subMinutes: __webpack_require__(293),
+  subMonths: __webpack_require__(294),
+  subQuarters: __webpack_require__(295),
+  subSeconds: __webpack_require__(296),
+  subWeeks: __webpack_require__(297),
+  subYears: __webpack_require__(298)
+}
+
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Week Helpers
+ * @summary Return the start of a week for the given date.
+ *
+ * @description
+ * Return the start of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the start of a week
+ *
+ * @example
+ * // The start of a week for 2 September 2014 11:55:00:
+ * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Aug 31 2014 00:00:00
+ *
+ * @example
+ * // If the week starts on Monday, the start of the week for 2 September 2014 11:55:00:
+ * var result = startOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? 7 : 0) + day - weekStartsOn
+
+  date.setDate(date.getDate() - diff)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfWeek
+
+
+/***/ }),
+/* 80 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_DAY = 86400000
+
+/**
+ * @category Day Helpers
+ * @summary Get the number of calendar days between the given dates.
+ *
+ * @description
+ * Get the number of calendar days between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar days
+ *
+ * @example
+ * // How many calendar days are between
+ * // 2 July 2011 23:00:00 and 2 July 2012 00:00:00?
+ * var result = differenceInCalendarDays(
+ *   new Date(2012, 6, 2, 0, 0),
+ *   new Date(2011, 6, 2, 23, 0)
+ * )
+ * //=> 366
+ */
+function differenceInCalendarDays (dirtyDateLeft, dirtyDateRight) {
+  var startOfDayLeft = startOfDay(dirtyDateLeft)
+  var startOfDayRight = startOfDay(dirtyDateRight)
+
+  var timestampLeft = startOfDayLeft.getTime() -
+    startOfDayLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfDayRight.getTime() -
+    startOfDayRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a day is not constant
+  // (e.g. it's different in the day of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_DAY)
+}
+
+module.exports = differenceInCalendarDays
+
+
+/***/ }),
+/* 81 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var getDaysInMonth = __webpack_require__(117)
+
+/**
+ * @category Month Helpers
+ * @summary Add the specified number of months to the given date.
+ *
+ * @description
+ * Add the specified number of months to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of months to be added
+ * @returns {Date} the new date with the months added
+ *
+ * @example
+ * // Add 5 months to 1 September 2014:
+ * var result = addMonths(new Date(2014, 8, 1), 5)
+ * //=> Sun Feb 01 2015 00:00:00
+ */
+function addMonths (dirtyDate, dirtyAmount) {
+  var date = parse(dirtyDate)
+  var amount = Number(dirtyAmount)
+  var desiredMonth = date.getMonth() + amount
+  var dateWithDesiredMonth = new Date(0)
+  dateWithDesiredMonth.setFullYear(date.getFullYear(), desiredMonth, 1)
+  dateWithDesiredMonth.setHours(0, 0, 0, 0)
+  var daysInMonth = getDaysInMonth(dateWithDesiredMonth)
+  // Set the last day of the new month
+  // if the original date was the last day of the longer month
+  date.setMonth(desiredMonth, Math.min(daysInMonth, date.getDate()))
+  return date
+}
+
+module.exports = addMonths
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Get the number of milliseconds between the given dates.
+ *
+ * @description
+ * Get the number of milliseconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of milliseconds
+ *
+ * @example
+ * // How many milliseconds are between
+ * // 2 July 2014 12:30:20.600 and 2 July 2014 12:30:21.700?
+ * var result = differenceInMilliseconds(
+ *   new Date(2014, 6, 2, 12, 30, 21, 700),
+ *   new Date(2014, 6, 2, 12, 30, 20, 600)
+ * )
+ * //=> 1100
+ */
+function differenceInMilliseconds (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getTime() - dateRight.getTime()
+}
+
+module.exports = differenceInMilliseconds
+
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(12)
+var buildFormatLocale = __webpack_require__(13)
+
+/**
+ * @category Locales
+ * @summary Arabic locale (Modern Standard Arabic - Al-fussha).
+ * @author Abdallah Hassan [@AbdallahAHO]{@link https://github.com/AbdallahAHO}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(14)
+var buildFormatLocale = __webpack_require__(15)
+
+/**
+ * @category Locales
+ * @summary Bulgarian locale.
+ * @author Nikolay Stoynov [@arvigeus]{@link https://github.com/arvigeus}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(16)
+var buildFormatLocale = __webpack_require__(17)
+
+/**
+ * @category Locales
+ * @summary Catalan locale.
+ * @author Guillermo Grau [@guigrpa]{@link https://github.com/guigrpa}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(18)
+var buildFormatLocale = __webpack_require__(19)
+
+/**
+ * @category Locales
+ * @summary Czech locale.
+ * @author David Rus [@davidrus]{@link https://github.com/davidrus}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(20)
+var buildFormatLocale = __webpack_require__(21)
+
+/**
+ * @category Locales
+ * @summary Danish locale.
+ * @author Anders B. Hansen [@Andersbiha]{@link https://github.com/Andersbiha}
+ * @author [@kgram]{@link https://github.com/kgram}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(22)
+var buildFormatLocale = __webpack_require__(23)
+
+/**
+ * @category Locales
+ * @summary German locale.
+ * @author Thomas Eilmsteiner [@DeMuu]{@link https://github.com/DeMuu}
+ * @author Asia [@asia-t]{@link https://github.com/asia-t}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(24)
+var buildFormatLocale = __webpack_require__(25)
+
+/**
+ * @category Locales
+ * @summary Greek locale.
+ * @author Theodoros Orfanidis [@teoulas]{@link https://github.com/teoulas}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 90 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(26)
+var buildFormatLocale = __webpack_require__(27)
+
+/**
+ * @category Locales
+ * @summary Esperanto locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(28)
+var buildFormatLocale = __webpack_require__(29)
+
+/**
+ * @category Locales
+ * @summary Spanish locale.
+ * @author Juan Angosto [@juanangosto]{@link https://github.com/juanangosto}
+ * @author Guillermo Grau [@guigrpa]{@link https://github.com/guigrpa}
+ * @author Fernando Agüero [@fjaguero]{@link https://github.com/fjaguero}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(30)
+var buildFormatLocale = __webpack_require__(31)
+
+/**
+ * @category Locales
+ * @summary Finnish locale.
+ * @author Pyry-Samuli Lahti [@Pyppe]{@link https://github.com/Pyppe}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 93 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(32)
+var buildFormatLocale = __webpack_require__(33)
+
+/**
+ * @category Locales
+ * @summary Filipino locale.
+ * @author Ian De La Cruz [@RIanDeLaCruz]{@link https://github.com/RIanDeLaCruz}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 94 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(34)
+var buildFormatLocale = __webpack_require__(35)
+
+/**
+ * @category Locales
+ * @summary French locale.
+ * @author Jean Dupouy [@izeau]{@link https://github.com/izeau}
+ * @author François B [@fbonzon]{@link https://github.com/fbonzon}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 95 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(36)
+var buildFormatLocale = __webpack_require__(37)
+
+/**
+ * @category Locales
+ * @summary Croatian locale.
+ * @author Matija Marohnić [@silvenon]{@link https://github.com/silvenon}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 96 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(38)
+var buildFormatLocale = __webpack_require__(39)
+
+/**
+ * @category Locales
+ * @summary English locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 97 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(40)
+var buildFormatLocale = __webpack_require__(41)
+
+/**
+ * @category Locales
+ * @summary Indonesian locale.
+ * @author Rahmat Budiharso [@rbudiharso]{@link https://github.com/rbudiharso}
+ * @author Benget Nata [@bentinata]{@link https://github.com/bentinata}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(42)
+var buildFormatLocale = __webpack_require__(43)
+
+/**
+ * @category Locales
+ * @summary Icelandic locale.
+ * @author Derek Blank [@derekblank]{@link https://github.com/derekblank}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 99 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(44)
+var buildFormatLocale = __webpack_require__(45)
+
+/**
+ * @category Locales
+ * @summary Italian locale.
+ * @author Alberto Restifo [@albertorestifo]{@link https://github.com/albertorestifo}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 100 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(46)
+var buildFormatLocale = __webpack_require__(47)
+
+/**
+ * @category Locales
+ * @summary Japanese locale.
+ * @author Thomas Eilmsteiner [@DeMuu]{@link https://github.com/DeMuu}
+ * @author Yamagishi Kazutoshi [@ykzts]{@link https://github.com/ykzts}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(48)
+var buildFormatLocale = __webpack_require__(49)
+
+/**
+ * @category Locales
+ * @summary Korean locale.
+ * @author Hong Chulju [@angdev]{@link https://github.com/angdev}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(50)
+var buildFormatLocale = __webpack_require__(51)
+
+/**
+ * @category Locales
+ * @summary Macedonian locale.
+ * @author Petar Vlahu [@vlahupetar]{@link https://github.com/vlahupetar}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(52)
+var buildFormatLocale = __webpack_require__(53)
+
+/**
+ * @category Locales
+ * @summary Norwegian Bokmål locale.
+ * @author Hans-Kristian Koren [@Hanse]{@link https://github.com/Hanse}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(54)
+var buildFormatLocale = __webpack_require__(55)
+
+/**
+ * @category Locales
+ * @summary Dutch locale.
+ * @author Jorik Tangelder [@jtangelder]{@link https://github.com/jtangelder}
+ * @author Ruben Stolk [@rubenstolk]{@link https://github.com/rubenstolk}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(56)
+var buildFormatLocale = __webpack_require__(57)
+
+/**
+ * @category Locales
+ * @summary Polish locale.
+ * @author Mateusz Derks [@ertrzyiks]{@link https://github.com/ertrzyiks}
+ * @author Just RAG [@justrag]{@link https://github.com/justrag}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(58)
+var buildFormatLocale = __webpack_require__(59)
+
+/**
+ * @category Locales
+ * @summary Portuguese locale.
+ * @author Dário Freire [@dfreire]{@link https://github.com/dfreire}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 107 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(60)
+var buildFormatLocale = __webpack_require__(61)
+
+/**
+ * @category Locales
+ * @summary Romanian locale.
+ * @author Sergiu Munteanu [@jsergiu]{@link https://github.com/jsergiu}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 108 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(62)
+var buildFormatLocale = __webpack_require__(63)
+
+/**
+ * @category Locales
+ * @summary Russian locale.
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 109 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(64)
+var buildFormatLocale = __webpack_require__(65)
+
+/**
+ * @category Locales
+ * @summary Slovak locale.
+ * @author Marek Suscak [@mareksuscak]{@link https://github.com/mareksuscak}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 110 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(66)
+var buildFormatLocale = __webpack_require__(67)
+
+/**
+ * @category Locales
+ * @summary Slovenian locale.
+ * @author Adam Stradovnik [@Neoglyph]{@link https://github.com/Neoglyph}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 111 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(68)
+var buildFormatLocale = __webpack_require__(69)
+
+/**
+ * @category Locales
+ * @summary Swedish locale.
+ * @author Johannes Ulén [@ejulen]{@link https://github.com/ejulen}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 112 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(70)
+var buildFormatLocale = __webpack_require__(71)
+
+/**
+ * @category Locales
+ * @summary Thai locale.
+ * @author Athiwat Hirunworawongkun [@athivvat]{@link https://github.com/athivvat}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 113 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(72)
+var buildFormatLocale = __webpack_require__(73)
+
+/**
+ * @category Locales
+ * @summary Turkish locale.
+ * @author Alpcan Aydın [@alpcanaydin]{@link https://github.com/alpcanaydin}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(74)
+var buildFormatLocale = __webpack_require__(75)
+
+/**
+ * @category Locales
+ * @summary Chinese Simplified locale.
+ * @author Changyu Geng [@KingMario]{@link https://github.com/KingMario}
+ * @author Song Shuoyun [@fnlctrl]{@link https://github.com/fnlctrl}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 115 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var buildDistanceInWordsLocale = __webpack_require__(76)
+var buildFormatLocale = __webpack_require__(77)
+
+/**
+ * @category Locales
+ * @summary Chinese Simplified locale.
+ * @author tonypai [@tpai]{@link https://github.com/tpai}
+ */
+module.exports = {
+  distanceInWords: buildDistanceInWordsLocale(),
+  format: buildFormatLocale()
+}
+
+
+/***/ }),
+/* 116 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Common Helpers
+ * @summary Is the given argument an instance of Date?
+ *
+ * @description
+ * Is the given argument an instance of Date?
+ *
+ * @param {*} argument - the argument to check
+ * @returns {Boolean} the given argument is an instance of Date
+ *
+ * @example
+ * // Is 'mayonnaise' a Date?
+ * var result = isDate('mayonnaise')
+ * //=> false
+ */
+function isDate (argument) {
+  return argument instanceof Date
+}
+
+module.exports = isDate
+
+
+/***/ }),
+/* 117 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of days in a month of the given date.
+ *
+ * @description
+ * Get the number of days in a month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of days in a month
+ *
+ * @example
+ * // How many days are in February 2000?
+ * var result = getDaysInMonth(new Date(2000, 1))
+ * //=> 29
+ */
+function getDaysInMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  var monthIndex = date.getMonth()
+  var lastDayOfMonth = new Date(0)
+  lastDayOfMonth.setFullYear(year, monthIndex + 1, 0)
+  lastDayOfMonth.setHours(0, 0, 0, 0)
+  return lastDayOfMonth.getDate()
+}
+
+module.exports = getDaysInMonth
+
+
+/***/ }),
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addDays = __webpack_require__(6)
+
+/**
+ * @category Week Helpers
+ * @summary Add the specified number of weeks to the given date.
+ *
+ * @description
+ * Add the specified number of week to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of weeks to be added
+ * @returns {Date} the new date with the weeks added
+ *
+ * @example
+ * // Add 4 weeks to 1 September 2014:
+ * var result = addWeeks(new Date(2014, 8, 1), 4)
+ * //=> Mon Sep 29 2014 00:00:00
+ */
+function addWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  var days = amount * 7
+  return addDays(dirtyDate, days)
+}
+
+module.exports = addWeeks
+
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Compare the two dates reverse chronologically and return -1, 0 or 1.
+ *
+ * @description
+ * Compare the two dates and return -1 if the first date is after the second,
+ * 1 if the first date is before the second or 0 if dates are equal.
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Number} the result of the comparison
+ *
+ * @example
+ * // Compare 11 February 1987 and 10 July 1989 reverse chronologically:
+ * var result = compareDesc(
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * )
+ * //=> 1
+ *
+ * @example
+ * // Sort the array of dates in reverse chronological order:
+ * var result = [
+ *   new Date(1995, 6, 2),
+ *   new Date(1987, 1, 11),
+ *   new Date(1989, 6, 10)
+ * ].sort(compareDesc)
+ * //=> [
+ * //   Sun Jul 02 1995 00:00:00,
+ * //   Mon Jul 10 1989 00:00:00,
+ * //   Wed Feb 11 1987 00:00:00
+ * // ]
+ */
+function compareDesc (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var timeLeft = dateLeft.getTime()
+  var dateRight = parse(dirtyDateRight)
+  var timeRight = dateRight.getTime()
+
+  if (timeLeft > timeRight) {
+    return -1
+  } else if (timeLeft < timeRight) {
+    return 1
+  } else {
+    return 0
+  }
+}
+
+module.exports = compareDesc
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var differenceInCalendarMonths = __webpack_require__(136)
+var compareAsc = __webpack_require__(9)
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of full months between the given dates.
+ *
+ * @description
+ * Get the number of full months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full months
+ *
+ * @example
+ * // How many full months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 7
+ */
+function differenceInMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarMonths(dateLeft, dateRight))
+  dateLeft.setMonth(dateLeft.getMonth() - sign * difference)
+
+  // Math.abs(diff in full months - diff in calendar months) === 1 if last calendar month is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastMonthNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastMonthNotFull)
+}
+
+module.exports = differenceInMonths
+
+
+/***/ }),
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInMilliseconds = __webpack_require__(82)
+
+/**
+ * @category Second Helpers
+ * @summary Get the number of seconds between the given dates.
+ *
+ * @description
+ * Get the number of seconds between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of seconds
+ *
+ * @example
+ * // How many seconds are between
+ * // 2 July 2014 12:30:07.999 and 2 July 2014 12:30:20.000?
+ * var result = differenceInSeconds(
+ *   new Date(2014, 6, 2, 12, 30, 20, 0),
+ *   new Date(2014, 6, 2, 12, 30, 7, 999)
+ * )
+ * //=> 12
+ */
+function differenceInSeconds (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / 1000
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInSeconds
+
+
+/***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of a day for the given date.
+ *
+ * @description
+ * Return the end of a day for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a day
+ *
+ * @example
+ * // The end of a day for 2 September 2014 11:55:00:
+ * var result = endOfDay(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 02 2014 23:59:59.999
+ */
+function endOfDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfDay
+
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var startOfISOWeek = __webpack_require__(3)
+var startOfISOYear = __webpack_require__(8)
+
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week Helpers
+ * @summary Get the ISO week of the given date.
+ *
+ * @description
+ * Get the ISO week of the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the ISO week
+ *
+ * @example
+ * // Which week of the ISO-week numbering year is 2 January 2005?
+ * var result = getISOWeek(new Date(2005, 0, 2))
+ * //=> 53
+ */
+function getISOWeek (dirtyDate) {
+  var date = parse(dirtyDate)
+  var diff = startOfISOWeek(date).getTime() - startOfISOYear(date).getTime()
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK) + 1
+}
+
+module.exports = getISOWeek
+
+
+/***/ }),
+/* 124 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfWeek = __webpack_require__(79)
+
+/**
+ * @category Week Helpers
+ * @summary Are the given dates in the same week?
+ *
+ * @description
+ * Are the given dates in the same week?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Boolean} the dates are in the same week
+ *
+ * @example
+ * // Are 31 August 2014 and 4 September 2014 in the same week?
+ * var result = isSameWeek(
+ *   new Date(2014, 7, 31),
+ *   new Date(2014, 8, 4)
+ * )
+ * //=> true
+ *
+ * @example
+ * // If week starts with Monday,
+ * // are 31 August 2014 and 4 September 2014 in the same week?
+ * var result = isSameWeek(
+ *   new Date(2014, 7, 31),
+ *   new Date(2014, 8, 4),
+ *   {weekStartsOn: 1}
+ * )
+ * //=> false
+ */
+function isSameWeek (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var dateLeftStartOfWeek = startOfWeek(dirtyDateLeft, dirtyOptions)
+  var dateRightStartOfWeek = startOfWeek(dirtyDateRight, dirtyOptions)
+
+  return dateLeftStartOfWeek.getTime() === dateRightStartOfWeek.getTime()
+}
+
+module.exports = isSameWeek
+
+
+/***/ }),
+/* 125 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./_lib/build_formatting_tokens_reg_exp": 1,
+	"./_lib/build_formatting_tokens_reg_exp/": 1,
+	"./_lib/build_formatting_tokens_reg_exp/index": 1,
+	"./_lib/build_formatting_tokens_reg_exp/index.js": 1,
+	"./_lib/package": 164,
+	"./_lib/package.json": 164,
+	"./ar": 83,
+	"./ar/": 83,
+	"./ar/build_distance_in_words_locale": 12,
+	"./ar/build_distance_in_words_locale/": 12,
+	"./ar/build_distance_in_words_locale/index": 12,
+	"./ar/build_distance_in_words_locale/index.js": 12,
+	"./ar/build_format_locale": 13,
+	"./ar/build_format_locale/": 13,
+	"./ar/build_format_locale/index": 13,
+	"./ar/build_format_locale/index.js": 13,
+	"./ar/index": 83,
+	"./ar/index.js": 83,
+	"./ar/package": 165,
+	"./ar/package.json": 165,
+	"./bg": 84,
+	"./bg/": 84,
+	"./bg/build_distance_in_words_locale": 14,
+	"./bg/build_distance_in_words_locale/": 14,
+	"./bg/build_distance_in_words_locale/index": 14,
+	"./bg/build_distance_in_words_locale/index.js": 14,
+	"./bg/build_format_locale": 15,
+	"./bg/build_format_locale/": 15,
+	"./bg/build_format_locale/index": 15,
+	"./bg/build_format_locale/index.js": 15,
+	"./bg/index": 84,
+	"./bg/index.js": 84,
+	"./bg/package": 166,
+	"./bg/package.json": 166,
+	"./ca": 85,
+	"./ca/": 85,
+	"./ca/build_distance_in_words_locale": 16,
+	"./ca/build_distance_in_words_locale/": 16,
+	"./ca/build_distance_in_words_locale/index": 16,
+	"./ca/build_distance_in_words_locale/index.js": 16,
+	"./ca/build_format_locale": 17,
+	"./ca/build_format_locale/": 17,
+	"./ca/build_format_locale/index": 17,
+	"./ca/build_format_locale/index.js": 17,
+	"./ca/index": 85,
+	"./ca/index.js": 85,
+	"./ca/package": 167,
+	"./ca/package.json": 167,
+	"./cs": 86,
+	"./cs/": 86,
+	"./cs/build_distance_in_words_locale": 18,
+	"./cs/build_distance_in_words_locale/": 18,
+	"./cs/build_distance_in_words_locale/index": 18,
+	"./cs/build_distance_in_words_locale/index.js": 18,
+	"./cs/build_format_locale": 19,
+	"./cs/build_format_locale/": 19,
+	"./cs/build_format_locale/index": 19,
+	"./cs/build_format_locale/index.js": 19,
+	"./cs/index": 86,
+	"./cs/index.js": 86,
+	"./cs/package": 168,
+	"./cs/package.json": 168,
+	"./da": 87,
+	"./da/": 87,
+	"./da/build_distance_in_words_locale": 20,
+	"./da/build_distance_in_words_locale/": 20,
+	"./da/build_distance_in_words_locale/index": 20,
+	"./da/build_distance_in_words_locale/index.js": 20,
+	"./da/build_format_locale": 21,
+	"./da/build_format_locale/": 21,
+	"./da/build_format_locale/index": 21,
+	"./da/build_format_locale/index.js": 21,
+	"./da/index": 87,
+	"./da/index.js": 87,
+	"./da/package": 169,
+	"./da/package.json": 169,
+	"./de": 88,
+	"./de/": 88,
+	"./de/build_distance_in_words_locale": 22,
+	"./de/build_distance_in_words_locale/": 22,
+	"./de/build_distance_in_words_locale/index": 22,
+	"./de/build_distance_in_words_locale/index.js": 22,
+	"./de/build_format_locale": 23,
+	"./de/build_format_locale/": 23,
+	"./de/build_format_locale/index": 23,
+	"./de/build_format_locale/index.js": 23,
+	"./de/index": 88,
+	"./de/index.js": 88,
+	"./de/package": 170,
+	"./de/package.json": 170,
+	"./el": 89,
+	"./el/": 89,
+	"./el/build_distance_in_words_locale": 24,
+	"./el/build_distance_in_words_locale/": 24,
+	"./el/build_distance_in_words_locale/index": 24,
+	"./el/build_distance_in_words_locale/index.js": 24,
+	"./el/build_format_locale": 25,
+	"./el/build_format_locale/": 25,
+	"./el/build_format_locale/index": 25,
+	"./el/build_format_locale/index.js": 25,
+	"./el/index": 89,
+	"./el/index.js": 89,
+	"./el/package": 171,
+	"./el/package.json": 171,
+	"./en": 5,
+	"./en/": 5,
+	"./en/build_distance_in_words_locale": 10,
+	"./en/build_distance_in_words_locale/": 10,
+	"./en/build_distance_in_words_locale/index": 10,
+	"./en/build_distance_in_words_locale/index.js": 10,
+	"./en/build_format_locale": 11,
+	"./en/build_format_locale/": 11,
+	"./en/build_format_locale/index": 11,
+	"./en/build_format_locale/index.js": 11,
+	"./en/index": 5,
+	"./en/index.js": 5,
+	"./en/package": 172,
+	"./en/package.json": 172,
+	"./eo": 90,
+	"./eo/": 90,
+	"./eo/build_distance_in_words_locale": 26,
+	"./eo/build_distance_in_words_locale/": 26,
+	"./eo/build_distance_in_words_locale/index": 26,
+	"./eo/build_distance_in_words_locale/index.js": 26,
+	"./eo/build_format_locale": 27,
+	"./eo/build_format_locale/": 27,
+	"./eo/build_format_locale/index": 27,
+	"./eo/build_format_locale/index.js": 27,
+	"./eo/index": 90,
+	"./eo/index.js": 90,
+	"./eo/package": 173,
+	"./eo/package.json": 173,
+	"./es": 91,
+	"./es/": 91,
+	"./es/build_distance_in_words_locale": 28,
+	"./es/build_distance_in_words_locale/": 28,
+	"./es/build_distance_in_words_locale/index": 28,
+	"./es/build_distance_in_words_locale/index.js": 28,
+	"./es/build_format_locale": 29,
+	"./es/build_format_locale/": 29,
+	"./es/build_format_locale/index": 29,
+	"./es/build_format_locale/index.js": 29,
+	"./es/index": 91,
+	"./es/index.js": 91,
+	"./es/package": 174,
+	"./es/package.json": 174,
+	"./fi": 92,
+	"./fi/": 92,
+	"./fi/build_distance_in_words_locale": 30,
+	"./fi/build_distance_in_words_locale/": 30,
+	"./fi/build_distance_in_words_locale/index": 30,
+	"./fi/build_distance_in_words_locale/index.js": 30,
+	"./fi/build_format_locale": 31,
+	"./fi/build_format_locale/": 31,
+	"./fi/build_format_locale/index": 31,
+	"./fi/build_format_locale/index.js": 31,
+	"./fi/index": 92,
+	"./fi/index.js": 92,
+	"./fi/package": 175,
+	"./fi/package.json": 175,
+	"./fil": 93,
+	"./fil/": 93,
+	"./fil/build_distance_in_words_locale": 32,
+	"./fil/build_distance_in_words_locale/": 32,
+	"./fil/build_distance_in_words_locale/index": 32,
+	"./fil/build_distance_in_words_locale/index.js": 32,
+	"./fil/build_format_locale": 33,
+	"./fil/build_format_locale/": 33,
+	"./fil/build_format_locale/index": 33,
+	"./fil/build_format_locale/index.js": 33,
+	"./fil/index": 93,
+	"./fil/index.js": 93,
+	"./fil/package": 176,
+	"./fil/package.json": 176,
+	"./fr": 94,
+	"./fr/": 94,
+	"./fr/build_distance_in_words_locale": 34,
+	"./fr/build_distance_in_words_locale/": 34,
+	"./fr/build_distance_in_words_locale/index": 34,
+	"./fr/build_distance_in_words_locale/index.js": 34,
+	"./fr/build_format_locale": 35,
+	"./fr/build_format_locale/": 35,
+	"./fr/build_format_locale/index": 35,
+	"./fr/build_format_locale/index.js": 35,
+	"./fr/index": 94,
+	"./fr/index.js": 94,
+	"./fr/package": 177,
+	"./fr/package.json": 177,
+	"./hr": 95,
+	"./hr/": 95,
+	"./hr/build_distance_in_words_locale": 36,
+	"./hr/build_distance_in_words_locale/": 36,
+	"./hr/build_distance_in_words_locale/index": 36,
+	"./hr/build_distance_in_words_locale/index.js": 36,
+	"./hr/build_format_locale": 37,
+	"./hr/build_format_locale/": 37,
+	"./hr/build_format_locale/index": 37,
+	"./hr/build_format_locale/index.js": 37,
+	"./hr/index": 95,
+	"./hr/index.js": 95,
+	"./hr/package": 178,
+	"./hr/package.json": 178,
+	"./hu": 96,
+	"./hu/": 96,
+	"./hu/build_distance_in_words_locale": 38,
+	"./hu/build_distance_in_words_locale/": 38,
+	"./hu/build_distance_in_words_locale/index": 38,
+	"./hu/build_distance_in_words_locale/index.js": 38,
+	"./hu/build_format_locale": 39,
+	"./hu/build_format_locale/": 39,
+	"./hu/build_format_locale/index": 39,
+	"./hu/build_format_locale/index.js": 39,
+	"./hu/index": 96,
+	"./hu/index.js": 96,
+	"./hu/package": 179,
+	"./hu/package.json": 179,
+	"./id": 97,
+	"./id/": 97,
+	"./id/build_distance_in_words_locale": 40,
+	"./id/build_distance_in_words_locale/": 40,
+	"./id/build_distance_in_words_locale/index": 40,
+	"./id/build_distance_in_words_locale/index.js": 40,
+	"./id/build_format_locale": 41,
+	"./id/build_format_locale/": 41,
+	"./id/build_format_locale/index": 41,
+	"./id/build_format_locale/index.js": 41,
+	"./id/index": 97,
+	"./id/index.js": 97,
+	"./id/package": 180,
+	"./id/package.json": 180,
+	"./is": 98,
+	"./is/": 98,
+	"./is/build_distance_in_words_locale": 42,
+	"./is/build_distance_in_words_locale/": 42,
+	"./is/build_distance_in_words_locale/index": 42,
+	"./is/build_distance_in_words_locale/index.js": 42,
+	"./is/build_format_locale": 43,
+	"./is/build_format_locale/": 43,
+	"./is/build_format_locale/index": 43,
+	"./is/build_format_locale/index.js": 43,
+	"./is/index": 98,
+	"./is/index.js": 98,
+	"./is/package": 181,
+	"./is/package.json": 181,
+	"./it": 99,
+	"./it/": 99,
+	"./it/build_distance_in_words_locale": 44,
+	"./it/build_distance_in_words_locale/": 44,
+	"./it/build_distance_in_words_locale/index": 44,
+	"./it/build_distance_in_words_locale/index.js": 44,
+	"./it/build_format_locale": 45,
+	"./it/build_format_locale/": 45,
+	"./it/build_format_locale/index": 45,
+	"./it/build_format_locale/index.js": 45,
+	"./it/index": 99,
+	"./it/index.js": 99,
+	"./it/package": 182,
+	"./it/package.json": 182,
+	"./ja": 100,
+	"./ja/": 100,
+	"./ja/build_distance_in_words_locale": 46,
+	"./ja/build_distance_in_words_locale/": 46,
+	"./ja/build_distance_in_words_locale/index": 46,
+	"./ja/build_distance_in_words_locale/index.js": 46,
+	"./ja/build_format_locale": 47,
+	"./ja/build_format_locale/": 47,
+	"./ja/build_format_locale/index": 47,
+	"./ja/build_format_locale/index.js": 47,
+	"./ja/index": 100,
+	"./ja/index.js": 100,
+	"./ja/package": 183,
+	"./ja/package.json": 183,
+	"./ko": 101,
+	"./ko/": 101,
+	"./ko/build_distance_in_words_locale": 48,
+	"./ko/build_distance_in_words_locale/": 48,
+	"./ko/build_distance_in_words_locale/index": 48,
+	"./ko/build_distance_in_words_locale/index.js": 48,
+	"./ko/build_format_locale": 49,
+	"./ko/build_format_locale/": 49,
+	"./ko/build_format_locale/index": 49,
+	"./ko/build_format_locale/index.js": 49,
+	"./ko/index": 101,
+	"./ko/index.js": 101,
+	"./ko/package": 184,
+	"./ko/package.json": 184,
+	"./mk": 102,
+	"./mk/": 102,
+	"./mk/build_distance_in_words_locale": 50,
+	"./mk/build_distance_in_words_locale/": 50,
+	"./mk/build_distance_in_words_locale/index": 50,
+	"./mk/build_distance_in_words_locale/index.js": 50,
+	"./mk/build_format_locale": 51,
+	"./mk/build_format_locale/": 51,
+	"./mk/build_format_locale/index": 51,
+	"./mk/build_format_locale/index.js": 51,
+	"./mk/index": 102,
+	"./mk/index.js": 102,
+	"./mk/package": 185,
+	"./mk/package.json": 185,
+	"./nb": 103,
+	"./nb/": 103,
+	"./nb/build_distance_in_words_locale": 52,
+	"./nb/build_distance_in_words_locale/": 52,
+	"./nb/build_distance_in_words_locale/index": 52,
+	"./nb/build_distance_in_words_locale/index.js": 52,
+	"./nb/build_format_locale": 53,
+	"./nb/build_format_locale/": 53,
+	"./nb/build_format_locale/index": 53,
+	"./nb/build_format_locale/index.js": 53,
+	"./nb/index": 103,
+	"./nb/index.js": 103,
+	"./nb/package": 186,
+	"./nb/package.json": 186,
+	"./nl": 104,
+	"./nl/": 104,
+	"./nl/build_distance_in_words_locale": 54,
+	"./nl/build_distance_in_words_locale/": 54,
+	"./nl/build_distance_in_words_locale/index": 54,
+	"./nl/build_distance_in_words_locale/index.js": 54,
+	"./nl/build_format_locale": 55,
+	"./nl/build_format_locale/": 55,
+	"./nl/build_format_locale/index": 55,
+	"./nl/build_format_locale/index.js": 55,
+	"./nl/index": 104,
+	"./nl/index.js": 104,
+	"./nl/package": 187,
+	"./nl/package.json": 187,
+	"./package": 188,
+	"./package.json": 188,
+	"./pl": 105,
+	"./pl/": 105,
+	"./pl/build_distance_in_words_locale": 56,
+	"./pl/build_distance_in_words_locale/": 56,
+	"./pl/build_distance_in_words_locale/index": 56,
+	"./pl/build_distance_in_words_locale/index.js": 56,
+	"./pl/build_format_locale": 57,
+	"./pl/build_format_locale/": 57,
+	"./pl/build_format_locale/index": 57,
+	"./pl/build_format_locale/index.js": 57,
+	"./pl/index": 105,
+	"./pl/index.js": 105,
+	"./pl/package": 189,
+	"./pl/package.json": 189,
+	"./pt": 106,
+	"./pt/": 106,
+	"./pt/build_distance_in_words_locale": 58,
+	"./pt/build_distance_in_words_locale/": 58,
+	"./pt/build_distance_in_words_locale/index": 58,
+	"./pt/build_distance_in_words_locale/index.js": 58,
+	"./pt/build_format_locale": 59,
+	"./pt/build_format_locale/": 59,
+	"./pt/build_format_locale/index": 59,
+	"./pt/build_format_locale/index.js": 59,
+	"./pt/index": 106,
+	"./pt/index.js": 106,
+	"./pt/package": 190,
+	"./pt/package.json": 190,
+	"./ro": 107,
+	"./ro/": 107,
+	"./ro/build_distance_in_words_locale": 60,
+	"./ro/build_distance_in_words_locale/": 60,
+	"./ro/build_distance_in_words_locale/index": 60,
+	"./ro/build_distance_in_words_locale/index.js": 60,
+	"./ro/build_format_locale": 61,
+	"./ro/build_format_locale/": 61,
+	"./ro/build_format_locale/index": 61,
+	"./ro/build_format_locale/index.js": 61,
+	"./ro/index": 107,
+	"./ro/index.js": 107,
+	"./ro/package": 191,
+	"./ro/package.json": 191,
+	"./ru": 108,
+	"./ru/": 108,
+	"./ru/build_distance_in_words_locale": 62,
+	"./ru/build_distance_in_words_locale/": 62,
+	"./ru/build_distance_in_words_locale/index": 62,
+	"./ru/build_distance_in_words_locale/index.js": 62,
+	"./ru/build_format_locale": 63,
+	"./ru/build_format_locale/": 63,
+	"./ru/build_format_locale/index": 63,
+	"./ru/build_format_locale/index.js": 63,
+	"./ru/index": 108,
+	"./ru/index.js": 108,
+	"./ru/package": 192,
+	"./ru/package.json": 192,
+	"./sk": 109,
+	"./sk/": 109,
+	"./sk/build_distance_in_words_locale": 64,
+	"./sk/build_distance_in_words_locale/": 64,
+	"./sk/build_distance_in_words_locale/index": 64,
+	"./sk/build_distance_in_words_locale/index.js": 64,
+	"./sk/build_format_locale": 65,
+	"./sk/build_format_locale/": 65,
+	"./sk/build_format_locale/index": 65,
+	"./sk/build_format_locale/index.js": 65,
+	"./sk/index": 109,
+	"./sk/index.js": 109,
+	"./sk/package": 193,
+	"./sk/package.json": 193,
+	"./sl": 110,
+	"./sl/": 110,
+	"./sl/build_distance_in_words_locale": 66,
+	"./sl/build_distance_in_words_locale/": 66,
+	"./sl/build_distance_in_words_locale/index": 66,
+	"./sl/build_distance_in_words_locale/index.js": 66,
+	"./sl/build_format_locale": 67,
+	"./sl/build_format_locale/": 67,
+	"./sl/build_format_locale/index": 67,
+	"./sl/build_format_locale/index.js": 67,
+	"./sl/index": 110,
+	"./sl/index.js": 110,
+	"./sl/package": 194,
+	"./sl/package.json": 194,
+	"./sv": 111,
+	"./sv/": 111,
+	"./sv/build_distance_in_words_locale": 68,
+	"./sv/build_distance_in_words_locale/": 68,
+	"./sv/build_distance_in_words_locale/index": 68,
+	"./sv/build_distance_in_words_locale/index.js": 68,
+	"./sv/build_format_locale": 69,
+	"./sv/build_format_locale/": 69,
+	"./sv/build_format_locale/index": 69,
+	"./sv/build_format_locale/index.js": 69,
+	"./sv/index": 111,
+	"./sv/index.js": 111,
+	"./sv/package": 195,
+	"./sv/package.json": 195,
+	"./th": 112,
+	"./th/": 112,
+	"./th/build_distance_in_words_locale": 70,
+	"./th/build_distance_in_words_locale/": 70,
+	"./th/build_distance_in_words_locale/index": 70,
+	"./th/build_distance_in_words_locale/index.js": 70,
+	"./th/build_format_locale": 71,
+	"./th/build_format_locale/": 71,
+	"./th/build_format_locale/index": 71,
+	"./th/build_format_locale/index.js": 71,
+	"./th/index": 112,
+	"./th/index.js": 112,
+	"./th/package": 196,
+	"./th/package.json": 196,
+	"./tr": 113,
+	"./tr/": 113,
+	"./tr/build_distance_in_words_locale": 72,
+	"./tr/build_distance_in_words_locale/": 72,
+	"./tr/build_distance_in_words_locale/index": 72,
+	"./tr/build_distance_in_words_locale/index.js": 72,
+	"./tr/build_format_locale": 73,
+	"./tr/build_format_locale/": 73,
+	"./tr/build_format_locale/index": 73,
+	"./tr/build_format_locale/index.js": 73,
+	"./tr/index": 113,
+	"./tr/index.js": 113,
+	"./tr/package": 197,
+	"./tr/package.json": 197,
+	"./zh_cn": 114,
+	"./zh_cn/": 114,
+	"./zh_cn/build_distance_in_words_locale": 74,
+	"./zh_cn/build_distance_in_words_locale/": 74,
+	"./zh_cn/build_distance_in_words_locale/index": 74,
+	"./zh_cn/build_distance_in_words_locale/index.js": 74,
+	"./zh_cn/build_format_locale": 75,
+	"./zh_cn/build_format_locale/": 75,
+	"./zh_cn/build_format_locale/index": 75,
+	"./zh_cn/build_format_locale/index.js": 75,
+	"./zh_cn/index": 114,
+	"./zh_cn/index.js": 114,
+	"./zh_cn/package": 198,
+	"./zh_cn/package.json": 198,
+	"./zh_tw": 115,
+	"./zh_tw/": 115,
+	"./zh_tw/build_distance_in_words_locale": 76,
+	"./zh_tw/build_distance_in_words_locale/": 76,
+	"./zh_tw/build_distance_in_words_locale/index": 76,
+	"./zh_tw/build_distance_in_words_locale/index.js": 76,
+	"./zh_tw/build_format_locale": 77,
+	"./zh_tw/build_format_locale/": 77,
+	"./zh_tw/build_format_locale/index": 77,
+	"./zh_tw/build_format_locale/index.js": 77,
+	"./zh_tw/index": 115,
+	"./zh_tw/index.js": 115,
+	"./zh_tw/package": 199,
+	"./zh_tw/package.json": 199
+};
+function webpackContext(req) {
+	return __webpack_require__(webpackContextResolve(req));
+};
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) // check for number or string
+		throw new Error("Cannot find module '" + req + "'.");
+	return id;
+};
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 125;
+
+/***/ }),
+/* 126 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return uuid; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return detectSupportsPassive; });
+var uuid = function uuid() {
+	var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+	return prefix + ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, function (c) {
+		return (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16);
+	});
+};
+
+var detectSupportsPassive = function detectSupportsPassive() {
+	var supportsPassive = false;
+
+	try {
+		var opts = Object.defineProperty({}, 'passive', {
+			get: function get() {
+				supportsPassive = true;
+			}
+		});
+
+		window.addEventListener('testPassive', null, opts);
+		window.removeEventListener('testPassive', null, opts);
+	} catch (e) {}
+
+	return supportsPassive;
+};
+
+/***/ }),
+/* 127 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return isFunction; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return isString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return isObject; });
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var isFunction = function isFunction(unknown) {
+  return typeof unknown === 'function';
+};
+
+var isString = function isString(unknown) {
+  return typeof unknown === 'string' || !!unknown && (typeof unknown === 'undefined' ? 'undefined' : _typeof(unknown)) === 'object' && Object.prototype.toString.call(unknown) === '[object String]';
+};
+
+var isDate = function isDate(unknown) {
+  return (Object.prototype.toString.call(unknown) === '[object Date]' || unknown instanceof Date) && !isNaN(unknown.valueOf());
+};
+
+var isObject = function isObject(unknown) {
+  return (typeof unknown === 'function' || (typeof unknown === 'undefined' ? 'undefined' : _typeof(unknown)) === 'object' && !!unknown) && !Array.isArray(unknown);
+};
+
+/***/ }),
+/* 128 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMilliseconds = __webpack_require__(7)
+
+var MILLISECONDS_IN_HOUR = 3600000
+
+/**
+ * @category Hour Helpers
+ * @summary Add the specified number of hours to the given date.
+ *
+ * @description
+ * Add the specified number of hours to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of hours to be added
+ * @returns {Date} the new date with the hours added
+ *
+ * @example
+ * // Add 2 hours to 10 July 2014 23:00:00:
+ * var result = addHours(new Date(2014, 6, 10, 23, 0), 2)
+ * //=> Fri Jul 11 2014 01:00:00
+ */
+function addHours (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMilliseconds(dirtyDate, amount * MILLISECONDS_IN_HOUR)
+}
+
+module.exports = addHours
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(2)
+var setISOYear = __webpack_require__(130)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Add the specified number of ISO week-numbering years to the given date.
+ *
+ * @description
+ * Add the specified number of ISO week-numbering years to the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of ISO week-numbering years to be added
+ * @returns {Date} the new date with the ISO week-numbering years added
+ *
+ * @example
+ * // Add 5 ISO week-numbering years to 2 July 2010:
+ * var result = addISOYears(new Date(2010, 6, 2), 5)
+ * //=> Fri Jun 26 2015 00:00:00
+ */
+function addISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return setISOYear(dirtyDate, getISOYear(dirtyDate) + amount)
+}
+
+module.exports = addISOYears
+
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var startOfISOYear = __webpack_require__(8)
+var differenceInCalendarDays = __webpack_require__(80)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Set the ISO week-numbering year to the given date.
+ *
+ * @description
+ * Set the ISO week-numbering year to the given date,
+ * saving the week number and the weekday number.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} isoYear - the ISO week-numbering year of the new date
+ * @returns {Date} the new date with the ISO week-numbering year setted
+ *
+ * @example
+ * // Set ISO week-numbering year 2007 to 29 December 2008:
+ * var result = setISOYear(new Date(2008, 11, 29), 2007)
+ * //=> Mon Jan 01 2007 00:00:00
+ */
+function setISOYear (dirtyDate, dirtyISOYear) {
+  var date = parse(dirtyDate)
+  var isoYear = Number(dirtyISOYear)
+  var diff = differenceInCalendarDays(date, startOfISOYear(date))
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(isoYear, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  date = startOfISOYear(fourthOfJanuary)
+  date.setDate(date.getDate() + diff)
+  return date
+}
+
+module.exports = setISOYear
+
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMilliseconds = __webpack_require__(7)
+
+var MILLISECONDS_IN_MINUTE = 60000
+
+/**
+ * @category Minute Helpers
+ * @summary Add the specified number of minutes to the given date.
+ *
+ * @description
+ * Add the specified number of minutes to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of minutes to be added
+ * @returns {Date} the new date with the minutes added
+ *
+ * @example
+ * // Add 30 minutes to 10 July 2014 12:00:00:
+ * var result = addMinutes(new Date(2014, 6, 10, 12, 0), 30)
+ * //=> Thu Jul 10 2014 12:30:00
+ */
+function addMinutes (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMilliseconds(dirtyDate, amount * MILLISECONDS_IN_MINUTE)
+}
+
+module.exports = addMinutes
+
+
+/***/ }),
+/* 132 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMonths = __webpack_require__(81)
+
+/**
+ * @category Quarter Helpers
+ * @summary Add the specified number of year quarters to the given date.
+ *
+ * @description
+ * Add the specified number of year quarters to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of quarters to be added
+ * @returns {Date} the new date with the quarters added
+ *
+ * @example
+ * // Add 1 quarter to 1 September 2014:
+ * var result = addQuarters(new Date(2014, 8, 1), 1)
+ * //=> Mon Dec 01 2014 00:00:00
+ */
+function addQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  var months = amount * 3
+  return addMonths(dirtyDate, months)
+}
+
+module.exports = addQuarters
+
+
+/***/ }),
+/* 133 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMilliseconds = __webpack_require__(7)
+
+/**
+ * @category Second Helpers
+ * @summary Add the specified number of seconds to the given date.
+ *
+ * @description
+ * Add the specified number of seconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of seconds to be added
+ * @returns {Date} the new date with the seconds added
+ *
+ * @example
+ * // Add 30 seconds to 10 July 2014 12:45:00:
+ * var result = addSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
+ * //=> Thu Jul 10 2014 12:45:30
+ */
+function addSeconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMilliseconds(dirtyDate, amount * 1000)
+}
+
+module.exports = addSeconds
+
+
+/***/ }),
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMonths = __webpack_require__(81)
+
+/**
+ * @category Year Helpers
+ * @summary Add the specified number of years to the given date.
+ *
+ * @description
+ * Add the specified number of years to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of years to be added
+ * @returns {Date} the new date with the years added
+ *
+ * @example
+ * // Add 5 years to 1 September 2014:
+ * var result = addYears(new Date(2014, 8, 1), 5)
+ * //=> Sun Sep 01 2019 00:00:00
+ */
+function addYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMonths(dirtyDate, amount * 12)
+}
+
+module.exports = addYears
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(2)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of calendar ISO week-numbering years between the given dates.
+ *
+ * @description
+ * Get the number of calendar ISO week-numbering years between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar ISO week-numbering years
+ *
+ * @example
+ * // How many calendar ISO week-numbering years are 1 January 2010 and 1 January 2012?
+ * var result = differenceInCalendarISOYears(
+ *   new Date(2012, 0, 1),
+ *   new Date(2010, 0, 1)
+ * )
+ * //=> 2
+ */
+function differenceInCalendarISOYears (dirtyDateLeft, dirtyDateRight) {
+  return getISOYear(dirtyDateLeft) - getISOYear(dirtyDateRight)
+}
+
+module.exports = differenceInCalendarISOYears
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Get the number of calendar months between the given dates.
+ *
+ * @description
+ * Get the number of calendar months between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar months
+ *
+ * @example
+ * // How many calendar months are between 31 January 2014 and 1 September 2014?
+ * var result = differenceInCalendarMonths(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 0, 31)
+ * )
+ * //=> 8
+ */
+function differenceInCalendarMonths (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
+  var monthDiff = dateLeft.getMonth() - dateRight.getMonth()
+
+  return yearDiff * 12 + monthDiff
+}
+
+module.exports = differenceInCalendarMonths
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the year quarter of the given date.
+ *
+ * @description
+ * Get the year quarter of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the quarter
+ *
+ * @example
+ * // Which quarter is 2 July 2014?
+ * var result = getQuarter(new Date(2014, 6, 2))
+ * //=> 3
+ */
+function getQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var quarter = Math.floor(date.getMonth() / 3) + 1
+  return quarter
+}
+
+module.exports = getQuarter
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of calendar years between the given dates.
+ *
+ * @description
+ * Get the number of calendar years between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar years
+ *
+ * @example
+ * // How many calendar years are between 31 December 2013 and 11 February 2015?
+ * var result = differenceInCalendarYears(
+ *   new Date(2015, 1, 11),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 2
+ */
+function differenceInCalendarYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  return dateLeft.getFullYear() - dateRight.getFullYear()
+}
+
+module.exports = differenceInCalendarYears
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var differenceInCalendarDays = __webpack_require__(80)
+var compareAsc = __webpack_require__(9)
+
+/**
+ * @category Day Helpers
+ * @summary Get the number of full days between the given dates.
+ *
+ * @description
+ * Get the number of full days between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full days
+ *
+ * @example
+ * // How many full days are between
+ * // 2 July 2011 23:00:00 and 2 July 2012 00:00:00?
+ * var result = differenceInDays(
+ *   new Date(2012, 6, 2, 0, 0),
+ *   new Date(2011, 6, 2, 23, 0)
+ * )
+ * //=> 365
+ */
+function differenceInDays (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarDays(dateLeft, dateRight))
+  dateLeft.setDate(dateLeft.getDate() - sign * difference)
+
+  // Math.abs(diff in full days - diff in calendar days) === 1 if last calendar day is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastDayNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastDayNotFull)
+}
+
+module.exports = differenceInDays
+
+
+/***/ }),
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addISOYears = __webpack_require__(129)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Subtract the specified number of ISO week-numbering years from the given date.
+ *
+ * @description
+ * Subtract the specified number of ISO week-numbering years from the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of ISO week-numbering years to be subtracted
+ * @returns {Date} the new date with the ISO week-numbering years subtracted
+ *
+ * @example
+ * // Subtract 5 ISO week-numbering years from 1 September 2014:
+ * var result = subISOYears(new Date(2014, 8, 1), 5)
+ * //=> Mon Aug 31 2009 00:00:00
+ */
+function subISOYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addISOYears(dirtyDate, -amount)
+}
+
+module.exports = subISOYears
+
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var compareDesc = __webpack_require__(119)
+var parse = __webpack_require__(0)
+var differenceInSeconds = __webpack_require__(121)
+var differenceInMonths = __webpack_require__(120)
+var enLocale = __webpack_require__(5)
+
+var MINUTES_IN_DAY = 1440
+var MINUTES_IN_ALMOST_TWO_DAYS = 2520
+var MINUTES_IN_MONTH = 43200
+var MINUTES_IN_TWO_MONTHS = 86400
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words.
+ *
+ * | Distance between dates                                            | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance between dates | Result               |
+ * |------------------------|----------------------|
+ * | 0 secs ... 5 secs      | less than 5 seconds  |
+ * | 5 secs ... 10 secs     | less than 10 seconds |
+ * | 10 secs ... 20 secs    | less than 20 seconds |
+ * | 20 secs ... 40 secs    | half a minute        |
+ * | 40 secs ... 60 secs    | less than a minute   |
+ * | 60 secs ... 90 secs    | 1 minute             |
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date|String|Number} date - the other date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = distanceInWords(
+ *   new Date(2014, 6, 2),
+ *   new Date(2015, 0, 1)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00, including seconds?
+ * var result = distanceInWords(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = distanceInWords(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'about 1 year ago'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWords(
+ *   new Date(2016, 7, 1),
+ *   new Date(2015, 0, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWords (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {}
+
+  var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
+
+  var locale = options.locale
+  var localize = enLocale.distanceInWords.localize
+  if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+    localize = locale.distanceInWords.localize
+  }
+
+  var localizeOptions = {
+    addSuffix: Boolean(options.addSuffix),
+    comparison: comparison
+  }
+
+  var dateLeft, dateRight
+  if (comparison > 0) {
+    dateLeft = parse(dirtyDateToCompare)
+    dateRight = parse(dirtyDate)
+  } else {
+    dateLeft = parse(dirtyDate)
+    dateRight = parse(dirtyDateToCompare)
+  }
+
+  var seconds = differenceInSeconds(dateRight, dateLeft)
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
+  var minutes = Math.round(seconds / 60) - offset
+  var months
+
+  // 0 up to 2 mins
+  if (minutes < 2) {
+    if (options.includeSeconds) {
+      if (seconds < 5) {
+        return localize('lessThanXSeconds', 5, localizeOptions)
+      } else if (seconds < 10) {
+        return localize('lessThanXSeconds', 10, localizeOptions)
+      } else if (seconds < 20) {
+        return localize('lessThanXSeconds', 20, localizeOptions)
+      } else if (seconds < 40) {
+        return localize('halfAMinute', null, localizeOptions)
+      } else if (seconds < 60) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', 1, localizeOptions)
+      }
+    } else {
+      if (minutes === 0) {
+        return localize('lessThanXMinutes', 1, localizeOptions)
+      } else {
+        return localize('xMinutes', minutes, localizeOptions)
+      }
+    }
+
+  // 2 mins up to 0.75 hrs
+  } else if (minutes < 45) {
+    return localize('xMinutes', minutes, localizeOptions)
+
+  // 0.75 hrs up to 1.5 hrs
+  } else if (minutes < 90) {
+    return localize('aboutXHours', 1, localizeOptions)
+
+  // 1.5 hrs up to 24 hrs
+  } else if (minutes < MINUTES_IN_DAY) {
+    var hours = Math.round(minutes / 60)
+    return localize('aboutXHours', hours, localizeOptions)
+
+  // 1 day up to 1.75 days
+  } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+    return localize('xDays', 1, localizeOptions)
+
+  // 1.75 days up to 30 days
+  } else if (minutes < MINUTES_IN_MONTH) {
+    var days = Math.round(minutes / MINUTES_IN_DAY)
+    return localize('xDays', days, localizeOptions)
+
+  // 1 month up to 2 months
+  } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+    months = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('aboutXMonths', months, localizeOptions)
+  }
+
+  months = differenceInMonths(dateRight, dateLeft)
+
+  // 2 months up to 12 months
+  if (months < 12) {
+    var nearestMonth = Math.round(minutes / MINUTES_IN_MONTH)
+    return localize('xMonths', nearestMonth, localizeOptions)
+
+  // 1 year up to max Date
+  } else {
+    var monthsSinceStartOfYear = months % 12
+    var years = Math.floor(months / 12)
+
+    // N years up to 1 years 3 months
+    if (monthsSinceStartOfYear < 3) {
+      return localize('aboutXYears', years, localizeOptions)
+
+    // N years 3 months up to N years 9 months
+    } else if (monthsSinceStartOfYear < 9) {
+      return localize('overXYears', years, localizeOptions)
+
+    // N years 9 months up to N year 12 months
+    } else {
+      return localize('almostXYears', years + 1, localizeOptions)
+    }
+  }
+}
+
+module.exports = distanceInWords
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Week Helpers
+ * @summary Return the end of a week for the given date.
+ *
+ * @description
+ * Return the end of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the end of a week
+ *
+ * @example
+ * // The end of a week for 2 September 2014 11:55:00:
+ * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sat Sep 06 2014 23:59:59.999
+ *
+ * @example
+ * // If the week starts on Monday, the end of the week for 2 September 2014 11:55:00:
+ * var result = endOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+
+  date.setDate(date.getDate() + diff)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfWeek
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Return the end of a month for the given date.
+ *
+ * @description
+ * Return the end of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a month
+ *
+ * @example
+ * // The end of a month for 2 September 2014 11:55:00:
+ * var result = endOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 23:59:59.999
+ */
+function endOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  date.setFullYear(date.getFullYear(), month + 1, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfMonth
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var startOfYear = __webpack_require__(145)
+var differenceInCalendarDays = __webpack_require__(80)
+
+/**
+ * @category Day Helpers
+ * @summary Get the day of the year of the given date.
+ *
+ * @description
+ * Get the day of the year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of year
+ *
+ * @example
+ * // Which day of the year is 2 July 2014?
+ * var result = getDayOfYear(new Date(2014, 6, 2))
+ * //=> 183
+ */
+function getDayOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var diff = differenceInCalendarDays(date, startOfYear(date))
+  var dayOfYear = diff + 1
+  return dayOfYear
+}
+
+module.exports = getDayOfYear
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Return the start of a year for the given date.
+ *
+ * @description
+ * Return the start of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a year
+ *
+ * @example
+ * // The start of a year for 2 September 2014 11:55:00:
+ * var result = startOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Jan 01 2014 00:00:00
+ */
+function startOfYear (dirtyDate) {
+  var cleanDate = parse(dirtyDate)
+  var date = new Date(0)
+  date.setFullYear(cleanDate.getFullYear(), 0, 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfYear
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isDate = __webpack_require__(116)
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date valid?
+ *
+ * @description
+ * Returns false if argument is Invalid Date and true otherwise.
+ * Invalid Date is a Date, whose time value is NaN.
+ *
+ * Time value of Date: http://es5.github.io/#x15.9.1.1
+ *
+ * @param {Date} date - the date to check
+ * @returns {Boolean} the date is valid
+ * @throws {TypeError} argument must be an instance of Date
+ *
+ * @example
+ * // For the valid date:
+ * var result = isValid(new Date(2014, 1, 31))
+ * //=> true
+ *
+ * @example
+ * // For the invalid date:
+ * var result = isValid(new Date(''))
+ * //=> false
+ */
+function isValid (dirtyDate) {
+  if (isDate(dirtyDate)) {
+    return !isNaN(dirtyDate)
+  } else {
+    throw new TypeError(toString.call(dirtyDate) + ' is not an instance of Date')
+  }
+}
+
+module.exports = isValid
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Is the given date in the leap year?
+ *
+ * @description
+ * Is the given date in the leap year?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the leap year
+ *
+ * @example
+ * // Is 1 September 2012 in the leap year?
+ * var result = isLeapYear(new Date(2012, 8, 1))
+ * //=> true
+ */
+function isLeapYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  return year % 400 === 0 || year % 4 === 0 && year % 100 !== 0
+}
+
+module.exports = isLeapYear
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Get the day of the ISO week of the given date.
+ *
+ * @description
+ * Get the day of the ISO week of the given date,
+ * which is 7 for Sunday, 1 for Monday etc.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of ISO week
+ *
+ * @example
+ * // Which day of the ISO week is 26 February 2012?
+ * var result = getISODay(new Date(2012, 1, 26))
+ * //=> 7
+ */
+function getISODay (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+
+  if (day === 0) {
+    day = 7
+  }
+
+  return day
+}
+
+module.exports = getISODay
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfHour = __webpack_require__(150)
+
+/**
+ * @category Hour Helpers
+ * @summary Are the given dates in the same hour?
+ *
+ * @description
+ * Are the given dates in the same hour?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same hour
+ *
+ * @example
+ * // Are 4 September 2014 06:00:00 and 4 September 06:30:00 in the same hour?
+ * var result = isSameHour(
+ *   new Date(2014, 8, 4, 6, 0),
+ *   new Date(2014, 8, 4, 6, 30)
+ * )
+ * //=> true
+ */
+function isSameHour (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfHour = startOfHour(dirtyDateLeft)
+  var dateRightStartOfHour = startOfHour(dirtyDateRight)
+
+  return dateLeftStartOfHour.getTime() === dateRightStartOfHour.getTime()
+}
+
+module.exports = isSameHour
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Hour Helpers
+ * @summary Return the start of an hour for the given date.
+ *
+ * @description
+ * Return the start of an hour for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of an hour
+ *
+ * @example
+ * // The start of an hour for 2 September 2014 11:55:00:
+ * var result = startOfHour(new Date(2014, 8, 2, 11, 55))
+ * //=> Tue Sep 02 2014 11:00:00
+ */
+function startOfHour (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMinutes(0, 0, 0)
+  return date
+}
+
+module.exports = startOfHour
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameWeek = __webpack_require__(124)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Are the given dates in the same ISO week?
+ *
+ * @description
+ * Are the given dates in the same ISO week?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same ISO week
+ *
+ * @example
+ * // Are 1 September 2014 and 7 September 2014 in the same ISO week?
+ * var result = isSameISOWeek(
+ *   new Date(2014, 8, 1),
+ *   new Date(2014, 8, 7)
+ * )
+ * //=> true
+ */
+function isSameISOWeek (dirtyDateLeft, dirtyDateRight) {
+  return isSameWeek(dirtyDateLeft, dirtyDateRight, {weekStartsOn: 1})
+}
+
+module.exports = isSameISOWeek
+
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfISOYear = __webpack_require__(8)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Are the given dates in the same ISO week-numbering year?
+ *
+ * @description
+ * Are the given dates in the same ISO week-numbering year?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same ISO week-numbering year
+ *
+ * @example
+ * // Are 29 December 2003 and 2 January 2005 in the same ISO week-numbering year?
+ * var result = isSameISOYear(
+ *   new Date(2003, 11, 29),
+ *   new Date(2005, 0, 2)
+ * )
+ * //=> true
+ */
+function isSameISOYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfYear = startOfISOYear(dirtyDateLeft)
+  var dateRightStartOfYear = startOfISOYear(dirtyDateRight)
+
+  return dateLeftStartOfYear.getTime() === dateRightStartOfYear.getTime()
+}
+
+module.exports = isSameISOYear
+
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfMinute = __webpack_require__(154)
+
+/**
+ * @category Minute Helpers
+ * @summary Are the given dates in the same minute?
+ *
+ * @description
+ * Are the given dates in the same minute?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same minute
+ *
+ * @example
+ * // Are 4 September 2014 06:30:00 and 4 September 2014 06:30:15
+ * // in the same minute?
+ * var result = isSameMinute(
+ *   new Date(2014, 8, 4, 6, 30),
+ *   new Date(2014, 8, 4, 6, 30, 15)
+ * )
+ * //=> true
+ */
+function isSameMinute (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfMinute = startOfMinute(dirtyDateLeft)
+  var dateRightStartOfMinute = startOfMinute(dirtyDateRight)
+
+  return dateLeftStartOfMinute.getTime() === dateRightStartOfMinute.getTime()
+}
+
+module.exports = isSameMinute
+
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Minute Helpers
+ * @summary Return the start of a minute for the given date.
+ *
+ * @description
+ * Return the start of a minute for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a minute
+ *
+ * @example
+ * // The start of a minute for 1 December 2014 22:15:45.400:
+ * var result = startOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:00
+ */
+function startOfMinute (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setSeconds(0, 0)
+  return date
+}
+
+module.exports = startOfMinute
+
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Are the given dates in the same month?
+ *
+ * @description
+ * Are the given dates in the same month?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same month
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same month?
+ * var result = isSameMonth(
+ *   new Date(2014, 8, 2),
+ *   new Date(2014, 8, 25)
+ * )
+ * //=> true
+ */
+function isSameMonth (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getFullYear() === dateRight.getFullYear() &&
+    dateLeft.getMonth() === dateRight.getMonth()
+}
+
+module.exports = isSameMonth
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfQuarter = __webpack_require__(157)
+
+/**
+ * @category Quarter Helpers
+ * @summary Are the given dates in the same year quarter?
+ *
+ * @description
+ * Are the given dates in the same year quarter?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same quarter
+ *
+ * @example
+ * // Are 1 January 2014 and 8 March 2014 in the same quarter?
+ * var result = isSameQuarter(
+ *   new Date(2014, 0, 1),
+ *   new Date(2014, 2, 8)
+ * )
+ * //=> true
+ */
+function isSameQuarter (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfQuarter = startOfQuarter(dirtyDateLeft)
+  var dateRightStartOfQuarter = startOfQuarter(dirtyDateRight)
+
+  return dateLeftStartOfQuarter.getTime() === dateRightStartOfQuarter.getTime()
+}
+
+module.exports = isSameQuarter
+
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the start of a year quarter for the given date.
+ *
+ * @description
+ * Return the start of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a quarter
+ *
+ * @example
+ * // The start of a quarter for 2 September 2014 11:55:00:
+ * var result = startOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Jul 01 2014 00:00:00
+ */
+function startOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3
+  date.setMonth(month, 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfQuarter
+
+
+/***/ }),
+/* 158 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfSecond = __webpack_require__(159)
+
+/**
+ * @category Second Helpers
+ * @summary Are the given dates in the same second?
+ *
+ * @description
+ * Are the given dates in the same second?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same second
+ *
+ * @example
+ * // Are 4 September 2014 06:30:15.000 and 4 September 2014 06:30.15.500
+ * // in the same second?
+ * var result = isSameSecond(
+ *   new Date(2014, 8, 4, 6, 30, 15),
+ *   new Date(2014, 8, 4, 6, 30, 15, 500)
+ * )
+ * //=> true
+ */
+function isSameSecond (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfSecond = startOfSecond(dirtyDateLeft)
+  var dateRightStartOfSecond = startOfSecond(dirtyDateRight)
+
+  return dateLeftStartOfSecond.getTime() === dateRightStartOfSecond.getTime()
+}
+
+module.exports = isSameSecond
+
+
+/***/ }),
+/* 159 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Second Helpers
+ * @summary Return the start of a second for the given date.
+ *
+ * @description
+ * Return the start of a second for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a second
+ *
+ * @example
+ * // The start of a second for 1 December 2014 22:15:45.400:
+ * var result = startOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:45.000
+ */
+function startOfSecond (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(0)
+  return date
+}
+
+module.exports = startOfSecond
+
+
+/***/ }),
+/* 160 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Are the given dates in the same year?
+ *
+ * @description
+ * Are the given dates in the same year?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same year
+ *
+ * @example
+ * // Are 2 September 2014 and 25 September 2014 in the same year?
+ * var result = isSameYear(
+ *   new Date(2014, 8, 2),
+ *   new Date(2014, 8, 25)
+ * )
+ * //=> true
+ */
+function isSameYear (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+  return dateLeft.getFullYear() === dateRight.getFullYear()
+}
+
+module.exports = isSameYear
+
+
+/***/ }),
+/* 161 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Week Helpers
+ * @summary Return the last day of a week for the given date.
+ *
+ * @description
+ * Return the last day of a week for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the last day of a week
+ *
+ * @example
+ * // The last day of a week for 2 September 2014 11:55:00:
+ * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sat Sep 06 2014 00:00:00
+ *
+ * @example
+ * // If the week starts on Monday, the last day of the week for 2 September 2014 11:55:00:
+ * var result = lastDayOfWeek(new Date(2014, 8, 2, 11, 55, 0), {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function lastDayOfWeek (dirtyDate, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
+
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  var diff = (day < weekStartsOn ? -7 : 0) + 6 - (day - weekStartsOn)
+
+  date.setHours(0, 0, 0, 0)
+  date.setDate(date.getDate() + diff)
+  return date
+}
+
+module.exports = lastDayOfWeek
+
+
+/***/ }),
+/* 162 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var getDaysInMonth = __webpack_require__(117)
+
+/**
+ * @category Month Helpers
+ * @summary Set the month to the given date.
+ *
+ * @description
+ * Set the month to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} month - the month of the new date
+ * @returns {Date} the new date with the month setted
+ *
+ * @example
+ * // Set February to 1 September 2014:
+ * var result = setMonth(new Date(2014, 8, 1), 1)
+ * //=> Sat Feb 01 2014 00:00:00
+ */
+function setMonth (dirtyDate, dirtyMonth) {
+  var date = parse(dirtyDate)
+  var month = Number(dirtyMonth)
+  var year = date.getFullYear()
+  var day = date.getDate()
+
+  var dateWithDesiredMonth = new Date(0)
+  dateWithDesiredMonth.setFullYear(year, month, 15)
+  dateWithDesiredMonth.setHours(0, 0, 0, 0)
+  var daysInMonth = getDaysInMonth(dateWithDesiredMonth)
+  // Set the last day of the new month
+  // if the original date was the last day of the longer month
+  date.setMonth(month, Math.min(day, daysInMonth))
+  return date
+}
+
+module.exports = setMonth
+
+
+/***/ }),
+/* 163 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({
+            once: once,
+            callback: callback
+          });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback({
+              type: name,
+              timestamp: new Date().getTime(),
+              data: data
+            });
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 164 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 165 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 172 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 173 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 174 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 177 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 178 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 179 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../typings.d.ts"}
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 195 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 198 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 199 */
+/***/ (function(module, exports) {
+
+module.exports = {"typings":"../../typings.d.ts"}
+
+/***/ }),
+/* 200 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_index__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_type__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_events__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__datePicker__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__defaultOptions__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_header__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__templates_footer__ = __webpack_require__(309);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var bulmaCalendar = function (_EventEmitter) {
+  _inherits(bulmaCalendar, _EventEmitter);
+
+  function bulmaCalendar(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaCalendar);
+
+    var _this = _possibleConstructorReturn(this, (bulmaCalendar.__proto__ || Object.getPrototypeOf(bulmaCalendar)).call(this));
+
+    _this.element = __WEBPACK_IMPORTED_MODULE_1__utils_type__["d" /* isString */](selector) ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+    _this._clickEvents = ['click', 'touch'];
+    _this._supportsPassive = __WEBPACK_IMPORTED_MODULE_0__utils_index__["a" /* detectSupportsPassive */]();
+
+    // Use Element dataset values to override options
+    var elementConfig = _this.element.dataset ? Object.keys(_this.element.dataset).filter(function (key) {
+      return Object.keys(__WEBPACK_IMPORTED_MODULE_5__defaultOptions__["a" /* default */]).includes(key);
+    }).reduce(function (obj, key) {
+      return _extends({}, obj, _defineProperty({}, key, _this.element.dataset[key]));
+    }, {}) : {};
+    // Set default options - dataset attributes are master
+    _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_5__defaultOptions__["a" /* default */], options, elementConfig);
+
+    _this._id = __WEBPACK_IMPORTED_MODULE_0__utils_index__["b" /* uuid */]('bulmaDatePicker');
+
+    _this._onToggle = _this._onToggle.bind(_this);
+    _this._onClose = _this._onClose.bind(_this);
+    _this._onDocumentClick = _this._onDocumentClick.bind(_this);
+    _this._onValidateClick = _this._onValidateClick.bind(_this);
+    _this._onTodayClick = _this._onTodayClick.bind(_this);
+    _this._onClearClick = _this._onClearClick.bind(_this);
+    _this._onCancelClick = _this._onCancelClick.bind(_this);
+    _this._onSelectDate = _this._onSelectDate.bind(_this);
+
+    // Initiate plugin
+    _this._init();
+    return _this;
+  }
+
+  /**
+   * Initiate all DOM element containing datePicker class
+   * @method
+   * @return {Array} Array of all datePicker instances
+   */
+
+
+  _createClass(bulmaCalendar, [{
+    key: '_onSelectDate',
+
+
+    /****************************************************
+     *                                                  *
+     * EVENTS FUNCTIONS                                 *
+     *                                                  *
+     ****************************************************/
+    value: function _onSelectDate(e) {
+      this.refresh();
+      this.save();
+      if (e.type === 'select' && this.options.closeOnSelect && this.options.displayMode !== 'inline') {
+        this.hide();
+      }
+      this.emit(e.type, e.data);
+    }
+  }, {
+    key: '_onDocumentClick',
+    value: function _onDocumentClick(e) {
+      if (!this._open) {
+        return;
+      }
+
+      if (!this._supportsPassive) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+
+      // Check is e.target not within datepicker element
+      var target = e.target || e.srcElement;
+      if (!this._ui.wrapper.contains(target) && this.options.displayMode !== 'inline') {
+        this._onClose(e);
+      }
+    }
+  }, {
+    key: '_onToggle',
+    value: function _onToggle(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
+
+      if (this._open) {
         this.hide();
       } else {
         this.show();
       }
-    };
-
-    _proto.show = function show() {
-      var _this = this;
-
-      if (this._isTransitioning || $(this._element).hasClass(ClassName$3.SHOW)) {
-        return;
-      }
-
-      var actives;
-      var activesData;
-
-      if (this._parent) {
-        actives = [].slice.call(this._parent.querySelectorAll(Selector$3.ACTIVES)).filter(function (elem) {
-          if (typeof _this._config.parent === 'string') {
-            return elem.getAttribute('data-parent') === _this._config.parent;
-          }
-
-          return elem.classList.contains(ClassName$3.COLLAPSE);
-        });
-
-        if (actives.length === 0) {
-          actives = null;
-        }
-      }
-
-      if (actives) {
-        activesData = $(actives).not(this._selector).data(DATA_KEY$3);
-
-        if (activesData && activesData._isTransitioning) {
-          return;
-        }
-      }
-
-      var startEvent = $.Event(Event$3.SHOW);
-      $(this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (actives) {
-        Collapse._jQueryInterface.call($(actives).not(this._selector), 'hide');
-
-        if (!activesData) {
-          $(actives).data(DATA_KEY$3, null);
-        }
-      }
-
-      var dimension = this._getDimension();
-
-      $(this._element).removeClass(ClassName$3.COLLAPSE).addClass(ClassName$3.COLLAPSING);
-      this._element.style[dimension] = 0;
-
-      if (this._triggerArray.length) {
-        $(this._triggerArray).removeClass(ClassName$3.COLLAPSED).attr('aria-expanded', true);
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        $(_this._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).addClass(ClassName$3.SHOW);
-        _this._element.style[dimension] = '';
-
-        _this.setTransitioning(false);
-
-        $(_this._element).trigger(Event$3.SHOWN);
-      };
-
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      this._element.style[dimension] = this._element[scrollSize] + "px";
-    };
-
-    _proto.hide = function hide() {
-      var _this2 = this;
-
-      if (this._isTransitioning || !$(this._element).hasClass(ClassName$3.SHOW)) {
-        return;
-      }
-
-      var startEvent = $.Event(Event$3.HIDE);
-      $(this._element).trigger(startEvent);
-
-      if (startEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      var dimension = this._getDimension();
-
-      this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
-      Util.reflow(this._element);
-      $(this._element).addClass(ClassName$3.COLLAPSING).removeClass(ClassName$3.COLLAPSE).removeClass(ClassName$3.SHOW);
-      var triggerArrayLength = this._triggerArray.length;
-
-      if (triggerArrayLength > 0) {
-        for (var i = 0; i < triggerArrayLength; i++) {
-          var trigger = this._triggerArray[i];
-          var selector = Util.getSelectorFromElement(trigger);
-
-          if (selector !== null) {
-            var $elem = $([].slice.call(document.querySelectorAll(selector)));
-
-            if (!$elem.hasClass(ClassName$3.SHOW)) {
-              $(trigger).addClass(ClassName$3.COLLAPSED).attr('aria-expanded', false);
-            }
-          }
-        }
-      }
-
-      this.setTransitioning(true);
-
-      var complete = function complete() {
-        _this2.setTransitioning(false);
-
-        $(_this2._element).removeClass(ClassName$3.COLLAPSING).addClass(ClassName$3.COLLAPSE).trigger(Event$3.HIDDEN);
-      };
-
-      this._element.style[dimension] = '';
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-      $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-    };
-
-    _proto.setTransitioning = function setTransitioning(isTransitioning) {
-      this._isTransitioning = isTransitioning;
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$3);
-      this._config = null;
-      this._parent = null;
-      this._element = null;
-      this._triggerArray = null;
-      this._isTransitioning = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, Default$1, config);
-      config.toggle = Boolean(config.toggle); // Coerce string values
-
-      Util.typeCheckConfig(NAME$3, config, DefaultType$1);
-      return config;
-    };
-
-    _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(Dimension.WIDTH);
-      return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT;
-    };
-
-    _proto._getParent = function _getParent() {
-      var _this3 = this;
-
-      var parent;
-
-      if (Util.isElement(this._config.parent)) {
-        parent = this._config.parent; // It's a jQuery object
-
-        if (typeof this._config.parent.jquery !== 'undefined') {
-          parent = this._config.parent[0];
-        }
-      } else {
-        parent = document.querySelector(this._config.parent);
-      }
-
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
-      var children = [].slice.call(parent.querySelectorAll(selector));
-      $(children).each(function (i, element) {
-        _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
-      });
-      return parent;
-    };
-
-    _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(ClassName$3.SHOW);
-
-      if (triggerArray.length) {
-        $(triggerArray).toggleClass(ClassName$3.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
-      }
-    } // Static
-    ;
-
-    Collapse._getTargetFromElement = function _getTargetFromElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      return selector ? document.querySelector(selector) : null;
-    };
-
-    Collapse._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY$3);
-
-        var _config = _objectSpread({}, Default$1, $this.data(), typeof config === 'object' && config ? config : {});
-
-        if (!data && _config.toggle && /show|hide/.test(config)) {
-          _config.toggle = false;
-        }
-
-        if (!data) {
-          data = new Collapse(this, _config);
-          $this.data(DATA_KEY$3, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Collapse, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$3;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$1;
-      }
-    }]);
-
-    return Collapse;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$3.CLICK_DATA_API, Selector$3.DATA_TOGGLE, function (event) {
-    // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
-    if (event.currentTarget.tagName === 'A') {
-      event.preventDefault();
     }
-
-    var $trigger = $(this);
-    var selector = Util.getSelectorFromElement(this);
-    var selectors = [].slice.call(document.querySelectorAll(selector));
-    $(selectors).each(function () {
-      var $target = $(this);
-      var data = $target.data(DATA_KEY$3);
-      var config = data ? 'toggle' : $trigger.data();
-
-      Collapse._jQueryInterface.call($target, config);
-    });
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$3] = Collapse._jQueryInterface;
-  $.fn[NAME$3].Constructor = Collapse;
-
-  $.fn[NAME$3].noConflict = function () {
-    $.fn[NAME$3] = JQUERY_NO_CONFLICT$3;
-    return Collapse._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$4 = 'dropdown';
-  var VERSION$4 = '4.3.1';
-  var DATA_KEY$4 = 'bs.dropdown';
-  var EVENT_KEY$4 = "." + DATA_KEY$4;
-  var DATA_API_KEY$4 = '.data-api';
-  var JQUERY_NO_CONFLICT$4 = $.fn[NAME$4];
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
-
-  var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
-
-  var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
-
-  var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
-
-  var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
-
-  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
-
-  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-  var Event$4 = {
-    HIDE: "hide" + EVENT_KEY$4,
-    HIDDEN: "hidden" + EVENT_KEY$4,
-    SHOW: "show" + EVENT_KEY$4,
-    SHOWN: "shown" + EVENT_KEY$4,
-    CLICK: "click" + EVENT_KEY$4,
-    CLICK_DATA_API: "click" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYDOWN_DATA_API: "keydown" + EVENT_KEY$4 + DATA_API_KEY$4,
-    KEYUP_DATA_API: "keyup" + EVENT_KEY$4 + DATA_API_KEY$4
-  };
-  var ClassName$4 = {
-    DISABLED: 'disabled',
-    SHOW: 'show',
-    DROPUP: 'dropup',
-    DROPRIGHT: 'dropright',
-    DROPLEFT: 'dropleft',
-    MENURIGHT: 'dropdown-menu-right',
-    MENULEFT: 'dropdown-menu-left',
-    POSITION_STATIC: 'position-static'
-  };
-  var Selector$4 = {
-    DATA_TOGGLE: '[data-toggle="dropdown"]',
-    FORM_CHILD: '.dropdown form',
-    MENU: '.dropdown-menu',
-    NAVBAR_NAV: '.navbar-nav',
-    VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
-  };
-  var AttachmentMap = {
-    TOP: 'top-start',
-    TOPEND: 'top-end',
-    BOTTOM: 'bottom-start',
-    BOTTOMEND: 'bottom-end',
-    RIGHT: 'right-start',
-    RIGHTEND: 'right-end',
-    LEFT: 'left-start',
-    LEFTEND: 'left-end'
-  };
-  var Default$2 = {
-    offset: 0,
-    flip: true,
-    boundary: 'scrollParent',
-    reference: 'toggle',
-    display: 'dynamic'
-  };
-  var DefaultType$2 = {
-    offset: '(number|string|function)',
-    flip: 'boolean',
-    boundary: '(string|element)',
-    reference: '(string|element)',
-    display: 'string'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Dropdown =
-  /*#__PURE__*/
-  function () {
-    function Dropdown(element, config) {
-      this._element = element;
-      this._popper = null;
-      this._config = this._getConfig(config);
-      this._menu = this._getMenuElement();
-      this._inNavbar = this._detectNavbar();
-
-      this._addEventListeners();
-    } // Getters
-
-
-    var _proto = Dropdown.prototype;
-
-    // Public
-    _proto.toggle = function toggle() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED)) {
-        return;
+  }, {
+    key: '_onValidateClick',
+    value: function _onValidateClick(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
       }
+      e.stopPropagation();
 
-      var parent = Dropdown._getParentFromElement(this._element);
+      this.save();
 
-      var isActive = $(this._menu).hasClass(ClassName$4.SHOW);
-
-      Dropdown._clearMenus();
-
-      if (isActive) {
-        return;
-      }
-
-      var relatedTarget = {
-        relatedTarget: this._element
-      };
-      var showEvent = $.Event(Event$4.SHOW, relatedTarget);
-      $(parent).trigger(showEvent);
-
-      if (showEvent.isDefaultPrevented()) {
-        return;
-      } // Disable totally Popper.js for Dropdown in Navbar
-
-
-      if (!this._inNavbar) {
-        /**
-         * Check for Popper dependency
-         * Popper - https://popper.js.org
-         */
-        if (typeof Popper === 'undefined') {
-          throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)');
-        }
-
-        var referenceElement = this._element;
-
-        if (this._config.reference === 'parent') {
-          referenceElement = parent;
-        } else if (Util.isElement(this._config.reference)) {
-          referenceElement = this._config.reference; // Check if it's jQuery element
-
-          if (typeof this._config.reference.jquery !== 'undefined') {
-            referenceElement = this._config.reference[0];
-          }
-        } // If boundary is not `scrollParent`, then set position to `static`
-        // to allow the menu to "escape" the scroll parent's boundaries
-        // https://github.com/twbs/bootstrap/issues/24251
-
-
-        if (this._config.boundary !== 'scrollParent') {
-          $(parent).addClass(ClassName$4.POSITION_STATIC);
-        }
-
-        this._popper = new Popper(referenceElement, this._menu, this._getPopperConfig());
-      } // If this is a touch-enabled device we add extra
-      // empty mouseover listeners to the body's immediate children;
-      // only needed because of broken event delegation on iOS
-      // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-
-
-      if ('ontouchstart' in document.documentElement && $(parent).closest(Selector$4.NAVBAR_NAV).length === 0) {
-        $(document.body).children().on('mouseover', null, $.noop);
-      }
-
-      this._element.focus();
-
-      this._element.setAttribute('aria-expanded', true);
-
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
-    };
-
-    _proto.show = function show() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || $(this._menu).hasClass(ClassName$4.SHOW)) {
-        return;
-      }
-
-      var relatedTarget = {
-        relatedTarget: this._element
-      };
-      var showEvent = $.Event(Event$4.SHOW, relatedTarget);
-
-      var parent = Dropdown._getParentFromElement(this._element);
-
-      $(parent).trigger(showEvent);
-
-      if (showEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.SHOWN, relatedTarget));
-    };
-
-    _proto.hide = function hide() {
-      if (this._element.disabled || $(this._element).hasClass(ClassName$4.DISABLED) || !$(this._menu).hasClass(ClassName$4.SHOW)) {
-        return;
-      }
-
-      var relatedTarget = {
-        relatedTarget: this._element
-      };
-      var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
-
-      var parent = Dropdown._getParentFromElement(this._element);
-
-      $(parent).trigger(hideEvent);
-
-      if (hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      $(this._menu).toggleClass(ClassName$4.SHOW);
-      $(parent).toggleClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$4);
-      $(this._element).off(EVENT_KEY$4);
-      this._element = null;
-      this._menu = null;
-
-      if (this._popper !== null) {
-        this._popper.destroy();
-
-        this._popper = null;
-      }
-    };
-
-    _proto.update = function update() {
-      this._inNavbar = this._detectNavbar();
-
-      if (this._popper !== null) {
-        this._popper.scheduleUpdate();
-      }
-    } // Private
-    ;
-
-    _proto._addEventListeners = function _addEventListeners() {
-      var _this = this;
-
-      $(this._element).on(Event$4.CLICK, function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        _this.toggle();
-      });
-    };
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, this.constructor.Default, $(this._element).data(), config);
-      Util.typeCheckConfig(NAME$4, config, this.constructor.DefaultType);
-      return config;
-    };
-
-    _proto._getMenuElement = function _getMenuElement() {
-      if (!this._menu) {
-        var parent = Dropdown._getParentFromElement(this._element);
-
-        if (parent) {
-          this._menu = parent.querySelector(Selector$4.MENU);
-        }
-      }
-
-      return this._menu;
-    };
-
-    _proto._getPlacement = function _getPlacement() {
-      var $parentDropdown = $(this._element.parentNode);
-      var placement = AttachmentMap.BOTTOM; // Handle dropup
-
-      if ($parentDropdown.hasClass(ClassName$4.DROPUP)) {
-        placement = AttachmentMap.TOP;
-
-        if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-          placement = AttachmentMap.TOPEND;
-        }
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPRIGHT)) {
-        placement = AttachmentMap.RIGHT;
-      } else if ($parentDropdown.hasClass(ClassName$4.DROPLEFT)) {
-        placement = AttachmentMap.LEFT;
-      } else if ($(this._menu).hasClass(ClassName$4.MENURIGHT)) {
-        placement = AttachmentMap.BOTTOMEND;
-      }
-
-      return placement;
-    };
-
-    _proto._detectNavbar = function _detectNavbar() {
-      return $(this._element).closest('.navbar').length > 0;
-    };
-
-    _proto._getOffset = function _getOffset() {
-      var _this2 = this;
-
-      var offset = {};
-
-      if (typeof this._config.offset === 'function') {
-        offset.fn = function (data) {
-          data.offsets = _objectSpread({}, data.offsets, _this2._config.offset(data.offsets, _this2._element) || {});
-          return data;
-        };
-      } else {
-        offset.offset = this._config.offset;
-      }
-
-      return offset;
-    };
-
-    _proto._getPopperConfig = function _getPopperConfig() {
-      var popperConfig = {
-        placement: this._getPlacement(),
-        modifiers: {
-          offset: this._getOffset(),
-          flip: {
-            enabled: this._config.flip
-          },
-          preventOverflow: {
-            boundariesElement: this._config.boundary
-          }
-        } // Disable Popper.js if we have a static display
-
-      };
-
-      if (this._config.display === 'static') {
-        popperConfig.modifiers.applyStyle = {
-          enabled: false
-        };
-      }
-
-      return popperConfig;
-    } // Static
-    ;
-
-    Dropdown._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$4);
-
-        var _config = typeof config === 'object' ? config : null;
-
-        if (!data) {
-          data = new Dropdown(this, _config);
-          $(this).data(DATA_KEY$4, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    Dropdown._clearMenus = function _clearMenus(event) {
-      if (event && (event.which === RIGHT_MOUSE_BUTTON_WHICH || event.type === 'keyup' && event.which !== TAB_KEYCODE)) {
-        return;
-      }
-
-      var toggles = [].slice.call(document.querySelectorAll(Selector$4.DATA_TOGGLE));
-
-      for (var i = 0, len = toggles.length; i < len; i++) {
-        var parent = Dropdown._getParentFromElement(toggles[i]);
-
-        var context = $(toggles[i]).data(DATA_KEY$4);
-        var relatedTarget = {
-          relatedTarget: toggles[i]
-        };
-
-        if (event && event.type === 'click') {
-          relatedTarget.clickEvent = event;
-        }
-
-        if (!context) {
-          continue;
-        }
-
-        var dropdownMenu = context._menu;
-
-        if (!$(parent).hasClass(ClassName$4.SHOW)) {
-          continue;
-        }
-
-        if (event && (event.type === 'click' && /input|textarea/i.test(event.target.tagName) || event.type === 'keyup' && event.which === TAB_KEYCODE) && $.contains(parent, event.target)) {
-          continue;
-        }
-
-        var hideEvent = $.Event(Event$4.HIDE, relatedTarget);
-        $(parent).trigger(hideEvent);
-
-        if (hideEvent.isDefaultPrevented()) {
-          continue;
-        } // If this is a touch-enabled device we remove the extra
-        // empty mouseover listeners we added for iOS support
-
-
-        if ('ontouchstart' in document.documentElement) {
-          $(document.body).children().off('mouseover', null, $.noop);
-        }
-
-        toggles[i].setAttribute('aria-expanded', 'false');
-        $(dropdownMenu).removeClass(ClassName$4.SHOW);
-        $(parent).removeClass(ClassName$4.SHOW).trigger($.Event(Event$4.HIDDEN, relatedTarget));
-      }
-    };
-
-    Dropdown._getParentFromElement = function _getParentFromElement(element) {
-      var parent;
-      var selector = Util.getSelectorFromElement(element);
-
-      if (selector) {
-        parent = document.querySelector(selector);
-      }
-
-      return parent || element.parentNode;
-    } // eslint-disable-next-line complexity
-    ;
-
-    Dropdown._dataApiKeydownHandler = function _dataApiKeydownHandler(event) {
-      // If not input/textarea:
-      //  - And not a key in REGEXP_KEYDOWN => not a dropdown command
-      // If input/textarea:
-      //  - If space key => not a dropdown command
-      //  - If key is other than escape
-      //    - If key is not up or down => not a dropdown command
-      //    - If trigger inside the menu => not a dropdown command
-      if (/input|textarea/i.test(event.target.tagName) ? event.which === SPACE_KEYCODE || event.which !== ESCAPE_KEYCODE && (event.which !== ARROW_DOWN_KEYCODE && event.which !== ARROW_UP_KEYCODE || $(event.target).closest(Selector$4.MENU).length) : !REGEXP_KEYDOWN.test(event.which)) {
-        return;
-      }
-
-      event.preventDefault();
-      event.stopPropagation();
-
-      if (this.disabled || $(this).hasClass(ClassName$4.DISABLED)) {
-        return;
-      }
-
-      var parent = Dropdown._getParentFromElement(this);
-
-      var isActive = $(parent).hasClass(ClassName$4.SHOW);
-
-      if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
-        if (event.which === ESCAPE_KEYCODE) {
-          var toggle = parent.querySelector(Selector$4.DATA_TOGGLE);
-          $(toggle).trigger('focus');
-        }
-
-        $(this).trigger('click');
-        return;
-      }
-
-      var items = [].slice.call(parent.querySelectorAll(Selector$4.VISIBLE_ITEMS));
-
-      if (items.length === 0) {
-        return;
-      }
-
-      var index = items.indexOf(event.target);
-
-      if (event.which === ARROW_UP_KEYCODE && index > 0) {
-        // Up
-        index--;
-      }
-
-      if (event.which === ARROW_DOWN_KEYCODE && index < items.length - 1) {
-        // Down
-        index++;
-      }
-
-      if (index < 0) {
-        index = 0;
-      }
-
-      items[index].focus();
-    };
-
-    _createClass(Dropdown, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$4;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$2;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$2;
-      }
-    }]);
-
-    return Dropdown;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$4.KEYDOWN_DATA_API, Selector$4.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event$4.KEYDOWN_DATA_API, Selector$4.MENU, Dropdown._dataApiKeydownHandler).on(Event$4.CLICK_DATA_API + " " + Event$4.KEYUP_DATA_API, Dropdown._clearMenus).on(Event$4.CLICK_DATA_API, Selector$4.DATA_TOGGLE, function (event) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    Dropdown._jQueryInterface.call($(this), 'toggle');
-  }).on(Event$4.CLICK_DATA_API, Selector$4.FORM_CHILD, function (e) {
-    e.stopPropagation();
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$4] = Dropdown._jQueryInterface;
-  $.fn[NAME$4].Constructor = Dropdown;
-
-  $.fn[NAME$4].noConflict = function () {
-    $.fn[NAME$4] = JQUERY_NO_CONFLICT$4;
-    return Dropdown._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$5 = 'modal';
-  var VERSION$5 = '4.3.1';
-  var DATA_KEY$5 = 'bs.modal';
-  var EVENT_KEY$5 = "." + DATA_KEY$5;
-  var DATA_API_KEY$5 = '.data-api';
-  var JQUERY_NO_CONFLICT$5 = $.fn[NAME$5];
-  var ESCAPE_KEYCODE$1 = 27; // KeyboardEvent.which value for Escape (Esc) key
-
-  var Default$3 = {
-    backdrop: true,
-    keyboard: true,
-    focus: true,
-    show: true
-  };
-  var DefaultType$3 = {
-    backdrop: '(boolean|string)',
-    keyboard: 'boolean',
-    focus: 'boolean',
-    show: 'boolean'
-  };
-  var Event$5 = {
-    HIDE: "hide" + EVENT_KEY$5,
-    HIDDEN: "hidden" + EVENT_KEY$5,
-    SHOW: "show" + EVENT_KEY$5,
-    SHOWN: "shown" + EVENT_KEY$5,
-    FOCUSIN: "focusin" + EVENT_KEY$5,
-    RESIZE: "resize" + EVENT_KEY$5,
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$5,
-    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY$5,
-    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY$5,
-    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY$5,
-    CLICK_DATA_API: "click" + EVENT_KEY$5 + DATA_API_KEY$5
-  };
-  var ClassName$5 = {
-    SCROLLABLE: 'modal-dialog-scrollable',
-    SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
-    BACKDROP: 'modal-backdrop',
-    OPEN: 'modal-open',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$5 = {
-    DIALOG: '.modal-dialog',
-    MODAL_BODY: '.modal-body',
-    DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
-    FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
-    STICKY_CONTENT: '.sticky-top'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Modal =
-  /*#__PURE__*/
-  function () {
-    function Modal(element, config) {
-      this._config = this._getConfig(config);
-      this._element = element;
-      this._dialog = element.querySelector(Selector$5.DIALOG);
-      this._backdrop = null;
-      this._isShown = false;
-      this._isBodyOverflowing = false;
-      this._ignoreBackdropClick = false;
-      this._isTransitioning = false;
-      this._scrollbarWidth = 0;
-    } // Getters
-
-
-    var _proto = Modal.prototype;
-
-    // Public
-    _proto.toggle = function toggle(relatedTarget) {
-      return this._isShown ? this.hide() : this.show(relatedTarget);
-    };
-
-    _proto.show = function show(relatedTarget) {
-      var _this = this;
-
-      if (this._isShown || this._isTransitioning) {
-        return;
-      }
-
-      if ($(this._element).hasClass(ClassName$5.FADE)) {
-        this._isTransitioning = true;
-      }
-
-      var showEvent = $.Event(Event$5.SHOW, {
-        relatedTarget: relatedTarget
-      });
-      $(this._element).trigger(showEvent);
-
-      if (this._isShown || showEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._isShown = true;
-
-      this._checkScrollbar();
-
-      this._setScrollbar();
-
-      this._adjustDialog();
-
-      this._setEscapeEvent();
-
-      this._setResizeEvent();
-
-      $(this._element).on(Event$5.CLICK_DISMISS, Selector$5.DATA_DISMISS, function (event) {
-        return _this.hide(event);
-      });
-      $(this._dialog).on(Event$5.MOUSEDOWN_DISMISS, function () {
-        $(_this._element).one(Event$5.MOUSEUP_DISMISS, function (event) {
-          if ($(event.target).is(_this._element)) {
-            _this._ignoreBackdropClick = true;
-          }
-        });
-      });
-
-      this._showBackdrop(function () {
-        return _this._showElement(relatedTarget);
-      });
-    };
-
-    _proto.hide = function hide(event) {
-      var _this2 = this;
-
-      if (event) {
-        event.preventDefault();
-      }
-
-      if (!this._isShown || this._isTransitioning) {
-        return;
-      }
-
-      var hideEvent = $.Event(Event$5.HIDE);
-      $(this._element).trigger(hideEvent);
-
-      if (!this._isShown || hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      this._isShown = false;
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
-
-      if (transition) {
-        this._isTransitioning = true;
-      }
-
-      this._setEscapeEvent();
-
-      this._setResizeEvent();
-
-      $(document).off(Event$5.FOCUSIN);
-      $(this._element).removeClass(ClassName$5.SHOW);
-      $(this._element).off(Event$5.CLICK_DISMISS);
-      $(this._dialog).off(Event$5.MOUSEDOWN_DISMISS);
-
-      if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, function (event) {
-          return _this2._hideModal(event);
-        }).emulateTransitionEnd(transitionDuration);
-      } else {
-        this._hideModal();
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      [window, this._element, this._dialog].forEach(function (htmlElement) {
-        return $(htmlElement).off(EVENT_KEY$5);
-      });
-      /**
-       * `document` has 2 events `Event.FOCUSIN` and `Event.CLICK_DATA_API`
-       * Do not move `document` in `htmlElements` array
-       * It will remove `Event.CLICK_DATA_API` event that should remain
-       */
-
-      $(document).off(Event$5.FOCUSIN);
-      $.removeData(this._element, DATA_KEY$5);
-      this._config = null;
-      this._element = null;
-      this._dialog = null;
-      this._backdrop = null;
-      this._isShown = null;
-      this._isBodyOverflowing = null;
-      this._ignoreBackdropClick = null;
-      this._isTransitioning = null;
-      this._scrollbarWidth = null;
-    };
-
-    _proto.handleUpdate = function handleUpdate() {
-      this._adjustDialog();
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, Default$3, config);
-      Util.typeCheckConfig(NAME$5, config, DefaultType$3);
-      return config;
-    };
-
-    _proto._showElement = function _showElement(relatedTarget) {
-      var _this3 = this;
-
-      var transition = $(this._element).hasClass(ClassName$5.FADE);
-
-      if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
-        // Don't move modal's DOM position
-        document.body.appendChild(this._element);
-      }
-
-      this._element.style.display = 'block';
-
-      this._element.removeAttribute('aria-hidden');
-
-      this._element.setAttribute('aria-modal', true);
-
-      if ($(this._dialog).hasClass(ClassName$5.SCROLLABLE)) {
-        this._dialog.querySelector(Selector$5.MODAL_BODY).scrollTop = 0;
-      } else {
-        this._element.scrollTop = 0;
-      }
-
-      if (transition) {
-        Util.reflow(this._element);
-      }
-
-      $(this._element).addClass(ClassName$5.SHOW);
-
-      if (this._config.focus) {
-        this._enforceFocus();
-      }
-
-      var shownEvent = $.Event(Event$5.SHOWN, {
-        relatedTarget: relatedTarget
-      });
-
-      var transitionComplete = function transitionComplete() {
-        if (_this3._config.focus) {
-          _this3._element.focus();
-        }
-
-        _this3._isTransitioning = false;
-        $(_this3._element).trigger(shownEvent);
-      };
-
-      if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
-        $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
-      } else {
-        transitionComplete();
-      }
-    };
-
-    _proto._enforceFocus = function _enforceFocus() {
-      var _this4 = this;
-
-      $(document).off(Event$5.FOCUSIN) // Guard against infinite focus loop
-      .on(Event$5.FOCUSIN, function (event) {
-        if (document !== event.target && _this4._element !== event.target && $(_this4._element).has(event.target).length === 0) {
-          _this4._element.focus();
-        }
-      });
-    };
-
-    _proto._setEscapeEvent = function _setEscapeEvent() {
-      var _this5 = this;
-
-      if (this._isShown && this._config.keyboard) {
-        $(this._element).on(Event$5.KEYDOWN_DISMISS, function (event) {
-          if (event.which === ESCAPE_KEYCODE$1) {
-            event.preventDefault();
-
-            _this5.hide();
-          }
-        });
-      } else if (!this._isShown) {
-        $(this._element).off(Event$5.KEYDOWN_DISMISS);
-      }
-    };
-
-    _proto._setResizeEvent = function _setResizeEvent() {
-      var _this6 = this;
-
-      if (this._isShown) {
-        $(window).on(Event$5.RESIZE, function (event) {
-          return _this6.handleUpdate(event);
-        });
-      } else {
-        $(window).off(Event$5.RESIZE);
-      }
-    };
-
-    _proto._hideModal = function _hideModal() {
-      var _this7 = this;
-
-      this._element.style.display = 'none';
-
-      this._element.setAttribute('aria-hidden', true);
-
-      this._element.removeAttribute('aria-modal');
-
-      this._isTransitioning = false;
-
-      this._showBackdrop(function () {
-        $(document.body).removeClass(ClassName$5.OPEN);
-
-        _this7._resetAdjustments();
-
-        _this7._resetScrollbar();
-
-        $(_this7._element).trigger(Event$5.HIDDEN);
-      });
-    };
-
-    _proto._removeBackdrop = function _removeBackdrop() {
-      if (this._backdrop) {
-        $(this._backdrop).remove();
-        this._backdrop = null;
-      }
-    };
-
-    _proto._showBackdrop = function _showBackdrop(callback) {
-      var _this8 = this;
-
-      var animate = $(this._element).hasClass(ClassName$5.FADE) ? ClassName$5.FADE : '';
-
-      if (this._isShown && this._config.backdrop) {
-        this._backdrop = document.createElement('div');
-        this._backdrop.className = ClassName$5.BACKDROP;
-
-        if (animate) {
-          this._backdrop.classList.add(animate);
-        }
-
-        $(this._backdrop).appendTo(document.body);
-        $(this._element).on(Event$5.CLICK_DISMISS, function (event) {
-          if (_this8._ignoreBackdropClick) {
-            _this8._ignoreBackdropClick = false;
-            return;
-          }
-
-          if (event.target !== event.currentTarget) {
-            return;
-          }
-
-          if (_this8._config.backdrop === 'static') {
-            _this8._element.focus();
-          } else {
-            _this8.hide();
-          }
-        });
-
-        if (animate) {
-          Util.reflow(this._backdrop);
-        }
-
-        $(this._backdrop).addClass(ClassName$5.SHOW);
-
-        if (!callback) {
-          return;
-        }
-
-        if (!animate) {
-          callback();
-          return;
-        }
-
-        var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
-        $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
-      } else if (!this._isShown && this._backdrop) {
-        $(this._backdrop).removeClass(ClassName$5.SHOW);
-
-        var callbackRemove = function callbackRemove() {
-          _this8._removeBackdrop();
-
-          if (callback) {
-            callback();
-          }
-        };
-
-        if ($(this._element).hasClass(ClassName$5.FADE)) {
-          var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
-
-          $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
-        } else {
-          callbackRemove();
-        }
-      } else if (callback) {
-        callback();
-      }
-    } // ----------------------------------------------------------------------
-    // the following methods are used to handle overflowing modals
-    // todo (fat): these should probably be refactored out of modal.js
-    // ----------------------------------------------------------------------
-    ;
-
-    _proto._adjustDialog = function _adjustDialog() {
-      var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
-
-      if (!this._isBodyOverflowing && isModalOverflowing) {
-        this._element.style.paddingLeft = this._scrollbarWidth + "px";
-      }
-
-      if (this._isBodyOverflowing && !isModalOverflowing) {
-        this._element.style.paddingRight = this._scrollbarWidth + "px";
-      }
-    };
-
-    _proto._resetAdjustments = function _resetAdjustments() {
-      this._element.style.paddingLeft = '';
-      this._element.style.paddingRight = '';
-    };
-
-    _proto._checkScrollbar = function _checkScrollbar() {
-      var rect = document.body.getBoundingClientRect();
-      this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
-      this._scrollbarWidth = this._getScrollbarWidth();
-    };
-
-    _proto._setScrollbar = function _setScrollbar() {
-      var _this9 = this;
-
-      if (this._isBodyOverflowing) {
-        // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
-        //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
-        var stickyContent = [].slice.call(document.querySelectorAll(Selector$5.STICKY_CONTENT)); // Adjust fixed content padding
-
-        $(fixedContent).each(function (index, element) {
-          var actualPadding = element.style.paddingRight;
-          var calculatedPadding = $(element).css('padding-right');
-          $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
-        }); // Adjust sticky content margin
-
-        $(stickyContent).each(function (index, element) {
-          var actualMargin = element.style.marginRight;
-          var calculatedMargin = $(element).css('margin-right');
-          $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
-        }); // Adjust body padding
-
-        var actualPadding = document.body.style.paddingRight;
-        var calculatedPadding = $(document.body).css('padding-right');
-        $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
-      }
-
-      $(document.body).addClass(ClassName$5.OPEN);
-    };
-
-    _proto._resetScrollbar = function _resetScrollbar() {
-      // Restore fixed content padding
-      var fixedContent = [].slice.call(document.querySelectorAll(Selector$5.FIXED_CONTENT));
-      $(fixedContent).each(function (index, element) {
-        var padding = $(element).data('padding-right');
-        $(element).removeData('padding-right');
-        element.style.paddingRight = padding ? padding : '';
-      }); // Restore sticky content
-
-      var elements = [].slice.call(document.querySelectorAll("" + Selector$5.STICKY_CONTENT));
-      $(elements).each(function (index, element) {
-        var margin = $(element).data('margin-right');
-
-        if (typeof margin !== 'undefined') {
-          $(element).css('margin-right', margin).removeData('margin-right');
-        }
-      }); // Restore body padding
-
-      var padding = $(document.body).data('padding-right');
-      $(document.body).removeData('padding-right');
-      document.body.style.paddingRight = padding ? padding : '';
-    };
-
-    _proto._getScrollbarWidth = function _getScrollbarWidth() {
-      // thx d.walsh
-      var scrollDiv = document.createElement('div');
-      scrollDiv.className = ClassName$5.SCROLLBAR_MEASURER;
-      document.body.appendChild(scrollDiv);
-      var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
-      document.body.removeChild(scrollDiv);
-      return scrollbarWidth;
-    } // Static
-    ;
-
-    Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$5);
-
-        var _config = _objectSpread({}, Default$3, $(this).data(), typeof config === 'object' && config ? config : {});
-
-        if (!data) {
-          data = new Modal(this, _config);
-          $(this).data(DATA_KEY$5, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config](relatedTarget);
-        } else if (_config.show) {
-          data.show(relatedTarget);
-        }
-      });
-    };
-
-    _createClass(Modal, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$5;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$3;
-      }
-    }]);
-
-    return Modal;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$5.CLICK_DATA_API, Selector$5.DATA_TOGGLE, function (event) {
-    var _this10 = this;
-
-    var target;
-    var selector = Util.getSelectorFromElement(this);
-
-    if (selector) {
-      target = document.querySelector(selector);
-    }
-
-    var config = $(target).data(DATA_KEY$5) ? 'toggle' : _objectSpread({}, $(target).data(), $(this).data());
-
-    if (this.tagName === 'A' || this.tagName === 'AREA') {
-      event.preventDefault();
-    }
-
-    var $target = $(target).one(Event$5.SHOW, function (showEvent) {
-      if (showEvent.isDefaultPrevented()) {
-        // Only register focus restorer if modal will actually get shown
-        return;
-      }
-
-      $target.one(Event$5.HIDDEN, function () {
-        if ($(_this10).is(':visible')) {
-          _this10.focus();
-        }
-      });
-    });
-
-    Modal._jQueryInterface.call($(target), config, this);
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$5] = Modal._jQueryInterface;
-  $.fn[NAME$5].Constructor = Modal;
-
-  $.fn[NAME$5].noConflict = function () {
-    $.fn[NAME$5] = JQUERY_NO_CONFLICT$5;
-    return Modal._jQueryInterface;
-  };
-
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): tools/sanitizer.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
-   */
-  var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
-  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
-  var DefaultWhitelist = {
-    // Global attributes allowed on any supplied element below.
-    '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
-    a: ['target', 'href', 'title', 'rel'],
-    area: [],
-    b: [],
-    br: [],
-    col: [],
-    code: [],
-    div: [],
-    em: [],
-    hr: [],
-    h1: [],
-    h2: [],
-    h3: [],
-    h4: [],
-    h5: [],
-    h6: [],
-    i: [],
-    img: ['src', 'alt', 'title', 'width', 'height'],
-    li: [],
-    ol: [],
-    p: [],
-    pre: [],
-    s: [],
-    small: [],
-    span: [],
-    sub: [],
-    sup: [],
-    strong: [],
-    u: [],
-    ul: []
-    /**
-     * A pattern that recognizes a commonly useful subset of URLs that are safe.
-     *
-     * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-     */
-
-  };
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
-  /**
-   * A pattern that matches safe data URLs. Only matches image, video and audio types.
-   *
-   * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
-   */
-
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
-
-  function allowedAttribute(attr, allowedAttributeList) {
-    var attrName = attr.nodeName.toLowerCase();
-
-    if (allowedAttributeList.indexOf(attrName) !== -1) {
-      if (uriAttrs.indexOf(attrName) !== -1) {
-        return Boolean(attr.nodeValue.match(SAFE_URL_PATTERN) || attr.nodeValue.match(DATA_URL_PATTERN));
-      }
-
-      return true;
-    }
-
-    var regExp = allowedAttributeList.filter(function (attrRegex) {
-      return attrRegex instanceof RegExp;
-    }); // Check if a regular expression validates the attribute.
-
-    for (var i = 0, l = regExp.length; i < l; i++) {
-      if (attrName.match(regExp[i])) {
-        return true;
+      if (this.options.displayMode !== 'inline') {
+        this._onClose(e);
       }
     }
+  }, {
+    key: '_onTodayClick',
+    value: function _onTodayClick(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
 
-    return false;
-  }
+      this.datePicker.value(new Date());
+      this.datePicker.refresh();
 
-  function sanitizeHtml(unsafeHtml, whiteList, sanitizeFn) {
-    if (unsafeHtml.length === 0) {
-      return unsafeHtml;
+      // TODO: check if closeOnSelect
+      this.save();
     }
+  }, {
+    key: '_onClearClick',
+    value: function _onClearClick(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
+      }
+      e.stopPropagation();
 
-    if (sanitizeFn && typeof sanitizeFn === 'function') {
-      return sanitizeFn(unsafeHtml);
+      this.clear();
     }
-
-    var domParser = new window.DOMParser();
-    var createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
-    var whitelistKeys = Object.keys(whiteList);
-    var elements = [].slice.call(createdDocument.body.querySelectorAll('*'));
-
-    var _loop = function _loop(i, len) {
-      var el = elements[i];
-      var elName = el.nodeName.toLowerCase();
-
-      if (whitelistKeys.indexOf(el.nodeName.toLowerCase()) === -1) {
-        el.parentNode.removeChild(el);
-        return "continue";
+  }, {
+    key: '_onCancelClick',
+    value: function _onCancelClick(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
       }
+      e.stopPropagation();
 
-      var attributeList = [].slice.call(el.attributes);
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || []);
-      attributeList.forEach(function (attr) {
-        if (!allowedAttribute(attr, whitelistedAttributes)) {
-          el.removeAttribute(attr.nodeName);
-        }
-      });
-    };
-
-    for (var i = 0, len = elements.length; i < len; i++) {
-      var _ret = _loop(i, len);
-
-      if (_ret === "continue") continue;
+      if (this._snapshots.length) {
+        this.datePicker = this._snapshots[0].datePicker;
+      }
+      this.save();
+      if (this.options.displayMode !== 'inline') {
+        this._onClose(e);
+      }
     }
-
-    return createdDocument.body.innerHTML;
-  }
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$6 = 'tooltip';
-  var VERSION$6 = '4.3.1';
-  var DATA_KEY$6 = 'bs.tooltip';
-  var EVENT_KEY$6 = "." + DATA_KEY$6;
-  var JQUERY_NO_CONFLICT$6 = $.fn[NAME$6];
-  var CLASS_PREFIX = 'bs-tooltip';
-  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
-  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
-  var DefaultType$4 = {
-    animation: 'boolean',
-    template: 'string',
-    title: '(string|element|function)',
-    trigger: 'string',
-    delay: '(number|object)',
-    html: 'boolean',
-    selector: '(string|boolean)',
-    placement: '(string|function)',
-    offset: '(number|string|function)',
-    container: '(string|element|boolean)',
-    fallbackPlacement: '(string|array)',
-    boundary: '(string|element)',
-    sanitize: 'boolean',
-    sanitizeFn: '(null|function)',
-    whiteList: 'object'
-  };
-  var AttachmentMap$1 = {
-    AUTO: 'auto',
-    TOP: 'top',
-    RIGHT: 'right',
-    BOTTOM: 'bottom',
-    LEFT: 'left'
-  };
-  var Default$4 = {
-    animation: true,
-    template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
-    trigger: 'hover focus',
-    title: '',
-    delay: 0,
-    html: false,
-    selector: false,
-    placement: 'top',
-    offset: 0,
-    container: false,
-    fallbackPlacement: 'flip',
-    boundary: 'scrollParent',
-    sanitize: true,
-    sanitizeFn: null,
-    whiteList: DefaultWhitelist
-  };
-  var HoverState = {
-    SHOW: 'show',
-    OUT: 'out'
-  };
-  var Event$6 = {
-    HIDE: "hide" + EVENT_KEY$6,
-    HIDDEN: "hidden" + EVENT_KEY$6,
-    SHOW: "show" + EVENT_KEY$6,
-    SHOWN: "shown" + EVENT_KEY$6,
-    INSERTED: "inserted" + EVENT_KEY$6,
-    CLICK: "click" + EVENT_KEY$6,
-    FOCUSIN: "focusin" + EVENT_KEY$6,
-    FOCUSOUT: "focusout" + EVENT_KEY$6,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$6,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$6
-  };
-  var ClassName$6 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$6 = {
-    TOOLTIP: '.tooltip',
-    TOOLTIP_INNER: '.tooltip-inner',
-    ARROW: '.arrow'
-  };
-  var Trigger = {
-    HOVER: 'hover',
-    FOCUS: 'focus',
-    CLICK: 'click',
-    MANUAL: 'manual'
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Tooltip =
-  /*#__PURE__*/
-  function () {
-    function Tooltip(element, config) {
-      /**
-       * Check for Popper dependency
-       * Popper - https://popper.js.org
-       */
-      if (typeof Popper === 'undefined') {
-        throw new TypeError('Bootstrap\'s tooltips require Popper.js (https://popper.js.org/)');
-      } // private
-
-
-      this._isEnabled = true;
-      this._timeout = 0;
-      this._hoverState = '';
-      this._activeTrigger = {};
-      this._popper = null; // Protected
-
-      this.element = element;
-      this.config = this._getConfig(config);
-      this.tip = null;
-
-      this._setListeners();
-    } // Getters
-
-
-    var _proto = Tooltip.prototype;
-
-    // Public
-    _proto.enable = function enable() {
-      this._isEnabled = true;
-    };
-
-    _proto.disable = function disable() {
-      this._isEnabled = false;
-    };
-
-    _proto.toggleEnabled = function toggleEnabled() {
-      this._isEnabled = !this._isEnabled;
-    };
-
-    _proto.toggle = function toggle(event) {
-      if (!this._isEnabled) {
-        return;
+  }, {
+    key: '_onClose',
+    value: function _onClose(e) {
+      if (!this._supportsPassive) {
+        e.preventDefault();
       }
+      e.stopPropagation();
 
-      if (event) {
-        var dataKey = this.constructor.DATA_KEY;
-        var context = $(event.currentTarget).data(dataKey);
-
-        if (!context) {
-          context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-          $(event.currentTarget).data(dataKey, context);
-        }
-
-        context._activeTrigger.click = !context._activeTrigger.click;
-
-        if (context._isWithActiveTrigger()) {
-          context._enter(null, context);
-        } else {
-          context._leave(null, context);
-        }
-      } else {
-        if ($(this.getTipElement()).hasClass(ClassName$6.SHOW)) {
-          this._leave(null, this);
-
-          return;
-        }
-
-        this._enter(null, this);
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      $.removeData(this.element, this.constructor.DATA_KEY);
-      $(this.element).off(this.constructor.EVENT_KEY);
-      $(this.element).closest('.modal').off('hide.bs.modal');
-
-      if (this.tip) {
-        $(this.tip).remove();
-      }
-
-      this._isEnabled = null;
-      this._timeout = null;
-      this._hoverState = null;
-      this._activeTrigger = null;
-
-      if (this._popper !== null) {
-        this._popper.destroy();
-      }
-
-      this._popper = null;
-      this.element = null;
-      this.config = null;
-      this.tip = null;
-    };
-
-    _proto.show = function show() {
-      var _this = this;
-
-      if ($(this.element).css('display') === 'none') {
-        throw new Error('Please use show on visible elements');
-      }
-
-      var showEvent = $.Event(this.constructor.Event.SHOW);
-
-      if (this.isWithContent() && this._isEnabled) {
-        $(this.element).trigger(showEvent);
-        var shadowRoot = Util.findShadowRoot(this.element);
-        var isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
-
-        if (showEvent.isDefaultPrevented() || !isInTheDom) {
-          return;
-        }
-
-        var tip = this.getTipElement();
-        var tipId = Util.getUID(this.constructor.NAME);
-        tip.setAttribute('id', tipId);
-        this.element.setAttribute('aria-describedby', tipId);
-        this.setContent();
-
-        if (this.config.animation) {
-          $(tip).addClass(ClassName$6.FADE);
-        }
-
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
-
-        var attachment = this._getAttachment(placement);
-
-        this.addAttachmentClass(attachment);
-
-        var container = this._getContainer();
-
-        $(tip).data(this.constructor.DATA_KEY, this);
-
-        if (!$.contains(this.element.ownerDocument.documentElement, this.tip)) {
-          $(tip).appendTo(container);
-        }
-
-        $(this.element).trigger(this.constructor.Event.INSERTED);
-        this._popper = new Popper(this.element, tip, {
-          placement: attachment,
-          modifiers: {
-            offset: this._getOffset(),
-            flip: {
-              behavior: this.config.fallbackPlacement
-            },
-            arrow: {
-              element: Selector$6.ARROW
-            },
-            preventOverflow: {
-              boundariesElement: this.config.boundary
-            }
-          },
-          onCreate: function onCreate(data) {
-            if (data.originalPlacement !== data.placement) {
-              _this._handlePopperPlacementChange(data);
-            }
-          },
-          onUpdate: function onUpdate(data) {
-            return _this._handlePopperPlacementChange(data);
-          }
-        });
-        $(tip).addClass(ClassName$6.SHOW); // If this is a touch-enabled device we add extra
-        // empty mouseover listeners to the body's immediate children;
-        // only needed because of broken event delegation on iOS
-        // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
-
-        if ('ontouchstart' in document.documentElement) {
-          $(document.body).children().on('mouseover', null, $.noop);
-        }
-
-        var complete = function complete() {
-          if (_this.config.animation) {
-            _this._fixTransition();
-          }
-
-          var prevHoverState = _this._hoverState;
-          _this._hoverState = null;
-          $(_this.element).trigger(_this.constructor.Event.SHOWN);
-
-          if (prevHoverState === HoverState.OUT) {
-            _this._leave(null, _this);
-          }
-        };
-
-        if ($(this.tip).hasClass(ClassName$6.FADE)) {
-          var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
-          $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-        } else {
-          complete();
-        }
-      }
-    };
-
-    _proto.hide = function hide(callback) {
-      var _this2 = this;
-
-      var tip = this.getTipElement();
-      var hideEvent = $.Event(this.constructor.Event.HIDE);
-
-      var complete = function complete() {
-        if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
-          tip.parentNode.removeChild(tip);
-        }
-
-        _this2._cleanTipClass();
-
-        _this2.element.removeAttribute('aria-describedby');
-
-        $(_this2.element).trigger(_this2.constructor.Event.HIDDEN);
-
-        if (_this2._popper !== null) {
-          _this2._popper.destroy();
-        }
-
-        if (callback) {
-          callback();
-        }
-      };
-
-      $(this.element).trigger(hideEvent);
-
-      if (hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      $(tip).removeClass(ClassName$6.SHOW); // If this is a touch-enabled device we remove the extra
-      // empty mouseover listeners we added for iOS support
-
-      if ('ontouchstart' in document.documentElement) {
-        $(document.body).children().off('mouseover', null, $.noop);
-      }
-
-      this._activeTrigger[Trigger.CLICK] = false;
-      this._activeTrigger[Trigger.FOCUS] = false;
-      this._activeTrigger[Trigger.HOVER] = false;
-
-      if ($(this.tip).hasClass(ClassName$6.FADE)) {
-        var transitionDuration = Util.getTransitionDurationFromElement(tip);
-        $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-
-      this._hoverState = '';
-    };
-
-    _proto.update = function update() {
-      if (this._popper !== null) {
-        this._popper.scheduleUpdate();
-      }
-    } // Protected
-    ;
-
-    _proto.isWithContent = function isWithContent() {
-      return Boolean(this.getTitle());
-    };
-
-    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX + "-" + attachment);
-    };
-
-    _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
-      return this.tip;
-    };
-
-    _proto.setContent = function setContent() {
-      var tip = this.getTipElement();
-      this.setElementContent($(tip.querySelectorAll(Selector$6.TOOLTIP_INNER)), this.getTitle());
-      $(tip).removeClass(ClassName$6.FADE + " " + ClassName$6.SHOW);
-    };
-
-    _proto.setElementContent = function setElementContent($element, content) {
-      if (typeof content === 'object' && (content.nodeType || content.jquery)) {
-        // Content is a DOM node or a jQuery
-        if (this.config.html) {
-          if (!$(content).parent().is($element)) {
-            $element.empty().append(content);
-          }
-        } else {
-          $element.text($(content).text());
-        }
-
-        return;
-      }
-
-      if (this.config.html) {
-        if (this.config.sanitize) {
-          content = sanitizeHtml(content, this.config.whiteList, this.config.sanitizeFn);
-        }
-
-        $element.html(content);
-      } else {
-        $element.text(content);
-      }
-    };
-
-    _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
-
-      if (!title) {
-        title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
-      }
-
-      return title;
-    } // Private
-    ;
-
-    _proto._getOffset = function _getOffset() {
-      var _this3 = this;
-
-      var offset = {};
-
-      if (typeof this.config.offset === 'function') {
-        offset.fn = function (data) {
-          data.offsets = _objectSpread({}, data.offsets, _this3.config.offset(data.offsets, _this3.element) || {});
-          return data;
-        };
-      } else {
-        offset.offset = this.config.offset;
-      }
-
-      return offset;
-    };
-
-    _proto._getContainer = function _getContainer() {
-      if (this.config.container === false) {
-        return document.body;
-      }
-
-      if (Util.isElement(this.config.container)) {
-        return $(this.config.container);
-      }
-
-      return $(document).find(this.config.container);
-    };
-
-    _proto._getAttachment = function _getAttachment(placement) {
-      return AttachmentMap$1[placement.toUpperCase()];
-    };
-
-    _proto._setListeners = function _setListeners() {
-      var _this4 = this;
-
-      var triggers = this.config.trigger.split(' ');
-      triggers.forEach(function (trigger) {
-        if (trigger === 'click') {
-          $(_this4.element).on(_this4.constructor.Event.CLICK, _this4.config.selector, function (event) {
-            return _this4.toggle(event);
-          });
-        } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSEENTER : _this4.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this4.constructor.Event.MOUSELEAVE : _this4.constructor.Event.FOCUSOUT;
-          $(_this4.element).on(eventIn, _this4.config.selector, function (event) {
-            return _this4._enter(event);
-          }).on(eventOut, _this4.config.selector, function (event) {
-            return _this4._leave(event);
-          });
-        }
-      });
-      $(this.element).closest('.modal').on('hide.bs.modal', function () {
-        if (_this4.element) {
-          _this4.hide();
-        }
-      });
-
-      if (this.config.selector) {
-        this.config = _objectSpread({}, this.config, {
-          trigger: 'manual',
-          selector: ''
-        });
-      } else {
-        this._fixTitle();
-      }
-    };
-
-    _proto._fixTitle = function _fixTitle() {
-      var titleType = typeof this.element.getAttribute('data-original-title');
-
-      if (this.element.getAttribute('title') || titleType !== 'string') {
-        this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
-        this.element.setAttribute('title', '');
-      }
-    };
-
-    _proto._enter = function _enter(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-      context = context || $(event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusin' ? Trigger.FOCUS : Trigger.HOVER] = true;
-      }
-
-      if ($(context.getTipElement()).hasClass(ClassName$6.SHOW) || context._hoverState === HoverState.SHOW) {
-        context._hoverState = HoverState.SHOW;
-        return;
-      }
-
-      clearTimeout(context._timeout);
-      context._hoverState = HoverState.SHOW;
-
-      if (!context.config.delay || !context.config.delay.show) {
-        context.show();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.SHOW) {
-          context.show();
-        }
-      }, context.config.delay.show);
-    };
-
-    _proto._leave = function _leave(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
-      context = context || $(event.currentTarget).data(dataKey);
-
-      if (!context) {
-        context = new this.constructor(event.currentTarget, this._getDelegateConfig());
-        $(event.currentTarget).data(dataKey, context);
-      }
-
-      if (event) {
-        context._activeTrigger[event.type === 'focusout' ? Trigger.FOCUS : Trigger.HOVER] = false;
-      }
-
-      if (context._isWithActiveTrigger()) {
-        return;
-      }
-
-      clearTimeout(context._timeout);
-      context._hoverState = HoverState.OUT;
-
-      if (!context.config.delay || !context.config.delay.hide) {
-        context.hide();
-        return;
-      }
-
-      context._timeout = setTimeout(function () {
-        if (context._hoverState === HoverState.OUT) {
-          context.hide();
-        }
-      }, context.config.delay.hide);
-    };
-
-    _proto._isWithActiveTrigger = function _isWithActiveTrigger() {
-      for (var trigger in this._activeTrigger) {
-        if (this._activeTrigger[trigger]) {
-          return true;
-        }
-      }
-
-      return false;
-    };
-
-    _proto._getConfig = function _getConfig(config) {
-      var dataAttributes = $(this.element).data();
-      Object.keys(dataAttributes).forEach(function (dataAttr) {
-        if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
-          delete dataAttributes[dataAttr];
-        }
-      });
-      config = _objectSpread({}, this.constructor.Default, dataAttributes, typeof config === 'object' && config ? config : {});
-
-      if (typeof config.delay === 'number') {
-        config.delay = {
-          show: config.delay,
-          hide: config.delay
-        };
-      }
-
-      if (typeof config.title === 'number') {
-        config.title = config.title.toString();
-      }
-
-      if (typeof config.content === 'number') {
-        config.content = config.content.toString();
-      }
-
-      Util.typeCheckConfig(NAME$6, config, this.constructor.DefaultType);
-
-      if (config.sanitize) {
-        config.template = sanitizeHtml(config.template, config.whiteList, config.sanitizeFn);
-      }
-
-      return config;
-    };
-
-    _proto._getDelegateConfig = function _getDelegateConfig() {
-      var config = {};
-
-      if (this.config) {
-        for (var key in this.config) {
-          if (this.constructor.Default[key] !== this.config[key]) {
-            config[key] = this.config[key];
-          }
-        }
-      }
-
-      return config;
-    };
-
-    _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
-
-      if (tabClass !== null && tabClass.length) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    };
-
-    _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      var popperInstance = popperData.instance;
-      this.tip = popperInstance.popper;
-
-      this._cleanTipClass();
-
-      this.addAttachmentClass(this._getAttachment(popperData.placement));
-    };
-
-    _proto._fixTransition = function _fixTransition() {
-      var tip = this.getTipElement();
-      var initConfigAnimation = this.config.animation;
-
-      if (tip.getAttribute('x-placement') !== null) {
-        return;
-      }
-
-      $(tip).removeClass(ClassName$6.FADE);
-      this.config.animation = false;
       this.hide();
-      this.show();
-      this.config.animation = initConfigAnimation;
-    } // Static
-    ;
-
-    Tooltip._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$6);
-
-        var _config = typeof config === 'object' && config;
-
-        if (!data && /dispose|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Tooltip(this, _config);
-          $(this).data(DATA_KEY$6, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Tooltip, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$6;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$4;
-      }
-    }, {
-      key: "NAME",
-      get: function get() {
-        return NAME$6;
-      }
-    }, {
-      key: "DATA_KEY",
-      get: function get() {
-        return DATA_KEY$6;
-      }
-    }, {
-      key: "Event",
-      get: function get() {
-        return Event$6;
-      }
-    }, {
-      key: "EVENT_KEY",
-      get: function get() {
-        return EVENT_KEY$6;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$4;
-      }
-    }]);
-
-    return Tooltip;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-
-  $.fn[NAME$6] = Tooltip._jQueryInterface;
-  $.fn[NAME$6].Constructor = Tooltip;
-
-  $.fn[NAME$6].noConflict = function () {
-    $.fn[NAME$6] = JQUERY_NO_CONFLICT$6;
-    return Tooltip._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$7 = 'popover';
-  var VERSION$7 = '4.3.1';
-  var DATA_KEY$7 = 'bs.popover';
-  var EVENT_KEY$7 = "." + DATA_KEY$7;
-  var JQUERY_NO_CONFLICT$7 = $.fn[NAME$7];
-  var CLASS_PREFIX$1 = 'bs-popover';
-  var BSCLS_PREFIX_REGEX$1 = new RegExp("(^|\\s)" + CLASS_PREFIX$1 + "\\S+", 'g');
-
-  var Default$5 = _objectSpread({}, Tooltip.Default, {
-    placement: 'right',
-    trigger: 'click',
-    content: '',
-    template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
-  });
-
-  var DefaultType$5 = _objectSpread({}, Tooltip.DefaultType, {
-    content: '(string|element|function)'
-  });
-
-  var ClassName$7 = {
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$7 = {
-    TITLE: '.popover-header',
-    CONTENT: '.popover-body'
-  };
-  var Event$7 = {
-    HIDE: "hide" + EVENT_KEY$7,
-    HIDDEN: "hidden" + EVENT_KEY$7,
-    SHOW: "show" + EVENT_KEY$7,
-    SHOWN: "shown" + EVENT_KEY$7,
-    INSERTED: "inserted" + EVENT_KEY$7,
-    CLICK: "click" + EVENT_KEY$7,
-    FOCUSIN: "focusin" + EVENT_KEY$7,
-    FOCUSOUT: "focusout" + EVENT_KEY$7,
-    MOUSEENTER: "mouseenter" + EVENT_KEY$7,
-    MOUSELEAVE: "mouseleave" + EVENT_KEY$7
-    /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
-     */
-
-  };
-
-  var Popover =
-  /*#__PURE__*/
-  function (_Tooltip) {
-    _inheritsLoose(Popover, _Tooltip);
-
-    function Popover() {
-      return _Tooltip.apply(this, arguments) || this;
     }
 
-    var _proto = Popover.prototype;
+    /****************************************************
+     *                                                  *
+     * PUBLIC FUNCTIONS                                 *
+     *                                                  *
+     ****************************************************/
 
-    // Overrides
-    _proto.isWithContent = function isWithContent() {
-      return this.getTitle() || this._getContent();
-    };
+  }, {
+    key: 'isRange',
+    value: function isRange() {
+      return this.options.isRange;
+    }
 
-    _proto.addAttachmentClass = function addAttachmentClass(attachment) {
-      $(this.getTipElement()).addClass(CLASS_PREFIX$1 + "-" + attachment);
-    };
-
-    _proto.getTipElement = function getTipElement() {
-      this.tip = this.tip || $(this.config.template)[0];
-      return this.tip;
-    };
-
-    _proto.setContent = function setContent() {
-      var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
-
-      this.setElementContent($tip.find(Selector$7.TITLE), this.getTitle());
-
-      var content = this._getContent();
-
-      if (typeof content === 'function') {
-        content = content.call(this.element);
-      }
-
-      this.setElementContent($tip.find(Selector$7.CONTENT), content);
-      $tip.removeClass(ClassName$7.FADE + " " + ClassName$7.SHOW);
-    } // Private
-    ;
-
-    _proto._getContent = function _getContent() {
-      return this.element.getAttribute('data-content') || this.config.content;
-    };
-
-    _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX$1);
-
-      if (tabClass !== null && tabClass.length > 0) {
-        $tip.removeClass(tabClass.join(''));
-      }
-    } // Static
-    ;
-
-    Popover._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$7);
-
-        var _config = typeof config === 'object' ? config : null;
-
-        if (!data && /dispose|hide/.test(config)) {
-          return;
-        }
-
-        if (!data) {
-          data = new Popover(this, _config);
-          $(this).data(DATA_KEY$7, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Popover, null, [{
-      key: "VERSION",
-      // Getters
-      get: function get() {
-        return VERSION$7;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$5;
-      }
-    }, {
-      key: "NAME",
-      get: function get() {
-        return NAME$7;
-      }
-    }, {
-      key: "DATA_KEY",
-      get: function get() {
-        return DATA_KEY$7;
-      }
-    }, {
-      key: "Event",
-      get: function get() {
-        return Event$7;
-      }
-    }, {
-      key: "EVENT_KEY",
-      get: function get() {
-        return EVENT_KEY$7;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$5;
-      }
-    }]);
-
-    return Popover;
-  }(Tooltip);
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-
-  $.fn[NAME$7] = Popover._jQueryInterface;
-  $.fn[NAME$7].Constructor = Popover;
-
-  $.fn[NAME$7].noConflict = function () {
-    $.fn[NAME$7] = JQUERY_NO_CONFLICT$7;
-    return Popover._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$8 = 'scrollspy';
-  var VERSION$8 = '4.3.1';
-  var DATA_KEY$8 = 'bs.scrollspy';
-  var EVENT_KEY$8 = "." + DATA_KEY$8;
-  var DATA_API_KEY$6 = '.data-api';
-  var JQUERY_NO_CONFLICT$8 = $.fn[NAME$8];
-  var Default$6 = {
-    offset: 10,
-    method: 'auto',
-    target: ''
-  };
-  var DefaultType$6 = {
-    offset: 'number',
-    method: 'string',
-    target: '(string|element)'
-  };
-  var Event$8 = {
-    ACTIVATE: "activate" + EVENT_KEY$8,
-    SCROLL: "scroll" + EVENT_KEY$8,
-    LOAD_DATA_API: "load" + EVENT_KEY$8 + DATA_API_KEY$6
-  };
-  var ClassName$8 = {
-    DROPDOWN_ITEM: 'dropdown-item',
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active'
-  };
-  var Selector$8 = {
-    DATA_SPY: '[data-spy="scroll"]',
-    ACTIVE: '.active',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    NAV_LINKS: '.nav-link',
-    NAV_ITEMS: '.nav-item',
-    LIST_ITEMS: '.list-group-item',
-    DROPDOWN: '.dropdown',
-    DROPDOWN_ITEMS: '.dropdown-item',
-    DROPDOWN_TOGGLE: '.dropdown-toggle'
-  };
-  var OffsetMethod = {
-    OFFSET: 'offset',
-    POSITION: 'position'
     /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
+     * Returns true if datetime picker is open, otherwise false.
+     * @method isOpen
+     * @return {boolean}
      */
 
-  };
+  }, {
+    key: 'isOpen',
+    value: function isOpen() {
+      return this._open;
+    }
 
-  var ScrollSpy =
-  /*#__PURE__*/
-  function () {
-    function ScrollSpy(element, config) {
-      var _this = this;
+    /**
+     * Get / Set ement value
+     * @param {*} date 
+     */
 
-      this._element = element;
-      this._scrollElement = element.tagName === 'BODY' ? window : element;
-      this._config = this._getConfig(config);
-      this._selector = this._config.target + " " + Selector$8.NAV_LINKS + "," + (this._config.target + " " + Selector$8.LIST_ITEMS + ",") + (this._config.target + " " + Selector$8.DROPDOWN_ITEMS);
-      this._offsets = [];
-      this._targets = [];
-      this._activeTarget = null;
-      this._scrollHeight = 0;
-      $(this._scrollElement).on(Event$8.SCROLL, function (event) {
-        return _this._process(event);
-      });
-      this.refresh();
+  }, {
+    key: 'value',
+    value: function value() {
+      var _value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-      this._process();
-    } // Getters
-
-
-    var _proto = ScrollSpy.prototype;
-
-    // Public
-    _proto.refresh = function refresh() {
-      var _this2 = this;
-
-      var autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
-      var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
-      this._offsets = [];
-      this._targets = [];
-      this._scrollHeight = this._getScrollHeight();
-      var targets = [].slice.call(document.querySelectorAll(this._selector));
-      targets.map(function (element) {
-        var target;
-        var targetSelector = Util.getSelectorFromElement(element);
-
-        if (targetSelector) {
-          target = document.querySelector(targetSelector);
-        }
-
-        if (target) {
-          var targetBCR = target.getBoundingClientRect();
-
-          if (targetBCR.width || targetBCR.height) {
-            // TODO (fat): remove sketch reliance on jQuery position/offset
-            return [$(target)[offsetMethod]().top + offsetBase, targetSelector];
-          }
-        }
-
-        return null;
-      }).filter(function (item) {
-        return item;
-      }).sort(function (a, b) {
-        return a[0] - b[0];
-      }).forEach(function (item) {
-        _this2._offsets.push(item[0]);
-
-        _this2._targets.push(item[1]);
-      });
-    };
-
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$8);
-      $(this._scrollElement).off(EVENT_KEY$8);
-      this._element = null;
-      this._scrollElement = null;
-      this._config = null;
-      this._selector = null;
-      this._offsets = null;
-      this._targets = null;
-      this._activeTarget = null;
-      this._scrollHeight = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, Default$6, typeof config === 'object' && config ? config : {});
-
-      if (typeof config.target !== 'string') {
-        var id = $(config.target).attr('id');
-
-        if (!id) {
-          id = Util.getUID(NAME$8);
-          $(config.target).attr('id', id);
-        }
-
-        config.target = "#" + id;
+      if (_value) {
+        this.datePicker.value(_value);
+        this.refresh();
+      } else {
+        return this.datePicker.value();
+      }
+    }
+  }, {
+    key: 'refresh',
+    value: function refresh() {
+      this._ui.header.start.day.innerHTML = this.datePicker.start ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.start, 'DD', {
+        locale: this.locale
+      }) : '--';
+      this._ui.header.start.month.innerHTML = this.datePicker.start ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.start, 'MMMM YYYY', {
+        locale: this.locale
+      }) : '';
+      if (this.datePicker.start) {
+        this._ui.header.start.weekday.classList.remove('is-hidden');
+        this._ui.header.start.weekday.innerHTML = this.datePicker.start ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.start, 'dddd', {
+          locale: this.locale
+        }) : '';
+      } else {
+        this._ui.header.start.weekday.classList.add('is-hidden');
       }
 
-      Util.typeCheckConfig(NAME$8, config, DefaultType$6);
-      return config;
-    };
+      if (this._ui.header.end) {
+        this._ui.header.end.day.innerHTML = this.options.isRange && this.datePicker.end ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.end, 'DD', {
+          locale: this.locale
+        }) : '--';
+        this._ui.header.end.month.innerHTML = this.options.isRange && this.datePicker.end ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.end, 'MMMM YYYY', {
+          locale: this.locale
+        }) : '';
+        if (this.datePicker.end) {
+          this._ui.header.end.weekday.classList.remove('is-hidden');
+          this._ui.header.end.weekday.innerHTML = this.datePicker.end ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.datePicker.end, 'dddd', {
+            locale: this.locale
+          }) : '';
+        } else {
+          this._ui.header.end.weekday.classList.add('is-hidden');
+        }
+      }
+      this.datePicker.refresh();
+      this.emit('refresh', this);
+    }
+  }, {
+    key: 'clear',
+    value: function clear() {
+      this.datePicker.clear();
 
-    _proto._getScrollTop = function _getScrollTop() {
-      return this._scrollElement === window ? this._scrollElement.pageYOffset : this._scrollElement.scrollTop;
-    };
+      this.refresh();
+      this.element.value = '';
+      this.emit('clear', this);
+    }
 
-    _proto._getScrollHeight = function _getScrollHeight() {
-      return this._scrollElement.scrollHeight || Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-    };
+    /**
+     * Show datePicker HTML Component
+     * @method show
+     * @return {void}
+     */
 
-    _proto._getOffsetHeight = function _getOffsetHeight() {
-      return this._scrollElement === window ? window.innerHeight : this._scrollElement.getBoundingClientRect().height;
-    };
+  }, {
+    key: 'show',
+    value: function show() {
+      this._snapshots = [];
+      this.snapshot();
 
-    _proto._process = function _process() {
-      var scrollTop = this._getScrollTop() + this._config.offset;
-
-      var scrollHeight = this._getScrollHeight();
-
-      var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
-
-      if (this._scrollHeight !== scrollHeight) {
+      if (this.element.value) {
+        this.datePicker.value(this.element.value);
         this.refresh();
       }
 
-      if (scrollTop >= maxScroll) {
-        var target = this._targets[this._targets.length - 1];
+      this.datePicker.show();
 
-        if (this._activeTarget !== target) {
-          this._activate(target);
+      if (this._ui.modal) {
+        this._ui.modal.classList.add('is-active');
+      }
+      this._ui.wrapper.classList.add('is-active');
+      this._open = true;
+      this.emit('show', this);
+    }
+
+    /**
+     * Hide datePicker HTML Component
+     * @method hide
+     * @return {void}
+     */
+
+  }, {
+    key: 'hide',
+    value: function hide() {
+      this._open = false;
+      this._focus = false;
+      if (this._ui.modal) {
+        this._ui.modal.classList.remove('is-active');
+      }
+      this._ui.wrapper.classList.remove('is-active');
+      this.emit('hide', this);
+    }
+
+    // Set element value to datetime selected based on format
+
+  }, {
+    key: 'save',
+    value: function save() {
+      var date = this.value();
+      this.element.value = date;
+    }
+  }, {
+    key: 'snapshot',
+    value: function snapshot() {}
+    // this._snapshots.push([
+    //   ...this.datePicker,
+    //   ...this.timePicker
+    // ]);
+
+
+    /**
+     * Destroy datePicker
+     * @method destroy
+     * @return {[type]} [description]
+     */
+
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this._ui.wrapper.remove();
+    }
+
+    /****************************************************
+     *                                                  *
+     * PRIVATE FUNCTIONS                                *
+     *                                                  *
+     ****************************************************/
+    /**
+     * Initiate plugin instance
+     * @method _init
+     * @return {datePicker} Current plugin instance
+     */
+
+  }, {
+    key: '_init',
+    value: function _init() {
+      this._open = false;
+      this._snapshots = []; // Use to revert selection
+      // Change element type to prevent browser default type="date" behavior
+      this.element.setAttribute('type', 'text');
+      this.datePicker = new __WEBPACK_IMPORTED_MODULE_4__datePicker__["a" /* default */](_extends({}, this.options, {
+        lang: this.lang
+      }));
+
+      if (this.element.value) {
+        this.datePicker.value(this.element.value);
+      }
+
+      this.lang = this.options.lang;
+      // Set export format based on component type
+      this.format = this._type === 'date' ? this.options.dateFormat : '' + this.options.dateFormat;
+
+      // Force dialog display mode on mobile devices
+      if (this.options.displayMode === 'default' && window.matchMedia('screen and (max-width: 768px)').matches) {
+        this.options.displayMode = 'dialog';
+      }
+      if (window.matchMedia('screen and (max-width: 768px)').matches) {
+        if (this.options.displayMode === 'default') {
+          this.options.displayMode = 'dialog';
         }
-
-        return;
+        this.options.displayDual = false;
       }
 
-      if (this._activeTarget && scrollTop < this._offsets[0] && this._offsets[0] > 0) {
-        this._activeTarget = null;
+      this._build();
+      this._bindEvents();
+      this.save();
 
-        this._clear();
+      this.emit('ready', this);
+    }
 
-        return;
-      }
+    /**
+     * Build datePicker HTML component and bulmaCalendarend it to the DOM
+     * @method _build
+     * @return {datePicker} Current plugin instance
+     */
 
-      var offsetLength = this._offsets.length;
+  }, {
+    key: '_build',
+    value: function _build() {
+      var headerNode = document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_7__templates_header__["a" /* default */])(_extends({}, this.options, {
+        type: this._type,
+        datePicker: this.options.type !== 'time'
+      })));
+      var footerNode = document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_8__templates_footer__["a" /* default */])(this.options));
+      var elementNode = document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_6__templates__["a" /* default */])(_extends({}, this.options, {
+        id: this.id
+      })));
 
-      for (var i = offsetLength; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
-
-        if (isActiveTarget) {
-          this._activate(this._targets[i]);
+      // Save pointer to each datePicker element for later use
+      this._ui = {
+        modal: elementNode.querySelector('.modal'),
+        wrapper: elementNode.querySelector('.bulma-datepicker'),
+        container: elementNode.querySelector('.bulma-datepicker-container'),
+        calendar: elementNode.querySelector('.ement'),
+        overlay: this.options.displayMode === 'dialog' ? {
+          background: elementNode.querySelector('.modal-background'),
+          close: elementNode.querySelector('.modal-close')
+        } : undefined,
+        header: {
+          container: headerNode.querySelector('.bulma-datepicker-header'),
+          start: {
+            container: headerNode.querySelector('.bulma-datepicker-selection-start'),
+            day: headerNode.querySelector('.bulma-datepicker-selection-start .bulma-datepicker-selection-day'),
+            month: headerNode.querySelector('.bulma-datepicker-selection-start .bulma-datepicker-selection-month'),
+            weekday: headerNode.querySelector('.bulma-datepicker-selection-start .bulma-datepicker-selection-weekday'),
+            empty: headerNode.querySelector('.bulma-datepicker-selection-start .empty')
+          },
+          end: this.options.isRange ? {
+            container: headerNode.querySelector('.bulma-datepicker-selection-end'),
+            day: headerNode.querySelector('.bulma-datepicker-selection-end .bulma-datepicker-selection-day'),
+            month: headerNode.querySelector('.bulma-datepicker-selection-end .bulma-datepicker-selection-month'),
+            weekday: headerNode.querySelector('.bulma-datepicker-selection-end .bulma-datepicker-selection-weekday'),
+            empty: headerNode.querySelector('.bulma-datepicker-selection-start .empty')
+          } : undefined
+        },
+        footer: {
+          container: footerNode.querySelector('.bulma-datepicker-footer'),
+          validate: footerNode.querySelector('.bulma-datepicker-footer-validate'),
+          today: footerNode.querySelector('.bulma-datepicker-footer-today'),
+          clear: footerNode.querySelector('.bulma-datepicker-footer-clear'),
+          cancel: footerNode.querySelector('.bulma-datepicker-footer-cancel')
         }
+      };
+
+      if (!this.options.showHeader) {
+        this._ui.header.container.classList.add('is-hidden');
       }
-    };
+      if (!this.options.showFooter) {
+        this._ui.footer.container.classList.add('is-hidden');
+      }
+      if (!this.options.showTodayButton) {
+        this._ui.footer.today.classList.add('is-hidden');
+      }
+      if (!this.options.showClearButton) {
+        this._ui.footer.clear.classList.add('is-hidden');
+      }
 
-    _proto._activate = function _activate(target) {
-      this._activeTarget = target;
+      if (this.options.closeOnSelect && this._ui.footer.validate) {
+        this._ui.footer.validate.classList.add('is-hidden');
+      }
 
-      this._clear();
+      this._ui.container.appendChild(headerNode);
+      this._ui.container.appendChild(this.datePicker.render());
 
-      var queries = this._selector.split(',').map(function (selector) {
-        return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
-      });
+      this._ui.wrapper.appendChild(footerNode);
+      this._ui.wrapper.classList.add('is-' + this.options.color);
+      // Add datepicker HTML element to Document Body
+      this.element.parentNode.insertBefore(elementNode, this.element.nextSibling);
+      // this.element.classList.add('is-hidden');
 
-      var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
+      if (this.element.getAttribute('type') === 'date') {
+        this.element.setAttributes('type', 'text');
+      }
 
-      if ($link.hasClass(ClassName$8.DROPDOWN_ITEM)) {
-        $link.closest(Selector$8.DROPDOWN).find(Selector$8.DROPDOWN_TOGGLE).addClass(ClassName$8.ACTIVE);
-        $link.addClass(ClassName$8.ACTIVE);
+      if (this.options.displayMode === 'inline') {
+        this._ui.wrapper.classList.add('is-active');
+        this.element.classList.add('is-hidden');
       } else {
-        // Set triggered link as active
-        $link.addClass(ClassName$8.ACTIVE); // Set triggered links parents as active
-        // With both <ul> and <nav> markup a parent is the previous sibling of any nav ancestor
+        this._ui.wrapper.style.position = 'absolute';
+        this._ui.wrapper.classList.add('is-datetimepicker-default');
+      }
+      this.refresh();
+    }
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_LINKS + ", " + Selector$8.LIST_ITEMS).addClass(ClassName$8.ACTIVE); // Handle special case when .nav-link is inside .nav-item
+    /**
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
+     */
 
-        $link.parents(Selector$8.NAV_LIST_GROUP).prev(Selector$8.NAV_ITEMS).children(Selector$8.NAV_LINKS).addClass(ClassName$8.ACTIVE);
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      var _this2 = this;
+
+      this._clickEvents.forEach(function (clickEvent) {
+        document.body.addEventListener(clickEvent, _this2._onDocumentClick);
+      });
+
+      this.datePicker.on('select', this._onSelectDate);
+      this.datePicker.on('select:start', this._onSelectDate);
+      this.datePicker.on('select:end', this._onSelectDate);
+
+      // Bind event to element in order to display/hide datePicker on click
+      if (this.options.toggleOnInputClick === true) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this2.element.addEventListener(clickEvent, _this2._onToggle);
+        });
       }
 
-      $(this._scrollElement).trigger(Event$8.ACTIVATE, {
-        relatedTarget: target
-      });
-    };
-
-    _proto._clear = function _clear() {
-      [].slice.call(document.querySelectorAll(this._selector)).filter(function (node) {
-        return node.classList.contains(ClassName$8.ACTIVE);
-      }).forEach(function (node) {
-        return node.classList.remove(ClassName$8.ACTIVE);
-      });
-    } // Static
-    ;
-
-    ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var data = $(this).data(DATA_KEY$8);
-
-        var _config = typeof config === 'object' && config;
-
-        if (!data) {
-          data = new ScrollSpy(this, _config);
-          $(this).data(DATA_KEY$8, data);
+      if (this.options.displayMode === 'dialog' && this._ui.overlay) {
+        // Bind close event on Close button
+        if (this._ui.overlay.close) {
+          this._clickEvents.forEach(function (clickEvent) {
+            _this2.this._ui.overlay.close.addEventListener(clickEvent, _this2._onClose);
+          });
         }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
+        // Bind close event on overlay based on options
+        if (this.options.closeOnOverlayClick && this._ui.overlay.background) {
+          this._clickEvents.forEach(function (clickEvent) {
+            _this2._ui.overlay.background.addEventListener(clickEvent, _this2._onClose);
+          });
         }
+      }
+
+      if (this._ui.footer.validate) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this2._ui.footer.validate.addEventListener(clickEvent, _this2._onValidateClick);
+        });
+      }
+      if (this._ui.footer.today) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this2._ui.footer.today.addEventListener(clickEvent, _this2._onTodayClick);
+        });
+      }
+      if (this._ui.footer.clear) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this2._ui.footer.clear.addEventListener(clickEvent, _this2._onClearClick);
+        });
+      }
+      this._clickEvents.forEach(function (clickEvent) {
+        // this._ui.dummy.clear.addEventListener(clickEvent, this._onClearClick);
       });
-    };
-
-    _createClass(ScrollSpy, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$8;
+      if (this._ui.footer.cancel) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this2._ui.footer.cancel.addEventListener(clickEvent, _this2._onCancelClick);
+        });
       }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$6;
-      }
-    }]);
+    }
+  }, {
+    key: 'id',
 
-    return ScrollSpy;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
+
+    /****************************************************
+     *                                                  *
+     * GETTERS and SETTERS                              *
+     *                                                  *
+     ****************************************************/
+
+    /**
+     * Get id of current instance
+     */
+    get: function get() {
+      return this._id;
+    }
+
+    // Set language
+
+  }, {
+    key: 'lang',
+    set: function set() {
+      var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
+
+      try {
+        this._locale = __webpack_require__(125)("./" + lang);
+      } catch (e) {
+        lang = 'en';
+        this._locale = __webpack_require__(125)("./" + lang);
+      } finally {
+        this._lang = lang;
+        this.datePicker.lang = lang;
+        return this;
+      }
+    }
+    // Get current language
+    ,
+    get: function get() {
+      return this._lang;
+    }
+  }, {
+    key: 'locale',
+    get: function get() {
+      return this._locale;
+    }
+
+    // Set format (set to yyyy-mm-dd HH:mm:ss by default)
+
+  }, {
+    key: 'format',
+    set: function set(format) {
+      this._format = format;
+      return this;
+    }
+    // Get format
+    ,
+    get: function get() {
+      return this._format;
+    }
+
+    /**
+     * * Date setter and getter
+     */
+
+  }, {
+    key: 'date',
+    set: function set() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      this.datePicker.date = date;
+      return this;
+    }
+    // Get date object
+    ,
+    get: function get() {
+      return this.datePicker.date;
+    }
+  }, {
+    key: 'startDate',
+    set: function set() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+      this.datePicker.start = date;
+      return this;
+    },
+    get: function get() {
+      return this.datePicker.start;
+    }
+  }, {
+    key: 'endDate',
+    set: function set() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+      this.datePicker.end = date;
+      return this;
+    },
+    get: function get() {
+      return this.datePicker.end;
+    }
+
+    /**
+     * minDate getter and setters
+     */
+
+  }, {
+    key: 'minDate',
+    set: function set() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+      this.datePicker.minDate = date;
+      return this;
+    }
+    // Get minDate
+    ,
+    get: function get() {
+      return this.datePicker.minDate;
+    }
+
+    // Set maxDate
+
+  }, {
+    key: 'maxDate',
+    set: function set() {
+      var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+      this.datePicker.maxDate = date;
+      return this;
+    }
+    // Get maxDate
+    ,
+    get: function get() {
+      return this.datePicker.maxDate;
+    }
+
+    // Set dateFormat (set to yyyy-mm-dd by default)
+
+  }, {
+    key: 'dateFormat',
+    set: function set(dateFormat) {
+      this.datePicker.dateFormat = dateFormat;
+      return this;
+    }
+    // Get dateFormat
+    ,
+    get: function get() {
+      return this.datePicker.dateFormat;
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.bulma-datepicker';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = [];
+
+      var elements = __WEBPACK_IMPORTED_MODULE_1__utils_type__["d" /* isString */](selector) ? document.querySelectorAll(selector) : Array.isArray(selector) ? selector : [selector];
+      if (elements.length > 1) {
+        [].forEach.call(elements, function (ement) {
+          instances.push(new bulmaCalendar(ement, options));
+        });
+        return instances;
+      } else if (elements.length === 1) {
+        return new bulmaCalendar(elements[0], options);
+      }
+    }
+  }]);
+
+  return bulmaCalendar;
+}(__WEBPACK_IMPORTED_MODULE_3__utils_events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaCalendar);
+
+/***/ }),
+/* 201 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Range Helpers
+ * @summary Is the given date range overlapping with another date range?
+ *
+ * @description
+ * Is the given date range overlapping with another date range?
+ *
+ * @param {Date|String|Number} initialRangeStartDate - the start of the initial range
+ * @param {Date|String|Number} initialRangeEndDate - the end of the initial range
+ * @param {Date|String|Number} comparedRangeStartDate - the start of the range to compare it with
+ * @param {Date|String|Number} comparedRangeEndDate - the end of the range to compare it with
+ * @returns {Boolean} whether the date ranges are overlapping
+ * @throws {Error} startDate of a date range cannot be after its endDate
+ *
+ * @example
+ * // For overlapping date ranges:
+ * areRangesOverlapping(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 17), new Date(2014, 0, 21)
+ * )
+ * //=> true
+ *
+ * @example
+ * // For non-overlapping date ranges:
+ * areRangesOverlapping(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 21), new Date(2014, 0, 22)
+ * )
+ * //=> false
+ */
+function areRangesOverlapping (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse(dirtyInitialRangeStartDate).getTime()
+  var initialEndTime = parse(dirtyInitialRangeEndDate).getTime()
+  var comparedStartTime = parse(dirtyComparedRangeStartDate).getTime()
+  var comparedEndTime = parse(dirtyComparedRangeEndDate).getTime()
+
+  if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  return initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
+}
+
+module.exports = areRangesOverlapping
+
+
+/***/ }),
+/* 202 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Return an index of the closest date from the array comparing to the given date.
+ *
+ * @description
+ * Return an index of the closest date from the array comparing to the given date.
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date[]|String[]|Number[]} datesArray - the array to search
+ * @returns {Number} an index of the date closest to the given date
+ * @throws {TypeError} the second argument must be an instance of Array
+ *
+ * @example
+ * // Which date is closer to 6 September 2015?
+ * var dateToCompare = new Date(2015, 8, 6)
+ * var datesArray = [
+ *   new Date(2015, 0, 1),
+ *   new Date(2016, 0, 1),
+ *   new Date(2017, 0, 1)
+ * ]
+ * var result = closestIndexTo(dateToCompare, datesArray)
+ * //=> 1
+ */
+function closestIndexTo (dirtyDateToCompare, dirtyDatesArray) {
+  if (!(dirtyDatesArray instanceof Array)) {
+    throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
+  }
+
+  var dateToCompare = parse(dirtyDateToCompare)
+  var timeToCompare = dateToCompare.getTime()
+
+  var result
+  var minDistance
+
+  dirtyDatesArray.forEach(function (dirtyDate, index) {
+    var currentDate = parse(dirtyDate)
+    var distance = Math.abs(timeToCompare - currentDate.getTime())
+    if (result === undefined || distance < minDistance) {
+      result = index
+      minDistance = distance
+    }
+  })
+
+  return result
+}
+
+module.exports = closestIndexTo
+
+
+/***/ }),
+/* 203 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Return a date from the array closest to the given date.
+ *
+ * @description
+ * Return a date from the array closest to the given date.
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date[]|String[]|Number[]} datesArray - the array to search
+ * @returns {Date} the date from the array closest to the given date
+ * @throws {TypeError} the second argument must be an instance of Array
+ *
+ * @example
+ * // Which date is closer to 6 September 2015: 1 January 2000 or 1 January 2030?
+ * var dateToCompare = new Date(2015, 8, 6)
+ * var result = closestTo(dateToCompare, [
+ *   new Date(2000, 0, 1),
+ *   new Date(2030, 0, 1)
+ * ])
+ * //=> Tue Jan 01 2030 00:00:00
+ */
+function closestTo (dirtyDateToCompare, dirtyDatesArray) {
+  if (!(dirtyDatesArray instanceof Array)) {
+    throw new TypeError(toString.call(dirtyDatesArray) + ' is not an instance of Array')
+  }
+
+  var dateToCompare = parse(dirtyDateToCompare)
+  var timeToCompare = dateToCompare.getTime()
+
+  var result
+  var minDistance
+
+  dirtyDatesArray.forEach(function (dirtyDate) {
+    var currentDate = parse(dirtyDate)
+    var distance = Math.abs(timeToCompare - currentDate.getTime())
+    if (result === undefined || distance < minDistance) {
+      result = currentDate
+      minDistance = distance
+    }
+  })
+
+  return result
+}
+
+module.exports = closestTo
+
+
+/***/ }),
+/* 204 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfISOWeek = __webpack_require__(3)
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week Helpers
+ * @summary Get the number of calendar ISO weeks between the given dates.
+ *
+ * @description
+ * Get the number of calendar ISO weeks between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar ISO weeks
+ *
+ * @example
+ * // How many calendar ISO weeks are between 6 July 2014 and 21 July 2014?
+ * var result = differenceInCalendarISOWeeks(
+ *   new Date(2014, 6, 21),
+ *   new Date(2014, 6, 6)
+ * )
+ * //=> 3
+ */
+function differenceInCalendarISOWeeks (dirtyDateLeft, dirtyDateRight) {
+  var startOfISOWeekLeft = startOfISOWeek(dirtyDateLeft)
+  var startOfISOWeekRight = startOfISOWeek(dirtyDateRight)
+
+  var timestampLeft = startOfISOWeekLeft.getTime() -
+    startOfISOWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfISOWeekRight.getTime() -
+    startOfISOWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = differenceInCalendarISOWeeks
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getQuarter = __webpack_require__(137)
+var parse = __webpack_require__(0)
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the number of calendar quarters between the given dates.
+ *
+ * @description
+ * Get the number of calendar quarters between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of calendar quarters
+ *
+ * @example
+ * // How many calendar quarters are between 31 December 2013 and 2 July 2014?
+ * var result = differenceInCalendarQuarters(
+ *   new Date(2014, 6, 2),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 3
+ */
+function differenceInCalendarQuarters (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var yearDiff = dateLeft.getFullYear() - dateRight.getFullYear()
+  var quarterDiff = getQuarter(dateLeft) - getQuarter(dateRight)
+
+  return yearDiff * 4 + quarterDiff
+}
+
+module.exports = differenceInCalendarQuarters
+
+
+/***/ }),
+/* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfWeek = __webpack_require__(79)
+
+var MILLISECONDS_IN_MINUTE = 60000
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category Week Helpers
+ * @summary Get the number of calendar weeks between the given dates.
+ *
+ * @description
+ * Get the number of calendar weeks between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Number} the number of calendar weeks
+ *
+ * @example
+ * // How many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5)
+ * )
+ * //=> 3
+ *
+ * @example
+ * // If the week starts on Monday,
+ * // how many calendar weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInCalendarWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5),
+ *   {weekStartsOn: 1}
+ * )
+ * //=> 2
+ */
+function differenceInCalendarWeeks (dirtyDateLeft, dirtyDateRight, dirtyOptions) {
+  var startOfWeekLeft = startOfWeek(dirtyDateLeft, dirtyOptions)
+  var startOfWeekRight = startOfWeek(dirtyDateRight, dirtyOptions)
+
+  var timestampLeft = startOfWeekLeft.getTime() -
+    startOfWeekLeft.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+  var timestampRight = startOfWeekRight.getTime() -
+    startOfWeekRight.getTimezoneOffset() * MILLISECONDS_IN_MINUTE
+
+  // Round the number of days to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round((timestampLeft - timestampRight) / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = differenceInCalendarWeeks
+
+
+/***/ }),
+/* 207 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInMilliseconds = __webpack_require__(82)
+
+var MILLISECONDS_IN_HOUR = 3600000
+
+/**
+ * @category Hour Helpers
+ * @summary Get the number of hours between the given dates.
+ *
+ * @description
+ * Get the number of hours between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of hours
+ *
+ * @example
+ * // How many hours are between 2 July 2014 06:50:00 and 2 July 2014 19:00:00?
+ * var result = differenceInHours(
+ *   new Date(2014, 6, 2, 19, 0),
+ *   new Date(2014, 6, 2, 6, 50)
+ * )
+ * //=> 12
+ */
+function differenceInHours (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_HOUR
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInHours
+
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var differenceInCalendarISOYears = __webpack_require__(135)
+var compareAsc = __webpack_require__(9)
+var subISOYears = __webpack_require__(140)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of full ISO week-numbering years between the given dates.
+ *
+ * @description
+ * Get the number of full ISO week-numbering years between the given dates.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full ISO week-numbering years
+ *
+ * @example
+ * // How many full ISO week-numbering years are between 1 January 2010 and 1 January 2012?
+ * var result = differenceInISOYears(
+ *   new Date(2012, 0, 1),
+ *   new Date(2010, 0, 1)
+ * )
+ * //=> 1
+ */
+function differenceInISOYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarISOYears(dateLeft, dateRight))
+  dateLeft = subISOYears(dateLeft, sign * difference)
+
+  // Math.abs(diff in full ISO years - diff in calendar ISO years) === 1
+  // if last calendar ISO year is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastISOYearNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastISOYearNotFull)
+}
+
+module.exports = differenceInISOYears
+
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInMilliseconds = __webpack_require__(82)
+
+var MILLISECONDS_IN_MINUTE = 60000
+
+/**
+ * @category Minute Helpers
+ * @summary Get the number of minutes between the given dates.
+ *
+ * @description
+ * Get the number of minutes between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of minutes
+ *
+ * @example
+ * // How many minutes are between 2 July 2014 12:07:59 and 2 July 2014 12:20:00?
+ * var result = differenceInMinutes(
+ *   new Date(2014, 6, 2, 12, 20, 0),
+ *   new Date(2014, 6, 2, 12, 7, 59)
+ * )
+ * //=> 12
+ */
+function differenceInMinutes (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) / MILLISECONDS_IN_MINUTE
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInMinutes
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInMonths = __webpack_require__(120)
+
+/**
+ * @category Quarter Helpers
+ * @summary Get the number of full quarters between the given dates.
+ *
+ * @description
+ * Get the number of full quarters between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full quarters
+ *
+ * @example
+ * // How many full quarters are between 31 December 2013 and 2 July 2014?
+ * var result = differenceInQuarters(
+ *   new Date(2014, 6, 2),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 2
+ */
+function differenceInQuarters (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInMonths(dirtyDateLeft, dirtyDateRight) / 3
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInQuarters
+
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var differenceInDays = __webpack_require__(139)
+
+/**
+ * @category Week Helpers
+ * @summary Get the number of full weeks between the given dates.
+ *
+ * @description
+ * Get the number of full weeks between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full weeks
+ *
+ * @example
+ * // How many full weeks are between 5 July 2014 and 20 July 2014?
+ * var result = differenceInWeeks(
+ *   new Date(2014, 6, 20),
+ *   new Date(2014, 6, 5)
+ * )
+ * //=> 2
+ */
+function differenceInWeeks (dirtyDateLeft, dirtyDateRight) {
+  var diff = differenceInDays(dirtyDateLeft, dirtyDateRight) / 7
+  return diff > 0 ? Math.floor(diff) : Math.ceil(diff)
+}
+
+module.exports = differenceInWeeks
+
+
+/***/ }),
+/* 212 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var differenceInCalendarYears = __webpack_require__(138)
+var compareAsc = __webpack_require__(9)
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of full years between the given dates.
+ *
+ * @description
+ * Get the number of full years between the given dates.
+ *
+ * @param {Date|String|Number} dateLeft - the later date
+ * @param {Date|String|Number} dateRight - the earlier date
+ * @returns {Number} the number of full years
+ *
+ * @example
+ * // How many full years are between 31 December 2013 and 11 February 2015?
+ * var result = differenceInYears(
+ *   new Date(2015, 1, 11),
+ *   new Date(2013, 11, 31)
+ * )
+ * //=> 1
+ */
+function differenceInYears (dirtyDateLeft, dirtyDateRight) {
+  var dateLeft = parse(dirtyDateLeft)
+  var dateRight = parse(dirtyDateRight)
+
+  var sign = compareAsc(dateLeft, dateRight)
+  var difference = Math.abs(differenceInCalendarYears(dateLeft, dateRight))
+  dateLeft.setFullYear(dateLeft.getFullYear() - sign * difference)
+
+  // Math.abs(diff in full years - diff in calendar years) === 1 if last calendar year is not full
+  // If so, result must be decreased by 1 in absolute value
+  var isLastYearNotFull = compareAsc(dateLeft, dateRight) === -sign
+  return sign * (difference - isLastYearNotFull)
+}
+
+module.exports = differenceInYears
+
+
+/***/ }),
+/* 213 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var compareDesc = __webpack_require__(119)
+var parse = __webpack_require__(0)
+var differenceInSeconds = __webpack_require__(121)
+var enLocale = __webpack_require__(5)
+
+var MINUTES_IN_DAY = 1440
+var MINUTES_IN_MONTH = 43200
+var MINUTES_IN_YEAR = 525600
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given dates in words.
+ *
+ * @description
+ * Return the distance between the given dates in words, using strict units.
+ * This is like `distanceInWords`, but does not use helpers like 'almost', 'over',
+ * 'less than' and the like.
+ *
+ * | Distance between dates | Result              |
+ * |------------------------|---------------------|
+ * | 0 ... 59 secs          | [0..59] seconds     |
+ * | 1 ... 59 mins          | [1..59] minutes     |
+ * | 1 ... 23 hrs           | [1..23] hours       |
+ * | 1 ... 29 days          | [1..29] days        |
+ * | 1 ... 11 months        | [1..11] months      |
+ * | 1 ... N years          | [1..N]  years       |
+ *
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @param {Date|String|Number} date - the other date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.addSuffix=false] - result indicates if the second date is earlier or later than the first
+ * @param {'s'|'m'|'h'|'d'|'M'|'Y'} [options.unit] - if specified, will force a unit
+ * @param {'floor'|'ceil'|'round'} [options.partialMethod='floor'] - which way to round partial units
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // What is the distance between 2 July 2014 and 1 January 2015?
+ * var result = distanceInWordsStrict(
+ *   new Date(2014, 6, 2),
+ *   new Date(2015, 0, 2)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // What is the distance between 1 January 2015 00:00:15
+ * // and 1 January 2015 00:00:00?
+ * var result = distanceInWordsStrict(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   new Date(2015, 0, 1, 0, 0, 0),
+ * )
+ * //=> '15 seconds'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, with a suffix?
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> '1 year ago'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 1 January 2015, in minutes?
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 0, 1),
+ *   new Date(2015, 0, 1),
+ *   {unit: 'm'}
+ * )
+ * //=> '525600 minutes'
+ *
+ * @example
+ * // What is the distance from 1 January 2016
+ * // to 28 January 2015, in months, rounded up?
+ * var result = distanceInWordsStrict(
+ *   new Date(2015, 0, 28),
+ *   new Date(2015, 0, 1),
+ *   {unit: 'M', partialMethod: 'ceil'}
+ * )
+ * //=> '1 month'
+ *
+ * @example
+ * // What is the distance between 1 August 2016 and 1 January 2015 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWordsStrict(
+ *   new Date(2016, 7, 1),
+ *   new Date(2015, 0, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> '1 jaro'
+ */
+function distanceInWordsStrict (dirtyDateToCompare, dirtyDate, dirtyOptions) {
+  var options = dirtyOptions || {}
+
+  var comparison = compareDesc(dirtyDateToCompare, dirtyDate)
+
+  var locale = options.locale
+  var localize = enLocale.distanceInWords.localize
+  if (locale && locale.distanceInWords && locale.distanceInWords.localize) {
+    localize = locale.distanceInWords.localize
+  }
+
+  var localizeOptions = {
+    addSuffix: Boolean(options.addSuffix),
+    comparison: comparison
+  }
+
+  var dateLeft, dateRight
+  if (comparison > 0) {
+    dateLeft = parse(dirtyDateToCompare)
+    dateRight = parse(dirtyDate)
+  } else {
+    dateLeft = parse(dirtyDate)
+    dateRight = parse(dirtyDateToCompare)
+  }
+
+  var unit
+  var mathPartial = Math[options.partialMethod ? String(options.partialMethod) : 'floor']
+  var seconds = differenceInSeconds(dateRight, dateLeft)
+  var offset = dateRight.getTimezoneOffset() - dateLeft.getTimezoneOffset()
+  var minutes = mathPartial(seconds / 60) - offset
+  var hours, days, months, years
+
+  if (options.unit) {
+    unit = String(options.unit)
+  } else {
+    if (minutes < 1) {
+      unit = 's'
+    } else if (minutes < 60) {
+      unit = 'm'
+    } else if (minutes < MINUTES_IN_DAY) {
+      unit = 'h'
+    } else if (minutes < MINUTES_IN_MONTH) {
+      unit = 'd'
+    } else if (minutes < MINUTES_IN_YEAR) {
+      unit = 'M'
+    } else {
+      unit = 'Y'
+    }
+  }
+
+  // 0 up to 60 seconds
+  if (unit === 's') {
+    return localize('xSeconds', seconds, localizeOptions)
+
+  // 1 up to 60 mins
+  } else if (unit === 'm') {
+    return localize('xMinutes', minutes, localizeOptions)
+
+  // 1 up to 24 hours
+  } else if (unit === 'h') {
+    hours = mathPartial(minutes / 60)
+    return localize('xHours', hours, localizeOptions)
+
+  // 1 up to 30 days
+  } else if (unit === 'd') {
+    days = mathPartial(minutes / MINUTES_IN_DAY)
+    return localize('xDays', days, localizeOptions)
+
+  // 1 up to 12 months
+  } else if (unit === 'M') {
+    months = mathPartial(minutes / MINUTES_IN_MONTH)
+    return localize('xMonths', months, localizeOptions)
+
+  // 1 year up to max Date
+  } else if (unit === 'Y') {
+    years = mathPartial(minutes / MINUTES_IN_YEAR)
+    return localize('xYears', years, localizeOptions)
+  }
+
+  throw new Error('Unknown unit: ' + unit)
+}
+
+module.exports = distanceInWordsStrict
+
+
+/***/ }),
+/* 214 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var distanceInWords = __webpack_require__(141)
+
+/**
+ * @category Common Helpers
+ * @summary Return the distance between the given date and now in words.
+ *
+ * @description
+ * Return the distance between the given date and now in words.
+ *
+ * | Distance to now                                                   | Result              |
+ * |-------------------------------------------------------------------|---------------------|
+ * | 0 ... 30 secs                                                     | less than a minute  |
+ * | 30 secs ... 1 min 30 secs                                         | 1 minute            |
+ * | 1 min 30 secs ... 44 mins 30 secs                                 | [2..44] minutes     |
+ * | 44 mins ... 30 secs ... 89 mins 30 secs                           | about 1 hour        |
+ * | 89 mins 30 secs ... 23 hrs 59 mins 30 secs                        | about [2..24] hours |
+ * | 23 hrs 59 mins 30 secs ... 41 hrs 59 mins 30 secs                 | 1 day               |
+ * | 41 hrs 59 mins 30 secs ... 29 days 23 hrs 59 mins 30 secs         | [2..30] days        |
+ * | 29 days 23 hrs 59 mins 30 secs ... 44 days 23 hrs 59 mins 30 secs | about 1 month       |
+ * | 44 days 23 hrs 59 mins 30 secs ... 59 days 23 hrs 59 mins 30 secs | about 2 months      |
+ * | 59 days 23 hrs 59 mins 30 secs ... 1 yr                           | [2..12] months      |
+ * | 1 yr ... 1 yr 3 months                                            | about 1 year        |
+ * | 1 yr 3 months ... 1 yr 9 month s                                  | over 1 year         |
+ * | 1 yr 9 months ... 2 yrs                                           | almost 2 years      |
+ * | N yrs ... N yrs 3 months                                          | about N years       |
+ * | N yrs 3 months ... N yrs 9 months                                 | over N years        |
+ * | N yrs 9 months ... N+1 yrs                                        | almost N+1 years    |
+ *
+ * With `options.includeSeconds == true`:
+ * | Distance to now     | Result               |
+ * |---------------------|----------------------|
+ * | 0 secs ... 5 secs   | less than 5 seconds  |
+ * | 5 secs ... 10 secs  | less than 10 seconds |
+ * | 10 secs ... 20 secs | less than 20 seconds |
+ * | 20 secs ... 40 secs | half a minute        |
+ * | 40 secs ... 60 secs | less than a minute   |
+ * | 60 secs ... 90 secs | 1 minute             |
+ *
+ * @param {Date|String|Number} date - the given date
+ * @param {Object} [options] - the object with options
+ * @param {Boolean} [options.includeSeconds=false] - distances less than a minute are more detailed
+ * @param {Boolean} [options.addSuffix=false] - result specifies if the second date is earlier or later than the first
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the distance in words
+ *
+ * @example
+ * // If today is 1 January 2015, what is the distance to 2 July 2014?
+ * var result = distanceInWordsToNow(
+ *   new Date(2014, 6, 2)
+ * )
+ * //=> '6 months'
+ *
+ * @example
+ * // If now is 1 January 2015 00:00:00,
+ * // what is the distance to 1 January 2015 00:00:15, including seconds?
+ * var result = distanceInWordsToNow(
+ *   new Date(2015, 0, 1, 0, 0, 15),
+ *   {includeSeconds: true}
+ * )
+ * //=> 'less than 20 seconds'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 January 2016, with a suffix?
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 0, 1),
+ *   {addSuffix: true}
+ * )
+ * //=> 'in about 1 year'
+ *
+ * @example
+ * // If today is 1 January 2015,
+ * // what is the distance to 1 August 2016 in Esperanto?
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = distanceInWordsToNow(
+ *   new Date(2016, 7, 1),
+ *   {locale: eoLocale}
+ * )
+ * //=> 'pli ol 1 jaro'
+ */
+function distanceInWordsToNow (dirtyDate, dirtyOptions) {
+  return distanceInWords(Date.now(), dirtyDate, dirtyOptions)
+}
+
+module.exports = distanceInWordsToNow
+
+
+/***/ }),
+/* 215 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Return the array of dates within the specified range.
+ *
+ * @description
+ * Return the array of dates within the specified range.
+ *
+ * @param {Date|String|Number} startDate - the first date
+ * @param {Date|String|Number} endDate - the last date
+ * @param {Number} [step=1] - the step between each day
+ * @returns {Date[]} the array with starts of days from the day of startDate to the day of endDate
+ * @throws {Error} startDate cannot be after endDate
+ *
+ * @example
+ * // Each day between 6 October 2014 and 10 October 2014:
+ * var result = eachDay(
+ *   new Date(2014, 9, 6),
+ *   new Date(2014, 9, 10)
+ * )
+ * //=> [
+ * //   Mon Oct 06 2014 00:00:00,
+ * //   Tue Oct 07 2014 00:00:00,
+ * //   Wed Oct 08 2014 00:00:00,
+ * //   Thu Oct 09 2014 00:00:00,
+ * //   Fri Oct 10 2014 00:00:00
+ * // ]
+ */
+function eachDay (dirtyStartDate, dirtyEndDate, dirtyStep) {
+  var startDate = parse(dirtyStartDate)
+  var endDate = parse(dirtyEndDate)
+  var step = dirtyStep !== undefined ? dirtyStep : 1
+
+  var endTime = endDate.getTime()
+
+  if (startDate.getTime() > endTime) {
+    throw new Error('The first date cannot be after the second date')
+  }
+
+  var dates = []
+
+  var currentDate = startDate
+  currentDate.setHours(0, 0, 0, 0)
+
+  while (currentDate.getTime() <= endTime) {
+    dates.push(parse(currentDate))
+    currentDate.setDate(currentDate.getDate() + step)
+  }
+
+  return dates
+}
+
+module.exports = eachDay
+
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Hour Helpers
+ * @summary Return the end of an hour for the given date.
+ *
+ * @description
+ * Return the end of an hour for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an hour
+ *
+ * @example
+ * // The end of an hour for 2 September 2014 11:55:00:
+ * var result = endOfHour(new Date(2014, 8, 2, 11, 55))
+ * //=> Tue Sep 02 2014 11:59:59.999
+ */
+function endOfHour (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMinutes(59, 59, 999)
+  return date
+}
+
+module.exports = endOfHour
+
+
+/***/ }),
+/* 217 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var endOfWeek = __webpack_require__(142)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the end of an ISO week for the given date.
+ *
+ * @description
+ * Return the end of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week
+ *
+ * @example
+ * // The end of an ISO week for 2 September 2014 11:55:00:
+ * var result = endOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Sep 07 2014 23:59:59.999
+ */
+function endOfISOWeek (dirtyDate) {
+  return endOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = endOfISOWeek
+
+
+/***/ }),
+/* 218 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(2)
+var startOfISOWeek = __webpack_require__(3)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the end of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the end of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week-numbering year
+ *
+ * @example
+ * // The end of an ISO week-numbering year for 2 July 2005:
+ * var result = endOfISOYear(new Date(2005, 6, 2))
+ * //=> Sun Jan 01 2006 23:59:59.999
+ */
+function endOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuaryOfNextYear = new Date(0)
+  fourthOfJanuaryOfNextYear.setFullYear(year + 1, 0, 4)
+  fourthOfJanuaryOfNextYear.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuaryOfNextYear)
+  date.setMilliseconds(date.getMilliseconds() - 1)
+  return date
+}
+
+module.exports = endOfISOYear
+
+
+/***/ }),
+/* 219 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Minute Helpers
+ * @summary Return the end of a minute for the given date.
+ *
+ * @description
+ * Return the end of a minute for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a minute
+ *
+ * @example
+ * // The end of a minute for 1 December 2014 22:15:45.400:
+ * var result = endOfMinute(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:59.999
+ */
+function endOfMinute (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setSeconds(59, 999)
+  return date
+}
+
+module.exports = endOfMinute
+
+
+/***/ }),
+/* 220 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the end of a year quarter for the given date.
+ *
+ * @description
+ * Return the end of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a quarter
+ *
+ * @example
+ * // The end of a quarter for 2 September 2014 11:55:00:
+ * var result = endOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 23:59:59.999
+ */
+function endOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3 + 3
+  date.setMonth(month, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfQuarter
+
+
+/***/ }),
+/* 221 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Second Helpers
+ * @summary Return the end of a second for the given date.
+ *
+ * @description
+ * Return the end of a second for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a second
+ *
+ * @example
+ * // The end of a second for 1 December 2014 22:15:45.400:
+ * var result = endOfSecond(new Date(2014, 11, 1, 22, 15, 45, 400))
+ * //=> Mon Dec 01 2014 22:15:45.999
+ */
+function endOfSecond (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setMilliseconds(999)
+  return date
+}
+
+module.exports = endOfSecond
+
+
+/***/ }),
+/* 222 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var endOfDay = __webpack_require__(122)
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of today.
+ *
+ * @description
+ * Return the end of today.
+ *
+ * @returns {Date} the end of today
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfToday()
+ * //=> Mon Oct 6 2014 23:59:59.999
+ */
+function endOfToday () {
+  return endOfDay(new Date())
+}
+
+module.exports = endOfToday
+
+
+/***/ }),
+/* 223 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of tomorrow.
+ *
+ * @description
+ * Return the end of tomorrow.
+ *
+ * @returns {Date} the end of tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfTomorrow()
+ * //=> Tue Oct 7 2014 23:59:59.999
+ */
+function endOfTomorrow () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day + 1)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfTomorrow
+
+
+/***/ }),
+/* 224 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Return the end of a year for the given date.
+ *
+ * @description
+ * Return the end of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of a year
+ *
+ * @example
+ * // The end of a year for 2 September 2014 11:55:00:
+ * var result = endOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Dec 31 2014 23:59:59.999
+ */
+function endOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  date.setFullYear(year + 1, 0, 0)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfYear
+
+
+/***/ }),
+/* 225 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Day Helpers
+ * @summary Return the end of yesterday.
+ *
+ * @description
+ * Return the end of yesterday.
+ *
+ * @returns {Date} the end of yesterday
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = endOfYesterday()
+ * //=> Sun Oct 5 2014 23:59:59.999
+ */
+function endOfYesterday () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day - 1)
+  date.setHours(23, 59, 59, 999)
+  return date
+}
+
+module.exports = endOfYesterday
+
+
+/***/ }),
+/* 226 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getDayOfYear = __webpack_require__(144)
+var getISOWeek = __webpack_require__(123)
+var getISOYear = __webpack_require__(2)
+var parse = __webpack_require__(0)
+var isValid = __webpack_require__(146)
+var enLocale = __webpack_require__(5)
+
+/**
+ * @category Common Helpers
+ * @summary Format the date.
+ *
+ * @description
+ * Return the formatted date string in the given format.
+ *
+ * Accepted tokens:
+ * | Unit                    | Token | Result examples                  |
+ * |-------------------------|-------|----------------------------------|
+ * | Month                   | M     | 1, 2, ..., 12                    |
+ * |                         | Mo    | 1st, 2nd, ..., 12th              |
+ * |                         | MM    | 01, 02, ..., 12                  |
+ * |                         | MMM   | Jan, Feb, ..., Dec               |
+ * |                         | MMMM  | January, February, ..., December |
+ * | Quarter                 | Q     | 1, 2, 3, 4                       |
+ * |                         | Qo    | 1st, 2nd, 3rd, 4th               |
+ * | Day of month            | D     | 1, 2, ..., 31                    |
+ * |                         | Do    | 1st, 2nd, ..., 31st              |
+ * |                         | DD    | 01, 02, ..., 31                  |
+ * | Day of year             | DDD   | 1, 2, ..., 366                   |
+ * |                         | DDDo  | 1st, 2nd, ..., 366th             |
+ * |                         | DDDD  | 001, 002, ..., 366               |
+ * | Day of week             | d     | 0, 1, ..., 6                     |
+ * |                         | do    | 0th, 1st, ..., 6th               |
+ * |                         | dd    | Su, Mo, ..., Sa                  |
+ * |                         | ddd   | Sun, Mon, ..., Sat               |
+ * |                         | dddd  | Sunday, Monday, ..., Saturday    |
+ * | Day of ISO week         | E     | 1, 2, ..., 7                     |
+ * | ISO week                | W     | 1, 2, ..., 53                    |
+ * |                         | Wo    | 1st, 2nd, ..., 53rd              |
+ * |                         | WW    | 01, 02, ..., 53                  |
+ * | Year                    | YY    | 00, 01, ..., 99                  |
+ * |                         | YYYY  | 1900, 1901, ..., 2099            |
+ * | ISO week-numbering year | GG    | 00, 01, ..., 99                  |
+ * |                         | GGGG  | 1900, 1901, ..., 2099            |
+ * | AM/PM                   | A     | AM, PM                           |
+ * |                         | a     | am, pm                           |
+ * |                         | aa    | a.m., p.m.                       |
+ * | Hour                    | H     | 0, 1, ... 23                     |
+ * |                         | HH    | 00, 01, ... 23                   |
+ * |                         | h     | 1, 2, ..., 12                    |
+ * |                         | hh    | 01, 02, ..., 12                  |
+ * | Minute                  | m     | 0, 1, ..., 59                    |
+ * |                         | mm    | 00, 01, ..., 59                  |
+ * | Second                  | s     | 0, 1, ..., 59                    |
+ * |                         | ss    | 00, 01, ..., 59                  |
+ * | 1/10 of second          | S     | 0, 1, ..., 9                     |
+ * | 1/100 of second         | SS    | 00, 01, ..., 99                  |
+ * | Millisecond             | SSS   | 000, 001, ..., 999               |
+ * | Timezone                | Z     | -01:00, +00:00, ... +12:00       |
+ * |                         | ZZ    | -0100, +0000, ..., +1200         |
+ * | Seconds timestamp       | X     | 512969520                        |
+ * | Milliseconds timestamp  | x     | 512969520900                     |
+ *
+ * The characters wrapped in square brackets are escaped.
+ *
+ * The result may vary by locale.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @param {String} [format='YYYY-MM-DDTHH:mm:ss.SSSZ'] - the string of tokens
+ * @param {Object} [options] - the object with options
+ * @param {Object} [options.locale=enLocale] - the locale object
+ * @returns {String} the formatted date string
+ *
+ * @example
+ * // Represent 11 February 2014 in middle-endian format:
+ * var result = format(
+ *   new Date(2014, 1, 11),
+ *   'MM/DD/YYYY'
+ * )
+ * //=> '02/11/2014'
+ *
+ * @example
+ * // Represent 2 July 2014 in Esperanto:
+ * var eoLocale = require('date-fns/locale/eo')
+ * var result = format(
+ *   new Date(2014, 6, 2),
+ *   'Do [de] MMMM YYYY',
+ *   {locale: eoLocale}
+ * )
+ * //=> '2-a de julio 2014'
+ */
+function format (dirtyDate, dirtyFormatStr, dirtyOptions) {
+  var formatStr = dirtyFormatStr ? String(dirtyFormatStr) : 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+  var options = dirtyOptions || {}
+
+  var locale = options.locale
+  var localeFormatters = enLocale.format.formatters
+  var formattingTokensRegExp = enLocale.format.formattingTokensRegExp
+  if (locale && locale.format && locale.format.formatters) {
+    localeFormatters = locale.format.formatters
+
+    if (locale.format.formattingTokensRegExp) {
+      formattingTokensRegExp = locale.format.formattingTokensRegExp
+    }
+  }
+
+  var date = parse(dirtyDate)
+
+  if (!isValid(date)) {
+    return 'Invalid Date'
+  }
+
+  var formatFn = buildFormatFn(formatStr, localeFormatters, formattingTokensRegExp)
+
+  return formatFn(date)
+}
+
+var formatters = {
+  // Month: 1, 2, ..., 12
+  'M': function (date) {
+    return date.getMonth() + 1
+  },
+
+  // Month: 01, 02, ..., 12
+  'MM': function (date) {
+    return addLeadingZeros(date.getMonth() + 1, 2)
+  },
+
+  // Quarter: 1, 2, 3, 4
+  'Q': function (date) {
+    return Math.ceil((date.getMonth() + 1) / 3)
+  },
+
+  // Day of month: 1, 2, ..., 31
+  'D': function (date) {
+    return date.getDate()
+  },
+
+  // Day of month: 01, 02, ..., 31
+  'DD': function (date) {
+    return addLeadingZeros(date.getDate(), 2)
+  },
+
+  // Day of year: 1, 2, ..., 366
+  'DDD': function (date) {
+    return getDayOfYear(date)
+  },
+
+  // Day of year: 001, 002, ..., 366
+  'DDDD': function (date) {
+    return addLeadingZeros(getDayOfYear(date), 3)
+  },
+
+  // Day of week: 0, 1, ..., 6
+  'd': function (date) {
+    return date.getDay()
+  },
+
+  // Day of ISO week: 1, 2, ..., 7
+  'E': function (date) {
+    return date.getDay() || 7
+  },
+
+  // ISO week: 1, 2, ..., 53
+  'W': function (date) {
+    return getISOWeek(date)
+  },
+
+  // ISO week: 01, 02, ..., 53
+  'WW': function (date) {
+    return addLeadingZeros(getISOWeek(date), 2)
+  },
+
+  // Year: 00, 01, ..., 99
+  'YY': function (date) {
+    return addLeadingZeros(date.getFullYear(), 4).substr(2)
+  },
+
+  // Year: 1900, 1901, ..., 2099
+  'YYYY': function (date) {
+    return addLeadingZeros(date.getFullYear(), 4)
+  },
+
+  // ISO week-numbering year: 00, 01, ..., 99
+  'GG': function (date) {
+    return String(getISOYear(date)).substr(2)
+  },
+
+  // ISO week-numbering year: 1900, 1901, ..., 2099
+  'GGGG': function (date) {
+    return getISOYear(date)
+  },
+
+  // Hour: 0, 1, ... 23
+  'H': function (date) {
+    return date.getHours()
+  },
+
+  // Hour: 00, 01, ..., 23
+  'HH': function (date) {
+    return addLeadingZeros(date.getHours(), 2)
+  },
+
+  // Hour: 1, 2, ..., 12
+  'h': function (date) {
+    var hours = date.getHours()
+    if (hours === 0) {
+      return 12
+    } else if (hours > 12) {
+      return hours % 12
+    } else {
+      return hours
+    }
+  },
+
+  // Hour: 01, 02, ..., 12
+  'hh': function (date) {
+    return addLeadingZeros(formatters['h'](date), 2)
+  },
+
+  // Minute: 0, 1, ..., 59
+  'm': function (date) {
+    return date.getMinutes()
+  },
+
+  // Minute: 00, 01, ..., 59
+  'mm': function (date) {
+    return addLeadingZeros(date.getMinutes(), 2)
+  },
+
+  // Second: 0, 1, ..., 59
+  's': function (date) {
+    return date.getSeconds()
+  },
+
+  // Second: 00, 01, ..., 59
+  'ss': function (date) {
+    return addLeadingZeros(date.getSeconds(), 2)
+  },
+
+  // 1/10 of second: 0, 1, ..., 9
+  'S': function (date) {
+    return Math.floor(date.getMilliseconds() / 100)
+  },
+
+  // 1/100 of second: 00, 01, ..., 99
+  'SS': function (date) {
+    return addLeadingZeros(Math.floor(date.getMilliseconds() / 10), 2)
+  },
+
+  // Millisecond: 000, 001, ..., 999
+  'SSS': function (date) {
+    return addLeadingZeros(date.getMilliseconds(), 3)
+  },
+
+  // Timezone: -01:00, +00:00, ... +12:00
+  'Z': function (date) {
+    return formatTimezone(date.getTimezoneOffset(), ':')
+  },
+
+  // Timezone: -0100, +0000, ... +1200
+  'ZZ': function (date) {
+    return formatTimezone(date.getTimezoneOffset())
+  },
+
+  // Seconds timestamp: 512969520
+  'X': function (date) {
+    return Math.floor(date.getTime() / 1000)
+  },
+
+  // Milliseconds timestamp: 512969520900
+  'x': function (date) {
+    return date.getTime()
+  }
+}
+
+function buildFormatFn (formatStr, localeFormatters, formattingTokensRegExp) {
+  var array = formatStr.match(formattingTokensRegExp)
+  var length = array.length
+
+  var i
+  var formatter
+  for (i = 0; i < length; i++) {
+    formatter = localeFormatters[array[i]] || formatters[array[i]]
+    if (formatter) {
+      array[i] = formatter
+    } else {
+      array[i] = removeFormattingTokens(array[i])
+    }
+  }
+
+  return function (date) {
+    var output = ''
+    for (var i = 0; i < length; i++) {
+      if (array[i] instanceof Function) {
+        output += array[i](date, formatters)
+      } else {
+        output += array[i]
+      }
+    }
+    return output
+  }
+}
+
+function removeFormattingTokens (input) {
+  if (input.match(/\[[\s\S]/)) {
+    return input.replace(/^\[|]$/g, '')
+  }
+  return input.replace(/\\/g, '')
+}
+
+function formatTimezone (offset, delimeter) {
+  delimeter = delimeter || ''
+  var sign = offset > 0 ? '-' : '+'
+  var absOffset = Math.abs(offset)
+  var hours = Math.floor(absOffset / 60)
+  var minutes = absOffset % 60
+  return sign + addLeadingZeros(hours, 2) + delimeter + addLeadingZeros(minutes, 2)
+}
+
+function addLeadingZeros (number, targetLength) {
+  var output = Math.abs(number).toString()
+  while (output.length < targetLength) {
+    output = '0' + output
+  }
+  return output
+}
+
+module.exports = format
+
+
+/***/ }),
+/* 227 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Get the day of the month of the given date.
+ *
+ * @description
+ * Get the day of the month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of month
+ *
+ * @example
+ * // Which day of the month is 29 February 2012?
+ * var result = getDate(new Date(2012, 1, 29))
+ * //=> 29
+ */
+function getDate (dirtyDate) {
+  var date = parse(dirtyDate)
+  var dayOfMonth = date.getDate()
+  return dayOfMonth
+}
+
+module.exports = getDate
+
+
+/***/ }),
+/* 228 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Get the day of the week of the given date.
+ *
+ * @description
+ * Get the day of the week of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the day of week
+ *
+ * @example
+ * // Which day of the week is 29 February 2012?
+ * var result = getDay(new Date(2012, 1, 29))
+ * //=> 3
+ */
+function getDay (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  return day
+}
+
+module.exports = getDay
+
+
+/***/ }),
+/* 229 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isLeapYear = __webpack_require__(147)
+
+/**
+ * @category Year Helpers
+ * @summary Get the number of days in a year of the given date.
+ *
+ * @description
+ * Get the number of days in a year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of days in a year
+ *
+ * @example
+ * // How many days are in 2012?
+ * var result = getDaysInYear(new Date(2012, 0, 1))
+ * //=> 366
+ */
+function getDaysInYear (dirtyDate) {
+  return isLeapYear(dirtyDate) ? 366 : 365
+}
+
+module.exports = getDaysInYear
+
+
+/***/ }),
+/* 230 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Hour Helpers
+ * @summary Get the hours of the given date.
+ *
+ * @description
+ * Get the hours of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the hours
+ *
+ * @example
+ * // Get the hours of 29 February 2012 11:45:00:
+ * var result = getHours(new Date(2012, 1, 29, 11, 45))
+ * //=> 11
+ */
+function getHours (dirtyDate) {
+  var date = parse(dirtyDate)
+  var hours = date.getHours()
+  return hours
+}
+
+module.exports = getHours
+
+
+/***/ }),
+/* 231 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfISOYear = __webpack_require__(8)
+var addWeeks = __webpack_require__(118)
+
+var MILLISECONDS_IN_WEEK = 604800000
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Get the number of weeks in an ISO week-numbering year of the given date.
+ *
+ * @description
+ * Get the number of weeks in an ISO week-numbering year of the given date.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the number of ISO weeks in a year
+ *
+ * @example
+ * // How many weeks are in ISO week-numbering year 2015?
+ * var result = getISOWeeksInYear(new Date(2015, 1, 11))
+ * //=> 53
+ */
+function getISOWeeksInYear (dirtyDate) {
+  var thisYear = startOfISOYear(dirtyDate)
+  var nextYear = startOfISOYear(addWeeks(thisYear, 60))
+  var diff = nextYear.valueOf() - thisYear.valueOf()
+  // Round the number of weeks to the nearest integer
+  // because the number of milliseconds in a week is not constant
+  // (e.g. it's different in the week of the daylight saving time clock shift)
+  return Math.round(diff / MILLISECONDS_IN_WEEK)
+}
+
+module.exports = getISOWeeksInYear
+
+
+/***/ }),
+/* 232 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Get the milliseconds of the given date.
+ *
+ * @description
+ * Get the milliseconds of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the milliseconds
+ *
+ * @example
+ * // Get the milliseconds of 29 February 2012 11:45:05.123:
+ * var result = getMilliseconds(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 123
+ */
+function getMilliseconds (dirtyDate) {
+  var date = parse(dirtyDate)
+  var milliseconds = date.getMilliseconds()
+  return milliseconds
+}
+
+module.exports = getMilliseconds
+
+
+/***/ }),
+/* 233 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Minute Helpers
+ * @summary Get the minutes of the given date.
+ *
+ * @description
+ * Get the minutes of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the minutes
+ *
+ * @example
+ * // Get the minutes of 29 February 2012 11:45:05:
+ * var result = getMinutes(new Date(2012, 1, 29, 11, 45, 5))
+ * //=> 45
+ */
+function getMinutes (dirtyDate) {
+  var date = parse(dirtyDate)
+  var minutes = date.getMinutes()
+  return minutes
+}
+
+module.exports = getMinutes
+
+
+/***/ }),
+/* 234 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Get the month of the given date.
+ *
+ * @description
+ * Get the month of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the month
+ *
+ * @example
+ * // Which month is 29 February 2012?
+ * var result = getMonth(new Date(2012, 1, 29))
+ * //=> 1
+ */
+function getMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  return month
+}
+
+module.exports = getMonth
+
+
+/***/ }),
+/* 235 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+var MILLISECONDS_IN_DAY = 24 * 60 * 60 * 1000
+
+/**
+ * @category Range Helpers
+ * @summary Get the number of days that overlap in two date ranges
+ *
+ * @description
+ * Get the number of days that overlap in two date ranges
+ *
+ * @param {Date|String|Number} initialRangeStartDate - the start of the initial range
+ * @param {Date|String|Number} initialRangeEndDate - the end of the initial range
+ * @param {Date|String|Number} comparedRangeStartDate - the start of the range to compare it with
+ * @param {Date|String|Number} comparedRangeEndDate - the end of the range to compare it with
+ * @returns {Number} the number of days that overlap in two date ranges
+ * @throws {Error} startDate of a date range cannot be after its endDate
+ *
+ * @example
+ * // For overlapping date ranges adds 1 for each started overlapping day:
+ * getOverlappingDaysInRanges(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 17), new Date(2014, 0, 21)
+ * )
+ * //=> 3
+ *
+ * @example
+ * // For non-overlapping date ranges returns 0:
+ * getOverlappingDaysInRanges(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 20), new Date(2014, 0, 21), new Date(2014, 0, 22)
+ * )
+ * //=> 0
+ */
+function getOverlappingDaysInRanges (dirtyInitialRangeStartDate, dirtyInitialRangeEndDate, dirtyComparedRangeStartDate, dirtyComparedRangeEndDate) {
+  var initialStartTime = parse(dirtyInitialRangeStartDate).getTime()
+  var initialEndTime = parse(dirtyInitialRangeEndDate).getTime()
+  var comparedStartTime = parse(dirtyComparedRangeStartDate).getTime()
+  var comparedEndTime = parse(dirtyComparedRangeEndDate).getTime()
+
+  if (initialStartTime > initialEndTime || comparedStartTime > comparedEndTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  var isOverlapping = initialStartTime < comparedEndTime && comparedStartTime < initialEndTime
+
+  if (!isOverlapping) {
+    return 0
+  }
+
+  var overlapStartDate = comparedStartTime < initialStartTime
+    ? initialStartTime
+    : comparedStartTime
+
+  var overlapEndDate = comparedEndTime > initialEndTime
+    ? initialEndTime
+    : comparedEndTime
+
+  var differenceInMs = overlapEndDate - overlapStartDate
+
+  return Math.ceil(differenceInMs / MILLISECONDS_IN_DAY)
+}
+
+module.exports = getOverlappingDaysInRanges
+
+
+/***/ }),
+/* 236 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Second Helpers
+ * @summary Get the seconds of the given date.
+ *
+ * @description
+ * Get the seconds of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the seconds
+ *
+ * @example
+ * // Get the seconds of 29 February 2012 11:45:05.123:
+ * var result = getSeconds(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 5
+ */
+function getSeconds (dirtyDate) {
+  var date = parse(dirtyDate)
+  var seconds = date.getSeconds()
+  return seconds
+}
+
+module.exports = getSeconds
+
+
+/***/ }),
+/* 237 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Timestamp Helpers
+ * @summary Get the milliseconds timestamp of the given date.
+ *
+ * @description
+ * Get the milliseconds timestamp of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the timestamp
+ *
+ * @example
+ * // Get the timestamp of 29 February 2012 11:45:05.123:
+ * var result = getTime(new Date(2012, 1, 29, 11, 45, 5, 123))
+ * //=> 1330515905123
+ */
+function getTime (dirtyDate) {
+  var date = parse(dirtyDate)
+  var timestamp = date.getTime()
+  return timestamp
+}
+
+module.exports = getTime
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Get the year of the given date.
+ *
+ * @description
+ * Get the year of the given date.
+ *
+ * @param {Date|String|Number} date - the given date
+ * @returns {Number} the year
+ *
+ * @example
+ * // Which year is 2 July 2014?
+ * var result = getYear(new Date(2014, 6, 2))
+ * //=> 2014
+ */
+function getYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  return year
+}
+
+module.exports = getYear
+
+
+/***/ }),
+/* 239 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Is the first date after the second one?
+ *
+ * @description
+ * Is the first date after the second one?
+ *
+ * @param {Date|String|Number} date - the date that should be after the other one to return true
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is after the second date
+ *
+ * @example
+ * // Is 10 July 1989 after 11 February 1987?
+ * var result = isAfter(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> true
+ */
+function isAfter (dirtyDate, dirtyDateToCompare) {
+  var date = parse(dirtyDate)
+  var dateToCompare = parse(dirtyDateToCompare)
+  return date.getTime() > dateToCompare.getTime()
+}
+
+module.exports = isAfter
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Is the first date before the second one?
+ *
+ * @description
+ * Is the first date before the second one?
+ *
+ * @param {Date|String|Number} date - the date that should be before the other one to return true
+ * @param {Date|String|Number} dateToCompare - the date to compare with
+ * @returns {Boolean} the first date is before the second date
+ *
+ * @example
+ * // Is 10 July 1989 before 11 February 1987?
+ * var result = isBefore(new Date(1989, 6, 10), new Date(1987, 1, 11))
+ * //=> false
+ */
+function isBefore (dirtyDate, dirtyDateToCompare) {
+  var date = parse(dirtyDate)
+  var dateToCompare = parse(dirtyDateToCompare)
+  return date.getTime() < dateToCompare.getTime()
+}
+
+module.exports = isBefore
+
+
+/***/ }),
+/* 241 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Are the given dates equal?
+ *
+ * @description
+ * Are the given dates equal?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to compare
+ * @param {Date|String|Number} dateRight - the second date to compare
+ * @returns {Boolean} the dates are equal
+ *
+ * @example
+ * // Are 2 July 2014 06:30:45.000 and 2 July 2014 06:30:45.500 equal?
+ * var result = isEqual(
+ *   new Date(2014, 6, 2, 6, 30, 45, 0)
+ *   new Date(2014, 6, 2, 6, 30, 45, 500)
+ * )
+ * //=> false
+ */
+function isEqual (dirtyLeftDate, dirtyRightDate) {
+  var dateLeft = parse(dirtyLeftDate)
+  var dateRight = parse(dirtyRightDate)
+  return dateLeft.getTime() === dateRight.getTime()
+}
+
+module.exports = isEqual
+
+
+/***/ }),
+/* 242 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date the first day of a month?
+ *
+ * @description
+ * Is the given date the first day of a month?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is the first day of a month
+ *
+ * @example
+ * // Is 1 September 2014 the first day of a month?
+ * var result = isFirstDayOfMonth(new Date(2014, 8, 1))
+ * //=> true
+ */
+function isFirstDayOfMonth (dirtyDate) {
+  return parse(dirtyDate).getDate() === 1
+}
+
+module.exports = isFirstDayOfMonth
+
+
+/***/ }),
+/* 243 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Friday?
+ *
+ * @description
+ * Is the given date Friday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Friday
+ *
+ * @example
+ * // Is 26 September 2014 Friday?
+ * var result = isFriday(new Date(2014, 8, 26))
+ * //=> true
+ */
+function isFriday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 5
+}
+
+module.exports = isFriday
+
+
+/***/ }),
+/* 244 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date in the future?
+ *
+ * @description
+ * Is the given date in the future?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the future
+ *
+ * @example
+ * // If today is 6 October 2014, is 31 December 2014 in the future?
+ * var result = isFuture(new Date(2014, 11, 31))
+ * //=> true
+ */
+function isFuture (dirtyDate) {
+  return parse(dirtyDate).getTime() > new Date().getTime()
+}
+
+module.exports = isFuture
+
+
+/***/ }),
+/* 245 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var endOfDay = __webpack_require__(122)
+var endOfMonth = __webpack_require__(143)
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date the last day of a month?
+ *
+ * @description
+ * Is the given date the last day of a month?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is the last day of a month
+ *
+ * @example
+ * // Is 28 February 2014 the last day of a month?
+ * var result = isLastDayOfMonth(new Date(2014, 1, 28))
+ * //=> true
+ */
+function isLastDayOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  return endOfDay(date).getTime() === endOfMonth(date).getTime()
+}
+
+module.exports = isLastDayOfMonth
+
+
+/***/ }),
+/* 246 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Monday?
+ *
+ * @description
+ * Is the given date Monday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Monday
+ *
+ * @example
+ * // Is 22 September 2014 Monday?
+ * var result = isMonday(new Date(2014, 8, 22))
+ * //=> true
+ */
+function isMonday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 1
+}
+
+module.exports = isMonday
+
+
+/***/ }),
+/* 247 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Is the given date in the past?
+ *
+ * @description
+ * Is the given date in the past?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in the past
+ *
+ * @example
+ * // If today is 6 October 2014, is 2 July 2014 in the past?
+ * var result = isPast(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isPast (dirtyDate) {
+  return parse(dirtyDate).getTime() < new Date().getTime()
+}
+
+module.exports = isPast
+
+
+/***/ }),
+/* 248 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+/**
+ * @category Day Helpers
+ * @summary Are the given dates in the same day?
+ *
+ * @description
+ * Are the given dates in the same day?
+ *
+ * @param {Date|String|Number} dateLeft - the first date to check
+ * @param {Date|String|Number} dateRight - the second date to check
+ * @returns {Boolean} the dates are in the same day
+ *
+ * @example
+ * // Are 4 September 06:00:00 and 4 September 18:00:00 in the same day?
+ * var result = isSameDay(
+ *   new Date(2014, 8, 4, 6, 0),
+ *   new Date(2014, 8, 4, 18, 0)
+ * )
+ * //=> true
+ */
+function isSameDay (dirtyDateLeft, dirtyDateRight) {
+  var dateLeftStartOfDay = startOfDay(dirtyDateLeft)
+  var dateRightStartOfDay = startOfDay(dirtyDateRight)
+
+  return dateLeftStartOfDay.getTime() === dateRightStartOfDay.getTime()
+}
+
+module.exports = isSameDay
+
+
+/***/ }),
+/* 249 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Saturday?
+ *
+ * @description
+ * Is the given date Saturday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Saturday
+ *
+ * @example
+ * // Is 27 September 2014 Saturday?
+ * var result = isSaturday(new Date(2014, 8, 27))
+ * //=> true
+ */
+function isSaturday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 6
+}
+
+module.exports = isSaturday
+
+
+/***/ }),
+/* 250 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Sunday?
+ *
+ * @description
+ * Is the given date Sunday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Sunday
+ *
+ * @example
+ * // Is 21 September 2014 Sunday?
+ * var result = isSunday(new Date(2014, 8, 21))
+ * //=> true
+ */
+function isSunday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 0
+}
+
+module.exports = isSunday
+
+
+/***/ }),
+/* 251 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameHour = __webpack_require__(149)
+
+/**
+ * @category Hour Helpers
+ * @summary Is the given date in the same hour as the current date?
+ *
+ * @description
+ * Is the given date in the same hour as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this hour
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:00:00 in this hour?
+ * var result = isThisHour(new Date(2014, 8, 25, 18))
+ * //=> true
+ */
+function isThisHour (dirtyDate) {
+  return isSameHour(new Date(), dirtyDate)
+}
+
+module.exports = isThisHour
+
+
+/***/ }),
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameISOWeek = __webpack_require__(151)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Is the given date in the same ISO week as the current date?
+ *
+ * @description
+ * Is the given date in the same ISO week as the current date?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this ISO week
+ *
+ * @example
+ * // If today is 25 September 2014, is 22 September 2014 in this ISO week?
+ * var result = isThisISOWeek(new Date(2014, 8, 22))
+ * //=> true
+ */
+function isThisISOWeek (dirtyDate) {
+  return isSameISOWeek(new Date(), dirtyDate)
+}
+
+module.exports = isThisISOWeek
+
+
+/***/ }),
+/* 253 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameISOYear = __webpack_require__(152)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Is the given date in the same ISO week-numbering year as the current date?
+ *
+ * @description
+ * Is the given date in the same ISO week-numbering year as the current date?
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this ISO week-numbering year
+ *
+ * @example
+ * // If today is 25 September 2014,
+ * // is 30 December 2013 in this ISO week-numbering year?
+ * var result = isThisISOYear(new Date(2013, 11, 30))
+ * //=> true
+ */
+function isThisISOYear (dirtyDate) {
+  return isSameISOYear(new Date(), dirtyDate)
+}
+
+module.exports = isThisISOYear
+
+
+/***/ }),
+/* 254 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameMinute = __webpack_require__(153)
+
+/**
+ * @category Minute Helpers
+ * @summary Is the given date in the same minute as the current date?
+ *
+ * @description
+ * Is the given date in the same minute as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this minute
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:30:00 in this minute?
+ * var result = isThisMinute(new Date(2014, 8, 25, 18, 30))
+ * //=> true
+ */
+function isThisMinute (dirtyDate) {
+  return isSameMinute(new Date(), dirtyDate)
+}
+
+module.exports = isThisMinute
+
+
+/***/ }),
+/* 255 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameMonth = __webpack_require__(155)
+
+/**
+ * @category Month Helpers
+ * @summary Is the given date in the same month as the current date?
+ *
+ * @description
+ * Is the given date in the same month as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this month
+ *
+ * @example
+ * // If today is 25 September 2014, is 15 September 2014 in this month?
+ * var result = isThisMonth(new Date(2014, 8, 15))
+ * //=> true
+ */
+function isThisMonth (dirtyDate) {
+  return isSameMonth(new Date(), dirtyDate)
+}
+
+module.exports = isThisMonth
+
+
+/***/ }),
+/* 256 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameQuarter = __webpack_require__(156)
+
+/**
+ * @category Quarter Helpers
+ * @summary Is the given date in the same quarter as the current date?
+ *
+ * @description
+ * Is the given date in the same quarter as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this quarter
+ *
+ * @example
+ * // If today is 25 September 2014, is 2 July 2014 in this quarter?
+ * var result = isThisQuarter(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isThisQuarter (dirtyDate) {
+  return isSameQuarter(new Date(), dirtyDate)
+}
+
+module.exports = isThisQuarter
+
+
+/***/ }),
+/* 257 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameSecond = __webpack_require__(158)
+
+/**
+ * @category Second Helpers
+ * @summary Is the given date in the same second as the current date?
+ *
+ * @description
+ * Is the given date in the same second as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this second
+ *
+ * @example
+ * // If now is 25 September 2014 18:30:15.500,
+ * // is 25 September 2014 18:30:15.000 in this second?
+ * var result = isThisSecond(new Date(2014, 8, 25, 18, 30, 15))
+ * //=> true
+ */
+function isThisSecond (dirtyDate) {
+  return isSameSecond(new Date(), dirtyDate)
+}
+
+module.exports = isThisSecond
+
+
+/***/ }),
+/* 258 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameWeek = __webpack_require__(124)
+
+/**
+ * @category Week Helpers
+ * @summary Is the given date in the same week as the current date?
+ *
+ * @description
+ * Is the given date in the same week as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Boolean} the date is in this week
+ *
+ * @example
+ * // If today is 25 September 2014, is 21 September 2014 in this week?
+ * var result = isThisWeek(new Date(2014, 8, 21))
+ * //=> true
+ *
+ * @example
+ * // If today is 25 September 2014 and week starts with Monday
+ * // is 21 September 2014 in this week?
+ * var result = isThisWeek(new Date(2014, 8, 21), {weekStartsOn: 1})
+ * //=> false
+ */
+function isThisWeek (dirtyDate, dirtyOptions) {
+  return isSameWeek(new Date(), dirtyDate, dirtyOptions)
+}
+
+module.exports = isThisWeek
+
+
+/***/ }),
+/* 259 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var isSameYear = __webpack_require__(160)
+
+/**
+ * @category Year Helpers
+ * @summary Is the given date in the same year as the current date?
+ *
+ * @description
+ * Is the given date in the same year as the current date?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is in this year
+ *
+ * @example
+ * // If today is 25 September 2014, is 2 July 2014 in this year?
+ * var result = isThisYear(new Date(2014, 6, 2))
+ * //=> true
+ */
+function isThisYear (dirtyDate) {
+  return isSameYear(new Date(), dirtyDate)
+}
+
+module.exports = isThisYear
+
+
+/***/ }),
+/* 260 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Thursday?
+ *
+ * @description
+ * Is the given date Thursday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Thursday
+ *
+ * @example
+ * // Is 25 September 2014 Thursday?
+ * var result = isThursday(new Date(2014, 8, 25))
+ * //=> true
+ */
+function isThursday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 4
+}
+
+module.exports = isThursday
+
+
+/***/ }),
+/* 261 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date today?
+ *
+ * @description
+ * Is the given date today?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is today
+ *
+ * @example
+ * // If today is 6 October 2014, is 6 October 14:00:00 today?
+ * var result = isToday(new Date(2014, 9, 6, 14, 0))
+ * //=> true
+ */
+function isToday (dirtyDate) {
+  return startOfDay(dirtyDate).getTime() === startOfDay(new Date()).getTime()
+}
+
+module.exports = isToday
+
+
+/***/ }),
+/* 262 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date tomorrow?
+ *
+ * @description
+ * Is the given date tomorrow?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014, is 7 October 14:00:00 tomorrow?
+ * var result = isTomorrow(new Date(2014, 9, 7, 14, 0))
+ * //=> true
+ */
+function isTomorrow (dirtyDate) {
+  var tomorrow = new Date()
+  tomorrow.setDate(tomorrow.getDate() + 1)
+  return startOfDay(dirtyDate).getTime() === startOfDay(tomorrow).getTime()
+}
+
+module.exports = isTomorrow
+
+
+/***/ }),
+/* 263 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Tuesday?
+ *
+ * @description
+ * Is the given date Tuesday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Tuesday
+ *
+ * @example
+ * // Is 23 September 2014 Tuesday?
+ * var result = isTuesday(new Date(2014, 8, 23))
+ * //=> true
+ */
+function isTuesday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 2
+}
+
+module.exports = isTuesday
+
+
+/***/ }),
+/* 264 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Is the given date Wednesday?
+ *
+ * @description
+ * Is the given date Wednesday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is Wednesday
+ *
+ * @example
+ * // Is 24 September 2014 Wednesday?
+ * var result = isWednesday(new Date(2014, 8, 24))
+ * //=> true
+ */
+function isWednesday (dirtyDate) {
+  return parse(dirtyDate).getDay() === 3
+}
+
+module.exports = isWednesday
+
+
+/***/ }),
+/* 265 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Weekday Helpers
+ * @summary Does the given date fall on a weekend?
+ *
+ * @description
+ * Does the given date fall on a weekend?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date falls on a weekend
+ *
+ * @example
+ * // Does 5 October 2014 fall on a weekend?
+ * var result = isWeekend(new Date(2014, 9, 5))
+ * //=> true
+ */
+function isWeekend (dirtyDate) {
+  var date = parse(dirtyDate)
+  var day = date.getDay()
+  return day === 0 || day === 6
+}
+
+module.exports = isWeekend
+
+
+/***/ }),
+/* 266 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Range Helpers
+ * @summary Is the given date within the range?
+ *
+ * @description
+ * Is the given date within the range?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @param {Date|String|Number} startDate - the start of range
+ * @param {Date|String|Number} endDate - the end of range
+ * @returns {Boolean} the date is within the range
+ * @throws {Error} startDate cannot be after endDate
+ *
+ * @example
+ * // For the date within the range:
+ * isWithinRange(
+ *   new Date(2014, 0, 3), new Date(2014, 0, 1), new Date(2014, 0, 7)
+ * )
+ * //=> true
+ *
+ * @example
+ * // For the date outside of the range:
+ * isWithinRange(
+ *   new Date(2014, 0, 10), new Date(2014, 0, 1), new Date(2014, 0, 7)
+ * )
+ * //=> false
+ */
+function isWithinRange (dirtyDate, dirtyStartDate, dirtyEndDate) {
+  var time = parse(dirtyDate).getTime()
+  var startTime = parse(dirtyStartDate).getTime()
+  var endTime = parse(dirtyEndDate).getTime()
+
+  if (startTime > endTime) {
+    throw new Error('The start of the range cannot be after the end of the range')
+  }
+
+  return time >= startTime && time <= endTime
+}
+
+module.exports = isWithinRange
+
+
+/***/ }),
+/* 267 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+/**
+ * @category Day Helpers
+ * @summary Is the given date yesterday?
+ *
+ * @description
+ * Is the given date yesterday?
+ *
+ * @param {Date|String|Number} date - the date to check
+ * @returns {Boolean} the date is yesterday
+ *
+ * @example
+ * // If today is 6 October 2014, is 5 October 14:00:00 yesterday?
+ * var result = isYesterday(new Date(2014, 9, 5, 14, 0))
+ * //=> true
+ */
+function isYesterday (dirtyDate) {
+  var yesterday = new Date()
+  yesterday.setDate(yesterday.getDate() - 1)
+  return startOfDay(dirtyDate).getTime() === startOfDay(yesterday).getTime()
+}
+
+module.exports = isYesterday
+
+
+/***/ }),
+/* 268 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var lastDayOfWeek = __webpack_require__(161)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Return the last day of an ISO week for the given date.
+ *
+ * @description
+ * Return the last day of an ISO week for the given date.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of an ISO week
+ *
+ * @example
+ * // The last day of an ISO week for 2 September 2014 11:55:00:
+ * var result = lastDayOfISOWeek(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function lastDayOfISOWeek (dirtyDate) {
+  return lastDayOfWeek(dirtyDate, {weekStartsOn: 1})
+}
+
+module.exports = lastDayOfISOWeek
+
+
+/***/ }),
+/* 269 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getISOYear = __webpack_require__(2)
+var startOfISOWeek = __webpack_require__(3)
+
+/**
+ * @category ISO Week-Numbering Year Helpers
+ * @summary Return the last day of an ISO week-numbering year for the given date.
+ *
+ * @description
+ * Return the last day of an ISO week-numbering year,
+ * which always starts 3 days before the year's first Thursday.
+ * The result will be in the local timezone.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the end of an ISO week-numbering year
+ *
+ * @example
+ * // The last day of an ISO week-numbering year for 2 July 2005:
+ * var result = lastDayOfISOYear(new Date(2005, 6, 2))
+ * //=> Sun Jan 01 2006 00:00:00
+ */
+function lastDayOfISOYear (dirtyDate) {
+  var year = getISOYear(dirtyDate)
+  var fourthOfJanuary = new Date(0)
+  fourthOfJanuary.setFullYear(year + 1, 0, 4)
+  fourthOfJanuary.setHours(0, 0, 0, 0)
+  var date = startOfISOWeek(fourthOfJanuary)
+  date.setDate(date.getDate() - 1)
+  return date
+}
+
+module.exports = lastDayOfISOYear
+
+
+/***/ }),
+/* 270 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Return the last day of a month for the given date.
+ *
+ * @description
+ * Return the last day of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a month
+ *
+ * @example
+ * // The last day of a month for 2 September 2014 11:55:00:
+ * var result = lastDayOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  var month = date.getMonth()
+  date.setFullYear(date.getFullYear(), month + 1, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfMonth
+
+
+/***/ }),
+/* 271 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Quarter Helpers
+ * @summary Return the last day of a year quarter for the given date.
+ *
+ * @description
+ * Return the last day of a year quarter for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a quarter
+ *
+ * @example
+ * // The last day of a quarter for 2 September 2014 11:55:00:
+ * var result = lastDayOfQuarter(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function lastDayOfQuarter (dirtyDate) {
+  var date = parse(dirtyDate)
+  var currentMonth = date.getMonth()
+  var month = currentMonth - currentMonth % 3 + 3
+  date.setMonth(month, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfQuarter
+
+
+/***/ }),
+/* 272 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Return the last day of a year for the given date.
+ *
+ * @description
+ * Return the last day of a year for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the last day of a year
+ *
+ * @example
+ * // The last day of a year for 2 September 2014 11:55:00:
+ * var result = lastDayOfYear(new Date(2014, 8, 2, 11, 55, 00))
+ * //=> Wed Dec 31 2014 00:00:00
+ */
+function lastDayOfYear (dirtyDate) {
+  var date = parse(dirtyDate)
+  var year = date.getFullYear()
+  date.setFullYear(year + 1, 0, 0)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = lastDayOfYear
+
+
+/***/ }),
+/* 273 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Return the latest of the given dates.
+ *
+ * @description
+ * Return the latest of the given dates.
+ *
+ * @param {...(Date|String|Number)} dates - the dates to compare
+ * @returns {Date} the latest of the dates
+ *
+ * @example
+ * // Which of these dates is the latest?
+ * var result = max(
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * )
+ * //=> Sun Jul 02 1995 00:00:00
+ */
+function max () {
+  var dirtyDates = Array.prototype.slice.call(arguments)
+  var dates = dirtyDates.map(function (dirtyDate) {
+    return parse(dirtyDate)
+  })
+  var latestTimestamp = Math.max.apply(null, dates)
+  return new Date(latestTimestamp)
+}
+
+module.exports = max
+
+
+/***/ }),
+/* 274 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Common Helpers
+ * @summary Return the earliest of the given dates.
+ *
+ * @description
+ * Return the earliest of the given dates.
+ *
+ * @param {...(Date|String|Number)} dates - the dates to compare
+ * @returns {Date} the earliest of the dates
+ *
+ * @example
+ * // Which of these dates is the earliest?
+ * var result = min(
+ *   new Date(1989, 6, 10),
+ *   new Date(1987, 1, 11),
+ *   new Date(1995, 6, 2),
+ *   new Date(1990, 0, 1)
+ * )
+ * //=> Wed Feb 11 1987 00:00:00
+ */
+function min () {
+  var dirtyDates = Array.prototype.slice.call(arguments)
+  var dates = dirtyDates.map(function (dirtyDate) {
+    return parse(dirtyDate)
+  })
+  var earliestTimestamp = Math.min.apply(null, dates)
+  return new Date(earliestTimestamp)
+}
+
+module.exports = min
+
+
+/***/ }),
+/* 275 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Set the day of the month to the given date.
+ *
+ * @description
+ * Set the day of the month to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} dayOfMonth - the day of the month of the new date
+ * @returns {Date} the new date with the day of the month setted
+ *
+ * @example
+ * // Set the 30th day of the month to 1 September 2014:
+ * var result = setDate(new Date(2014, 8, 1), 30)
+ * //=> Tue Sep 30 2014 00:00:00
+ */
+function setDate (dirtyDate, dirtyDayOfMonth) {
+  var date = parse(dirtyDate)
+  var dayOfMonth = Number(dirtyDayOfMonth)
+  date.setDate(dayOfMonth)
+  return date
+}
+
+module.exports = setDate
+
+
+/***/ }),
+/* 276 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var addDays = __webpack_require__(6)
+
+/**
+ * @category Weekday Helpers
+ * @summary Set the day of the week to the given date.
+ *
+ * @description
+ * Set the day of the week to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} day - the day of the week of the new date
+ * @param {Object} [options] - the object with options
+ * @param {Number} [options.weekStartsOn=0] - the index of the first day of the week (0 - Sunday)
+ * @returns {Date} the new date with the day of the week setted
+ *
+ * @example
+ * // Set Sunday to 1 September 2014:
+ * var result = setDay(new Date(2014, 8, 1), 0)
+ * //=> Sun Aug 31 2014 00:00:00
+ *
+ * @example
+ * // If week starts with Monday, set Sunday to 1 September 2014:
+ * var result = setDay(new Date(2014, 8, 1), 0, {weekStartsOn: 1})
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function setDay (dirtyDate, dirtyDay, dirtyOptions) {
+  var weekStartsOn = dirtyOptions ? (Number(dirtyOptions.weekStartsOn) || 0) : 0
+  var date = parse(dirtyDate)
+  var day = Number(dirtyDay)
+  var currentDay = date.getDay()
+
+  var remainder = day % 7
+  var dayIndex = (remainder + 7) % 7
+
+  var diff = (dayIndex < weekStartsOn ? 7 : 0) + day - currentDay
+  return addDays(date, diff)
+}
+
+module.exports = setDay
+
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Day Helpers
+ * @summary Set the day of the year to the given date.
+ *
+ * @description
+ * Set the day of the year to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} dayOfYear - the day of the year of the new date
+ * @returns {Date} the new date with the day of the year setted
+ *
+ * @example
+ * // Set the 2nd day of the year to 2 July 2014:
+ * var result = setDayOfYear(new Date(2014, 6, 2), 2)
+ * //=> Thu Jan 02 2014 00:00:00
+ */
+function setDayOfYear (dirtyDate, dirtyDayOfYear) {
+  var date = parse(dirtyDate)
+  var dayOfYear = Number(dirtyDayOfYear)
+  date.setMonth(0)
+  date.setDate(dayOfYear)
+  return date
+}
+
+module.exports = setDayOfYear
+
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Hour Helpers
+ * @summary Set the hours to the given date.
+ *
+ * @description
+ * Set the hours to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} hours - the hours of the new date
+ * @returns {Date} the new date with the hours setted
+ *
+ * @example
+ * // Set 4 hours to 1 September 2014 11:30:00:
+ * var result = setHours(new Date(2014, 8, 1, 11, 30), 4)
+ * //=> Mon Sep 01 2014 04:30:00
+ */
+function setHours (dirtyDate, dirtyHours) {
+  var date = parse(dirtyDate)
+  var hours = Number(dirtyHours)
+  date.setHours(hours)
+  return date
+}
+
+module.exports = setHours
+
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var addDays = __webpack_require__(6)
+var getISODay = __webpack_require__(148)
+
+/**
+ * @category Weekday Helpers
+ * @summary Set the day of the ISO week to the given date.
+ *
+ * @description
+ * Set the day of the ISO week to the given date.
+ * ISO week starts with Monday.
+ * 7 is the index of Sunday, 1 is the index of Monday etc.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} day - the day of the ISO week of the new date
+ * @returns {Date} the new date with the day of the ISO week setted
+ *
+ * @example
+ * // Set Sunday to 1 September 2014:
+ * var result = setISODay(new Date(2014, 8, 1), 7)
+ * //=> Sun Sep 07 2014 00:00:00
+ */
+function setISODay (dirtyDate, dirtyDay) {
+  var date = parse(dirtyDate)
+  var day = Number(dirtyDay)
+  var currentDay = getISODay(date)
+  var diff = day - currentDay
+  return addDays(date, diff)
+}
+
+module.exports = setISODay
+
+
+/***/ }),
+/* 280 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var getISOWeek = __webpack_require__(123)
+
+/**
+ * @category ISO Week Helpers
+ * @summary Set the ISO week to the given date.
+ *
+ * @description
+ * Set the ISO week to the given date, saving the weekday number.
+ *
+ * ISO week-numbering year: http://en.wikipedia.org/wiki/ISO_week_date
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} isoWeek - the ISO week of the new date
+ * @returns {Date} the new date with the ISO week setted
+ *
+ * @example
+ * // Set the 53rd ISO week to 7 August 2004:
+ * var result = setISOWeek(new Date(2004, 7, 7), 53)
+ * //=> Sat Jan 01 2005 00:00:00
+ */
+function setISOWeek (dirtyDate, dirtyISOWeek) {
+  var date = parse(dirtyDate)
+  var isoWeek = Number(dirtyISOWeek)
+  var diff = getISOWeek(date) - isoWeek
+  date.setDate(date.getDate() - diff * 7)
+  return date
+}
+
+module.exports = setISOWeek
+
+
+/***/ }),
+/* 281 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Set the milliseconds to the given date.
+ *
+ * @description
+ * Set the milliseconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} milliseconds - the milliseconds of the new date
+ * @returns {Date} the new date with the milliseconds setted
+ *
+ * @example
+ * // Set 300 milliseconds to 1 September 2014 11:30:40.500:
+ * var result = setMilliseconds(new Date(2014, 8, 1, 11, 30, 40, 500), 300)
+ * //=> Mon Sep 01 2014 11:30:40.300
+ */
+function setMilliseconds (dirtyDate, dirtyMilliseconds) {
+  var date = parse(dirtyDate)
+  var milliseconds = Number(dirtyMilliseconds)
+  date.setMilliseconds(milliseconds)
+  return date
+}
+
+module.exports = setMilliseconds
+
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Minute Helpers
+ * @summary Set the minutes to the given date.
+ *
+ * @description
+ * Set the minutes to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} minutes - the minutes of the new date
+ * @returns {Date} the new date with the minutes setted
+ *
+ * @example
+ * // Set 45 minutes to 1 September 2014 11:30:40:
+ * var result = setMinutes(new Date(2014, 8, 1, 11, 30, 40), 45)
+ * //=> Mon Sep 01 2014 11:45:40
+ */
+function setMinutes (dirtyDate, dirtyMinutes) {
+  var date = parse(dirtyDate)
+  var minutes = Number(dirtyMinutes)
+  date.setMinutes(minutes)
+  return date
+}
+
+module.exports = setMinutes
+
+
+/***/ }),
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+var setMonth = __webpack_require__(162)
+
+/**
+ * @category Quarter Helpers
+ * @summary Set the year quarter to the given date.
+ *
+ * @description
+ * Set the year quarter to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} quarter - the quarter of the new date
+ * @returns {Date} the new date with the quarter setted
+ *
+ * @example
+ * // Set the 2nd quarter to 2 July 2014:
+ * var result = setQuarter(new Date(2014, 6, 2), 2)
+ * //=> Wed Apr 02 2014 00:00:00
+ */
+function setQuarter (dirtyDate, dirtyQuarter) {
+  var date = parse(dirtyDate)
+  var quarter = Number(dirtyQuarter)
+  var oldQuarter = Math.floor(date.getMonth() / 3) + 1
+  var diff = quarter - oldQuarter
+  return setMonth(date, date.getMonth() + diff * 3)
+}
+
+module.exports = setQuarter
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Second Helpers
+ * @summary Set the seconds to the given date.
+ *
+ * @description
+ * Set the seconds to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} seconds - the seconds of the new date
+ * @returns {Date} the new date with the seconds setted
+ *
+ * @example
+ * // Set 45 seconds to 1 September 2014 11:30:40:
+ * var result = setSeconds(new Date(2014, 8, 1, 11, 30, 40), 45)
+ * //=> Mon Sep 01 2014 11:30:45
+ */
+function setSeconds (dirtyDate, dirtySeconds) {
+  var date = parse(dirtyDate)
+  var seconds = Number(dirtySeconds)
+  date.setSeconds(seconds)
+  return date
+}
+
+module.exports = setSeconds
+
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Year Helpers
+ * @summary Set the year to the given date.
+ *
+ * @description
+ * Set the year to the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} year - the year of the new date
+ * @returns {Date} the new date with the year setted
+ *
+ * @example
+ * // Set year 2013 to 1 September 2014:
+ * var result = setYear(new Date(2014, 8, 1), 2013)
+ * //=> Sun Sep 01 2013 00:00:00
+ */
+function setYear (dirtyDate, dirtyYear) {
+  var date = parse(dirtyDate)
+  var year = Number(dirtyYear)
+  date.setFullYear(year)
+  return date
+}
+
+module.exports = setYear
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var parse = __webpack_require__(0)
+
+/**
+ * @category Month Helpers
+ * @summary Return the start of a month for the given date.
+ *
+ * @description
+ * Return the start of a month for the given date.
+ * The result will be in the local timezone.
+ *
+ * @param {Date|String|Number} date - the original date
+ * @returns {Date} the start of a month
+ *
+ * @example
+ * // The start of a month for 2 September 2014 11:55:00:
+ * var result = startOfMonth(new Date(2014, 8, 2, 11, 55, 0))
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function startOfMonth (dirtyDate) {
+  var date = parse(dirtyDate)
+  date.setDate(1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfMonth
+
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var startOfDay = __webpack_require__(4)
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of today.
+ *
+ * @description
+ * Return the start of today.
+ *
+ * @returns {Date} the start of today
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfToday()
+ * //=> Mon Oct 6 2014 00:00:00
+ */
+function startOfToday () {
+  return startOfDay(new Date())
+}
+
+module.exports = startOfToday
+
+
+/***/ }),
+/* 288 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of tomorrow.
+ *
+ * @description
+ * Return the start of tomorrow.
+ *
+ * @returns {Date} the start of tomorrow
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfTomorrow()
+ * //=> Tue Oct 7 2014 00:00:00
+ */
+function startOfTomorrow () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day + 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfTomorrow
+
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports) {
+
+/**
+ * @category Day Helpers
+ * @summary Return the start of yesterday.
+ *
+ * @description
+ * Return the start of yesterday.
+ *
+ * @returns {Date} the start of yesterday
+ *
+ * @example
+ * // If today is 6 October 2014:
+ * var result = startOfYesterday()
+ * //=> Sun Oct 5 2014 00:00:00
+ */
+function startOfYesterday () {
+  var now = new Date()
+  var year = now.getFullYear()
+  var month = now.getMonth()
+  var day = now.getDate()
+
+  var date = new Date(0)
+  date.setFullYear(year, month, day - 1)
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+
+module.exports = startOfYesterday
+
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addDays = __webpack_require__(6)
+
+/**
+ * @category Day Helpers
+ * @summary Subtract the specified number of days from the given date.
+ *
+ * @description
+ * Subtract the specified number of days from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of days to be subtracted
+ * @returns {Date} the new date with the days subtracted
+ *
+ * @example
+ * // Subtract 10 days from 1 September 2014:
+ * var result = subDays(new Date(2014, 8, 1), 10)
+ * //=> Fri Aug 22 2014 00:00:00
+ */
+function subDays (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addDays(dirtyDate, -amount)
+}
+
+module.exports = subDays
+
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addHours = __webpack_require__(128)
+
+/**
+ * @category Hour Helpers
+ * @summary Subtract the specified number of hours from the given date.
+ *
+ * @description
+ * Subtract the specified number of hours from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of hours to be subtracted
+ * @returns {Date} the new date with the hours subtracted
+ *
+ * @example
+ * // Subtract 2 hours from 11 July 2014 01:00:00:
+ * var result = subHours(new Date(2014, 6, 11, 1, 0), 2)
+ * //=> Thu Jul 10 2014 23:00:00
+ */
+function subHours (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addHours(dirtyDate, -amount)
+}
+
+module.exports = subHours
+
+
+/***/ }),
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMilliseconds = __webpack_require__(7)
+
+/**
+ * @category Millisecond Helpers
+ * @summary Subtract the specified number of milliseconds from the given date.
+ *
+ * @description
+ * Subtract the specified number of milliseconds from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of milliseconds to be subtracted
+ * @returns {Date} the new date with the milliseconds subtracted
+ *
+ * @example
+ * // Subtract 750 milliseconds from 10 July 2014 12:45:30.000:
+ * var result = subMilliseconds(new Date(2014, 6, 10, 12, 45, 30, 0), 750)
+ * //=> Thu Jul 10 2014 12:45:29.250
+ */
+function subMilliseconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMilliseconds(dirtyDate, -amount)
+}
+
+module.exports = subMilliseconds
+
+
+/***/ }),
+/* 293 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMinutes = __webpack_require__(131)
+
+/**
+ * @category Minute Helpers
+ * @summary Subtract the specified number of minutes from the given date.
+ *
+ * @description
+ * Subtract the specified number of minutes from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of minutes to be subtracted
+ * @returns {Date} the new date with the mintues subtracted
+ *
+ * @example
+ * // Subtract 30 minutes from 10 July 2014 12:00:00:
+ * var result = subMinutes(new Date(2014, 6, 10, 12, 0), 30)
+ * //=> Thu Jul 10 2014 11:30:00
+ */
+function subMinutes (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMinutes(dirtyDate, -amount)
+}
+
+module.exports = subMinutes
+
+
+/***/ }),
+/* 294 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addMonths = __webpack_require__(81)
+
+/**
+ * @category Month Helpers
+ * @summary Subtract the specified number of months from the given date.
+ *
+ * @description
+ * Subtract the specified number of months from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of months to be subtracted
+ * @returns {Date} the new date with the months subtracted
+ *
+ * @example
+ * // Subtract 5 months from 1 February 2015:
+ * var result = subMonths(new Date(2015, 1, 1), 5)
+ * //=> Mon Sep 01 2014 00:00:00
+ */
+function subMonths (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addMonths(dirtyDate, -amount)
+}
+
+module.exports = subMonths
+
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addQuarters = __webpack_require__(132)
+
+/**
+ * @category Quarter Helpers
+ * @summary Subtract the specified number of year quarters from the given date.
+ *
+ * @description
+ * Subtract the specified number of year quarters from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of quarters to be subtracted
+ * @returns {Date} the new date with the quarters subtracted
+ *
+ * @example
+ * // Subtract 3 quarters from 1 September 2014:
+ * var result = subQuarters(new Date(2014, 8, 1), 3)
+ * //=> Sun Dec 01 2013 00:00:00
+ */
+function subQuarters (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addQuarters(dirtyDate, -amount)
+}
+
+module.exports = subQuarters
+
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addSeconds = __webpack_require__(133)
+
+/**
+ * @category Second Helpers
+ * @summary Subtract the specified number of seconds from the given date.
+ *
+ * @description
+ * Subtract the specified number of seconds from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of seconds to be subtracted
+ * @returns {Date} the new date with the seconds subtracted
+ *
+ * @example
+ * // Subtract 30 seconds from 10 July 2014 12:45:00:
+ * var result = subSeconds(new Date(2014, 6, 10, 12, 45, 0), 30)
+ * //=> Thu Jul 10 2014 12:44:30
+ */
+function subSeconds (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addSeconds(dirtyDate, -amount)
+}
+
+module.exports = subSeconds
+
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addWeeks = __webpack_require__(118)
+
+/**
+ * @category Week Helpers
+ * @summary Subtract the specified number of weeks from the given date.
+ *
+ * @description
+ * Subtract the specified number of weeks from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of weeks to be subtracted
+ * @returns {Date} the new date with the weeks subtracted
+ *
+ * @example
+ * // Subtract 4 weeks from 1 September 2014:
+ * var result = subWeeks(new Date(2014, 8, 1), 4)
+ * //=> Mon Aug 04 2014 00:00:00
+ */
+function subWeeks (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addWeeks(dirtyDate, -amount)
+}
+
+module.exports = subWeeks
+
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var addYears = __webpack_require__(134)
+
+/**
+ * @category Year Helpers
+ * @summary Subtract the specified number of years from the given date.
+ *
+ * @description
+ * Subtract the specified number of years from the given date.
+ *
+ * @param {Date|String|Number} date - the date to be changed
+ * @param {Number} amount - the amount of years to be subtracted
+ * @returns {Date} the new date with the years subtracted
+ *
+ * @example
+ * // Subtract 5 years from 1 September 2014:
+ * var result = subYears(new Date(2014, 8, 1), 5)
+ * //=> Tue Sep 01 2009 00:00:00
+ */
+function subYears (dirtyDate, dirtyAmount) {
+  var amount = Number(dirtyAmount)
+  return addYears(dirtyDate, -amount)
+}
+
+module.exports = subYears
+
+
+/***/ }),
+/* 299 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(126);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils_type__ = __webpack_require__(127);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_date_fns___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_date_fns__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils_events__ = __webpack_require__(163);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__templates_datepicker__ = __webpack_require__(300);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__templates_days__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__templates_weekdays__ = __webpack_require__(302);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__templates_months__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__templates_years__ = __webpack_require__(304);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__defaultOptions__ = __webpack_require__(305);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+var onPreviousDatePicker = Symbol('onPreviousDatePicker');
+var onNextDatePicker = Symbol('onNextDatePicker');
+var onSelectMonthDatePicker = Symbol('onSelectMonthDatePicker');
+var onMonthClickDatePicker = Symbol('onMonthClickDatePicker');
+var onSelectYearDatePicker = Symbol('onSelectYearDatePicker');
+var onYearClickDatePicker = Symbol('onYearClickDatePicker');
+var onDateClickDatePicker = Symbol('onDateClickDatePicker');
+
+var datePicker = function (_EventEmitter) {
+	_inherits(datePicker, _EventEmitter);
+
+	function datePicker() {
+		var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+		_classCallCheck(this, datePicker);
+
+		var _this = _possibleConstructorReturn(this, (datePicker.__proto__ || Object.getPrototypeOf(datePicker)).call(this));
+
+		_this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_9__defaultOptions__["a" /* default */], options);
+
+		_this._clickEvents = ['click', 'touch'];
+		_this._supportsPassive = __WEBPACK_IMPORTED_MODULE_0__utils__["a" /* detectSupportsPassive */]();
+		_this._id = __WEBPACK_IMPORTED_MODULE_0__utils__["b" /* uuid */]('datePicker');
+		_this.node = null;
+
+		_this[onPreviousDatePicker] = _this[onPreviousDatePicker].bind(_this);
+		_this[onNextDatePicker] = _this[onNextDatePicker].bind(_this);
+		_this[onSelectMonthDatePicker] = _this[onSelectMonthDatePicker].bind(_this);
+		_this[onMonthClickDatePicker] = _this[onMonthClickDatePicker].bind(_this);
+		_this[onSelectYearDatePicker] = _this[onSelectYearDatePicker].bind(_this);
+		_this[onYearClickDatePicker] = _this[onYearClickDatePicker].bind(_this);
+		_this[onDateClickDatePicker] = _this[onDateClickDatePicker].bind(_this);
+
+		_this._init();
+		return _this;
+	}
+
+	/****************************************************
+  *                                                  *
+  * GETTERS and SETTERS                              *
+  *                                                  *
+  ****************************************************/
+	/**
+  * Get id of current datePicker
+  */
+
+
+	_createClass(datePicker, [{
+		key: onPreviousDatePicker,
+
+
+		/****************************************************
+   *                                                  *
+   * EVENTS FUNCTIONS                                 *
+   *                                                  *
+   ****************************************************/
+		value: function value(e) {
+			if (!this._supportsPassive) {
+				e.preventDefault();
+			}
+			e.stopPropagation();
+
+			var prevMonth = __WEBPACK_IMPORTED_MODULE_2_date_fns__["lastDayOfMonth"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["subMonths"](new Date(__WEBPACK_IMPORTED_MODULE_2_date_fns__["getYear"](this._visibleDate), __WEBPACK_IMPORTED_MODULE_2_date_fns__["getMonth"](this._visibleDate)), 1));
+			var day = Math.min(__WEBPACK_IMPORTED_MODULE_2_date_fns__["getDaysInMonth"](prevMonth), __WEBPACK_IMPORTED_MODULE_2_date_fns__["getDate"](this._visibleDate));
+			this._visibleDate = this.min ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["max"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["setDate"](prevMonth, day), this.min) : __WEBPACK_IMPORTED_MODULE_2_date_fns__["setDate"](prevMonth, day);
+
+			this.refresh();
+		}
+	}, {
+		key: onNextDatePicker,
+		value: function value(e) {
+			if (!this._supportsPassive) {
+				e.preventDefault();
+			}
+			e.stopPropagation();
+
+			var nextMonth = __WEBPACK_IMPORTED_MODULE_2_date_fns__["addMonths"](this._visibleDate, 1);
+			var day = Math.min(__WEBPACK_IMPORTED_MODULE_2_date_fns__["getDaysInMonth"](nextMonth), __WEBPACK_IMPORTED_MODULE_2_date_fns__["getDate"](this._visibleDate));
+			this._visibleDate = this.max ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["min"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["setDate"](nextMonth, day), this.max) : __WEBPACK_IMPORTED_MODULE_2_date_fns__["setDate"](nextMonth, day);
+
+			this.refresh();
+		}
+	}, {
+		key: onSelectMonthDatePicker,
+		value: function value(e) {
+			e.stopPropagation();
+
+			if (this.options.enableMonthSwitch) {
+				this._ui.body.dates.classList.remove('is-active');
+				this._ui.body.years.classList.remove('is-active');
+				this._ui.body.months.classList.add('is-active');
+				this._ui.navigation.previous.setAttribute('disabled', 'disabled');
+				this._ui.navigation.next.setAttribute('disabled', 'disabled');
+			}
+		}
+	}, {
+		key: onSelectYearDatePicker,
+		value: function value(e) {
+			e.stopPropagation();
+
+			if (this.options.enableYearSwitch) {
+				this._ui.body.dates.classList.remove('is-active');
+				this._ui.body.months.classList.remove('is-active');
+				this._ui.body.years.classList.add('is-active');
+				this._ui.navigation.previous.setAttribute('disabled', 'disabled');
+				this._ui.navigation.next.setAttribute('disabled', 'disabled');
+
+				var currentYear = this._ui.body.years.querySelector('.calendar-year.is-active');
+				if (currentYear) {
+					this._ui.body.years.scrollTop = currentYear.offsetTop - this._ui.body.years.offsetTop - this._ui.body.years.clientHeight / 2;
+				}
+			}
+		}
+	}, {
+		key: onMonthClickDatePicker,
+		value: function value(e) {
+			if (!this._supportsPassive) {
+				e.preventDefault();
+			}
+
+			e.stopPropagation();
+			var newDate = __WEBPACK_IMPORTED_MODULE_2_date_fns__["setMonth"](this._visibleDate, parseInt(e.currentTarget.dataset.month) - 1);
+			this._visibleDate = this.min ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["max"](newDate, this.min) : newDate;
+			this._visibleDate = this.max ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["min"](this._visibleDate, this.max) : this._visibleDate;
+
+			this.refresh();
+		}
+	}, {
+		key: onYearClickDatePicker,
+		value: function value(e) {
+			if (!this._supportsPassive) {
+				e.preventDefault();
+			}
+
+			e.stopPropagation();
+			var newDate = __WEBPACK_IMPORTED_MODULE_2_date_fns__["setYear"](this._visibleDate, parseInt(e.currentTarget.dataset.year));
+			this._visibleDate = this.min ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["max"](newDate, this.min) : newDate;
+			this._visibleDate = this.max ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["min"](this._visibleDate, this.max) : this._visibleDate;
+
+			this.refresh();
+		}
+	}, {
+		key: onDateClickDatePicker,
+		value: function value(e) {
+			if (!this._supportsPassive) {
+				e.preventDefault();
+			}
+			e.stopPropagation();
+
+			if (!e.currentTarget.classList.contains('is-disabled')) {
+				this._select(e.currentTarget.dataset.date);
+
+				this.refresh();
+
+				// if ((!this.options.isRange || (this.start && this._isValidDate(this.start) && this.end && this._isValidDate(this.end))) && this.options.closeOnSelect) {
+				// 	this.hide();
+				// }
+			}
+			// this.emit('select', {
+			// 	date: this.date,
+			// 	instance: this
+			// });
+		}
+
+		/****************************************************
+   *                                                  *
+   * PUBLIC FUNCTIONS                                 *
+   *                                                  *
+   ****************************************************/
+
+	}, {
+		key: 'isRange',
+		value: function isRange() {
+			return this.options.isRange;
+		}
+	}, {
+		key: 'enableDate',
+		value: function enableDate() {
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+			var index = this.disabledDates.findIndex(function (disableDate) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](disableDate, date);
+			});
+			if (index > -1) {
+				unset(this.disabledDates[index]);
+			}
+		}
+	}, {
+		key: 'disableDate',
+		value: function disableDate() {
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+			var index = this.disabledDates.findIndex(function (disableDate) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](disableDate, date);
+			});
+			if (index > -1) {
+				this.disabledDates.push(date);
+			}
+		}
+	}, {
+		key: 'enableWeekDay',
+		value: function enableWeekDay(day) {
+			var index = this.disabledWeekDays.findIndex(function (disabledWeekDay) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](disabledWeekDay, day);
+			});
+			if (index > -1) {
+				unset(this.disabledWeekDays[index]);
+			}
+		}
+	}, {
+		key: 'disableWeekDay',
+		value: function disableWeekDay(day) {
+			var index = this.disabledWeekDays.findIndex(function (disabledWeekDay) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](disabledWeekDay, date);
+			});
+			if (index > -1) {
+				this.disabledWeekDays.push(day);
+			}
+		}
+	}, {
+		key: 'show',
+		value: function show() {
+			if (!this._open) {
+				this._ui.body.dates.classList.add('is-active');
+				this._ui.body.months.classList.remove('is-active');
+				this._ui.body.years.classList.remove('is-active');
+				this._ui.navigation.previous.removeAttribute('disabled');
+				this._ui.navigation.next.removeAttribute('disabled');
+				this._ui.container.classList.add('is-active');
+				this._open = true;
+				this._focus = true;
+
+				this.emit('show', this);
+			}
+		}
+	}, {
+		key: 'hide',
+		value: function hide() {
+			if (this._open) {
+				this._open = false;
+				this._focus = false;
+				this._ui.container.classList.remove('is-active');
+				this.emit('hide', this);
+			}
+		}
+	}, {
+		key: 'toggle',
+		value: function toggle() {
+			if (!this._open) {
+				this.show();
+			} else {
+				this.hide();
+			}
+		}
+
+		/**
+   * Get / Set datePicker value
+   * @param {null|Date|Object|String} date optional if null then return the current date as String
    */
 
+	}, {
+		key: 'value',
+		value: function value() {
+			var _value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
-  $(window).on(Event$8.LOAD_DATA_API, function () {
-    var scrollSpys = [].slice.call(document.querySelectorAll(Selector$8.DATA_SPY));
-    var scrollSpysLength = scrollSpys.length;
+			if (_value) {
+				if (this.options.isRange) {
+					if (__WEBPACK_IMPORTED_MODULE_1__utils_type__["d" /* isString */](_value)) {
+						var dates = _value.split(' - ');
+						if (dates.length) {
+							this.start = __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](new Date(dates[0]), this.format, {
+								locale: this.locale
+							});
+						}
+						if (dates.length === 2) {
+							this.end = __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](new Date(dates[1]), this.format, {
+								locale: this.locale
+							});
+						}
+					}
+					if (__WEBPACK_IMPORTED_MODULE_1__utils_type__["c" /* isObject */](_value) || __WEBPACK_IMPORTED_MODULE_1__utils_type__["a" /* isDate */](_value)) {
+						this._select(_value, false);
+					}
+				} else {
+					this._select(_value, false);
+				}
+			} else {
+				var string = this.start && this._isValidDate(this.start) ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.start, this.format, {
+					locale: this.locale
+				}) : '';
 
-    for (var i = scrollSpysLength; i--;) {
-      var $spy = $(scrollSpys[i]);
+				if (this.options.isRange) {
+					if (this.end && this._isValidDate(this.end)) {
+						string += ' - ' + __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.end, this.format, { locale: this.locale });
+					}
+				}
+				return string;
+			}
+		}
 
-      ScrollSpy._jQueryInterface.call($spy, $spy.data());
+		/**
+   * Refresh datepicker with new year/month days
+   * @method _refreshdatepicker
+   * @return {[type]}        [description]
+   */
+
+	}, {
+		key: 'refresh',
+		value: function refresh() {
+			var _this2 = this;
+
+			this._ui.body.dates.innerHTML = '';
+
+			// the 12 months of the year (Jan-SDecat)
+			var monthLabels = new Array(12).fill(__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfWeek"](this._visibleDate)).map(function (d, i) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["addMonths"](d, i), 'MM', {
+					locale: _this2.locale
+				});
+			});
+			this._ui.body.months.innerHTML = '';
+			this._ui.body.months.appendChild(document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_7__templates_months__["a" /* default */])({
+				months: monthLabels
+			})));
+			var months = this._ui.body.months.querySelectorAll('.datepicker-month') || [];
+			months.forEach(function (month) {
+				_this2._clickEvents.forEach(function (clickEvent) {
+					month.addEventListener(clickEvent, _this2[onMonthClickDatePicker]);
+				});
+				month.classList.remove('is-active');
+				if (month.dataset.month === __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](_this2._visibleDate, 'MM', {
+					locale: _this2.locale
+				})) {
+					month.classList.add('is-active');
+				}
+			});
+
+			var yearLabels = new Array(100).fill(__WEBPACK_IMPORTED_MODULE_2_date_fns__["subYears"](this._visibleDate, 50)).map(function (d, i) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["addYears"](d, i), 'YYYY', {
+					locale: _this2.locale
+				});
+			});
+			this._ui.body.years.innerHTML = '';
+			this._ui.body.years.appendChild(document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_8__templates_years__["a" /* default */])({
+				visibleDate: this._visibleDate,
+				years: yearLabels
+			})));
+			var years = this._ui.body.years.querySelectorAll('.datepicker-year') || [];
+			years.forEach(function (year) {
+				_this2._clickEvents.forEach(function (clickEvent) {
+					year.addEventListener(clickEvent, _this2[onYearClickDatePicker]);
+				});
+				year.classList.remove('is-active');
+				if (year.dataset.year === __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](_this2._visibleDate, 'YYYY', {
+					locale: _this2.locale
+				})) {
+					year.classList.add('is-active');
+				}
+			});
+
+			// the 7 days of the week (Sun-Sat)
+			var weekdayLabels = new Array(7).fill(__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfWeek"](this._visibleDate)).map(function (d, i) {
+				return __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["addDays"](d, i + _this2.options.weekStart), _this2.options.weekDaysFormat, {
+					locale: _this2.locale
+				});
+			});
+			this._ui.body.dates.appendChild(document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_6__templates_weekdays__["a" /* default */])({
+				weekdays: weekdayLabels
+			})));
+
+			if (this.min && __WEBPACK_IMPORTED_MODULE_2_date_fns__["differenceInMonths"](this._visibleDate, this.min) === 0) {
+				this._togglePreviousButton(false);
+			} else {
+				this._togglePreviousButton();
+			}
+
+			if (this.max && __WEBPACK_IMPORTED_MODULE_2_date_fns__["differenceInMonths"](this._visibleDate, this.max) === 0) {
+				this._toggleNextButton(false);
+			} else {
+				this._toggleNextButton();
+			}
+
+			this._ui.navigation.month.innerHTML = __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this._visibleDate, 'MMMM', {
+				locale: this.locale
+			});
+			this._ui.navigation.year.innerHTML = __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this._visibleDate, 'YYYY', {
+				locale: this.locale
+			});
+
+			this._renderDays();
+
+			this._ui.body.dates.classList.add('is-active');
+			this._ui.body.months.classList.remove('is-active');
+			this._ui.body.years.classList.remove('is-active');
+			this._ui.navigation.previous.removeAttribute('disabled');
+			this._ui.navigation.next.removeAttribute('disabled');
+
+			return this;
+		}
+	}, {
+		key: 'clear',
+		value: function clear() {
+			var today = new Date();
+			this._date = {
+				start: undefined,
+				end: undefined
+			};
+			this._visibleDate = this._isValidDate(today, this.min, this.max) ? today : this.min;
+			this.refresh();
+		}
+	}, {
+		key: 'snapshot',
+		value: function snapshot() {
+			this._snapshots.push(_extends({}, this._date));
+		}
+	}, {
+		key: 'render',
+		value: function render() {
+			this.refresh();
+			return this.node;
+		}
+
+		/****************************************************
+   *                                                  *
+   * PRIVATE FUNCTIONS                                *
+   *                                                  *
+   ****************************************************/
+
+	}, {
+		key: '_init',
+		value: function _init() {
+			var today = new Date();
+
+			this._open = false;
+			this._snapshots = [];
+			this.lang = this.options.lang;
+			this.format = this.options.dateFormat || 'MM/DD/YYYY';
+			this.disabledDates = Array.isArray(this.options.disabledDates) ? this.options.disabledDates : [];
+			for (var i = 0; i < this.disabledDates.length; i++) {
+				this.disabledDates[i] = __WEBPACK_IMPORTED_MODULE_2_date_fns__["format"](this.disabledDates[i], this.format, {
+					locale: this.locale
+				});
+			}
+			this.disabledWeekDays = __WEBPACK_IMPORTED_MODULE_1__utils_type__["d" /* isString */](this.options.disabledWeekDays) ? this.options.disabledWeekDays.split(',') : Array.isArray(this.options.disabledWeekDays) ? this.options.disabledWeekDays : [];
+			this.min = this.options.minDate;
+			this.max = this.options.maxDate;
+			this._date = {
+				start: this.options.startDate,
+				end: this.options.isRange ? this.options.endDate : undefined
+			};
+			this._visibleDate = this._isValidDate(this.start) ? this.start : this._isValidDate(today, this.min, this.max) ? today : this.min;
+
+			this._build();
+			this._bindEvents();
+
+			this.emit('ready', this);
+		}
+	}, {
+		key: '_build',
+		value: function _build() {
+			this.node = document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_4__templates_datepicker__["a" /* default */])({
+				locale: this.locale,
+				visibleDate: this._visibleDate,
+				icons: this.options.icons
+			}));
+
+			this._ui = {
+				container: this.node.firstChild,
+				navigation: {
+					container: this.node.querySelector('.datepicker-nav'),
+					previous: this.node.querySelector('.datepicker-nav-previous'),
+					next: this.node.querySelector('.datepicker-nav-next'),
+					month: this.node.querySelector('.datepicker-nav-month'),
+					year: this.node.querySelector('.datepicker-nav-year')
+				},
+				body: {
+					dates: this.node.querySelector('.datepicker-dates'),
+					days: this.node.querySelector('.datepicker-days'),
+					weekdays: this.node.querySelector('.datepicker-weekdays'),
+					months: this.node.querySelector('.datepicker-months'),
+					years: this.node.querySelector('.datepicker-years')
+				}
+			};
+		}
+	}, {
+		key: '_bindEvents',
+		value: function _bindEvents() {
+			var _this3 = this;
+
+			document.addEventListener('keydown', function (e) {
+				if (_this3._focus) {
+					switch (e.keyCode || e.which) {
+						case 37:
+							_this3[onPreviousDatePicker](e);
+							break;
+						case 39:
+							_this3[onNextDatePicker](e);
+							break;
+					}
+				}
+			});
+
+			// Bind year navigation events
+			if (this._ui.navigation.previous) {
+				this._clickEvents.forEach(function (clickEvent) {
+					_this3._ui.navigation.previous.addEventListener(clickEvent, _this3[onPreviousDatePicker]);
+				});
+			}
+			if (this._ui.navigation.next) {
+				this._clickEvents.forEach(function (clickEvent) {
+					_this3._ui.navigation.next.addEventListener(clickEvent, _this3[onNextDatePicker]);
+				});
+			}
+
+			if (this._ui.navigation.month) {
+				this._clickEvents.forEach(function (clickEvent) {
+					_this3._ui.navigation.month.addEventListener(clickEvent, _this3[onSelectMonthDatePicker]);
+				});
+			}
+			if (this._ui.navigation.year) {
+				this._clickEvents.forEach(function (clickEvent) {
+					_this3._ui.navigation.year.addEventListener(clickEvent, _this3[onSelectYearDatePicker]);
+				});
+			}
+
+			var months = this._ui.body.months.querySelectorAll('.calendar-month') || [];
+			months.forEach(function (month) {
+				_this3._clickEvents.forEach(function (clickEvent) {
+					month.addEventListener(clickEvent, _this3[onMonthClickDatePicker]);
+				});
+			});
+
+			var years = this._ui.body.years.querySelectorAll('.calendar-year') || [];
+			years.forEach(function (year) {
+				_this3._clickEvents.forEach(function (clickEvent) {
+					year.addEventListener(clickEvent, _this3[onYearClickDatePicker]);
+				});
+			});
+		}
+
+		/**
+   * Bind events on each Day item
+   * @method _bindDaysEvents
+   * @return {void}
+   */
+
+	}, {
+		key: '_bindDaysEvents',
+		value: function _bindDaysEvents() {
+			var _this4 = this;
+
+			[].forEach.call(this._ui.days, function (day) {
+				_this4._clickEvents.forEach(function (clickEvent) {
+					// if not in range, no click action
+					// if in this month, select the date
+					// if out of this month, jump to the date
+					var onClick = !_this4._isValidDate(new Date(day.dataset.date), _this4.min, _this4.max) ? null : _this4[onDateClickDatePicker];
+					day.addEventListener(clickEvent, onClick);
+				});
+
+				day.addEventListener('hover', function (e) {
+					e.preventDEfault();
+				});
+			});
+		}
+	}, {
+		key: '_renderDays',
+		value: function _renderDays() {
+			var _this5 = this;
+
+			// first day of current month view
+			var start = __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfWeek"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfMonth"](this._visibleDate));
+			// last day of current month view
+			var end = __WEBPACK_IMPORTED_MODULE_2_date_fns__["endOfWeek"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["endOfMonth"](this._visibleDate));
+
+			// get all days and whether they are within the current month and range
+			var days = new Array(__WEBPACK_IMPORTED_MODULE_2_date_fns__["differenceInDays"](end, start) + 1).fill(start).map(function (s, i) {
+				var theDate = __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["addDays"](s, i + _this5.options.weekStart));
+				var isThisMonth = __WEBPACK_IMPORTED_MODULE_2_date_fns__["isSameMonth"](_this5._visibleDate, theDate);
+				var isInRange = _this5.options.isRange && __WEBPACK_IMPORTED_MODULE_2_date_fns__["isWithinRange"](theDate, __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](_this5.start), __WEBPACK_IMPORTED_MODULE_2_date_fns__["endOfDay"](_this5.end));
+				var isDisabled = _this5.max ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["isAfter"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](theDate), __WEBPACK_IMPORTED_MODULE_2_date_fns__["endOfDay"](_this5.max)) : false;
+				isDisabled = !isDisabled && _this5.min ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["isBefore"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](theDate), __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](_this5.min)) : isDisabled;
+
+				if (_this5.disabledDates) {
+					for (var j = 0; j < _this5.disabledDates.length; j++) {
+						var day = _this5.disabledDates[j];
+						if (__WEBPACK_IMPORTED_MODULE_1__utils_type__["b" /* isFunction */](day)) {
+							day = day(_this5);
+						}
+						if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["getTime"](theDate) == __WEBPACK_IMPORTED_MODULE_2_date_fns__["getTime"](day)) {
+							isDisabled = true;
+						}
+					}
+				}
+
+				if (_this5.disabledWeekDays) {
+					_this5.disabledWeekDays.forEach(function (day) {
+						if (__WEBPACK_IMPORTED_MODULE_1__utils_type__["b" /* isFunction */](day)) {
+							day = day(_this5);
+						}
+						if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["getDay"](theDate) == day) {
+							isDisabled = true;
+						}
+					});
+				}
+
+				return {
+					date: theDate,
+					isRange: _this5.options.isRange,
+					isToday: __WEBPACK_IMPORTED_MODULE_2_date_fns__["isToday"](theDate),
+					isStartDate: __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](_this5.start), theDate),
+					isEndDate: __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](__WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](_this5.end), theDate),
+					isDisabled: isDisabled,
+					isThisMonth: isThisMonth,
+					isInRange: isInRange
+				};
+			});
+
+			this._ui.body.dates.appendChild(document.createRange().createContextualFragment(Object(__WEBPACK_IMPORTED_MODULE_5__templates_days__["a" /* default */])(days)));
+			this._ui.days = this._ui.body.dates.querySelectorAll('.datepicker-date');
+			this._bindDaysEvents();
+		}
+	}, {
+		key: '_select',
+		value: function _select() {
+			var _this6 = this;
+
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+			var withEvents = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+
+			this.snapshot();
+			date = __WEBPACK_IMPORTED_MODULE_1__utils_type__["a" /* isDate */](date) ? date : new Date(date);
+			if (this.options.isRange && (!this._isValidDate(this.start) || this._isValidDate(this.start) && this._isValidDate(this.end))) {
+				this.start = date;
+				this.end = undefined;
+				if (withEvents) this.emit('select:start', this);
+			} else if (this.options.isRange && !this._isValidDate(this.end)) {
+				if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["isBefore"](date, this.start)) {
+					this.end = this.start;
+					this.start = date;
+					if (withEvents) {
+						this.emit('select', this);
+					}
+				} else if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["isAfter"](date, this.start)) {
+					this.end = date;
+					if (withEvents) {
+						this.emit('select', this);
+					}
+				} else if (this.options.allowSameDayRange) {
+					this.end = date;
+					if (withEvents) {
+						this.emit('select', this);
+					}
+				} else {
+					this.start = date;
+					this.end = undefined;
+					if (withEvents) this.emit('select:start', this);
+				}
+			} else {
+				this.start = date;
+				this.end = undefined;
+				if (withEvents) this.emit('select', this);
+			}
+			this._visibleDate = this._isValidDate(this.start) ? this.start : this._visibleDate;
+
+			if (this.options.isRange && this._isValidDate(this.start) && this._isValidDate(this.end)) {
+				new Array(__WEBPACK_IMPORTED_MODULE_2_date_fns__["differenceInDays"](this.end, this.start) + 1).fill(this.start).map(function (s, i) {
+					var theDate = __WEBPACK_IMPORTED_MODULE_2_date_fns__["addDays"](s, i);
+					var dateElement = _this6._ui.body.dates.querySelector('.datepicker-date[data-date="' + theDate.toString() + '"]');
+					if (dateElement) {
+						if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](_this6.start, theDate)) {
+							dateElement.classList.add('datepicker-range-start');
+						}
+						if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](_this6.end, theDate)) {
+							dateElement.classList.add('datepicker-range-end');
+						}
+						dateElement.classList.add('datepicker-range');
+					}
+				});
+			}
+		}
+	}, {
+		key: '_isValidDate',
+		value: function _isValidDate(date, min, max) {
+			try {
+				if (!date) {
+					return false;
+				}
+				if (!__WEBPACK_IMPORTED_MODULE_2_date_fns__["isDate"](date)) {
+					date = __WEBPACK_IMPORTED_MODULE_2_date_fns__["parse"](date);
+				}
+				if (__WEBPACK_IMPORTED_MODULE_2_date_fns__["isValid"](date)) {
+					if (!min && !max) {
+						return true;
+					}
+					if (min && max) {
+						return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isWithinRange"](date, min, max);
+					}
+					if (max) {
+						return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isBefore"](date, max) || __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](date, max);
+					}
+					return __WEBPACK_IMPORTED_MODULE_2_date_fns__["isAfter"](date, min) || __WEBPACK_IMPORTED_MODULE_2_date_fns__["isEqual"](date, min);
+				} else {
+					return false;
+				}
+			} catch (e) {
+				return false;
+			}
+		}
+	}, {
+		key: '_togglePreviousButton',
+		value: function _togglePreviousButton() {
+			var active = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+			if (!active) {
+				this._ui.navigation.previous.setAttribute('disabled', 'disabled');
+			} else {
+				this._ui.navigation.previous.removeAttribute('disabled');
+			}
+		}
+	}, {
+		key: '_toggleNextButton',
+		value: function _toggleNextButton() {
+			var active = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+			if (!active) {
+				this._ui.navigation.next.setAttribute('disabled', 'disabled');
+			} else {
+				this._ui.navigation.next.removeAttribute('disabled');
+			}
+		}
+	}, {
+		key: 'id',
+		get: function get() {
+			return this._id;
+		}
+	}, {
+		key: 'date',
+		set: function set(date) {
+			if (__WEBPACK_IMPORTED_MODULE_1__utils_type__["c" /* isObject */](date) && date.start && date.end) {
+				this._date = date;
+			}
+			return this;
+		},
+		get: function get() {
+			return this._date || {
+				start: undefined,
+				end: undefined
+			};
+		}
+
+		// Set datePicker language
+
+	}, {
+		key: 'lang',
+		set: function set() {
+			var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
+
+			this._lang = lang;
+			this._locale = __webpack_require__(125)("./" + lang);
+			return this;
+		}
+		// Get current datePicker language
+		,
+		get: function get() {
+			return this._lang;
+		}
+	}, {
+		key: 'locale',
+		get: function get() {
+			return this._locale;
+		}
+	}, {
+		key: 'start',
+		set: function set(date) {
+			this._date.start = date ? this._isValidDate(date, this.min, this.max) ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](date) : this._date.start : undefined;
+			return this;
+		},
+		get: function get() {
+			return this._date.start;
+		}
+	}, {
+		key: 'end',
+		set: function set(date) {
+			this._date.end = date ? this._isValidDate(date, this.min, this.max) ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](date) : this._date.end : undefined;
+			return this;
+		},
+		get: function get() {
+			return this._date.end;
+		}
+
+		// Set min
+
+	}, {
+		key: 'min',
+		set: function set() {
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : undefined;
+
+			this._min = date ? this._isValidDate(date) ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](date) : this._min : undefined;
+			return this;
+		}
+		// Get min
+		,
+		get: function get() {
+			return this._min;
+		}
+
+		// Set max
+
+	}, {
+		key: 'max',
+		set: function set() {
+			var date = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+			this._max = date ? this._isValidDate(date) ? __WEBPACK_IMPORTED_MODULE_2_date_fns__["startOfDay"](date) : this._max : undefined;
+			return this;
+		}
+		// Get max
+		,
+		get: function get() {
+			return this._max;
+		}
+
+		// Set date format (set to MM/DD/YYYY by default)
+
+	}, {
+		key: 'format',
+		set: function set() {
+			var format = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'MM/DD/YYYY';
+
+			this._format = format;
+			return this;
+		}
+		// Get date format
+		,
+		get: function get() {
+			return this._format;
+		}
+	}]);
+
+	return datePicker;
+}(__WEBPACK_IMPORTED_MODULE_3__utils_events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (datePicker);
+
+/***/ }),
+/* 300 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+  return "<div class=\"datepicker\">\n    <div class=\"datepicker-nav\">\n        <button class=\"datepicker-nav-previous button is-small is-text\" type=\"button\">" + data.icons.previous + "</button>\n        <div class=\"datepicker-nav-month-year\">\n          <div class=\"datepicker-nav-month\"></div>\n          &nbsp;\n          <div class=\"datepicker-nav-year\"></div>\n        </div>\n        <button class=\"datepicker-nav-next button is-small is-text\" type=\"button\">" + data.icons.next + "</button>\n      </div>\n      <div class=\"datepicker-body\">\n        <div class=\"datepicker-dates is-active\"></div>\n        <div class=\"datepicker-months\"></div>\n        <div class=\"datepicker-years\"></div>\n      </div>\n    </div>";
+});
+
+/***/ }),
+/* 301 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+  return '<div class="datepicker-days">' + data.map(function (theDate) {
+    return '<div data-date="' + theDate.date.toString() + '" class="datepicker-date' + (theDate.isThisMonth ? ' is-current-month' : '') + (theDate.isDisabled ? ' is-disabled' : '') + (theDate.isRange && theDate.isInRange ? ' datepicker-range' : '') + (theDate.isStartDate ? ' datepicker-range-start' : '') + (theDate.isEndDate ? ' datepicker-range-end' : '') + '">\n      <button class="date-item' + (theDate.isToday ? ' is-today' : '') + (theDate.isStartDate ? ' is-active' : '') + '" type="button">' + theDate.date.getDate() + '</button>\n  </div>';
+  }).join('') + '</div>';
+});
+
+/***/ }),
+/* 302 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+	return '<div class="datepicker-weekdays">\n\t\t' + data.weekdays.map(function (day) {
+		return '<div class="datepicker-date">' + day + '</div>';
+	}).join('') + '\n\t</div>';
+});
+
+/***/ }),
+/* 303 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+  return '' + data.months.map(function (d, i) {
+    return '<div class="datepicker-month" data-month="' + Object(__WEBPACK_IMPORTED_MODULE_0_date_fns__["format"])(Object(__WEBPACK_IMPORTED_MODULE_0_date_fns__["addMonths"])(d, i), 'MM', {
+      locale: data.locale
+    }) + '">' + Object(__WEBPACK_IMPORTED_MODULE_0_date_fns__["format"])(Object(__WEBPACK_IMPORTED_MODULE_0_date_fns__["addMonths"])(d, i), 'MMM', {
+      locale: data.locale
+    }) + '</div>';
+  }).join('');
+});
+
+/***/ }),
+/* 304 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_date_fns___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_date_fns__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+	return '' + data.years.map(function (year) {
+		return '<div class="datepicker-year' + (year === Object(__WEBPACK_IMPORTED_MODULE_0_date_fns__["getMonth"])(data.visibleDate) ? ' is-active' : '') + '" data-year="' + year + '"><span class="item">' + year + '</span></div>';
+	}).join('');
+});
+
+/***/ }),
+/* 305 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+  color: 'primary',
+  isRange: false,
+  allowSameDayRange: true,
+  lang: 'en', // internationalization
+  startDate: undefined,
+  endDate: undefined,
+  minDate: null,
+  maxDate: null,
+  disabledDates: [],
+  disabledWeekDays: undefined,
+  weekStart: 0,
+  dateFormat: 'MM/DD/YYYY',
+  weekDaysFormat: 'ddd',
+  enableMonthSwitch: true,
+  enableYearSwitch: true
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ }),
+/* 306 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+  startDate: undefined,
+  endDate: undefined,
+  minDate: null,
+  maxDate: null,
+  isRange: false,
+  allowSameDayRange: true,
+  disabledDates: [],
+  disabledWeekDays: undefined,
+  lang: 'en', // internationalization
+  dateFormat: 'MM/DD/YYYY',
+  displayMode: 'default',
+  showHeader: true,
+  showFooter: true,
+  todayButton: true,
+  clearButton: true,
+  cancelLabel: 'Cancel',
+  clearLabel: 'Clear',
+  todayLabel: 'Today',
+  nowLabel: 'Now',
+  validateLabel: 'Validate',
+  labelFrom: '',
+  labelTo: '',
+  weekStart: 0,
+  weekDaysFormat: 'ddd',
+  closeOnOverlayClick: true,
+  closeOnSelect: true,
+  toggleOnInputClick: true,
+  icons: {
+    previous: '<svg viewBox="0 0 50 80" xml:space="preserve">\n      <polyline fill="none" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "/>\n    </svg>',
+    next: '<svg viewBox="0 0 50 80" xml:space="preserve">\n      <polyline fill="none" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "/>\n    </svg>'
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ }),
+/* 307 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+  return '<div id=\'' + data.id + '\'>\n    <div class="bulma-datepicker-wrapper' + (data.displayMode === 'dialog' ? ' modal' : '') + '">\n        <div class="modal-background' + (data.displayMode === 'dialog' ? '' : ' is-hidden') + '"></div>\n        <div class="bulma-datepicker">\n          <div class="bulma-datepicker-container' + (data.headerPosition === 'top' ? '' : ' has-header-bottom') + '"></div>\n        </div>\n    </div>\n  </div>';
+});
+
+/***/ }),
+/* 308 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+	return '<div class="bulma-datepicker-header' + (data.type === 'time' ? ' is-hidden' : '') + (data.type === 'date' ? ' is-date-only' : '') + '">\n\t\t<div class="bulma-datepicker-selection-details">\n\t\t\t<div class="bulma-datepicker-selection-from' + (data.labelFrom === '' ? ' is-hidden' : '') + '">' + data.labelFrom + '</div>\n\t\t\t<div class="bulma-datepicker-selection-start' + (data.isRange ? '' : ' is-centered') + '">\n\t\t\t\t<div class="bulma-datepicker-selection-wrapper">\n\t\t\t\t\t<div class="bulma-datepicker-selection-day"></div>\n\t\t\t\t\t<div class="bulma-datepicker-selection-date">\n\t\t\t\t\t\t<div class="bulma-datepicker-selection-month"></div>\n\t\t\t\t\t\t<div class="bulma-datepicker-selection-weekday"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t' + (data.isRange ? '\n\t\t<div class="bulma-datepicker-selection-details">\n\t\t\t<div class="bulma-datepicker-selection-to' + (data.labelTo === '' ? ' is-hidden' : '') + '">' + data.labelTo + '</div>\n\t\t\t<div class="bulma-datepicker-selection-end">\n\t\t\t\t<div class="bulma-datepicker-selection-wrapper">\n\t\t\t\t\t<div class="bulma-datepicker-selection-day"></div>\n\t\t\t\t\t<div class="bulma-datepicker-selection-date">\n\t\t\t\t\t\t<div class="bulma-datepicker-selection-month"></div>\n\t\t\t\t\t\t<div class="bulma-datepicker-selection-weekday"></div>\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>' : '') + '\n\t</div>';
+});
+
+/***/ }),
+/* 309 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = (function (data) {
+	return '<div class="bulma-datepicker-footer">\n\t\t<button class="bulma-datepicker-footer-validate has-text-success button is-small is-text ' + (data.displayMode === 'inline' ? 'is-hidden' : '') + '" type="button">' + (data.icons.validate ? data.icons.validate : '') + data.validateLabel + ' </button>\n\t\t<button class="bulma-datepicker-footer-today has-text-warning button is-small is-text" type="button">' + (data.icons.today ? data.icons.today : '') + data.todayLabel + '</button>\n\t\t<button class="bulma-datepicker-footer-clear has-text-danger button is-small is-text" type="button">' + (data.icons.clear ? data.icons.clear : '') + data.clearLabel + '</button>\n\t\t<button class="bulma-datepicker-footer-cancel button is-small is-text ' + (data.displayMode === 'inline' ? 'is-hidden' : '') + '" type="button">' + (data.icons.cancel ? data.icons.cancel : '') + data.cancelLabel + '</button>\n\t</div>';
+});
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.js ***!
+  \********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var BULMA_CAROUSEL_EVENTS = {
+  'ready': 'carousel:ready',
+  'slideBefore': 'carousel:slide:before',
+  'slideAfter': 'carousel:slide:after'
+};
+
+var onSwipeStart = Symbol('onSwipeStart');
+var onSwipeMove = Symbol('onSwipeMove');
+var onSwipeEnd = Symbol('onSwipeEnd');
+
+var supportsPassive = false;
+try {
+  var opts = Object.defineProperty({}, 'passive', {
+    get: function get() {
+      supportsPassive = true;
     }
   });
+  window.addEventListener("testPassive", null, opts);
+  window.removeEventListener("testPassive", null, opts);
+} catch (e) {}
+
+var bulmaCarousel = function (_EventEmitter) {
+  _inherits(bulmaCarousel, _EventEmitter);
+
+  function bulmaCarousel(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaCarousel);
+
+    var _this = _possibleConstructorReturn(this, (bulmaCarousel.__proto__ || Object.getPrototypeOf(bulmaCarousel)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+
+    _this._clickEvents = ['click'];
+    _this.options = Object.assign({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+    if (_this.element.dataset.autoplay) {
+      _this.options.autoplay = _this.element.dataset.autoplay;
+    }
+    if (_this.element.dataset.delay) {
+      _this.options.delay = _this.element.dataset.delay;
+    }
+    if (_this.element.dataset.size && !_this.element.classList.contains('carousel-animate-fade')) {
+      _this.options.size = _this.element.dataset.size;
+    }
+    if (_this.element.classList.contains('carousel-animate-fade')) {
+      _this.options.size = 1;
+    }
+
+    _this.forceHiddenNavigation = false;
+
+    _this[onSwipeStart] = _this[onSwipeStart].bind(_this);
+    _this[onSwipeMove] = _this[onSwipeMove].bind(_this);
+    _this[onSwipeEnd] = _this[onSwipeEnd].bind(_this);
+
+    _this.init();
+    return _this;
+  }
+
   /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
    */
 
-  $.fn[NAME$8] = ScrollSpy._jQueryInterface;
-  $.fn[NAME$8].Constructor = ScrollSpy;
 
-  $.fn[NAME$8].noConflict = function () {
-    $.fn[NAME$8] = JQUERY_NO_CONFLICT$8;
-    return ScrollSpy._jQueryInterface;
-  };
+  _createClass(bulmaCarousel, [{
+    key: 'init',
 
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
 
-  var NAME$9 = 'tab';
-  var VERSION$9 = '4.3.1';
-  var DATA_KEY$9 = 'bs.tab';
-  var EVENT_KEY$9 = "." + DATA_KEY$9;
-  var DATA_API_KEY$7 = '.data-api';
-  var JQUERY_NO_CONFLICT$9 = $.fn[NAME$9];
-  var Event$9 = {
-    HIDE: "hide" + EVENT_KEY$9,
-    HIDDEN: "hidden" + EVENT_KEY$9,
-    SHOW: "show" + EVENT_KEY$9,
-    SHOWN: "shown" + EVENT_KEY$9,
-    CLICK_DATA_API: "click" + EVENT_KEY$9 + DATA_API_KEY$7
-  };
-  var ClassName$9 = {
-    DROPDOWN_MENU: 'dropdown-menu',
-    ACTIVE: 'active',
-    DISABLED: 'disabled',
-    FADE: 'fade',
-    SHOW: 'show'
-  };
-  var Selector$9 = {
-    DROPDOWN: '.dropdown',
-    NAV_LIST_GROUP: '.nav, .list-group',
-    ACTIVE: '.active',
-    ACTIVE_UL: '> li > .active',
-    DATA_TOGGLE: '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]',
-    DROPDOWN_TOGGLE: '.dropdown-toggle',
-    DROPDOWN_ACTIVE_CHILD: '> .dropdown-menu .active'
     /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
+     * Initiate plugin
+     * @method init
+     * @return {void}
      */
-
-  };
-
-  var Tab =
-  /*#__PURE__*/
-  function () {
-    function Tab(element) {
-      this._element = element;
-    } // Getters
-
-
-    var _proto = Tab.prototype;
-
-    // Public
-    _proto.show = function show() {
-      var _this = this;
-
-      if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName$9.ACTIVE) || $(this._element).hasClass(ClassName$9.DISABLED)) {
-        return;
-      }
-
-      var target;
-      var previous;
-      var listElement = $(this._element).closest(Selector$9.NAV_LIST_GROUP)[0];
-      var selector = Util.getSelectorFromElement(this._element);
-
-      if (listElement) {
-        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector$9.ACTIVE_UL : Selector$9.ACTIVE;
-        previous = $.makeArray($(listElement).find(itemSelector));
-        previous = previous[previous.length - 1];
-      }
-
-      var hideEvent = $.Event(Event$9.HIDE, {
-        relatedTarget: this._element
-      });
-      var showEvent = $.Event(Event$9.SHOW, {
-        relatedTarget: previous
-      });
-
-      if (previous) {
-        $(previous).trigger(hideEvent);
-      }
-
-      $(this._element).trigger(showEvent);
-
-      if (showEvent.isDefaultPrevented() || hideEvent.isDefaultPrevented()) {
-        return;
-      }
-
-      if (selector) {
-        target = document.querySelector(selector);
-      }
-
-      this._activate(this._element, listElement);
-
-      var complete = function complete() {
-        var hiddenEvent = $.Event(Event$9.HIDDEN, {
-          relatedTarget: _this._element
-        });
-        var shownEvent = $.Event(Event$9.SHOWN, {
-          relatedTarget: previous
-        });
-        $(previous).trigger(hiddenEvent);
-        $(_this._element).trigger(shownEvent);
+    value: function init() {
+      this.container = this.element.querySelector('.carousel-container');
+      this.items = this.element.querySelectorAll('.carousel-item');
+      this.currentItem = {
+        element: this.element,
+        node: this.element.querySelector('.carousel-item.is-active'),
+        pos: -1
       };
-
-      if (target) {
-        this._activate(target, target.parentNode, complete);
-      } else {
-        complete();
+      this.currentItem.pos = this.currentItem.node ? Array.from(this.items).indexOf(this.currentItem.node) : -1;
+      if (!this.currentItem.node) {
+        this.currentItem.node = this.items[0];
+        this.currentItem.node.classList.add('is-active');
+        this.currentItem.pos = 0;
       }
-    };
+      this.forceHiddenNavigation = this.items.length <= 1;
 
-    _proto.dispose = function dispose() {
-      $.removeData(this._element, DATA_KEY$9);
-      this._element = null;
-    } // Private
-    ;
+      var images = this.element.querySelectorAll('img');
+      [].forEach.call(images, function (img) {
+        img.setAttribute('draggable', false);
+      });
 
-    _proto._activate = function _activate(element, container, callback) {
+      this._resize();
+      this._setOrder();
+      this._initNavigation();
+      this._bindEvents();
+
+      if (this.options.autoplay) {
+        this._autoPlay(this.options.delay);
+      }
+
+      this.emit(BULMA_CAROUSEL_EVENTS.ready, this.currentItem);
+    }
+  }, {
+    key: '_resize',
+    value: function _resize() {
       var _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector$9.ACTIVE_UL) : $(container).children(Selector$9.ACTIVE);
-      var active = activeElements[0];
-      var isTransitioning = callback && active && $(active).hasClass(ClassName$9.FADE);
+      var computedStyle = window.getComputedStyle(this.element);
+      var width = parseInt(computedStyle.getPropertyValue('width'), 10);
 
-      var complete = function complete() {
-        return _this2._transitionComplete(element, active, callback);
-      };
-
-      if (active && isTransitioning) {
-        var transitionDuration = Util.getTransitionDurationFromElement(active);
-        $(active).removeClass(ClassName$9.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-    };
-
-    _proto._transitionComplete = function _transitionComplete(element, active, callback) {
-      if (active) {
-        $(active).removeClass(ClassName$9.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector$9.DROPDOWN_ACTIVE_CHILD)[0];
-
-        if (dropdownChild) {
-          $(dropdownChild).removeClass(ClassName$9.ACTIVE);
+      // Detect which animation is setup and auto-calculate size and transformation
+      if (this.options.size > 1) {
+        if (this.options.size >= Array.from(this.items).length) {
+          this.offset = 0;
+        } else {
+          this.offset = width / this.options.size;
         }
 
-        if (active.getAttribute('role') === 'tab') {
-          active.setAttribute('aria-selected', false);
+        this.container.style.left = 0 - this.offset + 'px';
+        this.container.style.transform = 'translateX(' + this.offset + 'px)';
+        [].forEach.call(this.items, function (item) {
+          item.style.flexBasis = _this2.offset + 'px';
+        });
+      }
+
+      // If animation is fade then force carouselContainer size (due to the position: absolute)
+      if (this.element.classList.contains('carousel-animate-fade') && this.items.length) {
+        var img = this.items[0].querySelector('img');
+        var scale = 1;
+        if (img.naturalWidth) {
+          scale = width / img.naturalWidth;
+          this.container.style.height = img.naturalHeight * scale + 'px';
+        } else {
+          img.onload = function () {
+            scale = width / img.naturalWidth;
+            _this2.container.style.height = img.naturalHeight * scale + 'px';
+          };
         }
       }
+    }
 
-      $(element).addClass(ClassName$9.ACTIVE);
-
-      if (element.getAttribute('role') === 'tab') {
-        element.setAttribute('aria-selected', true);
-      }
-
-      Util.reflow(element);
-
-      if (element.classList.contains(ClassName$9.FADE)) {
-        element.classList.add(ClassName$9.SHOW);
-      }
-
-      if (element.parentNode && $(element.parentNode).hasClass(ClassName$9.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector$9.DROPDOWN)[0];
-
-        if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector$9.DROPDOWN_TOGGLE));
-          $(dropdownToggleList).addClass(ClassName$9.ACTIVE);
-        }
-
-        element.setAttribute('aria-expanded', true);
-      }
-
-      if (callback) {
-        callback();
-      }
-    } // Static
-    ;
-
-    Tab._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY$9);
-
-        if (!data) {
-          data = new Tab(this);
-          $this.data(DATA_KEY$9, data);
-        }
-
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
-          }
-
-          data[config]();
-        }
-      });
-    };
-
-    _createClass(Tab, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$9;
-      }
-    }]);
-
-    return Tab;
-  }();
-  /**
-   * ------------------------------------------------------------------------
-   * Data Api implementation
-   * ------------------------------------------------------------------------
-   */
-
-
-  $(document).on(Event$9.CLICK_DATA_API, Selector$9.DATA_TOGGLE, function (event) {
-    event.preventDefault();
-
-    Tab._jQueryInterface.call($(this), 'show');
-  });
-  /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
-   */
-
-  $.fn[NAME$9] = Tab._jQueryInterface;
-  $.fn[NAME$9].Constructor = Tab;
-
-  $.fn[NAME$9].noConflict = function () {
-    $.fn[NAME$9] = JQUERY_NO_CONFLICT$9;
-    return Tab._jQueryInterface;
-  };
-
-  /**
-   * ------------------------------------------------------------------------
-   * Constants
-   * ------------------------------------------------------------------------
-   */
-
-  var NAME$a = 'toast';
-  var VERSION$a = '4.3.1';
-  var DATA_KEY$a = 'bs.toast';
-  var EVENT_KEY$a = "." + DATA_KEY$a;
-  var JQUERY_NO_CONFLICT$a = $.fn[NAME$a];
-  var Event$a = {
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY$a,
-    HIDE: "hide" + EVENT_KEY$a,
-    HIDDEN: "hidden" + EVENT_KEY$a,
-    SHOW: "show" + EVENT_KEY$a,
-    SHOWN: "shown" + EVENT_KEY$a
-  };
-  var ClassName$a = {
-    FADE: 'fade',
-    HIDE: 'hide',
-    SHOW: 'show',
-    SHOWING: 'showing'
-  };
-  var DefaultType$7 = {
-    animation: 'boolean',
-    autohide: 'boolean',
-    delay: 'number'
-  };
-  var Default$7 = {
-    animation: true,
-    autohide: true,
-    delay: 500
-  };
-  var Selector$a = {
-    DATA_DISMISS: '[data-dismiss="toast"]'
     /**
-     * ------------------------------------------------------------------------
-     * Class Definition
-     * ------------------------------------------------------------------------
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
      */
 
-  };
-
-  var Toast =
-  /*#__PURE__*/
-  function () {
-    function Toast(element, config) {
-      this._element = element;
-      this._config = this._getConfig(config);
-      this._timeout = null;
-
-      this._setListeners();
-    } // Getters
-
-
-    var _proto = Toast.prototype;
-
-    // Public
-    _proto.show = function show() {
-      var _this = this;
-
-      $(this._element).trigger(Event$a.SHOW);
-
-      if (this._config.animation) {
-        this._element.classList.add(ClassName$a.FADE);
-      }
-
-      var complete = function complete() {
-        _this._element.classList.remove(ClassName$a.SHOWING);
-
-        _this._element.classList.add(ClassName$a.SHOW);
-
-        $(_this._element).trigger(Event$a.SHOWN);
-
-        if (_this._config.autohide) {
-          _this.hide();
-        }
-      };
-
-      this._element.classList.remove(ClassName$a.HIDE);
-
-      this._element.classList.add(ClassName$a.SHOWING);
-
-      if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
-      }
-    };
-
-    _proto.hide = function hide(withoutTimeout) {
-      var _this2 = this;
-
-      if (!this._element.classList.contains(ClassName$a.SHOW)) {
-        return;
-      }
-
-      $(this._element).trigger(Event$a.HIDE);
-
-      if (withoutTimeout) {
-        this._close();
-      } else {
-        this._timeout = setTimeout(function () {
-          _this2._close();
-        }, this._config.delay);
-      }
-    };
-
-    _proto.dispose = function dispose() {
-      clearTimeout(this._timeout);
-      this._timeout = null;
-
-      if (this._element.classList.contains(ClassName$a.SHOW)) {
-        this._element.classList.remove(ClassName$a.SHOW);
-      }
-
-      $(this._element).off(Event$a.CLICK_DISMISS);
-      $.removeData(this._element, DATA_KEY$a);
-      this._element = null;
-      this._config = null;
-    } // Private
-    ;
-
-    _proto._getConfig = function _getConfig(config) {
-      config = _objectSpread({}, Default$7, $(this._element).data(), typeof config === 'object' && config ? config : {});
-      Util.typeCheckConfig(NAME$a, config, this.constructor.DefaultType);
-      return config;
-    };
-
-    _proto._setListeners = function _setListeners() {
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
       var _this3 = this;
 
-      $(this._element).on(Event$a.CLICK_DISMISS, Selector$a.DATA_DISMISS, function () {
-        return _this3.hide(true);
-      });
-    };
+      if (this.previousControl) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this3.previousControl.addEventListener(clickEvent, function (e) {
+            if (!supportsPassive) {
+              e.preventDefault();
+            }
+            if (_this3._autoPlayInterval) {
+              clearInterval(_this3._autoPlayInterval);
+              _this3._autoPlay(_this3.optionsdelay);
+            }
+            _this3._slide('previous');
+          }, supportsPassive ? { passive: true } : false);
+        });
+      }
 
-    _proto._close = function _close() {
-      var _this4 = this;
+      if (this.nextControl) {
+        this._clickEvents.forEach(function (clickEvent) {
+          _this3.nextControl.addEventListener(clickEvent, function (e) {
+            if (!supportsPassive) {
+              e.preventDefault();
+            }
+            if (_this3._autoPlayInterval) {
+              clearInterval(_this3._autoPlayInterval);
+              _this3._autoPlay(_this3.options.delay);
+            }
+            _this3._slide('next');
+          }, supportsPassive ? { passive: true } : false);
+        });
+      }
 
-      var complete = function complete() {
-        _this4._element.classList.add(ClassName$a.HIDE);
+      // Bind swipe events
+      this.element.addEventListener('touchstart', this[onSwipeStart], supportsPassive ? { passive: true } : false);
+      this.element.addEventListener('mousedown', this[onSwipeStart], supportsPassive ? { passive: true } : false);
+      this.element.addEventListener('touchmove', this[onSwipeMove], supportsPassive ? { passive: true } : false);
+      this.element.addEventListener('mousemove', this[onSwipeMove], supportsPassive ? { passive: true } : false);
+      this.element.addEventListener('touchend', this[onSwipeEnd], supportsPassive ? { passive: true } : false);
+      this.element.addEventListener('mouseup', this[onSwipeEnd], supportsPassive ? { passive: true } : false);
+    }
+  }, {
+    key: 'destroy',
+    value: function destroy() {
+      this.element.removeEventListener('touchstart', this[onSwipeStart], supportsPassive ? { passive: true } : false);
+      this.element.removeEventListener('mousedown', this[onSwipeStart], supportsPassive ? { passive: true } : false);
+      this.element.removeEventListener('touchmove', this[onSwipeMove], supportsPassive ? { passive: true } : false);
+      this.element.removeEventListener('mousemove', this[onSwipeMove], supportsPassive ? { passive: true } : false);
+      this.element.removeEventListener('touchend', this[onSwipeEnd], supportsPassive ? { passive: true } : false);
+      this.element.removeEventListener('mouseup', this[onSwipeEnd], supportsPassive ? { passive: true } : false);
+    }
 
-        $(_this4._element).trigger(Event$a.HIDDEN);
+    /**
+     * Save current position on start swiping
+     * @method onSwipeStart
+     * @param  {Event}    e Swipe event
+     * @return {void}
+     */
+
+  }, {
+    key: onSwipeStart,
+    value: function value(e) {
+      if (!supportsPassive) {
+        e.preventDefault();
+      }
+
+      e = e ? e : window.event;
+      e = 'changedTouches' in e ? e.changedTouches[0] : e;
+      this._touch = {
+        start: {
+          time: new Date().getTime(), // record time when finger first makes contact with surface
+          x: e.pageX,
+          y: e.pageY
+        },
+        dist: {
+          x: 0,
+          y: 0
+        }
+      };
+    }
+
+    /**
+     * Save current position on end swiping
+     * @method onSwipeMove
+     * @param  {Event}  e swipe event
+     * @return {void}
+     */
+
+  }, {
+    key: onSwipeMove,
+    value: function value(e) {
+      if (!supportsPassive) {
+        e.preventDefault();
+      }
+    }
+
+    /**
+     * Save current position on end swiping
+     * @method onSwipeEnd
+     * @param  {Event}  e swipe event
+     * @return {void}
+     */
+
+  }, {
+    key: onSwipeEnd,
+    value: function value(e) {
+      if (!supportsPassive) {
+        e.preventDefault();
+      }
+
+      e = e ? e : window.event;
+      e = 'changedTouches' in e ? e.changedTouches[0] : e;
+      this._touch.dist = {
+        x: e.pageX - this._touch.start.x, // get horizontal dist traveled by finger while in contact with surface
+        y: e.pageY - this._touch.start.y // get vertical dist traveled by finger while in contact with surface
       };
 
-      this._element.classList.remove(ClassName$a.SHOW);
+      this._handleGesture();
+    }
 
-      if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
-        $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
-      } else {
-        complete();
+    /**
+     * Identify the gestureand slide if necessary
+     * @method _handleGesture
+     * @return {void}
+     */
+
+  }, {
+    key: '_handleGesture',
+    value: function _handleGesture() {
+      var elapsedTime = new Date().getTime() - this._touch.start.time; // get time elapsed
+      if (elapsedTime <= this.options.allowedTime) {
+        // first condition for awipe met
+        if (Math.abs(this._touch.dist.x) >= this.options.threshold && Math.abs(this._touch.dist.y) <= this.options.restraint) {
+          // 2nd condition for horizontal swipe met
+          this._touch.dist.x < 0 ? this._slide('next') : this._slide('previous'); // if dist traveled is negative, it indicates left swipe
+        }
       }
-    } // Static
-    ;
+    }
 
-    Toast._jQueryInterface = function _jQueryInterface(config) {
-      return this.each(function () {
-        var $element = $(this);
-        var data = $element.data(DATA_KEY$a);
+    /**
+     * Initiate Navigation area and Previous/Next buttons
+     * @method _initNavigation
+     * @return {[type]}        [description]
+     */
 
-        var _config = typeof config === 'object' && config;
+  }, {
+    key: '_initNavigation',
+    value: function _initNavigation() {
+      this.previousControl = this.element.querySelector('.carousel-nav-left');
+      this.nextControl = this.element.querySelector('.carousel-nav-right');
 
-        if (!data) {
-          data = new Toast(this, _config);
-          $element.data(DATA_KEY$a, data);
+      if (this.items.length <= 1 || this.forceHiddenNavigation) {
+        if (this.container) {
+          this.container.style.left = '0';
+        }
+        if (this.previousControl) {
+          this.previousControl.style.display = 'none';
+        }
+        if (this.nextControl) {
+          this.nextControl.style.display = 'none';
+        }
+      }
+    }
+
+    /**
+     * Update each item order
+     * @method _setOrder
+     */
+
+  }, {
+    key: '_setOrder',
+    value: function _setOrder() {
+      this.currentItem.node.style.order = '1';
+      this.currentItem.node.style.zIndex = '1';
+      var item = this.currentItem.node;
+      var i = void 0,
+          j = void 0,
+          ref = void 0;
+      for (i = j = 2, ref = Array.from(this.items).length; 2 <= ref ? j <= ref : j >= ref; i = 2 <= ref ? ++j : --j) {
+        item = this._next(item);
+        item.style.order = '' + i % Array.from(this.items).length;
+        item.style.zIndex = '0';
+      }
+    }
+
+    /**
+     * Find next item to display
+     * @method _next
+     * @param  {Node} element Current Node element
+     * @return {Node}         Next Node element
+     */
+
+  }, {
+    key: '_next',
+    value: function _next(element) {
+      if (element.nextElementSibling) {
+        return element.nextElementSibling;
+      } else {
+        return this.items[0];
+      }
+    }
+
+    /**
+     * Find previous item to display
+     * @method _previous
+     * @param  {Node}  element Current Node element
+     * @return {Node}          Previous Node element
+     */
+
+  }, {
+    key: '_previous',
+    value: function _previous(element) {
+      if (element.previousElementSibling) {
+        return element.previousElementSibling;
+      } else {
+        return this.items[this.items.length - 1];
+      }
+    }
+
+    /**
+     * Update slides to display the wanted one
+     * @method _slide
+     * @param  {String} [direction='next'] Direction in which items need to move
+     * @return {void}
+     */
+
+  }, {
+    key: '_slide',
+    value: function _slide() {
+      var _this4 = this;
+
+      var direction = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'next';
+
+      if (this.items.length) {
+        this.oldItemNode = this.currentItem.node;
+        this.emit(BULMA_CAROUSEL_EVENTS.slideBefore, this.currentItem);
+        // initialize direction to change order
+        if (direction === 'previous') {
+          this.currentItem.node = this._previous(this.currentItem.node);
+          // add reverse class
+          if (!this.element.classList.contains('carousel-animate-fade')) {
+            this.element.classList.add('is-reversing');
+            this.container.style.transform = 'translateX(' + -Math.abs(this.offset) + 'px)';
+          }
+        } else {
+          // Reorder items
+          this.currentItem.node = this._next(this.currentItem.node);
+          // re_slide reverse class
+          this.element.classList.remove('is-reversing');
+          this.container.style.transform = 'translateX(' + Math.abs(this.offset) + 'px)';
+        }
+        this.currentItem.node.classList.add('is-active');
+        this.oldItemNode.classList.remove('is-active');
+
+        // Disable transition to instant change order
+        this.element.classList.remove('carousel-animated');
+        // Enable transition to animate order 1 to order 2
+        setTimeout(function () {
+          _this4.element.classList.add('carousel-animated');
+        }, 50);
+
+        this._setOrder();
+        this.emit(BULMA_CAROUSEL_EVENTS.slideAfter, this.currentItem);
+      }
+    }
+
+    /**
+     * Initiate autoplay system
+     * @method _autoPlay
+     * @param  {Number}  [delay=5000] Delay between slides in milliseconds
+     * @return {void}
+     */
+
+  }, {
+    key: '_autoPlay',
+    value: function _autoPlay() {
+      var _this5 = this;
+
+      var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5000;
+
+      this._autoPlayInterval = setInterval(function () {
+        _this5._slide('next');
+      }, delay);
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.carousel, .hero-carousel';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaCarousel(element, options));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaCarousel;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaCarousel);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
         }
 
-        if (typeof config === 'string') {
-          if (typeof data[config] === 'undefined') {
-            throw new TypeError("No method named \"" + config + "\"");
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
           }
 
-          data[config](this);
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+  size: 1,
+  autoplay: false,
+  delay: 5000,
+  threshold: 50, //required min distance traveled to be considered swipe
+  restraint: 100, // maximum distance allowed at the same time in perpendicular direction
+  allowedTime: 500 // maximum time allowed to travel that distance
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-iconpicker/dist/js/bulma-iconpicker.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-iconpicker/dist/js/bulma-iconpicker.js ***!
+  \************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var fetchStyle = function fetchStyle(url) {
+  return new Promise(function (resolve, reject) {
+    var link = document.createElement('link');
+    link.type = 'text/css';
+    link.rel = 'stylesheet';
+    link.onload = function () {
+      resolve();
+    };
+    link.href = url;
+
+    if (!document.querySelector('link[href="' + url + '"]')) {
+      var headScript = document.querySelector('head');
+      headScript.append(link);
+    }
+  });
+};
+
+var bulmaIconpicker = function (_EventEmitter) {
+  _inherits(bulmaIconpicker, _EventEmitter);
+
+  function bulmaIconpicker(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaIconpicker);
+
+    var _this = _possibleConstructorReturn(this, (bulmaIconpicker.__proto__ || Object.getPrototypeOf(bulmaIconpicker)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+
+    _this._clickEvents = ['click'];
+    /// Set default options and merge with instance defined
+    _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+
+    _this.icons = [];
+    _this.id = 'iconPicker' + new Date().getTime();
+    _this.init();
+    return _this;
+  }
+
+  /**
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
+   */
+
+
+  _createClass(bulmaIconpicker, [{
+    key: 'init',
+    value: function init() {
+      var _this2 = this;
+
+      this.createModal();
+      this.createPreview();
+
+      this.options.iconSets.forEach(function (iconSet) {
+        fetchStyle(iconSet.css);
+        // Parse CSS file to get array of all available icons
+        fetch(iconSet.css, { mode: 'cors' }).then(function (res) {
+          return res.text();
+        }).then(function (css) {
+          _this2.icons[iconSet.name] = _this2.parseCSS(css, iconSet.prefix || 'fa-', iconSet.displayPrefix || '');
+          _this2.modalSetTabs.querySelector('a').click();
+          var touchEvent = new Event('touchstart');
+          _this2.modalSetTabs.querySelector('a').dispatchEvent(touchEvent);
+        });
+      });
+    }
+  }, {
+    key: 'createPreview',
+    value: function createPreview() {
+      var _this3 = this;
+
+      this.preview = document.createElement('div');
+      this.preview.className = 'icon is-large';
+      this.preview.classList.add('iconpicker-preview');
+      var iconPreview = document.createElement('i');
+      iconPreview.className = 'iconpicker-icon-preview';
+      if (this.element.value.length) {
+        var classes = this.element.value.split(' ');
+        classes.forEach(function (cls) {
+          iconPreview.classList.add(cls);
+        });
+      }
+      this.preview.appendChild(iconPreview);
+
+      this._clickEvents.forEach(function (event) {
+        _this3.preview.addEventListener(event, function (e) {
+          e.preventDefault();
+
+          _this3.modal.classList.add('is-active');
+        });
+      });
+
+      this.element.parentNode.insertBefore(this.preview, this.element.nextSibling);
+    }
+  }, {
+    key: 'parseCSS',
+    value: function parseCSS(css) {
+      var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'fa-';
+      var displayPrefix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+      var iconPattern = new RegExp('\\.' + prefix + '([^\\.!:]*)::?before\\s*{\\s*content:\\s*["|\']\\\\[^\'|"]*["|\'];?\\s*}', 'g');
+      var index = 1;
+      var icons = [],
+          icon = void 0,
+          match = void 0;
+
+      while (match = iconPattern.exec(css)) {
+        icon = {
+          prefix: prefix,
+          selector: prefix + match[index].trim(':'),
+          name: this.ucwords(match[index]).trim(':'),
+          filter: match[index].trim(':'),
+          displayPrefix: displayPrefix
+        };
+        icons[match[index]] = icon;
+      }
+
+      if (Object.getOwnPropertyNames(this.icons).length == 0) {
+        console.warn("No icons found in CSS file");
+      }
+      return icons;
+    }
+  }, {
+    key: 'ucwords',
+    value: function ucwords(str) {
+      return (str + '').replace(/^(.)|\s+(.)/g, function ($1) {
+        return $1.toUpperCase();
+      });
+    }
+  }, {
+    key: 'drawIcons',
+    value: function drawIcons(iconSet) {
+      this.iconsList.innerHTML = '';
+
+      if (iconSet) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = Object.entries(iconSet)[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var _ref = _step.value;
+
+            var _ref2 = _slicedToArray(_ref, 2);
+
+            var iconName = _ref2[0];
+            var icon = _ref2[1];
+
+            this.iconsList.appendChild(this.createIconPreview(icon));
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      }
+    }
+  }, {
+    key: 'createIconPreview',
+    value: function createIconPreview(icon) {
+      var _this4 = this;
+
+      var prefix = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'fa-';
+
+      var iconLink = document.createElement('a');
+      iconLink.dataset.title = icon['name'];
+      iconLink.setAttribute('title', icon['name']);
+      iconLink.dataset.icon = icon['selector'];
+      iconLink.dataset.filter = icon['filter'];
+      var iconPreview = document.createElement('i');
+      iconPreview.className = 'iconpicker-icon-preview';
+      if (icon['displayPrefix'].length) {
+        prefix = icon['displayPrefix'].split(' ');
+        prefix.forEach(function (pfx) {
+          iconPreview.classList.add(pfx);
+        });
+      }
+      iconPreview.classList.add(icon['selector']);
+      iconLink.appendChild(iconPreview);
+      this._clickEvents.forEach(function (event) {
+        iconLink.addEventListener(event, function (e) {
+          e.preventDefault();
+          _this4.preview.innerHTML = '';
+          _this4.element.value = e.target.classList;
+          _this4.preview.appendChild(e.target.cloneNode(true));
+          _this4.modal.classList.remove('is-active');
+        });
+      });
+      return iconLink;
+    }
+  }, {
+    key: 'createModal',
+    value: function createModal() {
+      var _this5 = this;
+
+      this.modal = document.createElement('div');
+      this.modal.className = 'modal';
+      this.modal.classList.add('iconpicker-modal');
+      this.modal.id = this.id;
+      var modalBackground = document.createElement('div');
+      modalBackground.className = 'modal-background';
+      var modalCard = document.createElement('div');
+      modalCard.className = 'modal-card';
+
+      var modalHeader = document.createElement('header');
+      modalHeader.className = 'modal-card-head';
+      var modalHeaderTitle = document.createElement('p');
+      modalHeaderTitle.className = 'modal-card-title';
+      modalHeaderTitle.innerHTML = 'iconPicker';
+      this.modalHeaderSearch = document.createElement('input');
+      this.modalHeaderSearch.setAttribute('type', 'search');
+      this.modalHeaderSearch.setAttribute('placeholder', 'Search');
+      this.modalHeaderSearch.className = 'iconpicker-search';
+      this.modalHeaderSearch.addEventListener('input', function (e) {
+        _this5.filter(e.target.value);
+      });
+      var modalHeaderClose = document.createElement('button');
+      modalHeaderClose.className = 'delete';
+      this._clickEvents.forEach(function (event) {
+        modalHeaderClose.addEventListener(event, function (e) {
+          e.preventDefault();
+
+          _this5.modal.classList.remove('is-active');
+        });
+      });
+
+      modalCard.appendChild(modalHeader);
+
+      this.modalBody = document.createElement('section');
+      this.modalBody.className = 'modal-card-body';
+
+      if (this.options.iconSets.length >= 1) {
+        var modalSets = document.createElement('div');
+        modalSets.className = 'iconpicker-sets';
+        modalSets.classList.add('tabs');
+        this.modalSetTabs = document.createElement('ul');
+        this.options.iconSets.forEach(function (iconSet) {
+          var modalSetTab = document.createElement('li');
+          var modalSetTabLink = document.createElement('a');
+          modalSetTabLink.dataset.iconset = iconSet.name;
+          modalSetTabLink.innerHTML = iconSet.name;
+          _this5._clickEvents.forEach(function (event) {
+            modalSetTabLink.addEventListener(event, function (e) {
+              e.preventDefault();
+
+              var activeModalTabs = _this5.modalSetTabs.querySelectorAll('.is-active');
+              [].forEach.call(activeModalTabs, function (activeModalTab) {
+                activeModalTab.classList.remove('is-active');
+              });
+
+              e.target.parentNode.classList.add('is-active');
+              _this5.drawIcons(_this5.icons[e.target.dataset.iconset]);
+              _this5.filter(_this5.modalHeaderSearch.value);
+            });
+          });
+          modalSetTab.appendChild(modalSetTabLink);
+          _this5.modalSetTabs.appendChild(modalSetTab);
+        });
+        modalSets.appendChild(this.modalSetTabs);
+        modalCard.appendChild(modalSets);
+      }
+
+      this.iconsList = document.createElement('div');
+      this.iconsList.className = 'iconpicker-icons';
+
+      modalHeader.appendChild(modalHeaderTitle);
+      modalHeader.appendChild(this.modalHeaderSearch);
+      modalHeader.appendChild(modalHeaderClose);
+
+      this.modalBody.appendChild(this.iconsList);
+      modalCard.appendChild(this.modalBody);
+
+      this.modal.appendChild(modalBackground);
+      this.modal.appendChild(modalCard);
+      document.body.appendChild(this.modal);
+    }
+  }, {
+    key: 'filter',
+    value: function filter() {
+      var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      if (value === '') {
+        this.iconsList.querySelectorAll('[data-filter]').forEach(function (el) {
+          el.classList.remove('is-hidden');
+        });
+        return;
+      }
+      this.iconsList.querySelectorAll('[data-filter]').forEach(function (el) {
+        el.classList.remove('is-hidden');
+      });
+      this.iconsList.querySelectorAll('[data-filter]:not([data-filter*="' + value + '"])').forEach(function (el) {
+        el.classList.add('is-hidden');
+      });
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '[data-action="iconPicker"]';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaIconpicker(element, options));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaIconpicker;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaIconpicker);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+  iconSets: [{
+    name: 'simpleLine', // Name displayed on tab
+    css: 'https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css', // CSS url containing icons rules
+    prefix: 'icon-', // CSS rules prefix to identify icons
+    displayPrefix: ''
+  }, {
+    name: 'fontAwesome', // Name displayed on tab
+    css: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css', // CSS url containing icons rules
+    prefix: 'fa-', // CSS rules prefix to identify icons
+    displayPrefix: 'fas fa-icon'
+  }]
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var onQuickviewShowClick = Symbol('onQuickviewShowClick');
+var onQuickviewDismissClick = Symbol('onQuickviewDismissClick');
+
+var bulmaQuickview = function (_EventEmitter) {
+  _inherits(bulmaQuickview, _EventEmitter);
+
+  function bulmaQuickview(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaQuickview);
+
+    var _this = _possibleConstructorReturn(this, (bulmaQuickview.__proto__ || Object.getPrototypeOf(bulmaQuickview)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+
+    _this._clickEvents = ['click'];
+    /// Set default options and merge with instance defined
+    _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+
+    _this[onQuickviewShowClick] = _this[onQuickviewShowClick].bind(_this);
+    _this[onQuickviewDismissClick] = _this[onQuickviewDismissClick].bind(_this);
+
+    _this.init();
+    return _this;
+  }
+
+  /**
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
+   */
+
+
+  _createClass(bulmaQuickview, [{
+    key: 'init',
+
+
+    /**
+     * Initiate plugin
+     * @method init
+     * @return {void}
+     */
+    value: function init() {
+      this.quickview = document.getElementById(this.element.dataset['target']);
+      this.dismissElements = document.querySelectorAll('[data-dismiss="quickview"]');
+
+      this._bindEvents();
+
+      this.emit('quickview:ready', {
+        element: this.element,
+        quickview: this.quickview
+      });
+    }
+
+    /**
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
+     */
+
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      var _this2 = this;
+
+      this._clickEvents.forEach(function (event) {
+        _this2.element.addEventListener(event, _this2[onQuickviewShowClick], false);
+      });
+
+      [].forEach.call(this.dismissElements, function (dismissElement) {
+        _this2._clickEvents.forEach(function (event) {
+          dismissElement.addEventListener(event, _this2[onQuickviewDismissClick], false);
+        });
+      });
+    }
+  }, {
+    key: onQuickviewShowClick,
+    value: function value(e) {
+      this.quickview.classList.add('is-active');
+
+      this.emit('quickview:show', {
+        element: this.element,
+        quickview: this.quickview
+      });
+    }
+  }, {
+    key: onQuickviewDismissClick,
+    value: function value(e) {
+      this.quickview.classList.remove('is-active');
+
+      this.emit('quickview:hide', {
+        element: this.element,
+        quickview: this.quickview
+      });
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '[data-show="quickview"]';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaQuickview(element, options));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaQuickview;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaQuickview);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-slider/dist/js/bulma-slider.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-slider/dist/js/bulma-slider.js ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var onSliderInput = Symbol('onSliderInput');
+
+var bulmaSlider = function (_EventEmitter) {
+  _inherits(bulmaSlider, _EventEmitter);
+
+  function bulmaSlider(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaSlider);
+
+    var _this = _possibleConstructorReturn(this, (bulmaSlider.__proto__ || Object.getPrototypeOf(bulmaSlider)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+
+    _this._clickEvents = ['click'];
+    /// Set default options and merge with instance defined
+    _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+
+    _this[onSliderInput] = _this[onSliderInput].bind(_this);
+
+    _this.init();
+    return _this;
+  }
+
+  /**
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
+   */
+
+
+  _createClass(bulmaSlider, [{
+    key: 'init',
+
+
+    /**
+     * Initiate plugin
+     * @method init
+     * @return {void}
+     */
+    value: function init() {
+      this._id = 'bulmaSlider' + new Date().getTime() + Math.floor(Math.random() * Math.floor(9999));
+      this.output = this._findOutputForSlider();
+
+      if (this.output) {
+        if (this.element.classList.contains('has-output-tooltip')) {
+          // Get new output position
+          var newPosition = this._getSliderOutputPosition();
+
+          // Set output position
+          this.output.style['left'] = newPosition.position;
+        }
+      }
+
+      this.emit('bulmaslider:ready', this.element.value);
+    }
+  }, {
+    key: '_findOutputForSlider',
+    value: function _findOutputForSlider() {
+      var _this2 = this;
+
+      var outputs = document.getElementsByTagName('output');
+      [].forEach.call(outputs, function (output) {
+        if (output.htmlFor == _this2.element.getAttribute('id')) {
+          return output;
         }
       });
-    };
+      return null;
+    }
+  }, {
+    key: '_getSliderOutputPosition',
+    value: function _getSliderOutputPosition() {
+      // Update output position
+      var newPlace, minValue;
 
-    _createClass(Toast, null, [{
-      key: "VERSION",
-      get: function get() {
-        return VERSION$a;
-      }
-    }, {
-      key: "DefaultType",
-      get: function get() {
-        return DefaultType$7;
-      }
-    }, {
-      key: "Default",
-      get: function get() {
-        return Default$7;
-      }
-    }]);
+      var style = window.getComputedStyle(this.element, null);
+      // Measure width of range input
+      var sliderWidth = parseInt(style.getPropertyValue('width'), 10);
 
-    return Toast;
-  }();
+      // Figure out placement percentage between left and right of input
+      if (!this.element.getAttribute('min')) {
+        minValue = 0;
+      } else {
+        minValue = this.element.getAttribute('min');
+      }
+      var newPoint = (this.element.value - minValue) / (this.element.getAttribute('max') - minValue);
+
+      // Prevent bubble from going beyond left or right (unsupported browsers)
+      if (newPoint < 0) {
+        newPlace = 0;
+      } else if (newPoint > 1) {
+        newPlace = sliderWidth;
+      } else {
+        newPlace = sliderWidth * newPoint;
+      }
+
+      return {
+        'position': newPlace + 'px'
+      };
+    }
+
+    /**
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
+     */
+
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      if (this.output) {
+        // Add event listener to update output when slider value change
+        this.element.addEventListener('input', this[onSliderInput], false);
+      }
+    }
+  }, {
+    key: onSliderInput,
+    value: function value(e) {
+      e.preventDefault();
+
+      if (this.element.classList.contains('has-output-tooltip')) {
+        // Get new output position
+        var newPosition = this._getSliderOutputPosition();
+
+        // Set output position
+        this.output.style['left'] = newPosition.position;
+      }
+
+      // Check for prefix and postfix
+      var prefix = this.output.hasAttribute('data-prefix') ? this.output.getAttribute('data-prefix') : '';
+      var postfix = this.output.hasAttribute('data-postfix') ? this.output.getAttribute('data-postfix') : '';
+
+      // Update output with slider value
+      this.output.value = prefix + this.element.value + postfix;
+
+      this.emit('bulmaslider:ready', this.element.value);
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'input[type="range"].slider';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaSlider(element, options));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaSlider;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaSlider);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-steps/dist/js/bulma-steps.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-steps/dist/js/bulma-steps.js ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var onStepsPrevious = Symbol('onStepsPrevious');
+var onStepsNext = Symbol('onStepsNext');
+
+var bulmaSteps = function (_EventEmitter) {
+  _inherits(bulmaSteps, _EventEmitter);
+
+  function bulmaSteps(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+    _classCallCheck(this, bulmaSteps);
+
+    var _this = _possibleConstructorReturn(this, (bulmaSteps.__proto__ || Object.getPrototypeOf(bulmaSteps)).call(this));
+
+    _this.element = typeof selector === 'string' ? document.querySelector(selector) : selector;
+    // An invalid selector or non-DOM node has been provided.
+    if (!_this.element) {
+      throw new Error('An invalid selector or non-DOM node has been provided.');
+    }
+
+    _this._clickEvents = ['click'];
+    /// Set default options and merge with instance defined
+    _this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+
+    _this[onStepsPrevious] = _this[onStepsPrevious].bind(_this);
+    _this[onStepsNext] = _this[onStepsNext].bind(_this);
+
+    _this.init();
+    return _this;
+  }
+
   /**
-   * ------------------------------------------------------------------------
-   * jQuery
-   * ------------------------------------------------------------------------
+   * Initiate all DOM element containing carousel class
+   * @method
+   * @return {Array} Array of all Carousel instances
    */
 
 
-  $.fn[NAME$a] = Toast._jQueryInterface;
-  $.fn[NAME$a].Constructor = Toast;
+  _createClass(bulmaSteps, [{
+    key: 'init',
 
-  $.fn[NAME$a].noConflict = function () {
-    $.fn[NAME$a] = JQUERY_NO_CONFLICT$a;
-    return Toast._jQueryInterface;
-  };
 
-  /**
-   * --------------------------------------------------------------------------
-   * Bootstrap (v4.3.1): index.js
-   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-   * --------------------------------------------------------------------------
+    /**
+     * Initiate plugin
+     * @method init
+     * @return {void}
+     */
+    value: function init() {
+      this._id = 'bulmaSteps' + new Date().getTime() + Math.floor(Math.random() * Math.floor(9999));
+
+      this.steps = this.element.querySelectorAll(this.options.selector);
+      this.contents = this.element.querySelectorAll(this.options.selector_content);
+      this.previous_btn = this.element.querySelector(this.options.previous_selector);
+      this.next_btn = this.element.querySelector(this.options.next_selector);
+
+      [].forEach.call(this.steps, function (step, index) {
+        step.setAttribute('data-step-id', index);
+      });
+
+      if (this.steps && this.steps.length) {
+        this.activate_step(0);
+        this.updateActions(this.steps[0]);
+      }
+
+      this._bindEvents();
+
+      this.emit('bulmasteps:ready', this.element.value);
+    }
+
+    /**
+     * Bind all events
+     * @method _bindEvents
+     * @return {void}
+     */
+
+  }, {
+    key: '_bindEvents',
+    value: function _bindEvents() {
+      var _this2 = this;
+
+      if (this.previous_btn != null) {
+        this._clickEvents.forEach(function (event) {
+          _this2.previous_btn.addEventListener(event, _this2[onStepsPrevious], false);
+        });
+      }
+
+      if (this.next_btn != null) {
+        this._clickEvents.forEach(function (event) {
+          _this2.next_btn.addEventListener(event, _this2[onStepsNext], false);
+        });
+      }
+
+      if (this.options.stepClickable) {
+        [].forEach.call(this.steps, function (step, index) {
+          _this2._clickEvents.forEach(function (event) {
+            while (index > _this2.current_id) {
+              _this2[onStepsNext](event);
+            }
+            while (index < _this2.current_id) {
+              _this2[onStepsPrevious](event);
+            }
+          });
+        });
+      }
+    }
+  }, {
+    key: onStepsPrevious,
+    value: function value(e) {
+      e.preventDefault();
+
+      if (!e.target.getAttribute('disabled')) {
+        this.previous_step();
+      }
+    }
+  }, {
+    key: onStepsNext,
+    value: function value(e) {
+      e.preventDefault();
+
+      if (!e.target.getAttribute('disabled')) {
+        this.next_step();
+      }
+    }
+  }, {
+    key: 'get_current_step_id',
+    value: function get_current_step_id() {
+      for (var i = 0; i < this.steps.length; i++) {
+        var step = this.steps[i];
+
+        if (step.classList.contains(this.options.active_class)) {
+          return parseInt(step.getAttribute('data-step-id'));
+        }
+      }
+
+      return null;
+    }
+  }, {
+    key: 'updateActions',
+    value: function updateActions(step) {
+      var stepId = parseInt(step.getAttribute('data-step-id'));
+      if (stepId == 0) {
+        if (this.previous_btn != null) {
+          this.previous_btn.setAttribute('disabled', 'disabled');
+        }
+        if (this.next_btn != null) {
+          this.next_btn.removeAttribute('disabled', 'disabled');
+        }
+      } else if (stepId == this.steps.length - 1) {
+        if (this.previous_btn != null) {
+          this.previous_btn.removeAttribute('disabled', 'disabled');
+        }
+        if (this.next_btn != null) {
+          this.next_btn.setAttribute('disabled', 'disabled');
+        }
+      } else {
+        if (this.previous_btn != null) {
+          this.previous_btn.removeAttribute('disabled', 'disabled');
+        }
+        if (this.next_btn != null) {
+          this.next_btn.removeAttribute('disabled', 'disabled');
+        }
+      }
+    }
+  }, {
+    key: 'next_step',
+    value: function next_step() {
+      var current_id = this.get_current_step_id();
+
+      if (current_id == null) {
+        return;
+      }
+
+      var next_id = current_id + 1,
+          errors = [];
+
+      if (typeof this.options.beforeNext != 'undefined' && this.options.beforeNext != null && this.options.beforeNext) {
+        errors = this.options.beforeNext(current_id);
+      }
+      this.emit('bulmasteps:before:next', current_id);
+
+      if (typeof errors == 'undefined') {
+        errors = [];
+      }
+
+      if (errors.length > 0) {
+        this.emit('bulmasteps:errors', errors);
+        for (var i = 0; i < errors.length; i++) {
+          if (typeof this.options.onError != 'undefined' && this.options.onError != null && this.options.onError) {
+            this.options.onError(errors[i]);
+          }
+        }
+
+        return;
+      }
+
+      if (next_id >= this.steps.length - 1) {
+        if (typeof this.options.onFinish != 'undefined' && this.options.onFinish != null && this.options.onFinish) {
+          this.options.onFinish(current_id);
+        }
+        this.emit('bulmasteps:finish', current_id);
+      }
+      if (next_id < this.steps.length) {
+        this.complete_step(current_id);
+        this.activate_step(next_id);
+      }
+    }
+  }, {
+    key: 'previous_step',
+    value: function previous_step() {
+      var current_id = this.get_current_step_id();
+      if (current_id == null) {
+        return;
+      }
+
+      this.uncomplete_step(current_id - 1);
+      this.activate_step(current_id - 1);
+    }
+
+    /**
+     * Activate a single step,
+     * will deactivate all other steps.
+     */
+
+  }, {
+    key: 'activate_step',
+    value: function activate_step(step_id) {
+      this.updateActions(this.steps[step_id]);
+
+      for (var i = 0; i < this.steps.length; i++) {
+        var _step = this.steps[i];
+
+        if (_step == this.steps[step_id]) {
+          continue;
+        }
+
+        this.deactivate_step(i);
+      }
+
+      this.steps[step_id].classList.add(this.options.active_class);
+      if (typeof this.contents[step_id] !== 'undefined') {
+        this.contents[step_id].classList.add(this.options.active_class);
+      }
+
+      if (typeof this.options.onShow != 'undefined' && this.options.onShow != null && this.options.onShow) {
+        this.options.onShow(step_id);
+      }
+
+      this.emit('bulmasteps:step:show', step_id);
+    }
+  }, {
+    key: 'complete_step',
+    value: function complete_step(step_id) {
+      this.steps[step_id].classList.add(this.options.completed_class);
+      this.emit('bulmasteps:step:completed', step_id);
+    }
+  }, {
+    key: 'uncomplete_step',
+    value: function uncomplete_step(step_id) {
+      this.steps[step_id].classList.remove(this.options.completed_class);
+      this.emit('bulmasteps:step:uncompleted', step_id);
+    }
+  }, {
+    key: 'deactivate_step',
+    value: function deactivate_step(step_id) {
+      this.steps[step_id].classList.remove(this.options.active_class);
+      if (typeof this.contents[step_id] !== 'undefined') {
+        this.contents[step_id].classList.remove(this.options.active_class);
+      }
+    }
+  }], [{
+    key: 'attach',
+    value: function attach() {
+      var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '.steps';
+      var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      var instances = new Array();
+
+      var elements = document.querySelectorAll(selector);
+      [].forEach.call(elements, function (element) {
+        setTimeout(function () {
+          instances.push(new bulmaSteps(element, options));
+        }, 100);
+      });
+      return instances;
+    }
+  }]);
+
+  return bulmaSteps;
+}(__WEBPACK_IMPORTED_MODULE_0__events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaSteps);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
+    }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
+    }
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
+
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
+
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
+
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+    'selector': '.step-item',
+    'selector_content': '.step-content',
+    'previous_selector': '[data-nav="previous"]',
+    'next_selector': '[data-nav="next"]',
+    'active_class': 'is-active',
+    'completed_class': 'is-completed',
+    'stepClickable': false,
+    'beforeNext': null,
+    'onShow': null,
+    'onFinish': null,
+    'onError': null
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ })
+/******/ ])["default"];
+});
+
+/***/ }),
+
+/***/ "./node_modules/bulma-extensions/bulma-tagsinput/dist/js/bulma-tagsinput.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/bulma-extensions/bulma-tagsinput/dist/js/bulma-tagsinput.js ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(true)
+		module.exports = factory();
+	else {}
+})(typeof self !== 'undefined' ? self : this, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_events__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__defaultOptions__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils_type__ = __webpack_require__(3);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+
+var KEY_BACKSPACE = 8,
+    KEY_TAB = 9,
+    KEY_ENTER = 13,
+    KEY_LEFT = 37,
+    KEY_RIGHT = 39,
+    KEY_DELETE = 46,
+    KEY_COMMA = 188;
+
+var bulmaTagsinput = function (_EventEmitter) {
+	_inherits(bulmaTagsinput, _EventEmitter);
+
+	function bulmaTagsinput(selector) {
+		var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+		_classCallCheck(this, bulmaTagsinput);
+
+		var _this = _possibleConstructorReturn(this, (bulmaTagsinput.__proto__ || Object.getPrototypeOf(bulmaTagsinput)).call(this));
+
+		_this.element = __WEBPACK_IMPORTED_MODULE_2__utils_type__["a" /* isString */](selector) ? document.querySelector(selector) : selector;
+		// An invalid selector or non-DOM node has been provided.
+		if (!_this.element) {
+			throw new Error('An invalid selector or non-DOM node has been provided.');
+		}
+		_this._clickEvents = ['click'];
+
+		/// Set default options and merge with instance defined
+		_this.options = _extends({}, __WEBPACK_IMPORTED_MODULE_1__defaultOptions__["a" /* default */], options);
+
+		if (_this.element.dataset.hasOwnProperty('lowercase')) {
+			_this.options.lowercase = _this.element.dataset('lowercase');
+		}
+		if (_this.element.dataset.hasOwnProperty('uppercase')) {
+			_this.options.lowercase = _this.element.dataset('uppercase');
+		}
+		if (_this.element.dataset.hasOwnProperty('duplicates')) {
+			_this.options.lowercase = _this.element.dataset('duplicates');
+		}
+
+		_this.init();
+		return _this;
+	}
+
+	/**
+   * Initiate all DOM element containing tagsinput class
+   * @method
+   * @return {Array} Array of all TagsInput instances
    */
 
-  (function () {
-    if (typeof $ === 'undefined') {
-      throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
+
+	_createClass(bulmaTagsinput, [{
+		key: 'init',
+		value: function init() {
+			if (!this.options.disabled) {
+				this.tags = [];
+				// The container will visually looks like an input
+				this.container = document.createElement('div');
+				this.container.className = 'tagsinput';
+				this.container.classList.add('field');
+				this.container.classList.add('is-grouped');
+				this.container.classList.add('is-grouped-multiline');
+				this.container.classList.add('input');
+
+				var inputType = this.element.getAttribute('type');
+				if (!inputType || inputType === 'tags') {
+					inputType = 'text';
+				}
+				// Create an invisible input element so user will be able to enter value
+				this.input = document.createElement('input');
+				this.input.setAttribute('type', inputType);
+				if (this.element.getAttribute('placeholder')) {
+					this.input.setAttribute('placeholder', this.element.getAttribute('placeholder'));
+				} else {
+					this.input.setAttribute('placeholder', 'Add a Tag');
+				}
+				this.container.appendChild(this.input);
+
+				var sib = this.element.nextSibling;
+				this.element.parentNode[sib ? 'insertBefore' : 'appendChild'](this.container, sib);
+				this.element.style.cssText = 'position:absolute;left:0;top:0;width:1px;height:1px;opacity:0.01;';
+				this.element.tabIndex = -1;
+
+				this.enable();
+			}
+		}
+	}, {
+		key: 'enable',
+		value: function enable() {
+			var _this2 = this;
+
+			if (!this.enabled && !this.options.disabled) {
+
+				this.element.addEventListener('focus', function () {
+					_this2.container.classList.add('is-focused');
+					_this2.select(Array.prototype.slice.call(_this2.container.querySelectorAll('.tag:not(.is-delete)')).pop());
+				});
+
+				this.input.addEventListener('focus', function () {
+					_this2.container.classList.add('is-focused');
+					_this2.select(Array.prototype.slice.call(_this2.container.querySelectorAll('.tag:not(.is-delete)')).pop());
+				});
+				this.input.addEventListener('blur', function () {
+					_this2.container.classList.remove('is-focused');
+					_this2.select(Array.prototype.slice.call(_this2.container.querySelectorAll('.tag:not(.is-delete)')).pop());
+					_this2.savePartial();
+				});
+				this.input.addEventListener('keydown', function (e) {
+					var key = e.charCode || e.keyCode || e.which,
+					    selectedTag = void 0,
+					    activeTag = _this2.container.querySelector('.tag.is-active'),
+					    last = Array.prototype.slice.call(_this2.container.querySelectorAll('.tag:not(.is-delete)')).pop(),
+					    atStart = _this2.caretAtStart(_this2.input);
+
+					if (activeTag) {
+						selectedTag = _this2.container.querySelector('[data-tag="' + activeTag.innerHTML.trim() + '"]');
+					}
+					_this2.setInputWidth();
+
+					if (key === KEY_ENTER || key === _this2.options.delimiter.charCodeAt(0) || key === KEY_COMMA || key === KEY_TAB) {
+						if (!_this2.input.value && (key !== _this2.options.delimiter.charCodeAt(0) || key === KEY_COMMA)) {
+							return;
+						}
+						_this2.savePartial();
+					} else if (key === KEY_DELETE && selectedTag) {
+						if (selectedTag.nextSibling) {
+							_this2.select(selectedTag.nextSibling.querySelector('.tag'));
+						} else if (selectedTag.previousSibling) {
+							_this2.select(selectedTag.previousSibling.querySelector('.tag'));
+						}
+						_this2.container.removeChild(selectedTag);
+						_this2.tags.splice(_this2.tags.indexOf(selectedTag.getAttribute('data-tag')), 1);
+						_this2.setInputWidth();
+						_this2.save();
+					} else if (key === KEY_BACKSPACE) {
+						if (selectedTag) {
+							if (selectedTag.previousSibling) {
+								_this2.select(selectedTag.previousSibling.querySelector('.tag'));
+							} else if (selectedTag.nextSibling) {
+								_this2.select(selectedTag.nextSibling.querySelector('.tag'));
+							}
+							_this2.container.removeChild(selectedTag);
+							_this2.tags.splice(_this2.tags.indexOf(selectedTag.getAttribute('data-tag')), 1);
+							_this2.setInputWidth();
+							_this2.save();
+						} else if (last && atStart) {
+							_this2.select(last);
+						} else {
+							return;
+						}
+					} else if (key === KEY_LEFT) {
+						if (selectedTag) {
+							if (selectedTag.previousSibling) {
+								_this2.select(selectedTag.previousSibling.querySelector('.tag'));
+							}
+						} else if (!atStart) {
+							return;
+						} else {
+							_this2.select(last);
+						}
+					} else if (key === KEY_RIGHT) {
+						if (!selectedTag) {
+							return;
+						}
+						_this2.select(selectedTag.nextSibling.querySelector('.tag'));
+					} else {
+						return _this2.select();
+					}
+
+					e.preventDefault();
+					return false;
+				});
+				this.input.addEventListener('input', function () {
+					_this2.element.value = _this2.getValue();
+					_this2.element.dispatchEvent(new Event('input'));
+				});
+				this.input.addEventListener('paste', function () {
+					return setTimeout(savePartial, 0);
+				});
+
+				this.container.addEventListener('mousedown', function (e) {
+					_this2.refocus(e);
+				});
+				this.container.addEventListener('touchstart', function (e) {
+					_this2.refocus(e);
+				});
+
+				this.savePartial(this.element.value);
+
+				this.enabled = true;
+			}
+		}
+	}, {
+		key: 'disable',
+		value: function disable() {
+			if (this.enabled && !this.options.disabled) {
+				this.reset();
+
+				this.enabled = false;
+			}
+		}
+	}, {
+		key: 'select',
+		value: function select(el) {
+			var sel = this.container.querySelector('.is-active');
+			if (sel) {
+				sel.classList.remove('is-active');
+			}
+			if (el) {
+				el.classList.add('is-active');
+			}
+		}
+	}, {
+		key: 'addTag',
+		value: function addTag(text) {
+			var _this3 = this;
+
+			if (~text.indexOf(this.options.delimiter)) {
+				text = text.split(this.options.delimiter);
+			}
+			if (Array.isArray(text)) {
+				return text.forEach(function (text) {
+					_this3.addTag(text);
+				});
+			}
+
+			var tag = text && text.trim();
+			if (!tag) {
+				return false;
+			}
+
+			if (this.options['lowercase'] == 'true') {
+				tag = tag.toLowerCase();
+			}
+			if (this.options['uppercase'] == 'true') {
+				tag = tag.toUpperCase();
+			}
+			if (this.options['duplicates'] || this.tags.indexOf(tag) === -1) {
+				this.tags.push(tag);
+
+				var newTagWrapper = document.createElement('div');
+				newTagWrapper.className = 'control';
+				newTagWrapper.setAttribute('data-tag', tag);
+
+				var newTag = document.createElement('div');
+				newTag.className = 'tags';
+				newTag.classList.add('has-addons');
+
+				var newTagContent = document.createElement('span');
+				newTagContent.className = 'tag';
+				newTagContent.classList.add('is-active');
+				this.select(newTagContent);
+				newTagContent.innerHTML = tag;
+
+				newTag.appendChild(newTagContent);
+				if (this.options.allowDelete) {
+					var newTagDeleteButton = document.createElement('a');
+					newTagDeleteButton.className = 'tag';
+					newTagDeleteButton.classList.add('is-delete');
+					this._clickEvents.forEach(function (event) {
+						newTagDeleteButton.addEventListener(event, function (e) {
+							var selectedTag = void 0,
+							    activeTag = e.target.parentNode,
+							    last = Array.prototype.slice.call(_this3.container.querySelectorAll('.tag')).pop(),
+							    atStart = _this3.caretAtStart(_this3.input);
+
+							if (activeTag) {
+								selectedTag = _this3.container.querySelector('[data-tag="' + activeTag.innerText.trim() + '"]');
+							}
+
+							if (selectedTag) {
+								_this3.select(selectedTag.previousSibling);
+								_this3.container.removeChild(selectedTag);
+								_this3.tags.splice(_this3.tags.indexOf(selectedTag.getAttribute('data-tag')), 1);
+								_this3.setInputWidth();
+								_this3.save();
+							} else if (last && atStart) {
+								_this3.select(last);
+							} else {
+								return;
+							}
+						});
+					});
+					newTag.appendChild(newTagDeleteButton);
+				}
+				newTagWrapper.appendChild(newTag);
+
+				this.container.insertBefore(newTagWrapper, this.input);
+			}
+		}
+	}, {
+		key: 'getValue',
+		value: function getValue() {
+			return this.tags.join(this.options.delimiter);
+		}
+	}, {
+		key: 'setValue',
+		value: function setValue(value) {
+			var _this4 = this;
+
+			Array.prototype.slice.call(this.container.querySelectorAll('.tag')).forEach(function (tag) {
+				_this4.tags.splice(_this4.tags.indexOf(tag.innerHTML), 1);
+				_this4.container.removeChild(tag);
+			});
+			this.savePartial(value);
+		}
+	}, {
+		key: 'setInputWidth',
+		value: function setInputWidth() {
+			var last = Array.prototype.slice.call(this.container.querySelectorAll('.control')).pop();
+
+			if (!this.container.offsetWidth) {
+				return;
+			}
+			this.input.style.width = Math.max(this.container.offsetWidth - (last ? last.offsetLeft + last.offsetWidth : 30) - 30, this.container.offsetWidth / 4) + 'px';
+		}
+	}, {
+		key: 'savePartial',
+		value: function savePartial(value) {
+			if (typeof value !== 'string' && !Array.isArray(value)) {
+				value = this.input.value;
+			}
+			if (this.addTag(value) !== false) {
+				this.input.value = '';
+				this.save();
+				this.setInputWidth();
+			}
+		}
+	}, {
+		key: 'save',
+		value: function save() {
+			this.element.value = this.tags.join(this.options.delimiter);
+			this.element.dispatchEvent(new Event('change'));
+		}
+	}, {
+		key: 'caretAtStart',
+		value: function caretAtStart(el) {
+			try {
+				return el.selectionStart === 0 && el.selectionEnd === 0;
+			} catch (e) {
+				return el.value === '';
+			}
+		}
+	}, {
+		key: 'refocus',
+		value: function refocus(e) {
+			if (e.target.classList.contains('tag')) {
+				this.select(e.target);
+			}
+			if (e.target === this.input) {
+				return this.select();
+			}
+			this.input.focus();
+			e.preventDefault();
+			return false;
+		}
+	}, {
+		key: 'reset',
+		value: function reset() {
+			this.tags = [];
+		}
+	}, {
+		key: 'destroy',
+		value: function destroy() {
+			this.disable();
+			this.reset();
+			this.element = null;
+		}
+	}], [{
+		key: 'attach',
+		value: function attach() {
+			var selector = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'input[type="tags"]';
+			var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+			var instances = new Array();
+
+			var elements = document.querySelectorAll(selector);
+			[].forEach.call(elements, function (element) {
+				setTimeout(function () {
+					instances.push(new bulmaTagsinput(element, options));
+				}, 100);
+			});
+			return instances;
+		}
+	}]);
+
+	return bulmaTagsinput;
+}(__WEBPACK_IMPORTED_MODULE_0__utils_events__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["default"] = (bulmaTagsinput);
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var EventEmitter = function () {
+  function EventEmitter() {
+    var listeners = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+
+    _classCallCheck(this, EventEmitter);
+
+    this._listeners = new Map(listeners);
+    this._middlewares = new Map();
+  }
+
+  _createClass(EventEmitter, [{
+    key: "listenerCount",
+    value: function listenerCount(eventName) {
+      if (!this._listeners.has(eventName)) {
+        return 0;
+      }
+
+      var eventListeners = this._listeners.get(eventName);
+      return eventListeners.length;
     }
+  }, {
+    key: "removeListeners",
+    value: function removeListeners() {
+      var _this = this;
 
-    var version = $.fn.jquery.split(' ')[0].split('.');
-    var minMajor = 1;
-    var ltMajor = 2;
-    var minMinor = 9;
-    var minPatch = 1;
-    var maxMajor = 4;
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+      var middleware = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
-    if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
-      throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this.removeListeners(e, middleware);
+          });
+        } else {
+          this._listeners.delete(eventName);
+
+          if (middleware) {
+            this.removeMiddleware(eventName);
+          }
+        }
+      } else {
+        this._listeners = new Map();
+      }
     }
-  })();
+  }, {
+    key: "middleware",
+    value: function middleware(eventName, fn) {
+      var _this2 = this;
 
-  exports.Util = Util;
-  exports.Alert = Alert;
-  exports.Button = Button;
-  exports.Carousel = Carousel;
-  exports.Collapse = Collapse;
-  exports.Dropdown = Dropdown;
-  exports.Modal = Modal;
-  exports.Popover = Popover;
-  exports.Scrollspy = ScrollSpy;
-  exports.Tab = Tab;
-  exports.Toast = Toast;
-  exports.Tooltip = Tooltip;
+      if (Array.isArray(eventName)) {
+        name.forEach(function (e) {
+          return _this2.middleware(e, fn);
+        });
+      } else {
+        if (!Array.isArray(this._middlewares.get(eventName))) {
+          this._middlewares.set(eventName, []);
+        }
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+        this._middlewares.get(eventName).push(fn);
+      }
+    }
+  }, {
+    key: "removeMiddleware",
+    value: function removeMiddleware() {
+      var _this3 = this;
 
-}));
-//# sourceMappingURL=bootstrap.js.map
+      var eventName = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
 
+      if (eventName !== null) {
+        if (Array.isArray(eventName)) {
+          name.forEach(function (e) {
+            return _this3.removeMiddleware(e);
+          });
+        } else {
+          this._middlewares.delete(eventName);
+        }
+      } else {
+        this._middlewares = new Map();
+      }
+    }
+  }, {
+    key: "on",
+    value: function on(name, callback) {
+      var _this4 = this;
+
+      var once = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (Array.isArray(name)) {
+        name.forEach(function (e) {
+          return _this4.on(e, callback);
+        });
+      } else {
+        name = name.toString();
+        var split = name.split(/,|, | /);
+
+        if (split.length > 1) {
+          split.forEach(function (e) {
+            return _this4.on(e, callback);
+          });
+        } else {
+          if (!Array.isArray(this._listeners.get(name))) {
+            this._listeners.set(name, []);
+          }
+
+          this._listeners.get(name).push({ once: once, callback: callback });
+        }
+      }
+    }
+  }, {
+    key: "once",
+    value: function once(name, callback) {
+      this.on(name, callback, true);
+    }
+  }, {
+    key: "emit",
+    value: function emit(name, data) {
+      var _this5 = this;
+
+      var silent = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      name = name.toString();
+      var listeners = this._listeners.get(name);
+      var middlewares = null;
+      var doneCount = 0;
+      var execute = silent;
+
+      if (Array.isArray(listeners)) {
+        listeners.forEach(function (listener, index) {
+          // Start Middleware checks unless we're doing a silent emit
+          if (!silent) {
+            middlewares = _this5._middlewares.get(name);
+            // Check and execute Middleware
+            if (Array.isArray(middlewares)) {
+              middlewares.forEach(function (middleware) {
+                middleware(data, function () {
+                  var newData = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+                  if (newData !== null) {
+                    data = newData;
+                  }
+                  doneCount++;
+                }, name);
+              });
+
+              if (doneCount >= middlewares.length) {
+                execute = true;
+              }
+            } else {
+              execute = true;
+            }
+          }
+
+          // If Middleware checks have been passed, execute
+          if (execute) {
+            if (listener.once) {
+              listeners[index] = null;
+            }
+            listener.callback(data);
+          }
+        });
+
+        // Dirty way of removing used Events
+        while (listeners.indexOf(null) !== -1) {
+          listeners.splice(listeners.indexOf(null), 1);
+        }
+      }
+    }
+  }]);
+
+  return EventEmitter;
+}();
+
+/* harmony default export */ __webpack_exports__["a"] = (EventEmitter);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var defaultOptions = {
+		disabled: false,
+		delimiter: ',',
+		allowDelete: true,
+		lowercase: false,
+		uppercase: false,
+		duplicates: true
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (defaultOptions);
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return isString; });
+/* unused harmony export isDate */
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+var isString = function isString(unknown) {
+  return typeof unknown === 'string' || !!unknown && (typeof unknown === 'undefined' ? 'undefined' : _typeof(unknown)) === 'object' && Object.prototype.toString.call(unknown) === '[object String]';
+};
+var isDate = function isDate(unknown) {
+  return (Object.prototype.toString.call(unknown) === '[object Date]' || unknown instanceof Date) && !isNaN(unknown.valueOf());
+};
+
+/***/ })
+/******/ ])["default"];
+});
 
 /***/ }),
 
@@ -33914,2624 +50578,6 @@ return jQuery;
 
 /***/ }),
 
-/***/ "./node_modules/popper.js/dist/esm/popper.js":
-/*!***************************************************!*\
-  !*** ./node_modules/popper.js/dist/esm/popper.js ***!
-  \***************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(global) {/**!
- * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.15.0
- * @license
- * Copyright (c) 2016 Federico Zivolo and contributors
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all
- * copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- * SOFTWARE.
- */
-var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
-
-var longerTimeoutBrowsers = ['Edge', 'Trident', 'Firefox'];
-var timeoutDuration = 0;
-for (var i = 0; i < longerTimeoutBrowsers.length; i += 1) {
-  if (isBrowser && navigator.userAgent.indexOf(longerTimeoutBrowsers[i]) >= 0) {
-    timeoutDuration = 1;
-    break;
-  }
-}
-
-function microtaskDebounce(fn) {
-  var called = false;
-  return function () {
-    if (called) {
-      return;
-    }
-    called = true;
-    window.Promise.resolve().then(function () {
-      called = false;
-      fn();
-    });
-  };
-}
-
-function taskDebounce(fn) {
-  var scheduled = false;
-  return function () {
-    if (!scheduled) {
-      scheduled = true;
-      setTimeout(function () {
-        scheduled = false;
-        fn();
-      }, timeoutDuration);
-    }
-  };
-}
-
-var supportsMicroTasks = isBrowser && window.Promise;
-
-/**
-* Create a debounced version of a method, that's asynchronously deferred
-* but called in the minimum time possible.
-*
-* @method
-* @memberof Popper.Utils
-* @argument {Function} fn
-* @returns {Function}
-*/
-var debounce = supportsMicroTasks ? microtaskDebounce : taskDebounce;
-
-/**
- * Check if the given variable is a function
- * @method
- * @memberof Popper.Utils
- * @argument {Any} functionToCheck - variable to check
- * @returns {Boolean} answer to: is a function?
- */
-function isFunction(functionToCheck) {
-  var getType = {};
-  return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
-}
-
-/**
- * Get CSS computed property of the given element
- * @method
- * @memberof Popper.Utils
- * @argument {Eement} element
- * @argument {String} property
- */
-function getStyleComputedProperty(element, property) {
-  if (element.nodeType !== 1) {
-    return [];
-  }
-  // NOTE: 1 DOM access here
-  var window = element.ownerDocument.defaultView;
-  var css = window.getComputedStyle(element, null);
-  return property ? css[property] : css;
-}
-
-/**
- * Returns the parentNode or the host of the element
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @returns {Element} parent
- */
-function getParentNode(element) {
-  if (element.nodeName === 'HTML') {
-    return element;
-  }
-  return element.parentNode || element.host;
-}
-
-/**
- * Returns the scrolling parent of the given element
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @returns {Element} scroll parent
- */
-function getScrollParent(element) {
-  // Return body, `getScroll` will take care to get the correct `scrollTop` from it
-  if (!element) {
-    return document.body;
-  }
-
-  switch (element.nodeName) {
-    case 'HTML':
-    case 'BODY':
-      return element.ownerDocument.body;
-    case '#document':
-      return element.body;
-  }
-
-  // Firefox want us to check `-x` and `-y` variations as well
-
-  var _getStyleComputedProp = getStyleComputedProperty(element),
-      overflow = _getStyleComputedProp.overflow,
-      overflowX = _getStyleComputedProp.overflowX,
-      overflowY = _getStyleComputedProp.overflowY;
-
-  if (/(auto|scroll|overlay)/.test(overflow + overflowY + overflowX)) {
-    return element;
-  }
-
-  return getScrollParent(getParentNode(element));
-}
-
-var isIE11 = isBrowser && !!(window.MSInputMethodContext && document.documentMode);
-var isIE10 = isBrowser && /MSIE 10/.test(navigator.userAgent);
-
-/**
- * Determines if the browser is Internet Explorer
- * @method
- * @memberof Popper.Utils
- * @param {Number} version to check
- * @returns {Boolean} isIE
- */
-function isIE(version) {
-  if (version === 11) {
-    return isIE11;
-  }
-  if (version === 10) {
-    return isIE10;
-  }
-  return isIE11 || isIE10;
-}
-
-/**
- * Returns the offset parent of the given element
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @returns {Element} offset parent
- */
-function getOffsetParent(element) {
-  if (!element) {
-    return document.documentElement;
-  }
-
-  var noOffsetParent = isIE(10) ? document.body : null;
-
-  // NOTE: 1 DOM access here
-  var offsetParent = element.offsetParent || null;
-  // Skip hidden elements which don't have an offsetParent
-  while (offsetParent === noOffsetParent && element.nextElementSibling) {
-    offsetParent = (element = element.nextElementSibling).offsetParent;
-  }
-
-  var nodeName = offsetParent && offsetParent.nodeName;
-
-  if (!nodeName || nodeName === 'BODY' || nodeName === 'HTML') {
-    return element ? element.ownerDocument.documentElement : document.documentElement;
-  }
-
-  // .offsetParent will return the closest TH, TD or TABLE in case
-  // no offsetParent is present, I hate this job...
-  if (['TH', 'TD', 'TABLE'].indexOf(offsetParent.nodeName) !== -1 && getStyleComputedProperty(offsetParent, 'position') === 'static') {
-    return getOffsetParent(offsetParent);
-  }
-
-  return offsetParent;
-}
-
-function isOffsetContainer(element) {
-  var nodeName = element.nodeName;
-
-  if (nodeName === 'BODY') {
-    return false;
-  }
-  return nodeName === 'HTML' || getOffsetParent(element.firstElementChild) === element;
-}
-
-/**
- * Finds the root node (document, shadowDOM root) of the given element
- * @method
- * @memberof Popper.Utils
- * @argument {Element} node
- * @returns {Element} root node
- */
-function getRoot(node) {
-  if (node.parentNode !== null) {
-    return getRoot(node.parentNode);
-  }
-
-  return node;
-}
-
-/**
- * Finds the offset parent common to the two provided nodes
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element1
- * @argument {Element} element2
- * @returns {Element} common offset parent
- */
-function findCommonOffsetParent(element1, element2) {
-  // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-  if (!element1 || !element1.nodeType || !element2 || !element2.nodeType) {
-    return document.documentElement;
-  }
-
-  // Here we make sure to give as "start" the element that comes first in the DOM
-  var order = element1.compareDocumentPosition(element2) & Node.DOCUMENT_POSITION_FOLLOWING;
-  var start = order ? element1 : element2;
-  var end = order ? element2 : element1;
-
-  // Get common ancestor container
-  var range = document.createRange();
-  range.setStart(start, 0);
-  range.setEnd(end, 0);
-  var commonAncestorContainer = range.commonAncestorContainer;
-
-  // Both nodes are inside #document
-
-  if (element1 !== commonAncestorContainer && element2 !== commonAncestorContainer || start.contains(end)) {
-    if (isOffsetContainer(commonAncestorContainer)) {
-      return commonAncestorContainer;
-    }
-
-    return getOffsetParent(commonAncestorContainer);
-  }
-
-  // one of the nodes is inside shadowDOM, find which one
-  var element1root = getRoot(element1);
-  if (element1root.host) {
-    return findCommonOffsetParent(element1root.host, element2);
-  } else {
-    return findCommonOffsetParent(element1, getRoot(element2).host);
-  }
-}
-
-/**
- * Gets the scroll value of the given element in the given side (top and left)
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @argument {String} side `top` or `left`
- * @returns {number} amount of scrolled pixels
- */
-function getScroll(element) {
-  var side = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'top';
-
-  var upperSide = side === 'top' ? 'scrollTop' : 'scrollLeft';
-  var nodeName = element.nodeName;
-
-  if (nodeName === 'BODY' || nodeName === 'HTML') {
-    var html = element.ownerDocument.documentElement;
-    var scrollingElement = element.ownerDocument.scrollingElement || html;
-    return scrollingElement[upperSide];
-  }
-
-  return element[upperSide];
-}
-
-/*
- * Sum or subtract the element scroll values (left and top) from a given rect object
- * @method
- * @memberof Popper.Utils
- * @param {Object} rect - Rect object you want to change
- * @param {HTMLElement} element - The element from the function reads the scroll values
- * @param {Boolean} subtract - set to true if you want to subtract the scroll values
- * @return {Object} rect - The modifier rect object
- */
-function includeScroll(rect, element) {
-  var subtract = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-  var scrollTop = getScroll(element, 'top');
-  var scrollLeft = getScroll(element, 'left');
-  var modifier = subtract ? -1 : 1;
-  rect.top += scrollTop * modifier;
-  rect.bottom += scrollTop * modifier;
-  rect.left += scrollLeft * modifier;
-  rect.right += scrollLeft * modifier;
-  return rect;
-}
-
-/*
- * Helper to detect borders of a given element
- * @method
- * @memberof Popper.Utils
- * @param {CSSStyleDeclaration} styles
- * Result of `getStyleComputedProperty` on the given element
- * @param {String} axis - `x` or `y`
- * @return {number} borders - The borders size of the given axis
- */
-
-function getBordersSize(styles, axis) {
-  var sideA = axis === 'x' ? 'Left' : 'Top';
-  var sideB = sideA === 'Left' ? 'Right' : 'Bottom';
-
-  return parseFloat(styles['border' + sideA + 'Width'], 10) + parseFloat(styles['border' + sideB + 'Width'], 10);
-}
-
-function getSize(axis, body, html, computedStyle) {
-  return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE(10) ? parseInt(html['offset' + axis]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')]) + parseInt(computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')]) : 0);
-}
-
-function getWindowSizes(document) {
-  var body = document.body;
-  var html = document.documentElement;
-  var computedStyle = isIE(10) && getComputedStyle(html);
-
-  return {
-    height: getSize('Height', body, html, computedStyle),
-    width: getSize('Width', body, html, computedStyle)
-  };
-}
-
-var classCallCheck = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-var createClass = function () {
-  function defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
-  }
-
-  return function (Constructor, protoProps, staticProps) {
-    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) defineProperties(Constructor, staticProps);
-    return Constructor;
-  };
-}();
-
-
-
-
-
-var defineProperty = function (obj, key, value) {
-  if (key in obj) {
-    Object.defineProperty(obj, key, {
-      value: value,
-      enumerable: true,
-      configurable: true,
-      writable: true
-    });
-  } else {
-    obj[key] = value;
-  }
-
-  return obj;
-};
-
-var _extends = Object.assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-/**
- * Given element offsets, generate an output similar to getBoundingClientRect
- * @method
- * @memberof Popper.Utils
- * @argument {Object} offsets
- * @returns {Object} ClientRect like output
- */
-function getClientRect(offsets) {
-  return _extends({}, offsets, {
-    right: offsets.left + offsets.width,
-    bottom: offsets.top + offsets.height
-  });
-}
-
-/**
- * Get bounding client rect of given element
- * @method
- * @memberof Popper.Utils
- * @param {HTMLElement} element
- * @return {Object} client rect
- */
-function getBoundingClientRect(element) {
-  var rect = {};
-
-  // IE10 10 FIX: Please, don't ask, the element isn't
-  // considered in DOM in some circumstances...
-  // This isn't reproducible in IE10 compatibility mode of IE11
-  try {
-    if (isIE(10)) {
-      rect = element.getBoundingClientRect();
-      var scrollTop = getScroll(element, 'top');
-      var scrollLeft = getScroll(element, 'left');
-      rect.top += scrollTop;
-      rect.left += scrollLeft;
-      rect.bottom += scrollTop;
-      rect.right += scrollLeft;
-    } else {
-      rect = element.getBoundingClientRect();
-    }
-  } catch (e) {}
-
-  var result = {
-    left: rect.left,
-    top: rect.top,
-    width: rect.right - rect.left,
-    height: rect.bottom - rect.top
-  };
-
-  // subtract scrollbar size from sizes
-  var sizes = element.nodeName === 'HTML' ? getWindowSizes(element.ownerDocument) : {};
-  var width = sizes.width || element.clientWidth || result.right - result.left;
-  var height = sizes.height || element.clientHeight || result.bottom - result.top;
-
-  var horizScrollbar = element.offsetWidth - width;
-  var vertScrollbar = element.offsetHeight - height;
-
-  // if an hypothetical scrollbar is detected, we must be sure it's not a `border`
-  // we make this check conditional for performance reasons
-  if (horizScrollbar || vertScrollbar) {
-    var styles = getStyleComputedProperty(element);
-    horizScrollbar -= getBordersSize(styles, 'x');
-    vertScrollbar -= getBordersSize(styles, 'y');
-
-    result.width -= horizScrollbar;
-    result.height -= vertScrollbar;
-  }
-
-  return getClientRect(result);
-}
-
-function getOffsetRectRelativeToArbitraryNode(children, parent) {
-  var fixedPosition = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
-
-  var isIE10 = isIE(10);
-  var isHTML = parent.nodeName === 'HTML';
-  var childrenRect = getBoundingClientRect(children);
-  var parentRect = getBoundingClientRect(parent);
-  var scrollParent = getScrollParent(children);
-
-  var styles = getStyleComputedProperty(parent);
-  var borderTopWidth = parseFloat(styles.borderTopWidth, 10);
-  var borderLeftWidth = parseFloat(styles.borderLeftWidth, 10);
-
-  // In cases where the parent is fixed, we must ignore negative scroll in offset calc
-  if (fixedPosition && isHTML) {
-    parentRect.top = Math.max(parentRect.top, 0);
-    parentRect.left = Math.max(parentRect.left, 0);
-  }
-  var offsets = getClientRect({
-    top: childrenRect.top - parentRect.top - borderTopWidth,
-    left: childrenRect.left - parentRect.left - borderLeftWidth,
-    width: childrenRect.width,
-    height: childrenRect.height
-  });
-  offsets.marginTop = 0;
-  offsets.marginLeft = 0;
-
-  // Subtract margins of documentElement in case it's being used as parent
-  // we do this only on HTML because it's the only element that behaves
-  // differently when margins are applied to it. The margins are included in
-  // the box of the documentElement, in the other cases not.
-  if (!isIE10 && isHTML) {
-    var marginTop = parseFloat(styles.marginTop, 10);
-    var marginLeft = parseFloat(styles.marginLeft, 10);
-
-    offsets.top -= borderTopWidth - marginTop;
-    offsets.bottom -= borderTopWidth - marginTop;
-    offsets.left -= borderLeftWidth - marginLeft;
-    offsets.right -= borderLeftWidth - marginLeft;
-
-    // Attach marginTop and marginLeft because in some circumstances we may need them
-    offsets.marginTop = marginTop;
-    offsets.marginLeft = marginLeft;
-  }
-
-  if (isIE10 && !fixedPosition ? parent.contains(scrollParent) : parent === scrollParent && scrollParent.nodeName !== 'BODY') {
-    offsets = includeScroll(offsets, parent);
-  }
-
-  return offsets;
-}
-
-function getViewportOffsetRectRelativeToArtbitraryNode(element) {
-  var excludeScroll = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-  var html = element.ownerDocument.documentElement;
-  var relativeOffset = getOffsetRectRelativeToArbitraryNode(element, html);
-  var width = Math.max(html.clientWidth, window.innerWidth || 0);
-  var height = Math.max(html.clientHeight, window.innerHeight || 0);
-
-  var scrollTop = !excludeScroll ? getScroll(html) : 0;
-  var scrollLeft = !excludeScroll ? getScroll(html, 'left') : 0;
-
-  var offset = {
-    top: scrollTop - relativeOffset.top + relativeOffset.marginTop,
-    left: scrollLeft - relativeOffset.left + relativeOffset.marginLeft,
-    width: width,
-    height: height
-  };
-
-  return getClientRect(offset);
-}
-
-/**
- * Check if the given element is fixed or is inside a fixed parent
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @argument {Element} customContainer
- * @returns {Boolean} answer to "isFixed?"
- */
-function isFixed(element) {
-  var nodeName = element.nodeName;
-  if (nodeName === 'BODY' || nodeName === 'HTML') {
-    return false;
-  }
-  if (getStyleComputedProperty(element, 'position') === 'fixed') {
-    return true;
-  }
-  var parentNode = getParentNode(element);
-  if (!parentNode) {
-    return false;
-  }
-  return isFixed(parentNode);
-}
-
-/**
- * Finds the first parent of an element that has a transformed property defined
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @returns {Element} first transformed parent or documentElement
- */
-
-function getFixedPositionOffsetParent(element) {
-  // This check is needed to avoid errors in case one of the elements isn't defined for any reason
-  if (!element || !element.parentElement || isIE()) {
-    return document.documentElement;
-  }
-  var el = element.parentElement;
-  while (el && getStyleComputedProperty(el, 'transform') === 'none') {
-    el = el.parentElement;
-  }
-  return el || document.documentElement;
-}
-
-/**
- * Computed the boundaries limits and return them
- * @method
- * @memberof Popper.Utils
- * @param {HTMLElement} popper
- * @param {HTMLElement} reference
- * @param {number} padding
- * @param {HTMLElement} boundariesElement - Element used to define the boundaries
- * @param {Boolean} fixedPosition - Is in fixed position mode
- * @returns {Object} Coordinates of the boundaries
- */
-function getBoundaries(popper, reference, padding, boundariesElement) {
-  var fixedPosition = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : false;
-
-  // NOTE: 1 DOM access here
-
-  var boundaries = { top: 0, left: 0 };
-  var offsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
-
-  // Handle viewport case
-  if (boundariesElement === 'viewport') {
-    boundaries = getViewportOffsetRectRelativeToArtbitraryNode(offsetParent, fixedPosition);
-  } else {
-    // Handle other cases based on DOM element used as boundaries
-    var boundariesNode = void 0;
-    if (boundariesElement === 'scrollParent') {
-      boundariesNode = getScrollParent(getParentNode(reference));
-      if (boundariesNode.nodeName === 'BODY') {
-        boundariesNode = popper.ownerDocument.documentElement;
-      }
-    } else if (boundariesElement === 'window') {
-      boundariesNode = popper.ownerDocument.documentElement;
-    } else {
-      boundariesNode = boundariesElement;
-    }
-
-    var offsets = getOffsetRectRelativeToArbitraryNode(boundariesNode, offsetParent, fixedPosition);
-
-    // In case of HTML, we need a different computation
-    if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
-      var _getWindowSizes = getWindowSizes(popper.ownerDocument),
-          height = _getWindowSizes.height,
-          width = _getWindowSizes.width;
-
-      boundaries.top += offsets.top - offsets.marginTop;
-      boundaries.bottom = height + offsets.top;
-      boundaries.left += offsets.left - offsets.marginLeft;
-      boundaries.right = width + offsets.left;
-    } else {
-      // for all the other DOM elements, this one is good
-      boundaries = offsets;
-    }
-  }
-
-  // Add paddings
-  padding = padding || 0;
-  var isPaddingNumber = typeof padding === 'number';
-  boundaries.left += isPaddingNumber ? padding : padding.left || 0;
-  boundaries.top += isPaddingNumber ? padding : padding.top || 0;
-  boundaries.right -= isPaddingNumber ? padding : padding.right || 0;
-  boundaries.bottom -= isPaddingNumber ? padding : padding.bottom || 0;
-
-  return boundaries;
-}
-
-function getArea(_ref) {
-  var width = _ref.width,
-      height = _ref.height;
-
-  return width * height;
-}
-
-/**
- * Utility used to transform the `auto` placement to the placement with more
- * available space.
- * @method
- * @memberof Popper.Utils
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function computeAutoPlacement(placement, refRect, popper, reference, boundariesElement) {
-  var padding = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : 0;
-
-  if (placement.indexOf('auto') === -1) {
-    return placement;
-  }
-
-  var boundaries = getBoundaries(popper, reference, padding, boundariesElement);
-
-  var rects = {
-    top: {
-      width: boundaries.width,
-      height: refRect.top - boundaries.top
-    },
-    right: {
-      width: boundaries.right - refRect.right,
-      height: boundaries.height
-    },
-    bottom: {
-      width: boundaries.width,
-      height: boundaries.bottom - refRect.bottom
-    },
-    left: {
-      width: refRect.left - boundaries.left,
-      height: boundaries.height
-    }
-  };
-
-  var sortedAreas = Object.keys(rects).map(function (key) {
-    return _extends({
-      key: key
-    }, rects[key], {
-      area: getArea(rects[key])
-    });
-  }).sort(function (a, b) {
-    return b.area - a.area;
-  });
-
-  var filteredAreas = sortedAreas.filter(function (_ref2) {
-    var width = _ref2.width,
-        height = _ref2.height;
-    return width >= popper.clientWidth && height >= popper.clientHeight;
-  });
-
-  var computedPlacement = filteredAreas.length > 0 ? filteredAreas[0].key : sortedAreas[0].key;
-
-  var variation = placement.split('-')[1];
-
-  return computedPlacement + (variation ? '-' + variation : '');
-}
-
-/**
- * Get offsets to the reference element
- * @method
- * @memberof Popper.Utils
- * @param {Object} state
- * @param {Element} popper - the popper element
- * @param {Element} reference - the reference element (the popper will be relative to this)
- * @param {Element} fixedPosition - is in fixed position mode
- * @returns {Object} An object containing the offsets which will be applied to the popper
- */
-function getReferenceOffsets(state, popper, reference) {
-  var fixedPosition = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
-
-  var commonOffsetParent = fixedPosition ? getFixedPositionOffsetParent(popper) : findCommonOffsetParent(popper, reference);
-  return getOffsetRectRelativeToArbitraryNode(reference, commonOffsetParent, fixedPosition);
-}
-
-/**
- * Get the outer sizes of the given element (offset size + margins)
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element
- * @returns {Object} object containing width and height properties
- */
-function getOuterSizes(element) {
-  var window = element.ownerDocument.defaultView;
-  var styles = window.getComputedStyle(element);
-  var x = parseFloat(styles.marginTop || 0) + parseFloat(styles.marginBottom || 0);
-  var y = parseFloat(styles.marginLeft || 0) + parseFloat(styles.marginRight || 0);
-  var result = {
-    width: element.offsetWidth + y,
-    height: element.offsetHeight + x
-  };
-  return result;
-}
-
-/**
- * Get the opposite placement of the given one
- * @method
- * @memberof Popper.Utils
- * @argument {String} placement
- * @returns {String} flipped placement
- */
-function getOppositePlacement(placement) {
-  var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
-  return placement.replace(/left|right|bottom|top/g, function (matched) {
-    return hash[matched];
-  });
-}
-
-/**
- * Get offsets to the popper
- * @method
- * @memberof Popper.Utils
- * @param {Object} position - CSS position the Popper will get applied
- * @param {HTMLElement} popper - the popper element
- * @param {Object} referenceOffsets - the reference offsets (the popper will be relative to this)
- * @param {String} placement - one of the valid placement options
- * @returns {Object} popperOffsets - An object containing the offsets which will be applied to the popper
- */
-function getPopperOffsets(popper, referenceOffsets, placement) {
-  placement = placement.split('-')[0];
-
-  // Get popper node sizes
-  var popperRect = getOuterSizes(popper);
-
-  // Add position, width and height to our offsets object
-  var popperOffsets = {
-    width: popperRect.width,
-    height: popperRect.height
-  };
-
-  // depending by the popper placement we have to compute its offsets slightly differently
-  var isHoriz = ['right', 'left'].indexOf(placement) !== -1;
-  var mainSide = isHoriz ? 'top' : 'left';
-  var secondarySide = isHoriz ? 'left' : 'top';
-  var measurement = isHoriz ? 'height' : 'width';
-  var secondaryMeasurement = !isHoriz ? 'height' : 'width';
-
-  popperOffsets[mainSide] = referenceOffsets[mainSide] + referenceOffsets[measurement] / 2 - popperRect[measurement] / 2;
-  if (placement === secondarySide) {
-    popperOffsets[secondarySide] = referenceOffsets[secondarySide] - popperRect[secondaryMeasurement];
-  } else {
-    popperOffsets[secondarySide] = referenceOffsets[getOppositePlacement(secondarySide)];
-  }
-
-  return popperOffsets;
-}
-
-/**
- * Mimics the `find` method of Array
- * @method
- * @memberof Popper.Utils
- * @argument {Array} arr
- * @argument prop
- * @argument value
- * @returns index or -1
- */
-function find(arr, check) {
-  // use native find if supported
-  if (Array.prototype.find) {
-    return arr.find(check);
-  }
-
-  // use `filter` to obtain the same behavior of `find`
-  return arr.filter(check)[0];
-}
-
-/**
- * Return the index of the matching object
- * @method
- * @memberof Popper.Utils
- * @argument {Array} arr
- * @argument prop
- * @argument value
- * @returns index or -1
- */
-function findIndex(arr, prop, value) {
-  // use native findIndex if supported
-  if (Array.prototype.findIndex) {
-    return arr.findIndex(function (cur) {
-      return cur[prop] === value;
-    });
-  }
-
-  // use `find` + `indexOf` if `findIndex` isn't supported
-  var match = find(arr, function (obj) {
-    return obj[prop] === value;
-  });
-  return arr.indexOf(match);
-}
-
-/**
- * Loop trough the list of modifiers and run them in order,
- * each of them will then edit the data object.
- * @method
- * @memberof Popper.Utils
- * @param {dataObject} data
- * @param {Array} modifiers
- * @param {String} ends - Optional modifier name used as stopper
- * @returns {dataObject}
- */
-function runModifiers(modifiers, data, ends) {
-  var modifiersToRun = ends === undefined ? modifiers : modifiers.slice(0, findIndex(modifiers, 'name', ends));
-
-  modifiersToRun.forEach(function (modifier) {
-    if (modifier['function']) {
-      // eslint-disable-line dot-notation
-      console.warn('`modifier.function` is deprecated, use `modifier.fn`!');
-    }
-    var fn = modifier['function'] || modifier.fn; // eslint-disable-line dot-notation
-    if (modifier.enabled && isFunction(fn)) {
-      // Add properties to offsets to make them a complete clientRect object
-      // we do this before each modifier to make sure the previous one doesn't
-      // mess with these values
-      data.offsets.popper = getClientRect(data.offsets.popper);
-      data.offsets.reference = getClientRect(data.offsets.reference);
-
-      data = fn(data, modifier);
-    }
-  });
-
-  return data;
-}
-
-/**
- * Updates the position of the popper, computing the new offsets and applying
- * the new style.<br />
- * Prefer `scheduleUpdate` over `update` because of performance reasons.
- * @method
- * @memberof Popper
- */
-function update() {
-  // if popper is destroyed, don't perform any further update
-  if (this.state.isDestroyed) {
-    return;
-  }
-
-  var data = {
-    instance: this,
-    styles: {},
-    arrowStyles: {},
-    attributes: {},
-    flipped: false,
-    offsets: {}
-  };
-
-  // compute reference element offsets
-  data.offsets.reference = getReferenceOffsets(this.state, this.popper, this.reference, this.options.positionFixed);
-
-  // compute auto placement, store placement inside the data object,
-  // modifiers will be able to edit `placement` if needed
-  // and refer to originalPlacement to know the original value
-  data.placement = computeAutoPlacement(this.options.placement, data.offsets.reference, this.popper, this.reference, this.options.modifiers.flip.boundariesElement, this.options.modifiers.flip.padding);
-
-  // store the computed placement inside `originalPlacement`
-  data.originalPlacement = data.placement;
-
-  data.positionFixed = this.options.positionFixed;
-
-  // compute the popper offsets
-  data.offsets.popper = getPopperOffsets(this.popper, data.offsets.reference, data.placement);
-
-  data.offsets.popper.position = this.options.positionFixed ? 'fixed' : 'absolute';
-
-  // run the modifiers
-  data = runModifiers(this.modifiers, data);
-
-  // the first `update` will call `onCreate` callback
-  // the other ones will call `onUpdate` callback
-  if (!this.state.isCreated) {
-    this.state.isCreated = true;
-    this.options.onCreate(data);
-  } else {
-    this.options.onUpdate(data);
-  }
-}
-
-/**
- * Helper used to know if the given modifier is enabled.
- * @method
- * @memberof Popper.Utils
- * @returns {Boolean}
- */
-function isModifierEnabled(modifiers, modifierName) {
-  return modifiers.some(function (_ref) {
-    var name = _ref.name,
-        enabled = _ref.enabled;
-    return enabled && name === modifierName;
-  });
-}
-
-/**
- * Get the prefixed supported property name
- * @method
- * @memberof Popper.Utils
- * @argument {String} property (camelCase)
- * @returns {String} prefixed property (camelCase or PascalCase, depending on the vendor prefix)
- */
-function getSupportedPropertyName(property) {
-  var prefixes = [false, 'ms', 'Webkit', 'Moz', 'O'];
-  var upperProp = property.charAt(0).toUpperCase() + property.slice(1);
-
-  for (var i = 0; i < prefixes.length; i++) {
-    var prefix = prefixes[i];
-    var toCheck = prefix ? '' + prefix + upperProp : property;
-    if (typeof document.body.style[toCheck] !== 'undefined') {
-      return toCheck;
-    }
-  }
-  return null;
-}
-
-/**
- * Destroys the popper.
- * @method
- * @memberof Popper
- */
-function destroy() {
-  this.state.isDestroyed = true;
-
-  // touch DOM only if `applyStyle` modifier is enabled
-  if (isModifierEnabled(this.modifiers, 'applyStyle')) {
-    this.popper.removeAttribute('x-placement');
-    this.popper.style.position = '';
-    this.popper.style.top = '';
-    this.popper.style.left = '';
-    this.popper.style.right = '';
-    this.popper.style.bottom = '';
-    this.popper.style.willChange = '';
-    this.popper.style[getSupportedPropertyName('transform')] = '';
-  }
-
-  this.disableEventListeners();
-
-  // remove the popper if user explicity asked for the deletion on destroy
-  // do not use `remove` because IE11 doesn't support it
-  if (this.options.removeOnDestroy) {
-    this.popper.parentNode.removeChild(this.popper);
-  }
-  return this;
-}
-
-/**
- * Get the window associated with the element
- * @argument {Element} element
- * @returns {Window}
- */
-function getWindow(element) {
-  var ownerDocument = element.ownerDocument;
-  return ownerDocument ? ownerDocument.defaultView : window;
-}
-
-function attachToScrollParents(scrollParent, event, callback, scrollParents) {
-  var isBody = scrollParent.nodeName === 'BODY';
-  var target = isBody ? scrollParent.ownerDocument.defaultView : scrollParent;
-  target.addEventListener(event, callback, { passive: true });
-
-  if (!isBody) {
-    attachToScrollParents(getScrollParent(target.parentNode), event, callback, scrollParents);
-  }
-  scrollParents.push(target);
-}
-
-/**
- * Setup needed event listeners used to update the popper position
- * @method
- * @memberof Popper.Utils
- * @private
- */
-function setupEventListeners(reference, options, state, updateBound) {
-  // Resize event listener on window
-  state.updateBound = updateBound;
-  getWindow(reference).addEventListener('resize', state.updateBound, { passive: true });
-
-  // Scroll event listener on scroll parents
-  var scrollElement = getScrollParent(reference);
-  attachToScrollParents(scrollElement, 'scroll', state.updateBound, state.scrollParents);
-  state.scrollElement = scrollElement;
-  state.eventsEnabled = true;
-
-  return state;
-}
-
-/**
- * It will add resize/scroll events and start recalculating
- * position of the popper element when they are triggered.
- * @method
- * @memberof Popper
- */
-function enableEventListeners() {
-  if (!this.state.eventsEnabled) {
-    this.state = setupEventListeners(this.reference, this.options, this.state, this.scheduleUpdate);
-  }
-}
-
-/**
- * Remove event listeners used to update the popper position
- * @method
- * @memberof Popper.Utils
- * @private
- */
-function removeEventListeners(reference, state) {
-  // Remove resize event listener on window
-  getWindow(reference).removeEventListener('resize', state.updateBound);
-
-  // Remove scroll event listener on scroll parents
-  state.scrollParents.forEach(function (target) {
-    target.removeEventListener('scroll', state.updateBound);
-  });
-
-  // Reset state
-  state.updateBound = null;
-  state.scrollParents = [];
-  state.scrollElement = null;
-  state.eventsEnabled = false;
-  return state;
-}
-
-/**
- * It will remove resize/scroll events and won't recalculate popper position
- * when they are triggered. It also won't trigger `onUpdate` callback anymore,
- * unless you call `update` method manually.
- * @method
- * @memberof Popper
- */
-function disableEventListeners() {
-  if (this.state.eventsEnabled) {
-    cancelAnimationFrame(this.scheduleUpdate);
-    this.state = removeEventListeners(this.reference, this.state);
-  }
-}
-
-/**
- * Tells if a given input is a number
- * @method
- * @memberof Popper.Utils
- * @param {*} input to check
- * @return {Boolean}
- */
-function isNumeric(n) {
-  return n !== '' && !isNaN(parseFloat(n)) && isFinite(n);
-}
-
-/**
- * Set the style to the given popper
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element - Element to apply the style to
- * @argument {Object} styles
- * Object with a list of properties and values which will be applied to the element
- */
-function setStyles(element, styles) {
-  Object.keys(styles).forEach(function (prop) {
-    var unit = '';
-    // add unit if the value is numeric and is one of the following
-    if (['width', 'height', 'top', 'right', 'bottom', 'left'].indexOf(prop) !== -1 && isNumeric(styles[prop])) {
-      unit = 'px';
-    }
-    element.style[prop] = styles[prop] + unit;
-  });
-}
-
-/**
- * Set the attributes to the given popper
- * @method
- * @memberof Popper.Utils
- * @argument {Element} element - Element to apply the attributes to
- * @argument {Object} styles
- * Object with a list of properties and values which will be applied to the element
- */
-function setAttributes(element, attributes) {
-  Object.keys(attributes).forEach(function (prop) {
-    var value = attributes[prop];
-    if (value !== false) {
-      element.setAttribute(prop, attributes[prop]);
-    } else {
-      element.removeAttribute(prop);
-    }
-  });
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Object} data.styles - List of style properties - values to apply to popper element
- * @argument {Object} data.attributes - List of attribute properties - values to apply to popper element
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The same data object
- */
-function applyStyle(data) {
-  // any property present in `data.styles` will be applied to the popper,
-  // in this way we can make the 3rd party modifiers add custom styles to it
-  // Be aware, modifiers could override the properties defined in the previous
-  // lines of this modifier!
-  setStyles(data.instance.popper, data.styles);
-
-  // any property present in `data.attributes` will be applied to the popper,
-  // they will be set as HTML attributes of the element
-  setAttributes(data.instance.popper, data.attributes);
-
-  // if arrowElement is defined and arrowStyles has some properties
-  if (data.arrowElement && Object.keys(data.arrowStyles).length) {
-    setStyles(data.arrowElement, data.arrowStyles);
-  }
-
-  return data;
-}
-
-/**
- * Set the x-placement attribute before everything else because it could be used
- * to add margins to the popper margins needs to be calculated to get the
- * correct popper offsets.
- * @method
- * @memberof Popper.modifiers
- * @param {HTMLElement} reference - The reference element used to position the popper
- * @param {HTMLElement} popper - The HTML element used as popper
- * @param {Object} options - Popper.js options
- */
-function applyStyleOnLoad(reference, popper, options, modifierOptions, state) {
-  // compute reference element offsets
-  var referenceOffsets = getReferenceOffsets(state, popper, reference, options.positionFixed);
-
-  // compute auto placement, store placement inside the data object,
-  // modifiers will be able to edit `placement` if needed
-  // and refer to originalPlacement to know the original value
-  var placement = computeAutoPlacement(options.placement, referenceOffsets, popper, reference, options.modifiers.flip.boundariesElement, options.modifiers.flip.padding);
-
-  popper.setAttribute('x-placement', placement);
-
-  // Apply `position` to popper before anything else because
-  // without the position applied we can't guarantee correct computations
-  setStyles(popper, { position: options.positionFixed ? 'fixed' : 'absolute' });
-
-  return options;
-}
-
-/**
- * @function
- * @memberof Popper.Utils
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Boolean} shouldRound - If the offsets should be rounded at all
- * @returns {Object} The popper's position offsets rounded
- *
- * The tale of pixel-perfect positioning. It's still not 100% perfect, but as
- * good as it can be within reason.
- * Discussion here: https://github.com/FezVrasta/popper.js/pull/715
- *
- * Low DPI screens cause a popper to be blurry if not using full pixels (Safari
- * as well on High DPI screens).
- *
- * Firefox prefers no rounding for positioning and does not have blurriness on
- * high DPI screens.
- *
- * Only horizontal placement and left/right values need to be considered.
- */
-function getRoundedOffsets(data, shouldRound) {
-  var _data$offsets = data.offsets,
-      popper = _data$offsets.popper,
-      reference = _data$offsets.reference;
-  var round = Math.round,
-      floor = Math.floor;
-
-  var noRound = function noRound(v) {
-    return v;
-  };
-
-  var referenceWidth = round(reference.width);
-  var popperWidth = round(popper.width);
-
-  var isVertical = ['left', 'right'].indexOf(data.placement) !== -1;
-  var isVariation = data.placement.indexOf('-') !== -1;
-  var sameWidthParity = referenceWidth % 2 === popperWidth % 2;
-  var bothOddWidth = referenceWidth % 2 === 1 && popperWidth % 2 === 1;
-
-  var horizontalToInteger = !shouldRound ? noRound : isVertical || isVariation || sameWidthParity ? round : floor;
-  var verticalToInteger = !shouldRound ? noRound : round;
-
-  return {
-    left: horizontalToInteger(bothOddWidth && !isVariation && shouldRound ? popper.left - 1 : popper.left),
-    top: verticalToInteger(popper.top),
-    bottom: verticalToInteger(popper.bottom),
-    right: horizontalToInteger(popper.right)
-  };
-}
-
-var isFirefox = isBrowser && /Firefox/i.test(navigator.userAgent);
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function computeStyle(data, options) {
-  var x = options.x,
-      y = options.y;
-  var popper = data.offsets.popper;
-
-  // Remove this legacy support in Popper.js v2
-
-  var legacyGpuAccelerationOption = find(data.instance.modifiers, function (modifier) {
-    return modifier.name === 'applyStyle';
-  }).gpuAcceleration;
-  if (legacyGpuAccelerationOption !== undefined) {
-    console.warn('WARNING: `gpuAcceleration` option moved to `computeStyle` modifier and will not be supported in future versions of Popper.js!');
-  }
-  var gpuAcceleration = legacyGpuAccelerationOption !== undefined ? legacyGpuAccelerationOption : options.gpuAcceleration;
-
-  var offsetParent = getOffsetParent(data.instance.popper);
-  var offsetParentRect = getBoundingClientRect(offsetParent);
-
-  // Styles
-  var styles = {
-    position: popper.position
-  };
-
-  var offsets = getRoundedOffsets(data, window.devicePixelRatio < 2 || !isFirefox);
-
-  var sideA = x === 'bottom' ? 'top' : 'bottom';
-  var sideB = y === 'right' ? 'left' : 'right';
-
-  // if gpuAcceleration is set to `true` and transform is supported,
-  //  we use `translate3d` to apply the position to the popper we
-  // automatically use the supported prefixed version if needed
-  var prefixedProperty = getSupportedPropertyName('transform');
-
-  // now, let's make a step back and look at this code closely (wtf?)
-  // If the content of the popper grows once it's been positioned, it
-  // may happen that the popper gets misplaced because of the new content
-  // overflowing its reference element
-  // To avoid this problem, we provide two options (x and y), which allow
-  // the consumer to define the offset origin.
-  // If we position a popper on top of a reference element, we can set
-  // `x` to `top` to make the popper grow towards its top instead of
-  // its bottom.
-  var left = void 0,
-      top = void 0;
-  if (sideA === 'bottom') {
-    // when offsetParent is <html> the positioning is relative to the bottom of the screen (excluding the scrollbar)
-    // and not the bottom of the html element
-    if (offsetParent.nodeName === 'HTML') {
-      top = -offsetParent.clientHeight + offsets.bottom;
-    } else {
-      top = -offsetParentRect.height + offsets.bottom;
-    }
-  } else {
-    top = offsets.top;
-  }
-  if (sideB === 'right') {
-    if (offsetParent.nodeName === 'HTML') {
-      left = -offsetParent.clientWidth + offsets.right;
-    } else {
-      left = -offsetParentRect.width + offsets.right;
-    }
-  } else {
-    left = offsets.left;
-  }
-  if (gpuAcceleration && prefixedProperty) {
-    styles[prefixedProperty] = 'translate3d(' + left + 'px, ' + top + 'px, 0)';
-    styles[sideA] = 0;
-    styles[sideB] = 0;
-    styles.willChange = 'transform';
-  } else {
-    // othwerise, we use the standard `top`, `left`, `bottom` and `right` properties
-    var invertTop = sideA === 'bottom' ? -1 : 1;
-    var invertLeft = sideB === 'right' ? -1 : 1;
-    styles[sideA] = top * invertTop;
-    styles[sideB] = left * invertLeft;
-    styles.willChange = sideA + ', ' + sideB;
-  }
-
-  // Attributes
-  var attributes = {
-    'x-placement': data.placement
-  };
-
-  // Update `data` attributes, styles and arrowStyles
-  data.attributes = _extends({}, attributes, data.attributes);
-  data.styles = _extends({}, styles, data.styles);
-  data.arrowStyles = _extends({}, data.offsets.arrow, data.arrowStyles);
-
-  return data;
-}
-
-/**
- * Helper used to know if the given modifier depends from another one.<br />
- * It checks if the needed modifier is listed and enabled.
- * @method
- * @memberof Popper.Utils
- * @param {Array} modifiers - list of modifiers
- * @param {String} requestingName - name of requesting modifier
- * @param {String} requestedName - name of requested modifier
- * @returns {Boolean}
- */
-function isModifierRequired(modifiers, requestingName, requestedName) {
-  var requesting = find(modifiers, function (_ref) {
-    var name = _ref.name;
-    return name === requestingName;
-  });
-
-  var isRequired = !!requesting && modifiers.some(function (modifier) {
-    return modifier.name === requestedName && modifier.enabled && modifier.order < requesting.order;
-  });
-
-  if (!isRequired) {
-    var _requesting = '`' + requestingName + '`';
-    var requested = '`' + requestedName + '`';
-    console.warn(requested + ' modifier is required by ' + _requesting + ' modifier in order to work, be sure to include it before ' + _requesting + '!');
-  }
-  return isRequired;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function arrow(data, options) {
-  var _data$offsets$arrow;
-
-  // arrow depends on keepTogether in order to work
-  if (!isModifierRequired(data.instance.modifiers, 'arrow', 'keepTogether')) {
-    return data;
-  }
-
-  var arrowElement = options.element;
-
-  // if arrowElement is a string, suppose it's a CSS selector
-  if (typeof arrowElement === 'string') {
-    arrowElement = data.instance.popper.querySelector(arrowElement);
-
-    // if arrowElement is not found, don't run the modifier
-    if (!arrowElement) {
-      return data;
-    }
-  } else {
-    // if the arrowElement isn't a query selector we must check that the
-    // provided DOM node is child of its popper node
-    if (!data.instance.popper.contains(arrowElement)) {
-      console.warn('WARNING: `arrow.element` must be child of its popper element!');
-      return data;
-    }
-  }
-
-  var placement = data.placement.split('-')[0];
-  var _data$offsets = data.offsets,
-      popper = _data$offsets.popper,
-      reference = _data$offsets.reference;
-
-  var isVertical = ['left', 'right'].indexOf(placement) !== -1;
-
-  var len = isVertical ? 'height' : 'width';
-  var sideCapitalized = isVertical ? 'Top' : 'Left';
-  var side = sideCapitalized.toLowerCase();
-  var altSide = isVertical ? 'left' : 'top';
-  var opSide = isVertical ? 'bottom' : 'right';
-  var arrowElementSize = getOuterSizes(arrowElement)[len];
-
-  //
-  // extends keepTogether behavior making sure the popper and its
-  // reference have enough pixels in conjunction
-  //
-
-  // top/left side
-  if (reference[opSide] - arrowElementSize < popper[side]) {
-    data.offsets.popper[side] -= popper[side] - (reference[opSide] - arrowElementSize);
-  }
-  // bottom/right side
-  if (reference[side] + arrowElementSize > popper[opSide]) {
-    data.offsets.popper[side] += reference[side] + arrowElementSize - popper[opSide];
-  }
-  data.offsets.popper = getClientRect(data.offsets.popper);
-
-  // compute center of the popper
-  var center = reference[side] + reference[len] / 2 - arrowElementSize / 2;
-
-  // Compute the sideValue using the updated popper offsets
-  // take popper margin in account because we don't have this info available
-  var css = getStyleComputedProperty(data.instance.popper);
-  var popperMarginSide = parseFloat(css['margin' + sideCapitalized], 10);
-  var popperBorderSide = parseFloat(css['border' + sideCapitalized + 'Width'], 10);
-  var sideValue = center - data.offsets.popper[side] - popperMarginSide - popperBorderSide;
-
-  // prevent arrowElement from being placed not contiguously to its popper
-  sideValue = Math.max(Math.min(popper[len] - arrowElementSize, sideValue), 0);
-
-  data.arrowElement = arrowElement;
-  data.offsets.arrow = (_data$offsets$arrow = {}, defineProperty(_data$offsets$arrow, side, Math.round(sideValue)), defineProperty(_data$offsets$arrow, altSide, ''), _data$offsets$arrow);
-
-  return data;
-}
-
-/**
- * Get the opposite placement variation of the given one
- * @method
- * @memberof Popper.Utils
- * @argument {String} placement variation
- * @returns {String} flipped placement variation
- */
-function getOppositeVariation(variation) {
-  if (variation === 'end') {
-    return 'start';
-  } else if (variation === 'start') {
-    return 'end';
-  }
-  return variation;
-}
-
-/**
- * List of accepted placements to use as values of the `placement` option.<br />
- * Valid placements are:
- * - `auto`
- * - `top`
- * - `right`
- * - `bottom`
- * - `left`
- *
- * Each placement can have a variation from this list:
- * - `-start`
- * - `-end`
- *
- * Variations are interpreted easily if you think of them as the left to right
- * written languages. Horizontally (`top` and `bottom`), `start` is left and `end`
- * is right.<br />
- * Vertically (`left` and `right`), `start` is top and `end` is bottom.
- *
- * Some valid examples are:
- * - `top-end` (on top of reference, right aligned)
- * - `right-start` (on right of reference, top aligned)
- * - `bottom` (on bottom, centered)
- * - `auto-end` (on the side with more space available, alignment depends by placement)
- *
- * @static
- * @type {Array}
- * @enum {String}
- * @readonly
- * @method placements
- * @memberof Popper
- */
-var placements = ['auto-start', 'auto', 'auto-end', 'top-start', 'top', 'top-end', 'right-start', 'right', 'right-end', 'bottom-end', 'bottom', 'bottom-start', 'left-end', 'left', 'left-start'];
-
-// Get rid of `auto` `auto-start` and `auto-end`
-var validPlacements = placements.slice(3);
-
-/**
- * Given an initial placement, returns all the subsequent placements
- * clockwise (or counter-clockwise).
- *
- * @method
- * @memberof Popper.Utils
- * @argument {String} placement - A valid placement (it accepts variations)
- * @argument {Boolean} counter - Set to true to walk the placements counterclockwise
- * @returns {Array} placements including their variations
- */
-function clockwise(placement) {
-  var counter = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-  var index = validPlacements.indexOf(placement);
-  var arr = validPlacements.slice(index + 1).concat(validPlacements.slice(0, index));
-  return counter ? arr.reverse() : arr;
-}
-
-var BEHAVIORS = {
-  FLIP: 'flip',
-  CLOCKWISE: 'clockwise',
-  COUNTERCLOCKWISE: 'counterclockwise'
-};
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function flip(data, options) {
-  // if `inner` modifier is enabled, we can't use the `flip` modifier
-  if (isModifierEnabled(data.instance.modifiers, 'inner')) {
-    return data;
-  }
-
-  if (data.flipped && data.placement === data.originalPlacement) {
-    // seems like flip is trying to loop, probably there's not enough space on any of the flippable sides
-    return data;
-  }
-
-  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, options.boundariesElement, data.positionFixed);
-
-  var placement = data.placement.split('-')[0];
-  var placementOpposite = getOppositePlacement(placement);
-  var variation = data.placement.split('-')[1] || '';
-
-  var flipOrder = [];
-
-  switch (options.behavior) {
-    case BEHAVIORS.FLIP:
-      flipOrder = [placement, placementOpposite];
-      break;
-    case BEHAVIORS.CLOCKWISE:
-      flipOrder = clockwise(placement);
-      break;
-    case BEHAVIORS.COUNTERCLOCKWISE:
-      flipOrder = clockwise(placement, true);
-      break;
-    default:
-      flipOrder = options.behavior;
-  }
-
-  flipOrder.forEach(function (step, index) {
-    if (placement !== step || flipOrder.length === index + 1) {
-      return data;
-    }
-
-    placement = data.placement.split('-')[0];
-    placementOpposite = getOppositePlacement(placement);
-
-    var popperOffsets = data.offsets.popper;
-    var refOffsets = data.offsets.reference;
-
-    // using floor because the reference offsets may contain decimals we are not going to consider here
-    var floor = Math.floor;
-    var overlapsRef = placement === 'left' && floor(popperOffsets.right) > floor(refOffsets.left) || placement === 'right' && floor(popperOffsets.left) < floor(refOffsets.right) || placement === 'top' && floor(popperOffsets.bottom) > floor(refOffsets.top) || placement === 'bottom' && floor(popperOffsets.top) < floor(refOffsets.bottom);
-
-    var overflowsLeft = floor(popperOffsets.left) < floor(boundaries.left);
-    var overflowsRight = floor(popperOffsets.right) > floor(boundaries.right);
-    var overflowsTop = floor(popperOffsets.top) < floor(boundaries.top);
-    var overflowsBottom = floor(popperOffsets.bottom) > floor(boundaries.bottom);
-
-    var overflowsBoundaries = placement === 'left' && overflowsLeft || placement === 'right' && overflowsRight || placement === 'top' && overflowsTop || placement === 'bottom' && overflowsBottom;
-
-    // flip the variation if required
-    var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
-
-    // flips variation if reference element overflows boundaries
-    var flippedVariationByRef = !!options.flipVariations && (isVertical && variation === 'start' && overflowsLeft || isVertical && variation === 'end' && overflowsRight || !isVertical && variation === 'start' && overflowsTop || !isVertical && variation === 'end' && overflowsBottom);
-
-    // flips variation if popper content overflows boundaries
-    var flippedVariationByContent = !!options.flipVariationsByContent && (isVertical && variation === 'start' && overflowsRight || isVertical && variation === 'end' && overflowsLeft || !isVertical && variation === 'start' && overflowsBottom || !isVertical && variation === 'end' && overflowsTop);
-
-    var flippedVariation = flippedVariationByRef || flippedVariationByContent;
-
-    if (overlapsRef || overflowsBoundaries || flippedVariation) {
-      // this boolean to detect any flip loop
-      data.flipped = true;
-
-      if (overlapsRef || overflowsBoundaries) {
-        placement = flipOrder[index + 1];
-      }
-
-      if (flippedVariation) {
-        variation = getOppositeVariation(variation);
-      }
-
-      data.placement = placement + (variation ? '-' + variation : '');
-
-      // this object contains `position`, we want to preserve it along with
-      // any additional property we may add in the future
-      data.offsets.popper = _extends({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
-
-      data = runModifiers(data.instance.modifiers, data, 'flip');
-    }
-  });
-  return data;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function keepTogether(data) {
-  var _data$offsets = data.offsets,
-      popper = _data$offsets.popper,
-      reference = _data$offsets.reference;
-
-  var placement = data.placement.split('-')[0];
-  var floor = Math.floor;
-  var isVertical = ['top', 'bottom'].indexOf(placement) !== -1;
-  var side = isVertical ? 'right' : 'bottom';
-  var opSide = isVertical ? 'left' : 'top';
-  var measurement = isVertical ? 'width' : 'height';
-
-  if (popper[side] < floor(reference[opSide])) {
-    data.offsets.popper[opSide] = floor(reference[opSide]) - popper[measurement];
-  }
-  if (popper[opSide] > floor(reference[side])) {
-    data.offsets.popper[opSide] = floor(reference[side]);
-  }
-
-  return data;
-}
-
-/**
- * Converts a string containing value + unit into a px value number
- * @function
- * @memberof {modifiers~offset}
- * @private
- * @argument {String} str - Value + unit string
- * @argument {String} measurement - `height` or `width`
- * @argument {Object} popperOffsets
- * @argument {Object} referenceOffsets
- * @returns {Number|String}
- * Value in pixels, or original string if no values were extracted
- */
-function toValue(str, measurement, popperOffsets, referenceOffsets) {
-  // separate value from unit
-  var split = str.match(/((?:\-|\+)?\d*\.?\d*)(.*)/);
-  var value = +split[1];
-  var unit = split[2];
-
-  // If it's not a number it's an operator, I guess
-  if (!value) {
-    return str;
-  }
-
-  if (unit.indexOf('%') === 0) {
-    var element = void 0;
-    switch (unit) {
-      case '%p':
-        element = popperOffsets;
-        break;
-      case '%':
-      case '%r':
-      default:
-        element = referenceOffsets;
-    }
-
-    var rect = getClientRect(element);
-    return rect[measurement] / 100 * value;
-  } else if (unit === 'vh' || unit === 'vw') {
-    // if is a vh or vw, we calculate the size based on the viewport
-    var size = void 0;
-    if (unit === 'vh') {
-      size = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    } else {
-      size = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    }
-    return size / 100 * value;
-  } else {
-    // if is an explicit pixel unit, we get rid of the unit and keep the value
-    // if is an implicit unit, it's px, and we return just the value
-    return value;
-  }
-}
-
-/**
- * Parse an `offset` string to extrapolate `x` and `y` numeric offsets.
- * @function
- * @memberof {modifiers~offset}
- * @private
- * @argument {String} offset
- * @argument {Object} popperOffsets
- * @argument {Object} referenceOffsets
- * @argument {String} basePlacement
- * @returns {Array} a two cells array with x and y offsets in numbers
- */
-function parseOffset(offset, popperOffsets, referenceOffsets, basePlacement) {
-  var offsets = [0, 0];
-
-  // Use height if placement is left or right and index is 0 otherwise use width
-  // in this way the first offset will use an axis and the second one
-  // will use the other one
-  var useHeight = ['right', 'left'].indexOf(basePlacement) !== -1;
-
-  // Split the offset string to obtain a list of values and operands
-  // The regex addresses values with the plus or minus sign in front (+10, -20, etc)
-  var fragments = offset.split(/(\+|\-)/).map(function (frag) {
-    return frag.trim();
-  });
-
-  // Detect if the offset string contains a pair of values or a single one
-  // they could be separated by comma or space
-  var divider = fragments.indexOf(find(fragments, function (frag) {
-    return frag.search(/,|\s/) !== -1;
-  }));
-
-  if (fragments[divider] && fragments[divider].indexOf(',') === -1) {
-    console.warn('Offsets separated by white space(s) are deprecated, use a comma (,) instead.');
-  }
-
-  // If divider is found, we divide the list of values and operands to divide
-  // them by ofset X and Y.
-  var splitRegex = /\s*,\s*|\s+/;
-  var ops = divider !== -1 ? [fragments.slice(0, divider).concat([fragments[divider].split(splitRegex)[0]]), [fragments[divider].split(splitRegex)[1]].concat(fragments.slice(divider + 1))] : [fragments];
-
-  // Convert the values with units to absolute pixels to allow our computations
-  ops = ops.map(function (op, index) {
-    // Most of the units rely on the orientation of the popper
-    var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
-    var mergeWithPrevious = false;
-    return op
-    // This aggregates any `+` or `-` sign that aren't considered operators
-    // e.g.: 10 + +5 => [10, +, +5]
-    .reduce(function (a, b) {
-      if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
-        a[a.length - 1] = b;
-        mergeWithPrevious = true;
-        return a;
-      } else if (mergeWithPrevious) {
-        a[a.length - 1] += b;
-        mergeWithPrevious = false;
-        return a;
-      } else {
-        return a.concat(b);
-      }
-    }, [])
-    // Here we convert the string values into number values (in px)
-    .map(function (str) {
-      return toValue(str, measurement, popperOffsets, referenceOffsets);
-    });
-  });
-
-  // Loop trough the offsets arrays and execute the operations
-  ops.forEach(function (op, index) {
-    op.forEach(function (frag, index2) {
-      if (isNumeric(frag)) {
-        offsets[index] += frag * (op[index2 - 1] === '-' ? -1 : 1);
-      }
-    });
-  });
-  return offsets;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @argument {Number|String} options.offset=0
- * The offset value as described in the modifier description
- * @returns {Object} The data object, properly modified
- */
-function offset(data, _ref) {
-  var offset = _ref.offset;
-  var placement = data.placement,
-      _data$offsets = data.offsets,
-      popper = _data$offsets.popper,
-      reference = _data$offsets.reference;
-
-  var basePlacement = placement.split('-')[0];
-
-  var offsets = void 0;
-  if (isNumeric(+offset)) {
-    offsets = [+offset, 0];
-  } else {
-    offsets = parseOffset(offset, popper, reference, basePlacement);
-  }
-
-  if (basePlacement === 'left') {
-    popper.top += offsets[0];
-    popper.left -= offsets[1];
-  } else if (basePlacement === 'right') {
-    popper.top += offsets[0];
-    popper.left += offsets[1];
-  } else if (basePlacement === 'top') {
-    popper.left += offsets[0];
-    popper.top -= offsets[1];
-  } else if (basePlacement === 'bottom') {
-    popper.left += offsets[0];
-    popper.top += offsets[1];
-  }
-
-  data.popper = popper;
-  return data;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function preventOverflow(data, options) {
-  var boundariesElement = options.boundariesElement || getOffsetParent(data.instance.popper);
-
-  // If offsetParent is the reference element, we really want to
-  // go one step up and use the next offsetParent as reference to
-  // avoid to make this modifier completely useless and look like broken
-  if (data.instance.reference === boundariesElement) {
-    boundariesElement = getOffsetParent(boundariesElement);
-  }
-
-  // NOTE: DOM access here
-  // resets the popper's position so that the document size can be calculated excluding
-  // the size of the popper element itself
-  var transformProp = getSupportedPropertyName('transform');
-  var popperStyles = data.instance.popper.style; // assignment to help minification
-  var top = popperStyles.top,
-      left = popperStyles.left,
-      transform = popperStyles[transformProp];
-
-  popperStyles.top = '';
-  popperStyles.left = '';
-  popperStyles[transformProp] = '';
-
-  var boundaries = getBoundaries(data.instance.popper, data.instance.reference, options.padding, boundariesElement, data.positionFixed);
-
-  // NOTE: DOM access here
-  // restores the original style properties after the offsets have been computed
-  popperStyles.top = top;
-  popperStyles.left = left;
-  popperStyles[transformProp] = transform;
-
-  options.boundaries = boundaries;
-
-  var order = options.priority;
-  var popper = data.offsets.popper;
-
-  var check = {
-    primary: function primary(placement) {
-      var value = popper[placement];
-      if (popper[placement] < boundaries[placement] && !options.escapeWithReference) {
-        value = Math.max(popper[placement], boundaries[placement]);
-      }
-      return defineProperty({}, placement, value);
-    },
-    secondary: function secondary(placement) {
-      var mainSide = placement === 'right' ? 'left' : 'top';
-      var value = popper[mainSide];
-      if (popper[placement] > boundaries[placement] && !options.escapeWithReference) {
-        value = Math.min(popper[mainSide], boundaries[placement] - (placement === 'right' ? popper.width : popper.height));
-      }
-      return defineProperty({}, mainSide, value);
-    }
-  };
-
-  order.forEach(function (placement) {
-    var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
-    popper = _extends({}, popper, check[side](placement));
-  });
-
-  data.offsets.popper = popper;
-
-  return data;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function shift(data) {
-  var placement = data.placement;
-  var basePlacement = placement.split('-')[0];
-  var shiftvariation = placement.split('-')[1];
-
-  // if shift shiftvariation is specified, run the modifier
-  if (shiftvariation) {
-    var _data$offsets = data.offsets,
-        reference = _data$offsets.reference,
-        popper = _data$offsets.popper;
-
-    var isVertical = ['bottom', 'top'].indexOf(basePlacement) !== -1;
-    var side = isVertical ? 'left' : 'top';
-    var measurement = isVertical ? 'width' : 'height';
-
-    var shiftOffsets = {
-      start: defineProperty({}, side, reference[side]),
-      end: defineProperty({}, side, reference[side] + reference[measurement] - popper[measurement])
-    };
-
-    data.offsets.popper = _extends({}, popper, shiftOffsets[shiftvariation]);
-  }
-
-  return data;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by update method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function hide(data) {
-  if (!isModifierRequired(data.instance.modifiers, 'hide', 'preventOverflow')) {
-    return data;
-  }
-
-  var refRect = data.offsets.reference;
-  var bound = find(data.instance.modifiers, function (modifier) {
-    return modifier.name === 'preventOverflow';
-  }).boundaries;
-
-  if (refRect.bottom < bound.top || refRect.left > bound.right || refRect.top > bound.bottom || refRect.right < bound.left) {
-    // Avoid unnecessary DOM access if visibility hasn't changed
-    if (data.hide === true) {
-      return data;
-    }
-
-    data.hide = true;
-    data.attributes['x-out-of-boundaries'] = '';
-  } else {
-    // Avoid unnecessary DOM access if visibility hasn't changed
-    if (data.hide === false) {
-      return data;
-    }
-
-    data.hide = false;
-    data.attributes['x-out-of-boundaries'] = false;
-  }
-
-  return data;
-}
-
-/**
- * @function
- * @memberof Modifiers
- * @argument {Object} data - The data object generated by `update` method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {Object} The data object, properly modified
- */
-function inner(data) {
-  var placement = data.placement;
-  var basePlacement = placement.split('-')[0];
-  var _data$offsets = data.offsets,
-      popper = _data$offsets.popper,
-      reference = _data$offsets.reference;
-
-  var isHoriz = ['left', 'right'].indexOf(basePlacement) !== -1;
-
-  var subtractLength = ['top', 'left'].indexOf(basePlacement) === -1;
-
-  popper[isHoriz ? 'left' : 'top'] = reference[basePlacement] - (subtractLength ? popper[isHoriz ? 'width' : 'height'] : 0);
-
-  data.placement = getOppositePlacement(placement);
-  data.offsets.popper = getClientRect(popper);
-
-  return data;
-}
-
-/**
- * Modifier function, each modifier can have a function of this type assigned
- * to its `fn` property.<br />
- * These functions will be called on each update, this means that you must
- * make sure they are performant enough to avoid performance bottlenecks.
- *
- * @function ModifierFn
- * @argument {dataObject} data - The data object generated by `update` method
- * @argument {Object} options - Modifiers configuration and options
- * @returns {dataObject} The data object, properly modified
- */
-
-/**
- * Modifiers are plugins used to alter the behavior of your poppers.<br />
- * Popper.js uses a set of 9 modifiers to provide all the basic functionalities
- * needed by the library.
- *
- * Usually you don't want to override the `order`, `fn` and `onLoad` props.
- * All the other properties are configurations that could be tweaked.
- * @namespace modifiers
- */
-var modifiers = {
-  /**
-   * Modifier used to shift the popper on the start or end of its reference
-   * element.<br />
-   * It will read the variation of the `placement` property.<br />
-   * It can be one either `-end` or `-start`.
-   * @memberof modifiers
-   * @inner
-   */
-  shift: {
-    /** @prop {number} order=100 - Index used to define the order of execution */
-    order: 100,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: shift
-  },
-
-  /**
-   * The `offset` modifier can shift your popper on both its axis.
-   *
-   * It accepts the following units:
-   * - `px` or unit-less, interpreted as pixels
-   * - `%` or `%r`, percentage relative to the length of the reference element
-   * - `%p`, percentage relative to the length of the popper element
-   * - `vw`, CSS viewport width unit
-   * - `vh`, CSS viewport height unit
-   *
-   * For length is intended the main axis relative to the placement of the popper.<br />
-   * This means that if the placement is `top` or `bottom`, the length will be the
-   * `width`. In case of `left` or `right`, it will be the `height`.
-   *
-   * You can provide a single value (as `Number` or `String`), or a pair of values
-   * as `String` divided by a comma or one (or more) white spaces.<br />
-   * The latter is a deprecated method because it leads to confusion and will be
-   * removed in v2.<br />
-   * Additionally, it accepts additions and subtractions between different units.
-   * Note that multiplications and divisions aren't supported.
-   *
-   * Valid examples are:
-   * ```
-   * 10
-   * '10%'
-   * '10, 10'
-   * '10%, 10'
-   * '10 + 10%'
-   * '10 - 5vh + 3%'
-   * '-10px + 5vh, 5px - 6%'
-   * ```
-   * > **NB**: If you desire to apply offsets to your poppers in a way that may make them overlap
-   * > with their reference element, unfortunately, you will have to disable the `flip` modifier.
-   * > You can read more on this at this [issue](https://github.com/FezVrasta/popper.js/issues/373).
-   *
-   * @memberof modifiers
-   * @inner
-   */
-  offset: {
-    /** @prop {number} order=200 - Index used to define the order of execution */
-    order: 200,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: offset,
-    /** @prop {Number|String} offset=0
-     * The offset value as described in the modifier description
-     */
-    offset: 0
-  },
-
-  /**
-   * Modifier used to prevent the popper from being positioned outside the boundary.
-   *
-   * A scenario exists where the reference itself is not within the boundaries.<br />
-   * We can say it has "escaped the boundaries" — or just "escaped".<br />
-   * In this case we need to decide whether the popper should either:
-   *
-   * - detach from the reference and remain "trapped" in the boundaries, or
-   * - if it should ignore the boundary and "escape with its reference"
-   *
-   * When `escapeWithReference` is set to`true` and reference is completely
-   * outside its boundaries, the popper will overflow (or completely leave)
-   * the boundaries in order to remain attached to the edge of the reference.
-   *
-   * @memberof modifiers
-   * @inner
-   */
-  preventOverflow: {
-    /** @prop {number} order=300 - Index used to define the order of execution */
-    order: 300,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: preventOverflow,
-    /**
-     * @prop {Array} [priority=['left','right','top','bottom']]
-     * Popper will try to prevent overflow following these priorities by default,
-     * then, it could overflow on the left and on top of the `boundariesElement`
-     */
-    priority: ['left', 'right', 'top', 'bottom'],
-    /**
-     * @prop {number} padding=5
-     * Amount of pixel used to define a minimum distance between the boundaries
-     * and the popper. This makes sure the popper always has a little padding
-     * between the edges of its container
-     */
-    padding: 5,
-    /**
-     * @prop {String|HTMLElement} boundariesElement='scrollParent'
-     * Boundaries used by the modifier. Can be `scrollParent`, `window`,
-     * `viewport` or any DOM element.
-     */
-    boundariesElement: 'scrollParent'
-  },
-
-  /**
-   * Modifier used to make sure the reference and its popper stay near each other
-   * without leaving any gap between the two. Especially useful when the arrow is
-   * enabled and you want to ensure that it points to its reference element.
-   * It cares only about the first axis. You can still have poppers with margin
-   * between the popper and its reference element.
-   * @memberof modifiers
-   * @inner
-   */
-  keepTogether: {
-    /** @prop {number} order=400 - Index used to define the order of execution */
-    order: 400,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: keepTogether
-  },
-
-  /**
-   * This modifier is used to move the `arrowElement` of the popper to make
-   * sure it is positioned between the reference element and its popper element.
-   * It will read the outer size of the `arrowElement` node to detect how many
-   * pixels of conjunction are needed.
-   *
-   * It has no effect if no `arrowElement` is provided.
-   * @memberof modifiers
-   * @inner
-   */
-  arrow: {
-    /** @prop {number} order=500 - Index used to define the order of execution */
-    order: 500,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: arrow,
-    /** @prop {String|HTMLElement} element='[x-arrow]' - Selector or node used as arrow */
-    element: '[x-arrow]'
-  },
-
-  /**
-   * Modifier used to flip the popper's placement when it starts to overlap its
-   * reference element.
-   *
-   * Requires the `preventOverflow` modifier before it in order to work.
-   *
-   * **NOTE:** this modifier will interrupt the current update cycle and will
-   * restart it if it detects the need to flip the placement.
-   * @memberof modifiers
-   * @inner
-   */
-  flip: {
-    /** @prop {number} order=600 - Index used to define the order of execution */
-    order: 600,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: flip,
-    /**
-     * @prop {String|Array} behavior='flip'
-     * The behavior used to change the popper's placement. It can be one of
-     * `flip`, `clockwise`, `counterclockwise` or an array with a list of valid
-     * placements (with optional variations)
-     */
-    behavior: 'flip',
-    /**
-     * @prop {number} padding=5
-     * The popper will flip if it hits the edges of the `boundariesElement`
-     */
-    padding: 5,
-    /**
-     * @prop {String|HTMLElement} boundariesElement='viewport'
-     * The element which will define the boundaries of the popper position.
-     * The popper will never be placed outside of the defined boundaries
-     * (except if `keepTogether` is enabled)
-     */
-    boundariesElement: 'viewport',
-    /**
-     * @prop {Boolean} flipVariations=false
-     * The popper will switch placement variation between `-start` and `-end` when
-     * the reference element overlaps its boundaries.
-     *
-     * The original placement should have a set variation.
-     */
-    flipVariations: false,
-    /**
-     * @prop {Boolean} flipVariationsByContent=false
-     * The popper will switch placement variation between `-start` and `-end` when
-     * the popper element overlaps its reference boundaries.
-     *
-     * The original placement should have a set variation.
-     */
-    flipVariationsByContent: false
-  },
-
-  /**
-   * Modifier used to make the popper flow toward the inner of the reference element.
-   * By default, when this modifier is disabled, the popper will be placed outside
-   * the reference element.
-   * @memberof modifiers
-   * @inner
-   */
-  inner: {
-    /** @prop {number} order=700 - Index used to define the order of execution */
-    order: 700,
-    /** @prop {Boolean} enabled=false - Whether the modifier is enabled or not */
-    enabled: false,
-    /** @prop {ModifierFn} */
-    fn: inner
-  },
-
-  /**
-   * Modifier used to hide the popper when its reference element is outside of the
-   * popper boundaries. It will set a `x-out-of-boundaries` attribute which can
-   * be used to hide with a CSS selector the popper when its reference is
-   * out of boundaries.
-   *
-   * Requires the `preventOverflow` modifier before it in order to work.
-   * @memberof modifiers
-   * @inner
-   */
-  hide: {
-    /** @prop {number} order=800 - Index used to define the order of execution */
-    order: 800,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: hide
-  },
-
-  /**
-   * Computes the style that will be applied to the popper element to gets
-   * properly positioned.
-   *
-   * Note that this modifier will not touch the DOM, it just prepares the styles
-   * so that `applyStyle` modifier can apply it. This separation is useful
-   * in case you need to replace `applyStyle` with a custom implementation.
-   *
-   * This modifier has `850` as `order` value to maintain backward compatibility
-   * with previous versions of Popper.js. Expect the modifiers ordering method
-   * to change in future major versions of the library.
-   *
-   * @memberof modifiers
-   * @inner
-   */
-  computeStyle: {
-    /** @prop {number} order=850 - Index used to define the order of execution */
-    order: 850,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: computeStyle,
-    /**
-     * @prop {Boolean} gpuAcceleration=true
-     * If true, it uses the CSS 3D transformation to position the popper.
-     * Otherwise, it will use the `top` and `left` properties
-     */
-    gpuAcceleration: true,
-    /**
-     * @prop {string} [x='bottom']
-     * Where to anchor the X axis (`bottom` or `top`). AKA X offset origin.
-     * Change this if your popper should grow in a direction different from `bottom`
-     */
-    x: 'bottom',
-    /**
-     * @prop {string} [x='left']
-     * Where to anchor the Y axis (`left` or `right`). AKA Y offset origin.
-     * Change this if your popper should grow in a direction different from `right`
-     */
-    y: 'right'
-  },
-
-  /**
-   * Applies the computed styles to the popper element.
-   *
-   * All the DOM manipulations are limited to this modifier. This is useful in case
-   * you want to integrate Popper.js inside a framework or view library and you
-   * want to delegate all the DOM manipulations to it.
-   *
-   * Note that if you disable this modifier, you must make sure the popper element
-   * has its position set to `absolute` before Popper.js can do its work!
-   *
-   * Just disable this modifier and define your own to achieve the desired effect.
-   *
-   * @memberof modifiers
-   * @inner
-   */
-  applyStyle: {
-    /** @prop {number} order=900 - Index used to define the order of execution */
-    order: 900,
-    /** @prop {Boolean} enabled=true - Whether the modifier is enabled or not */
-    enabled: true,
-    /** @prop {ModifierFn} */
-    fn: applyStyle,
-    /** @prop {Function} */
-    onLoad: applyStyleOnLoad,
-    /**
-     * @deprecated since version 1.10.0, the property moved to `computeStyle` modifier
-     * @prop {Boolean} gpuAcceleration=true
-     * If true, it uses the CSS 3D transformation to position the popper.
-     * Otherwise, it will use the `top` and `left` properties
-     */
-    gpuAcceleration: undefined
-  }
-};
-
-/**
- * The `dataObject` is an object containing all the information used by Popper.js.
- * This object is passed to modifiers and to the `onCreate` and `onUpdate` callbacks.
- * @name dataObject
- * @property {Object} data.instance The Popper.js instance
- * @property {String} data.placement Placement applied to popper
- * @property {String} data.originalPlacement Placement originally defined on init
- * @property {Boolean} data.flipped True if popper has been flipped by flip modifier
- * @property {Boolean} data.hide True if the reference element is out of boundaries, useful to know when to hide the popper
- * @property {HTMLElement} data.arrowElement Node used as arrow by arrow modifier
- * @property {Object} data.styles Any CSS property defined here will be applied to the popper. It expects the JavaScript nomenclature (eg. `marginBottom`)
- * @property {Object} data.arrowStyles Any CSS property defined here will be applied to the popper arrow. It expects the JavaScript nomenclature (eg. `marginBottom`)
- * @property {Object} data.boundaries Offsets of the popper boundaries
- * @property {Object} data.offsets The measurements of popper, reference and arrow elements
- * @property {Object} data.offsets.popper `top`, `left`, `width`, `height` values
- * @property {Object} data.offsets.reference `top`, `left`, `width`, `height` values
- * @property {Object} data.offsets.arrow] `top` and `left` offsets, only one of them will be different from 0
- */
-
-/**
- * Default options provided to Popper.js constructor.<br />
- * These can be overridden using the `options` argument of Popper.js.<br />
- * To override an option, simply pass an object with the same
- * structure of the `options` object, as the 3rd argument. For example:
- * ```
- * new Popper(ref, pop, {
- *   modifiers: {
- *     preventOverflow: { enabled: false }
- *   }
- * })
- * ```
- * @type {Object}
- * @static
- * @memberof Popper
- */
-var Defaults = {
-  /**
-   * Popper's placement.
-   * @prop {Popper.placements} placement='bottom'
-   */
-  placement: 'bottom',
-
-  /**
-   * Set this to true if you want popper to position it self in 'fixed' mode
-   * @prop {Boolean} positionFixed=false
-   */
-  positionFixed: false,
-
-  /**
-   * Whether events (resize, scroll) are initially enabled.
-   * @prop {Boolean} eventsEnabled=true
-   */
-  eventsEnabled: true,
-
-  /**
-   * Set to true if you want to automatically remove the popper when
-   * you call the `destroy` method.
-   * @prop {Boolean} removeOnDestroy=false
-   */
-  removeOnDestroy: false,
-
-  /**
-   * Callback called when the popper is created.<br />
-   * By default, it is set to no-op.<br />
-   * Access Popper.js instance with `data.instance`.
-   * @prop {onCreate}
-   */
-  onCreate: function onCreate() {},
-
-  /**
-   * Callback called when the popper is updated. This callback is not called
-   * on the initialization/creation of the popper, but only on subsequent
-   * updates.<br />
-   * By default, it is set to no-op.<br />
-   * Access Popper.js instance with `data.instance`.
-   * @prop {onUpdate}
-   */
-  onUpdate: function onUpdate() {},
-
-  /**
-   * List of modifiers used to modify the offsets before they are applied to the popper.
-   * They provide most of the functionalities of Popper.js.
-   * @prop {modifiers}
-   */
-  modifiers: modifiers
-};
-
-/**
- * @callback onCreate
- * @param {dataObject} data
- */
-
-/**
- * @callback onUpdate
- * @param {dataObject} data
- */
-
-// Utils
-// Methods
-var Popper = function () {
-  /**
-   * Creates a new Popper.js instance.
-   * @class Popper
-   * @param {Element|referenceObject} reference - The reference element used to position the popper
-   * @param {Element} popper - The HTML / XML element used as the popper
-   * @param {Object} options - Your custom options to override the ones defined in [Defaults](#defaults)
-   * @return {Object} instance - The generated Popper.js instance
-   */
-  function Popper(reference, popper) {
-    var _this = this;
-
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
-    classCallCheck(this, Popper);
-
-    this.scheduleUpdate = function () {
-      return requestAnimationFrame(_this.update);
-    };
-
-    // make update() debounced, so that it only runs at most once-per-tick
-    this.update = debounce(this.update.bind(this));
-
-    // with {} we create a new object with the options inside it
-    this.options = _extends({}, Popper.Defaults, options);
-
-    // init state
-    this.state = {
-      isDestroyed: false,
-      isCreated: false,
-      scrollParents: []
-    };
-
-    // get reference and popper elements (allow jQuery wrappers)
-    this.reference = reference && reference.jquery ? reference[0] : reference;
-    this.popper = popper && popper.jquery ? popper[0] : popper;
-
-    // Deep merge modifiers options
-    this.options.modifiers = {};
-    Object.keys(_extends({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
-      _this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
-    });
-
-    // Refactoring modifiers' list (Object => Array)
-    this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
-      return _extends({
-        name: name
-      }, _this.options.modifiers[name]);
-    })
-    // sort the modifiers by order
-    .sort(function (a, b) {
-      return a.order - b.order;
-    });
-
-    // modifiers have the ability to execute arbitrary code when Popper.js get inited
-    // such code is executed in the same order of its modifier
-    // they could add new properties to their options configuration
-    // BE AWARE: don't add options to `options.modifiers.name` but to `modifierOptions`!
-    this.modifiers.forEach(function (modifierOptions) {
-      if (modifierOptions.enabled && isFunction(modifierOptions.onLoad)) {
-        modifierOptions.onLoad(_this.reference, _this.popper, _this.options, modifierOptions, _this.state);
-      }
-    });
-
-    // fire the first update to position the popper in the right place
-    this.update();
-
-    var eventsEnabled = this.options.eventsEnabled;
-    if (eventsEnabled) {
-      // setup event listeners, they will take care of update the position in specific situations
-      this.enableEventListeners();
-    }
-
-    this.state.eventsEnabled = eventsEnabled;
-  }
-
-  // We can't use class properties because they don't get listed in the
-  // class prototype and break stuff like Sinon stubs
-
-
-  createClass(Popper, [{
-    key: 'update',
-    value: function update$$1() {
-      return update.call(this);
-    }
-  }, {
-    key: 'destroy',
-    value: function destroy$$1() {
-      return destroy.call(this);
-    }
-  }, {
-    key: 'enableEventListeners',
-    value: function enableEventListeners$$1() {
-      return enableEventListeners.call(this);
-    }
-  }, {
-    key: 'disableEventListeners',
-    value: function disableEventListeners$$1() {
-      return disableEventListeners.call(this);
-    }
-
-    /**
-     * Schedules an update. It will run on the next UI update available.
-     * @method scheduleUpdate
-     * @memberof Popper
-     */
-
-
-    /**
-     * Collection of utilities useful when writing custom modifiers.
-     * Starting from version 1.7, this method is available only if you
-     * include `popper-utils.js` before `popper.js`.
-     *
-     * **DEPRECATION**: This way to access PopperUtils is deprecated
-     * and will be removed in v2! Use the PopperUtils module directly instead.
-     * Due to the high instability of the methods contained in Utils, we can't
-     * guarantee them to follow semver. Use them at your own risk!
-     * @static
-     * @private
-     * @type {Object}
-     * @deprecated since version 1.8
-     * @member Utils
-     * @memberof Popper
-     */
-
-  }]);
-  return Popper;
-}();
-
-/**
- * The `referenceObject` is an object that provides an interface compatible with Popper.js
- * and lets you use it as replacement of a real DOM node.<br />
- * You can use this method to position a popper relatively to a set of coordinates
- * in case you don't have a DOM node to use as reference.
- *
- * ```
- * new Popper(referenceObject, popperNode);
- * ```
- *
- * NB: This feature isn't supported in Internet Explorer 10.
- * @name referenceObject
- * @property {Function} data.getBoundingClientRect
- * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
- * @property {number} data.clientWidth
- * An ES6 getter that will return the width of the virtual reference element.
- * @property {number} data.clientHeight
- * An ES6 getter that will return the height of the virtual reference element.
- */
-
-
-Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
-Popper.placements = placements;
-Popper.Defaults = Defaults;
-
-/* harmony default export */ __webpack_exports__["default"] = (Popper);
-//# sourceMappingURL=popper.js.map
-
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -49199,25 +63245,36 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
-/**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue"));
 var app = new Vue({
   el: '#app'
+}); // Bulma NavBar Burger Script
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0); // Check if there are any navbar burgers
+
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function ($el) {
+      $el.addEventListener('click', function () {
+        // Get the target from the "data-target" attribute
+        var target = $el.dataset.target;
+        var $target = document.getElementById(target); // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+
+        $el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
 });
+
+__webpack_require__(/*! ./bulma-extensions */ "./resources/js/bulma-extensions.js");
 
 /***/ }),
 
@@ -49236,10 +63293,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 try {
-  window.Popper = __webpack_require__(/*! popper.js */ "./node_modules/popper.js/dist/esm/popper.js")["default"];
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-  __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.js");
 } catch (e) {}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -49272,10 +63326,43 @@ if (token) {
 // window.Pusher = require('pusher-js');
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
+//     key: 'your-pusher-key'
 // });
+
+/***/ }),
+
+/***/ "./resources/js/bulma-extensions.js":
+/*!******************************************!*\
+  !*** ./resources/js/bulma-extensions.js ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var bulmaAccordion = __webpack_require__(/*! bulma-extensions/bulma-accordion/dist/js/bulma-accordion */ "./node_modules/bulma-extensions/bulma-accordion/dist/js/bulma-accordion.js");
+
+var bulmaCalendar = __webpack_require__(/*! bulma-extensions/bulma-calendar/dist/js/bulma-calendar */ "./node_modules/bulma-extensions/bulma-calendar/dist/js/bulma-calendar.js");
+
+var bulmaCarousel = __webpack_require__(/*! bulma-extensions/bulma-carousel/dist/js/bulma-carousel */ "./node_modules/bulma-extensions/bulma-carousel/dist/js/bulma-carousel.js");
+
+var bulmaIconpicker = __webpack_require__(/*! bulma-extensions/bulma-iconpicker/dist/js/bulma-iconpicker */ "./node_modules/bulma-extensions/bulma-iconpicker/dist/js/bulma-iconpicker.js");
+
+var bulmaQuickview = __webpack_require__(/*! bulma-extensions/bulma-quickview/dist/js/bulma-quickview */ "./node_modules/bulma-extensions/bulma-quickview/dist/js/bulma-quickview.js");
+
+var bulmaSlider = __webpack_require__(/*! bulma-extensions/bulma-slider/dist/js/bulma-slider */ "./node_modules/bulma-extensions/bulma-slider/dist/js/bulma-slider.js");
+
+var bulmaSteps = __webpack_require__(/*! bulma-extensions/bulma-steps/dist/js/bulma-steps */ "./node_modules/bulma-extensions/bulma-steps/dist/js/bulma-steps.js");
+
+var bulmaTagsinput = __webpack_require__(/*! bulma-extensions/bulma-tagsinput/dist/js/bulma-tagsinput */ "./node_modules/bulma-extensions/bulma-tagsinput/dist/js/bulma-tagsinput.js"); // Instantiate
+
+
+bulmaAccordion.attach();
+bulmaCalendar.attach();
+bulmaCarousel.attach();
+bulmaIconpicker.attach();
+bulmaQuickview.attach();
+bulmaSlider.attach();
+bulmaSteps.attach();
+bulmaTagsinput.attach();
 
 /***/ }),
 

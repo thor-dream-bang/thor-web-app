@@ -1603,6 +1603,8 @@ return array(
     'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => $vendorDir . '/jakub-onderka/php-console-color/src/InvalidStyleException.php',
     'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => $vendorDir . '/jakub-onderka/php-console-highlighter/src/Highlighter.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+    'LaravelFrontendPresets\\BulmaPreset\\BulmaPreset' => $vendorDir . '/laravel-frontend-presets/bulma/src/BulmaPreset.php',
+    'LaravelFrontendPresets\\BulmaPreset\\BulmaPresetServiceProvider' => $vendorDir . '/laravel-frontend-presets/bulma/src/BulmaPresetServiceProvider.php',
     'Laravel\\Tinker\\ClassAliasAutoloader' => $vendorDir . '/laravel/tinker/src/ClassAliasAutoloader.php',
     'Laravel\\Tinker\\Console\\TinkerCommand' => $vendorDir . '/laravel/tinker/src/Console/TinkerCommand.php',
     'Laravel\\Tinker\\TinkerCaster' => $vendorDir . '/laravel/tinker/src/TinkerCaster.php',
