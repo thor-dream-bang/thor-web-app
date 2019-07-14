@@ -83,6 +83,28 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+
+            .fade-enter-active, .fade-leave-active {
+            transition: opacity .5s ease;
+            }
+            .fade-enter, .fade-leave-active {
+            opacity: 0;
+            }
+            .child-view {
+            position: absolute;
+            transition: all .5s cubic-bezier(.55,0,.1,1);
+            }
+            .slide-left-enter, .slide-right-leave-active {
+            opacity: 0;
+            -webkit-transform: translate(30px, 0);
+            transform: translate(30px, 0);
+            }
+            .slide-left-leave-active, .slide-right-enter {
+            opacity: 0;
+            -webkit-transform: translate(-30px, 0);
+            transform: translate(-30px, 0);
+            }
         </style>
     </head>
     <body>
@@ -111,10 +133,8 @@
                     <a href="/">Welcome</a>
                     <a href="/applicant/biodata">Biodata</a>
                     <a href="/applicant/biodata/1">Biodata User</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/selfvue/router">Vue Router</a>
+                    <a href="/selfvue/router/transition">Vue Router Transition</a>
 
                     <P>
                     @yield('content-body')
@@ -135,5 +155,7 @@
                 </div>
             </div>
         </div>
+
+        <script src="{{ elixir('js/app.js') }}"></script>
     </body>
 </html>
